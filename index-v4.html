@@ -1,0 +1,1187 @@
+<!doctype html>
+<html lang="de">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width,initial-scale=1.0" />
+    <title>LUMITRONIX – Demo V4</title>
+    <link rel="stylesheet" href="./lumitronix-design.css" />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600;700;800&display=swap"
+      rel="stylesheet"
+    />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Oswald:wght@400;500;600;700&display=swap"
+      rel="stylesheet"
+    />
+  </head>
+  <body>
+    <main class="lum-flex lum-flex-col lum-gap-16">
+      <section id="start" class="lum-hero-bg">
+        <div class="lum-card lum-max-w-lg">
+          <nav class="lum-breadcrumbs" aria-label="Kontext">
+            <a href="./index.html">Bestand</a>
+            <span class="sep">/</span>
+            <a href="./index-v3.html">V3</a>
+            <span class="sep">/</span>
+            <span class="current">V4</span>
+          </nav>
+
+          <p class="lum-overline lum-mt-24">LUMITRONIX Design System</p>
+          <h1 class="lum-display lum-mt-8">
+            V4 Demo nur mit `lumitronix-design.css`
+          </h1>
+          <p class="lum-body lum-mt-24">
+            Diese Demo verwendet bewusst nur die bestehende produktive
+            Stylesheet-Datei, vorhandene `lum-*` Klassen und sauberes HTML.
+            Keine zusätzliche Demo-CSS, keine Inline-Styles.
+          </p>
+
+          <div class="lum-flex lum-flex-wrap lum-gap-16 lum-mt-24">
+            <a class="lum-btn lum-btn-accent" href="#signalbild">
+              System-Elemente
+            </a>
+            <a class="lum-btn lum-btn-outline" href="#formulare"> Formulare </a>
+            <button
+              class="lum-btn lum-btn-ghost-accent"
+              type="button"
+              data-modal-open="demo-modal"
+            >
+              Modal öffnen
+            </button>
+          </div>
+
+          <div class="lum-divider"></div>
+
+          <nav class="lum-nav-h" aria-label="Abschnitte">
+            <a class="active" href="#start">Start</a>
+            <a href="#signalbild">Signalbild</a>
+            <a href="#aktionen">Aktionen</a>
+            <a href="#formulare">Formulare</a>
+            <a href="#navigation">Navigation</a>
+            <a href="#daten">Daten</a>
+            <a href="#feedback">Feedback</a>
+            <a href="#integration">Einbindung</a>
+          </nav>
+        </div>
+      </section>
+
+      <section
+        id="signalbild"
+        class="lum-card lum-flex lum-flex-col lum-gap-16"
+      >
+        <div>
+          <p class="lum-overline">Signalbild</p>
+          <h2 class="lum-h2 lum-mt-8">Statuskarten, Badges und Team-Kontext</h2>
+        </div>
+
+        <div class="lum-grid-4">
+          <article class="lum-stat-card">
+            <span class="lum-stat-card-label">Offene Projekte</span>
+            <strong class="lum-stat-card-value">18</strong>
+            <span class="lum-stat-card-sub">
+              <span class="lum-stat-card-up">+3</span>
+              seit Montag
+            </span>
+          </article>
+
+          <article class="lum-stat-card">
+            <span class="lum-stat-card-label">Freigabequote</span>
+            <strong class="lum-stat-card-value">96%</strong>
+            <span class="lum-stat-card-sub">
+              <span class="lum-stat-card-up">+2%</span>
+              zu Vormonat
+            </span>
+          </article>
+
+          <article class="lum-stat-card">
+            <span class="lum-stat-card-label">Reklamationen</span>
+            <strong class="lum-stat-card-value">4</strong>
+            <span class="lum-stat-card-sub">
+              <span class="lum-stat-card-down">-1</span>
+              in Bearbeitung
+            </span>
+          </article>
+
+          <article class="lum-stat-card">
+            <span class="lum-stat-card-label">Lieferbereitschaft</span>
+            <strong class="lum-stat-card-value">87%</strong>
+            <span class="lum-stat-card-sub">
+              <span class="lum-stat-card-up">stabil</span>
+              gegenüber letzter Woche
+            </span>
+          </article>
+        </div>
+
+        <div class="lum-grid-3">
+          <article class="lum-card-gradient lum-flex lum-flex-col lum-gap-16">
+            <div>
+              <p class="lum-overline">Teams</p>
+              <h3 class="lum-h3 lum-mt-8">Verantwortliche Rollen</h3>
+            </div>
+
+            <div class="lum-flex lum-flex-col lum-gap-16">
+              <div class="lum-flex-center lum-gap-16">
+                <span class="lum-avatar lum-avatar-md lum-avatar-primary"
+                  >CH</span
+                >
+                <div class="lum-flex lum-flex-col lum-gap-4">
+                  <strong class="lum-h4">Christian Hoffmann</strong>
+                  <span class="lum-body-sm">Owner · Design System</span>
+                </div>
+              </div>
+
+              <div class="lum-flex-center lum-gap-16">
+                <span class="lum-avatar lum-avatar-md lum-avatar-accent"
+                  >MK</span
+                >
+                <div class="lum-flex lum-flex-col lum-gap-4">
+                  <strong class="lum-h4">Miriam Klein</strong>
+                  <span class="lum-body-sm">QA · Komponentenprüfung</span>
+                </div>
+              </div>
+
+              <div class="lum-flex-center lum-gap-16">
+                <span class="lum-avatar lum-avatar-md lum-avatar-teal">LS</span>
+                <div class="lum-flex lum-flex-col lum-gap-4">
+                  <strong class="lum-h4">Lars Schneider</strong>
+                  <span class="lum-body-sm">Frontend · Demo-Integration</span>
+                </div>
+              </div>
+            </div>
+          </article>
+
+          <article class="lum-card lum-flex lum-flex-col lum-gap-16">
+            <div>
+              <p class="lum-overline">Status</p>
+              <h3 class="lum-h3 lum-mt-8">Badges und Meldungen</h3>
+            </div>
+
+            <div class="lum-flex lum-flex-wrap lum-gap-16">
+              <span class="lum-badge lum-badge-accent">Dokumentation</span>
+              <span class="lum-badge lum-badge-primary">Bestandsschutz</span>
+              <span class="lum-badge lum-badge-green">Freigegeben</span>
+              <span class="lum-badge lum-badge-orange">Review nötig</span>
+              <span class="lum-badge lum-badge-red">Blockiert</span>
+              <span class="lum-badge lum-badge-gray">Legacy</span>
+            </div>
+
+            <div class="lum-alert lum-alert-info">
+              <span class="lum-icon lum-icon-accent lum-icon-md">
+                <svg viewBox="0 0 24 24" aria-hidden="true">
+                  <path
+                    d="M12.002 1.999c5.523 0 10.001 4.478 10.001 10.002c0 5.523-4.478 10.001-10.001 10.001C6.478 22.002 2 17.524 2 12.001C2 6.477 6.478 1.999 12.002 1.999M12 10.5a.75.75 0 0 0-.75.75v5a.75.75 0 0 0 1.5 0v-5a.75.75 0 0 0-.75-.75M12 9a1 1 0 1 0 0-2a1 1 0 0 0 0 2"
+                  />
+                </svg>
+              </span>
+              <div>
+                `lumitronix-design.css` bleibt die einzige visuelle Grundlage
+                dieser Demo.
+              </div>
+            </div>
+          </article>
+
+          <article class="lum-card lum-flex lum-flex-col lum-gap-16">
+            <div>
+              <p class="lum-overline">Hilfen</p>
+              <h3 class="lum-h3 lum-mt-8">Icons, Tooltip und Kontext</h3>
+            </div>
+
+            <span class="lum-icon-text">
+              <span class="lum-icon lum-icon-green lum-icon-sm">
+                <svg viewBox="0 0 24 24" aria-hidden="true">
+                  <path
+                    d="M12 2c5.523 0 10 4.477 10 10s-4.477 10-10 10S2 17.523 2 12S6.477 2 12 2m3.22 6.97l-4.47 4.47l-1.97-1.97a.75.75 0 0 0-1.06 1.06l2.5 2.5a.75.75 0 0 0 1.06 0l5-5a.75.75 0 1 0-1.06-1.06"
+                  />
+                </svg>
+              </span>
+              API der bestehenden `lum-*` Klassen wird direkt genutzt.
+            </span>
+
+            <span class="lum-icon-text">
+              <span class="lum-icon lum-icon-orange lum-icon-sm">
+                <svg viewBox="0 0 24 24" aria-hidden="true">
+                  <path
+                    d="M10.03 3.659c.856-1.548 3.081-1.548 3.937 0l7.746 14.001c.83 1.5-.255 3.34-1.969 3.34H4.254c-1.715 0-2.8-1.84-1.97-3.34zM12.997 17A.999.999 0 1 0 11 17a.999.999 0 0 0 1.997 0m-.259-7.853a.75.75 0 0 0-1.493.103l.004 4.501l.007.102a.75.75 0 0 0 1.493-.103l-.004-4.502z"
+                  />
+                </svg>
+              </span>
+              Wertegetriebene Charts wurden ausgelassen, weil ihre Breiten- und
+              Höhenwerte im Bestand pro Instanz gesetzt werden müssen.
+            </span>
+
+            <div class="lum-tooltip-card">
+              <button
+                class="lum-btn lum-btn-sm lum-btn-outline-accent"
+                type="button"
+              >
+                Tooltip-Karte
+              </button>
+              <div class="lum-tooltip-content">
+                Die Demo bleibt absichtlich nah an der vorhandenen CSS-API und
+                verzichtet auf zusätzliche Hüllklassen.
+              </div>
+            </div>
+
+            <p class="lum-body-sm">
+              Komponente
+              <span
+                class="lum-tooltip-text"
+                data-tooltip="Public API bleibt erhalten, Demo verzichtet auf zusätzliche Präsentations-CSS."
+              >
+                Bestandskompatibilität
+              </span>
+              <span
+                class="lum-info-icon"
+                data-tooltip="Nur vorhandene Klassen aus der produktiven CSS-Datei."
+                >?</span
+              >
+            </p>
+          </article>
+        </div>
+      </section>
+
+      <section id="aktionen" class="lum-card lum-flex lum-flex-col lum-gap-16">
+        <div>
+          <p class="lum-overline">Aktionen</p>
+          <h2 class="lum-h2 lum-mt-8">
+            Buttons, Icon-Buttons und dunkle Varianten
+          </h2>
+        </div>
+
+        <div class="lum-grid-2">
+          <article class="lum-card-gradient lum-flex lum-flex-col lum-gap-16">
+            <h3 class="lum-h3">Helle Oberflächen</h3>
+
+            <div class="lum-flex lum-flex-wrap lum-gap-16">
+              <a class="lum-btn lum-btn-primary" href="#integration">Primary</a>
+              <a class="lum-btn lum-btn-accent" href="#daten">Accent</a>
+              <a class="lum-btn lum-btn-teal" href="#feedback">Teal Alias</a>
+            </div>
+
+            <div class="lum-flex lum-flex-wrap lum-gap-16">
+              <button class="lum-btn lum-btn-outline" type="button">
+                Outline
+              </button>
+              <button class="lum-btn lum-btn-outline-accent" type="button">
+                Outline Accent
+              </button>
+              <button class="lum-btn lum-btn-ghost" type="button">Ghost</button>
+              <button class="lum-btn lum-btn-ghost-accent" type="button">
+                Ghost Accent
+              </button>
+            </div>
+
+            <div class="lum-flex lum-flex-wrap lum-gap-16">
+              <button
+                class="lum-btn-icon"
+                type="button"
+                data-tooltip="Einstellungen"
+              >
+                <svg viewBox="0 0 24 24" aria-hidden="true">
+                  <path
+                    d="M12.012 2.25c.734.008 1.465.093 2.182.253a.75.75 0 0 1 .582.649l.17 1.527a1.384 1.384 0 0 0 1.927 1.116l1.4-.615a.75.75 0 0 1 .85.174a9.8 9.8 0 0 1 2.205 3.792a.75.75 0 0 1-.272.825l-1.241.916a1.38 1.38 0 0 0 0 2.226l1.243.915a.75.75 0 0 1 .272.826a9.8 9.8 0 0 1-2.204 3.792a.75.75 0 0 1-.849.175l-1.406-.617a1.38 1.38 0 0 0-1.926 1.114l-.17 1.526a.75.75 0 0 1-.571.647a9.5 9.5 0 0 1-4.406 0a.75.75 0 0 1-.572-.647l-.169-1.524a1.382 1.382 0 0 0-1.925-1.11l-1.406.616a.75.75 0 0 1-.85-.175a9.8 9.8 0 0 1-2.203-3.796a.75.75 0 0 1 .272-.826l1.243-.916a1.38 1.38 0 0 0 0-2.226l-1.243-.914a.75.75 0 0 1-.272-.826a9.8 9.8 0 0 1 2.205-3.792a.75.75 0 0 1 .85-.174l1.4.615a1.387 1.387 0 0 0 1.93-1.118l.17-1.526a.75.75 0 0 1 .583-.65q1.074-.238 2.201-.252M12 9a3 3 0 1 0 0 6a3 3 0 0 0 0-6"
+                  />
+                </svg>
+              </button>
+
+              <button
+                class="lum-btn-icon"
+                type="button"
+                data-tooltip="Download"
+              >
+                <svg viewBox="0 0 24 24" aria-hidden="true">
+                  <path
+                    d="M13 3a1 1 0 1 0-2 0v12.086l-3.293-3.293a1 1 0 0 0-1.414 1.414l5 5a1 1 0 0 0 1.414 0l5-5a1 1 0 0 0-1.414-1.414L13 15.086zM5 20a1 1 0 1 0 0 2h14a1 1 0 1 0 0-2z"
+                  />
+                </svg>
+              </button>
+
+              <button class="lum-btn-icon" type="button" data-tooltip="Suchen">
+                <svg viewBox="0 0 24 24" aria-hidden="true">
+                  <path
+                    d="M15.843 17.368a8 8 0 1 1 1.428-1.4l4.427 4.316a1 1 0 1 1-1.396 1.432zM17 11a6 6 0 1 0-12 0a6 6 0 0 0 12 0"
+                  />
+                </svg>
+              </button>
+            </div>
+          </article>
+
+          <article class="lum-flex lum-flex-col lum-gap-16">
+            <div class="lum-dark-bg">
+              <div class="lum-flex lum-flex-wrap lum-gap-16">
+                <button class="lum-btn lum-btn-dark-solid" type="button">
+                  Dark Solid
+                </button>
+                <button class="lum-btn lum-btn-dark-glass" type="button">
+                  Dark Glass
+                </button>
+                <button class="lum-btn lum-btn-dark-outline" type="button">
+                  Dark Outline
+                </button>
+                <button class="lum-btn lum-btn-dark-ghost" type="button">
+                  Dark Ghost
+                </button>
+              </div>
+
+              <div class="lum-mt-24">
+                <div class="lum-flex lum-flex-wrap lum-gap-16">
+                  <button
+                    class="lum-btn-icon-dark lum-tooltip-light"
+                    type="button"
+                    data-tooltip="Freigeben"
+                  >
+                    <svg viewBox="0 0 24 24" aria-hidden="true">
+                      <path
+                        d="M5.5 2a1 1 0 0 0 0 2h13a1 1 0 1 0 0-2zm7.207 3.793a1 1 0 0 0-1.414 0l-5 5a1 1 0 1 0 1.414 1.414L11 8.914V21a1 1 0 1 0 2 0V8.914l3.293 3.293a1 1 0 0 0 1.414-1.414z"
+                      />
+                    </svg>
+                  </button>
+
+                  <button
+                    class="lum-btn-icon-dark lum-tooltip-light"
+                    type="button"
+                    data-tooltip="Bereitstellen"
+                  >
+                    <svg viewBox="0 0 24 24" aria-hidden="true">
+                      <path
+                        d="M14.003 5.5H21a1 1 0 0 1 .993.883L22 6.5v7a1 1 0 0 1-1.994.117L20 13.5l-.001-4.586l-7.292 7.293a1 1 0 0 1-1.32.084l-.094-.083l-2.296-2.292l-5.288 5.29a1 1 0 0 1-1.497-1.32l.083-.095l5.994-5.996a1 1 0 0 1 1.32-.084l.094.083l2.296 2.292L18.584 7.5h-4.581a1 1 0 0 1-.993-.883l-.007-.117a1 1 0 0 1 .883-.993z"
+                      />
+                    </svg>
+                  </button>
+
+                  <span class="lum-badge lum-badge-dark-accent">Produktiv</span>
+                  <span class="lum-badge lum-badge-dark-green">Live</span>
+                </div>
+              </div>
+            </div>
+          </article>
+        </div>
+      </section>
+
+      <section id="formulare" class="lum-card lum-flex lum-flex-col lum-gap-16">
+        <div>
+          <p class="lum-overline">Formulare</p>
+          <h2 class="lum-h2 lum-mt-8">Suche, Felder und Floating Labels</h2>
+        </div>
+
+        <div class="lum-grid-2">
+          <article class="lum-card-gradient lum-flex lum-flex-col lum-gap-16">
+            <div>
+              <label class="lum-label" for="product-search">Produktsuche</label>
+              <div class="lum-search-wrap">
+                <svg viewBox="0 0 24 24" aria-hidden="true">
+                  <path
+                    d="M15.843 17.368a8 8 0 1 1 1.428-1.4l4.427 4.316a1 1 0 1 1-1.396 1.432zM17 11a6 6 0 1 0-12 0a6 6 0 0 0 12 0"
+                  />
+                </svg>
+                <input
+                  id="product-search"
+                  class="lum-search"
+                  type="search"
+                  placeholder="LumiFlex700, COB, 4000K …"
+                />
+              </div>
+            </div>
+
+            <div>
+              <label class="lum-label" for="product-family"
+                >Produktfamilie</label
+              >
+              <select id="product-family" class="lum-select">
+                <option>LED-Streifen</option>
+                <option>Module</option>
+                <option>Leuchten</option>
+                <option>Steuerungen</option>
+              </select>
+            </div>
+
+            <div>
+              <label class="lum-label" for="product-note">Beschreibung</label>
+              <textarea
+                id="product-note"
+                class="lum-textarea"
+                placeholder="Kurzer Hinweis für Einkauf, Technik oder Vertrieb"
+              >
+Kompatibler Demo-Stand auf Basis der bestehenden Stylesheet-Datei.</textarea
+              >
+            </div>
+
+            <div class="lum-dark-bg">
+              <div class="lum-search-dark-wrap">
+                <svg viewBox="0 0 24 24" aria-hidden="true">
+                  <path
+                    d="M15.843 17.368a8 8 0 1 1 1.428-1.4l4.427 4.316a1 1 0 1 1-1.396 1.432zM17 11a6 6 0 1 0-12 0a6 6 0 0 0 12 0"
+                  />
+                </svg>
+                <input
+                  class="lum-search-dark"
+                  type="search"
+                  placeholder="Suche auf dunklem Hintergrund"
+                />
+              </div>
+            </div>
+          </article>
+
+          <article class="lum-card lum-flex lum-flex-col lum-gap-16">
+            <div class="lum-float-field">
+              <input
+                id="contact-name"
+                class="lum-input"
+                type="text"
+                placeholder=" "
+                value="LUMITRONIX Einkauf"
+              />
+              <label class="lum-float-label" for="contact-name"
+                >Ansprechpartner</label
+              >
+            </div>
+
+            <div class="lum-float-field">
+              <input
+                id="contact-email"
+                class="lum-input lum-input-error"
+                type="email"
+                placeholder=" "
+                value="styleguide@"
+              />
+              <label class="lum-float-label" for="contact-email">
+                E-Mail für Freigaben
+              </label>
+            </div>
+            <div class="lum-float-error">
+              Bitte vollständige E-Mail-Adresse angeben.
+            </div>
+
+            <div class="lum-float-field">
+              <textarea
+                id="contact-message"
+                class="lum-textarea"
+                placeholder=" "
+              >
+V4-Demo zeigt nur Komponenten, die ohne Zusatz-CSS direkt nutzbar sind.</textarea
+              >
+              <label class="lum-float-label" for="contact-message">
+                Nachricht an das Team
+              </label>
+            </div>
+
+            <div class="lum-flex lum-flex-wrap lum-gap-16">
+              <button class="lum-btn lum-btn-accent" type="button">
+                Anfrage speichern
+              </button>
+              <button class="lum-btn lum-btn-outline" type="button">
+                Entwurf zurücksetzen
+              </button>
+            </div>
+          </article>
+        </div>
+      </section>
+
+      <section
+        id="navigation"
+        class="lum-card lum-flex lum-flex-col lum-gap-16"
+      >
+        <div>
+          <p class="lum-overline">Navigation</p>
+          <h2 class="lum-h2 lum-mt-8">Tabs, Navigation und Paginierung</h2>
+        </div>
+
+        <div class="lum-grid-3">
+          <article class="lum-card-gradient lum-flex lum-flex-col lum-gap-16">
+            <div>
+              <h3 class="lum-h3">Tabs</h3>
+              <p class="lum-body-sm lum-mt-8">
+                Aktiv-Zustände werden zentral per Script gesetzt.
+              </p>
+            </div>
+
+            <div
+              class="lum-tabs"
+              data-tab-group="release"
+              role="tablist"
+              aria-label="Release-Ansichten"
+            >
+              <button
+                class="lum-tab active"
+                type="button"
+                data-tab-trigger
+                data-tab-value="overview"
+                role="tab"
+                aria-selected="true"
+              >
+                Übersicht
+              </button>
+              <button
+                class="lum-tab"
+                type="button"
+                data-tab-trigger
+                data-tab-value="qa"
+                role="tab"
+                aria-selected="false"
+              >
+                QA
+              </button>
+              <button
+                class="lum-tab"
+                type="button"
+                data-tab-trigger
+                data-tab-value="deploy"
+                role="tab"
+                aria-selected="false"
+              >
+                Deploy
+              </button>
+            </div>
+
+            <div
+              class="lum-tab-panel active"
+              data-tab-group="release"
+              data-tab-panel="overview"
+            >
+              <p class="lum-body">
+                Fokus auf eine kompakte Demo-Struktur ohne zusätzliche
+                Präsentationsschicht.
+              </p>
+            </div>
+            <div
+              class="lum-tab-panel"
+              data-tab-group="release"
+              data-tab-panel="qa"
+              hidden
+            >
+              <p class="lum-body">
+                HTML bleibt frei von Inline-Styles und `onclick`-Handlern.
+              </p>
+            </div>
+            <div
+              class="lum-tab-panel"
+              data-tab-group="release"
+              data-tab-panel="deploy"
+              hidden
+            >
+              <p class="lum-body">
+                Die Demo ist für Netlify als statische Datei direkt
+                veröffentlichbar.
+              </p>
+            </div>
+
+            <div
+              class="lum-tabs-seg"
+              data-tab-group="perspective"
+              role="tablist"
+              aria-label="Perspektiven"
+            >
+              <button
+                class="lum-tab-seg active"
+                type="button"
+                data-tab-trigger
+                role="tab"
+                aria-selected="true"
+              >
+                Bestand
+              </button>
+              <button
+                class="lum-tab-seg"
+                type="button"
+                data-tab-trigger
+                role="tab"
+                aria-selected="false"
+              >
+                Refactor
+              </button>
+              <button
+                class="lum-tab-seg"
+                type="button"
+                data-tab-trigger
+                role="tab"
+                aria-selected="false"
+              >
+                Demo
+              </button>
+            </div>
+          </article>
+
+          <article class="lum-card lum-flex lum-flex-col lum-gap-16">
+            <div>
+              <h3 class="lum-h3">Horizontale und vertikale Navigation</h3>
+            </div>
+
+            <nav class="lum-nav-h" aria-label="Sektionen">
+              <a class="active" href="#signalbild">Signalbild</a>
+              <a href="#aktionen">Aktionen</a>
+              <a href="#daten">Daten</a>
+            </nav>
+
+            <nav class="lum-nav-v" aria-label="Teilbereiche">
+              <button class="active" type="button">
+                <span class="lum-icon lum-icon-accent lum-icon-sm">
+                  <svg viewBox="0 0 24 24" aria-hidden="true">
+                    <path
+                      d="M8.75 13A2.25 2.25 0 0 1 11 15.25v3.5A2.25 2.25 0 0 1 8.75 21h-3.5A2.25 2.25 0 0 1 3 18.75v-3.5A2.25 2.25 0 0 1 5.25 13zm10 0A2.25 2.25 0 0 1 21 15.25v3.5A2.25 2.25 0 0 1 18.75 21h-3.5A2.25 2.25 0 0 1 13 18.75v-3.5A2.25 2.25 0 0 1 15.25 13zm-10-10A2.25 2.25 0 0 1 11 5.25v3.5A2.25 2.25 0 0 1 8.75 11h-3.5A2.25 2.25 0 0 1 3 8.75v-3.5A2.25 2.25 0 0 1 5.25 3zm10 0A2.25 2.25 0 0 1 21 5.25v3.5A2.25 2.25 0 0 1 18.75 11h-3.5A2.25 2.25 0 0 1 13 8.75v-3.5A2.25 2.25 0 0 1 15.25 3z"
+                    />
+                  </svg>
+                </span>
+                Dashboard
+              </button>
+              <button type="button">
+                <span class="lum-icon lum-icon-gray lum-icon-sm">
+                  <svg viewBox="0 0 24 24" aria-hidden="true">
+                    <path
+                      d="M15.25 13.5h-4a.75.75 0 0 1-.75-.75v-6a.75.75 0 0 1 1.5 0V12h3.25a.75.75 0 0 1 0 1.5M12 2C6.478 2 2 6.478 2 12s4.478 10 10 10s10-4.478 10-10S17.522 2 12 2"
+                    />
+                  </svg>
+                </span>
+                Zeitplan
+              </button>
+              <button type="button">
+                <span class="lum-icon lum-icon-gray lum-icon-sm">
+                  <svg viewBox="0 0 24 24" aria-hidden="true">
+                    <path
+                      d="M22 8.608v8.142a3.25 3.25 0 0 1-3.066 3.245L18.75 20H5.25a3.25 3.25 0 0 1-3.245-3.066L2 16.75V8.608l9.652 5.056a.75.75 0 0 0 .696 0zM5.25 4h13.5a3.25 3.25 0 0 1 3.234 2.924L12 12.154l-9.984-5.23a3.25 3.25 0 0 1 3.048-2.919z"
+                    />
+                  </svg>
+                </span>
+                Benachrichtigungen
+              </button>
+            </nav>
+          </article>
+
+          <article class="lum-card lum-flex lum-flex-col lum-gap-16">
+            <div>
+              <h3 class="lum-h3">Filter und Pagination</h3>
+            </div>
+
+            <div class="lum-filter-list">
+              <button class="lum-filter-item active" type="button">
+                <span class="lum-avatar lum-avatar-sm lum-avatar-primary"
+                  >DL</span
+                >
+                Design Tokens
+              </button>
+              <button class="lum-filter-item" type="button">
+                <span class="lum-avatar lum-avatar-sm lum-avatar-accent"
+                  >CP</span
+                >
+                Komponenten
+              </button>
+              <button class="lum-filter-item" type="button">
+                <span class="lum-avatar lum-avatar-sm lum-avatar-teal">UX</span>
+                Usage Notes
+              </button>
+            </div>
+
+            <nav class="lum-pagination" aria-label="Seitennavigation">
+              <button class="lum-page disabled" type="button">‹</button>
+              <button class="lum-page active" type="button">1</button>
+              <button class="lum-page" type="button">2</button>
+              <button class="lum-page" type="button">3</button>
+              <span class="lum-page-dots">…</span>
+              <button class="lum-page" type="button">8</button>
+              <button class="lum-page" type="button">›</button>
+            </nav>
+          </article>
+        </div>
+      </section>
+
+      <section id="daten" class="lum-card lum-flex lum-flex-col lum-gap-16">
+        <div>
+          <p class="lum-overline">Daten</p>
+          <h2 class="lum-h2 lum-mt-8">
+            Tabellen, Code und Integrationshinweise
+          </h2>
+        </div>
+
+        <div class="lum-grid-2">
+          <article class="lum-card-gradient lum-flex lum-flex-col lum-gap-16">
+            <div>
+              <h3 class="lum-h3">Produkttabelle</h3>
+              <p class="lum-body-sm lum-mt-8">
+                Direkte Nutzung der Tabellenklassen ohne zusätzliche
+                Demo-Helfer.
+              </p>
+            </div>
+
+            <div class="lum-table-wrap">
+              <table class="lum-table">
+                <thead>
+                  <tr>
+                    <th class="lum-col-group-a">Artikel</th>
+                    <th class="lum-col-group-b">Lichtfarbe</th>
+                    <th>Status</th>
+                    <th class="r">Bestand</th>
+                  </tr>
+                </thead>
+                <tbody>
+                  <tr>
+                    <td class="lum-col-group-a">LumiFlex700 Pro</td>
+                    <td class="lum-col-group-b">4000K</td>
+                    <td>
+                      <span class="lum-badge lum-badge-green">Verfügbar</span>
+                    </td>
+                    <td class="r">2.400</td>
+                  </tr>
+                  <tr>
+                    <td class="lum-col-group-a">COB Line 24V</td>
+                    <td class="lum-col-group-b">3000K</td>
+                    <td>
+                      <span class="lum-badge lum-badge-orange">Reserviert</span>
+                    </td>
+                    <td class="r">860</td>
+                  </tr>
+                  <tr>
+                    <td class="lum-col-group-a">Core Board 560</td>
+                    <td class="lum-col-group-b">6500K</td>
+                    <td>
+                      <span class="lum-badge lum-badge-red">Prüfung</span>
+                    </td>
+                    <td class="r">110</td>
+                  </tr>
+                </tbody>
+              </table>
+            </div>
+          </article>
+
+          <article class="lum-flex lum-flex-col lum-gap-16">
+            <div class="lum-dark-bg">
+              <div class="lum-table-dark-wrap">
+                <table class="lum-table lum-table-dark">
+                  <thead>
+                    <tr>
+                      <th class="lum-col-group-a">Deploy</th>
+                      <th class="lum-col-group-b">Stand</th>
+                      <th class="r">Dauer</th>
+                    </tr>
+                  </thead>
+                  <tbody>
+                    <tr>
+                      <td class="lum-col-group-a">Bestand</td>
+                      <td class="lum-col-group-b">Live</td>
+                      <td class="r">04:12</td>
+                    </tr>
+                    <tr>
+                      <td class="lum-col-group-a">V3 Vorschlag</td>
+                      <td class="lum-col-group-b">Review</td>
+                      <td class="r">06:48</td>
+                    </tr>
+                    <tr>
+                      <td class="lum-col-group-a">V4 Demo</td>
+                      <td class="lum-col-group-b">Nur CSS-Basis</td>
+                      <td class="r">03:55</td>
+                    </tr>
+                  </tbody>
+                </table>
+              </div>
+            </div>
+
+            <div class="lum-code-block">
+              <span class="lum-code-comment">&lt;!-- Einbindung --&gt;</span>
+              &lt;<span class="lum-code-keyword">link</span> rel=<span
+                class="lum-code-string"
+                >"stylesheet"</span
+              >
+              href=<span class="lum-code-string">"./lumitronix-design.css"</span
+              >&gt; &lt;<span class="lum-code-keyword">section</span>
+              class=<span class="lum-code-string">"lum-card"</span>&gt;
+              &lt;<span class="lum-code-keyword">h2</span> class=<span
+                class="lum-code-string"
+                >"lum-h2"</span
+              >&gt;Kompatible Demo&lt;/<span class="lum-code-keyword">h2</span
+              >&gt; &lt;<span class="lum-code-keyword">button</span> class=<span
+                class="lum-code-string"
+                >"lum-btn lum-btn-accent"</span
+              >&gt;Aktion&lt;/<span class="lum-code-keyword">button</span>&gt;
+              &lt;/<span class="lum-code-keyword">section</span>&gt;
+            </div>
+          </article>
+        </div>
+      </section>
+
+      <section id="feedback" class="lum-card lum-flex lum-flex-col lum-gap-16">
+        <div>
+          <p class="lum-overline">Feedback</p>
+          <h2 class="lum-h2 lum-mt-8">Alerts, Loader und Skeleton States</h2>
+        </div>
+
+        <div class="lum-grid-3">
+          <article class="lum-card-gradient lum-flex lum-flex-col lum-gap-16">
+            <h3 class="lum-h3">Alerts</h3>
+
+            <div class="lum-alert lum-alert-success">
+              <span class="lum-icon lum-icon-green lum-icon-md">
+                <svg viewBox="0 0 24 24" aria-hidden="true">
+                  <path
+                    d="M12 2c5.523 0 10 4.477 10 10s-4.477 10-10 10S2 17.523 2 12S6.477 2 12 2m3.22 6.97l-4.47 4.47l-1.97-1.97a.75.75 0 0 0-1.06 1.06l2.5 2.5a.75.75 0 0 0 1.06 0l5-5a.75.75 0 1 0-1.06-1.06"
+                  />
+                </svg>
+              </span>
+              <div>
+                Die V4-Datei lässt sich ohne zusätzliche Stylesheet-Datei
+                rendern.
+              </div>
+            </div>
+
+            <div class="lum-alert lum-alert-warning">
+              <span class="lum-icon lum-icon-orange lum-icon-md">
+                <svg viewBox="0 0 24 24" aria-hidden="true">
+                  <path
+                    d="M10.03 3.659c.856-1.548 3.081-1.548 3.937 0l7.746 14.001c.83 1.5-.255 3.34-1.969 3.34H4.254c-1.715 0-2.8-1.84-1.97-3.34zM12.997 17A.999.999 0 1 0 11 17a.999.999 0 0 0 1.997 0m-.259-7.853a.75.75 0 0 0-1.493.103l.004 4.501l.007.102a.75.75 0 0 0 1.493-.103l-.004-4.502z"
+                  />
+                </svg>
+              </span>
+              <div>
+                Wertabhängige Balken und Donuts wurden bewusst nicht als reine
+                CSS-Basis-Demo dargestellt.
+              </div>
+            </div>
+          </article>
+
+          <article class="lum-card lum-flex lum-flex-col lum-gap-16">
+            <h3 class="lum-h3">Loader</h3>
+
+            <div class="lum-loader">
+              <svg
+                class="lum-loader-sun"
+                viewBox="0 0 47 48.5"
+                fill="currentColor"
+                aria-hidden="true"
+              >
+                <g transform="translate(-8.14,-12.67)">
+                  <path
+                    class="r0"
+                    d="M32.46,25.85l0.88-13.18H30l0.88,13.18h1.62Z"
+                  />
+                  <path
+                    class="r1"
+                    d="M38.77,28.43l8.46-10.14l-2.74-1.99l-7.03,11.18l1.31,0.95Z"
+                  />
+                  <path
+                    class="r2"
+                    d="M42.36,34.22l12.81-3.23l-1.05-3.21l-12.26,4.91l0.5,1.53Z"
+                  />
+                  <path
+                    class="r3"
+                    d="M41.86,41.02l12.26,4.9l1.05-3.21l-12.81-3.23l-0.5,1.54Z"
+                  />
+                  <path
+                    class="r4"
+                    d="M38.77,45.27l-1.31,0.95l7.03,11.18l2.74-1.99l-8.46-10.14Z"
+                  />
+                  <path
+                    class="r5"
+                    d="M32.46,47.85h-1.62l-0.88,13.18h3.38l-0.88-13.18Z"
+                  />
+                  <path
+                    class="r6"
+                    d="M25.84,46.22l-1.31-0.95L16.08,55.41l2.73,1.99l7.03-11.18Z"
+                  />
+                  <path
+                    class="r7"
+                    d="M20.95,34.46L8.14,31.22l1.04-3.21l12.27,4.91l-0.5,1.54Z"
+                  />
+                  <path
+                    class="r8"
+                    d="M21.45,40.56L9.18,45.46l-1.04-3.21l12.81-3.23l0.5,1.54Z"
+                  />
+                  <path
+                    class="r9"
+                    d="M24.54,27.48l-7.03-11.18l-2.73,1.99l8.46,10.14l1.3-0.95Z"
+                  />
+                </g>
+              </svg>
+              <span class="lum-loader-text">Build läuft …</span>
+            </div>
+
+            <div class="lum-loader lum-loader-inline">
+              <svg
+                class="lum-loader-sun"
+                viewBox="0 0 47 48.5"
+                fill="currentColor"
+                aria-hidden="true"
+              >
+                <g transform="translate(-8.14,-12.67)">
+                  <path
+                    class="r0"
+                    d="M32.46,25.85l0.88-13.18H30l0.88,13.18h1.62Z"
+                  />
+                  <path
+                    class="r1"
+                    d="M38.77,28.43l8.46-10.14l-2.74-1.99l-7.03,11.18l1.31,0.95Z"
+                  />
+                  <path
+                    class="r2"
+                    d="M42.36,34.22l12.81-3.23l-1.05-3.21l-12.26,4.91l0.5,1.53Z"
+                  />
+                  <path
+                    class="r3"
+                    d="M41.86,41.02l12.26,4.9l1.05-3.21l-12.81-3.23l-0.5,1.54Z"
+                  />
+                  <path
+                    class="r4"
+                    d="M38.77,45.27l-1.31,0.95l7.03,11.18l2.74-1.99l-8.46-10.14Z"
+                  />
+                  <path
+                    class="r5"
+                    d="M32.46,47.85h-1.62l-0.88,13.18h3.38l-0.88-13.18Z"
+                  />
+                  <path
+                    class="r6"
+                    d="M25.84,46.22l-1.31-0.95L16.08,55.41l2.73,1.99l7.03-11.18Z"
+                  />
+                  <path
+                    class="r7"
+                    d="M20.95,34.46L8.14,31.22l1.04-3.21l12.27,4.91l-0.5,1.54Z"
+                  />
+                  <path
+                    class="r8"
+                    d="M21.45,40.56L9.18,45.46l-1.04-3.21l12.81-3.23l0.5,1.54Z"
+                  />
+                  <path
+                    class="r9"
+                    d="M24.54,27.48l-7.03-11.18l-2.73,1.99l8.46,10.14l1.3-0.95Z"
+                  />
+                </g>
+              </svg>
+              <span class="lum-loader-text">Assets werden synchronisiert</span>
+            </div>
+          </article>
+
+          <article class="lum-card lum-flex lum-flex-col lum-gap-16">
+            <h3 class="lum-h3">Skeleton</h3>
+
+            <div class="lum-card">
+              <div class="lum-flex-center lum-gap-16">
+                <div class="lum-skeleton lum-skeleton-avatar"></div>
+                <div class="lum-w-full">
+                  <div class="lum-skeleton lum-skeleton-text lum-mb-8"></div>
+                  <div class="lum-skeleton lum-skeleton-text"></div>
+                </div>
+              </div>
+              <div class="lum-mt-24">
+                <div class="lum-skeleton lum-skeleton-heading"></div>
+                <div class="lum-skeleton lum-skeleton-text"></div>
+                <div class="lum-skeleton lum-skeleton-text"></div>
+                <div class="lum-skeleton lum-skeleton-text"></div>
+              </div>
+            </div>
+          </article>
+        </div>
+      </section>
+
+      <section
+        id="integration"
+        class="lum-card-gradient lum-flex lum-flex-col lum-gap-16"
+      >
+        <div>
+          <p class="lum-overline">Einbindung</p>
+          <h2 class="lum-h2 lum-mt-8">Reiner HTML-Demostand auf CSS-Basis</h2>
+        </div>
+
+        <p class="lum-body">
+          `index-v4.html` demonstriert bewusst nur das, was mit der bestehenden
+          <a href="./lumitronix-design.css">lumitronix-design.css</a> ohne
+          zusätzliche Präsentationsschicht direkt darstellbar ist.
+        </p>
+
+        <div class="lum-code-block">
+          <span class="lum-code-comment">&lt;!-- V4 Demo --&gt;</span> &lt;<span
+            class="lum-code-keyword"
+            >link</span
+          >
+          rel=<span class="lum-code-string">"stylesheet"</span> href=<span
+            class="lum-code-string"
+            >"./lumitronix-design.css"</span
+          >&gt; &lt;<span class="lum-code-keyword">body</span>&gt; &lt;<span
+            class="lum-code-keyword"
+            >main</span
+          >
+          class=<span class="lum-code-string"
+            >"lum-flex lum-flex-col lum-gap-16"</span
+          >&gt; &lt;<span class="lum-code-keyword">section</span> class=<span
+            class="lum-code-string"
+            >"lum-card"</span
+          >&gt;…&lt;/<span class="lum-code-keyword">section</span>&gt;
+          &lt;/<span class="lum-code-keyword">main</span>&gt; &lt;/<span
+            class="lum-code-keyword"
+            >body</span
+          >&gt;
+        </div>
+
+        <div class="lum-flex lum-flex-wrap lum-gap-16">
+          <a class="lum-btn lum-btn-accent" href="./lumitronix-design.css">
+            CSS öffnen
+          </a>
+          <button
+            class="lum-btn lum-btn-outline-accent"
+            type="button"
+            data-modal-open="demo-modal"
+          >
+            Modal erneut öffnen
+          </button>
+        </div>
+      </section>
+    </main>
+
+    <div
+      class="lum-modal-backdrop"
+      id="demo-modal"
+      data-modal-backdrop
+      aria-hidden="true"
+    >
+      <div
+        class="lum-modal"
+        role="dialog"
+        aria-modal="true"
+        aria-labelledby="demo-modal-title"
+        tabindex="-1"
+      >
+        <div class="lum-modal-header">
+          <div class="lum-modal-title" id="demo-modal-title">
+            V4 Demo bestätigt
+          </div>
+          <button class="lum-modal-close" type="button" data-modal-close>
+            <svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true">
+              <path
+                d="M4.397 4.554l.073-.084a.75.75 0 0 1 .976-.073l.084.073L12 10.939l6.47-6.47a.75.75 0 1 1 1.06 1.061L13.061 12l6.47 6.47a.75.75 0 0 1-1.061 1.06L12 13.061l-6.47 6.47a.75.75 0 0 1-1.06-1.061L10.939 12l-6.47-6.47a.75.75 0 0 1-.072-.976"
+              />
+            </svg>
+          </button>
+        </div>
+
+        <div class="lum-modal-body">
+          Die Seite referenziert nur `lumitronix-design.css`, nutzt bestehende
+          `lum-*` Klassen und hält die Interaktion in einer kleinen zentralen
+          Script-Schicht.
+        </div>
+
+        <div class="lum-modal-footer">
+          <button
+            class="lum-btn lum-btn-outline"
+            type="button"
+            data-modal-close
+          >
+            Schließen
+          </button>
+          <a class="lum-btn lum-btn-accent" href="./index-v4.html"
+            >Datei öffnen</a
+          >
+        </div>
+      </div>
+    </div>
+
+    <script>
+      (() => {
+        const activateTabs = (group, value) => {
+          const groupName = group.dataset.tabGroup;
+          const triggers = Array.from(
+            group.querySelectorAll("[data-tab-trigger]"),
+          );
+          const panels = Array.from(
+            document.querySelectorAll(
+              `[data-tab-panel][data-tab-group="${groupName}"]`,
+            ),
+          );
+
+          triggers.forEach((trigger, index) => {
+            const isActive =
+              trigger.dataset.tabValue === value ||
+              (!value && index === 0 && !trigger.classList.contains("active"));
+            trigger.classList.toggle("active", isActive);
+            trigger.setAttribute("aria-selected", isActive ? "true" : "false");
+            trigger.tabIndex = isActive ? 0 : -1;
+          });
+
+          panels.forEach((panel) => {
+            const isActive = panel.dataset.tabPanel === value;
+            panel.classList.toggle("active", isActive);
+            panel.hidden = !isActive;
+          });
+        };
+
+        document.querySelectorAll("[data-tab-group]").forEach((group) => {
+          const triggers = Array.from(
+            group.querySelectorAll("[data-tab-trigger]"),
+          );
+          const initialTrigger =
+            triggers.find((trigger) => trigger.classList.contains("active")) ??
+            triggers[0];
+
+          if (initialTrigger?.dataset.tabValue) {
+            activateTabs(group, initialTrigger.dataset.tabValue);
+          } else {
+            triggers.forEach((trigger) => {
+              const isActive = trigger === initialTrigger;
+              trigger.setAttribute(
+                "aria-selected",
+                isActive ? "true" : "false",
+              );
+              trigger.tabIndex = isActive ? 0 : -1;
+            });
+          }
+
+          triggers.forEach((trigger) => {
+            trigger.addEventListener("click", () => {
+              if (trigger.dataset.tabValue) {
+                activateTabs(group, trigger.dataset.tabValue);
+                return;
+              }
+
+              triggers.forEach((candidate) => {
+                const isActive = candidate === trigger;
+                candidate.classList.toggle("active", isActive);
+                candidate.setAttribute(
+                  "aria-selected",
+                  isActive ? "true" : "false",
+                );
+                candidate.tabIndex = isActive ? 0 : -1;
+              });
+            });
+          });
+        });
+
+        const setModalState = (backdrop, isOpen) => {
+          backdrop.classList.toggle("open", isOpen);
+          backdrop.setAttribute("aria-hidden", isOpen ? "false" : "true");
+
+          if (isOpen) {
+            const focusTarget = backdrop.querySelector("[data-modal-close]");
+            (focusTarget ?? backdrop.querySelector(".lum-modal"))?.focus();
+            return;
+          }
+
+          backdrop.__opener?.focus?.();
+        };
+
+        document.querySelectorAll("[data-modal-open]").forEach((trigger) => {
+          trigger.addEventListener("click", () => {
+            const backdrop = document.getElementById(
+              trigger.getAttribute("data-modal-open"),
+            );
+            if (!backdrop) return;
+            backdrop.__opener = trigger;
+            setModalState(backdrop, true);
+          });
+        });
+
+        document
+          .querySelectorAll("[data-modal-backdrop]")
+          .forEach((backdrop) => {
+            backdrop.addEventListener("click", (event) => {
+              if (
+                event.target === backdrop ||
+                event.target.closest("[data-modal-close]")
+              ) {
+                setModalState(backdrop, false);
+              }
+            });
+          });
+
+        document.addEventListener("keydown", (event) => {
+          if (event.key !== "Escape") return;
+          document
+            .querySelectorAll("[data-modal-backdrop].open")
+            .forEach((backdrop) => setModalState(backdrop, false));
+        });
+      })();
+    </script>
+  </body>
+</html>
