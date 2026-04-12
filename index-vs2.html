@@ -1,0 +1,1509 @@
+<!doctype html>
+<html lang="de">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width,initial-scale=1.0" />
+    <title>LUMITRONIX Design System V2</title>
+    <link rel="stylesheet" href="./lumitronix-design-v2.css" />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600;700;800&display=swap"
+      rel="stylesheet"
+    />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Oswald:wght@400;500;600;700&display=swap"
+      rel="stylesheet"
+    />
+  </head>
+  <body class="lum-shell">
+    <nav class="sg-nav">
+      <div class="lum-content sg-nav-inner">
+        <a class="sg-brand" href="#start">
+          <img src="./Logo_negativ_ohne_Claim.svg" alt="LUMITRONIX" />
+          <span class="sg-brand-copy">
+            <span class="sg-brand-title">Styleguide V2</span>
+            <span class="sg-brand-sub">konsistent, tokenisiert, wartbar</span>
+          </span>
+        </a>
+        <div class="sg-nav-links">
+          <a href="#token">Token</a>
+          <a href="#typography">Typografie</a>
+          <a href="#forms">Formulare</a>
+          <a href="#data">Daten</a>
+          <a href="#components">Komponenten</a>
+          <a href="#brand">Marke</a>
+          <a href="#ki">KI</a>
+        </div>
+        <label class="sg-toggle">
+          <input type="checkbox" id="sg-class-toggle" />
+          <span>Klassen anzeigen</span>
+        </label>
+      </div>
+    </nav>
+
+    <main>
+      <section id="start" class="lum-section sg-hero">
+        <div class="lum-content sg-hero-grid">
+          <div>
+            <div class="sg-eyebrow">Design System V2</div>
+            <h1 class="lum-display">
+              LUMITRONIX mit klarer Farbsemantik, echter Groessenskala und
+              zentraler Interaktion.
+            </h1>
+            <p class="sg-sub">
+              Diese V2 trennt `primary` und `accent` sauber, fuehrt eine
+              konsistente Spacing- und Radius-Skala ein, reduziert
+              Inline-Styling auf datengetriebene Faelle und ersetzt verteilte
+              `onclick`-Logik durch zentrale JavaScript-Handler.
+            </p>
+            <div class="sg-chip-row">
+              <span class="lum-badge lum-badge-primary">Primary = #152C3E</span>
+              <span class="lum-badge lum-badge-accent">Accent = #366A99</span>
+              <span class="lum-badge lum-badge-teal">Spacing via Token</span>
+              <span class="lum-badge lum-badge-green">JS zentralisiert</span>
+            </div>
+            <div class="sg-hero-actions">
+              <a class="lum-btn lum-btn-accent" href="#token" data-sg-note
+                >Token ansehen</a
+              >
+              <a
+                class="lum-btn lum-btn-dark-glass"
+                href="#components"
+                data-sg-note
+                >Komponenten pruefen</a
+              >
+            </div>
+          </div>
+          <aside class="sg-panel">
+            <div class="sg-panel-content">
+              <div class="lum-overline">Audit-Fixes</div>
+              <div class="sg-kpi-grid lum-mt-16">
+                <div class="sg-kpi">
+                  <div class="sg-kpi-label">Farbmodell</div>
+                  <div class="sg-kpi-value">semantisch</div>
+                  <div class="sg-kpi-copy">
+                    Primary, Accent und Teal haben jetzt klar getrennte Rollen.
+                  </div>
+                </div>
+                <div class="sg-kpi">
+                  <div class="sg-kpi-label">Groessensystem</div>
+                  <div class="sg-kpi-value">skalierbar</div>
+                  <div class="sg-kpi-copy">
+                    Spacing, Radius, Icon- und Type-Scale leben als Token in
+                    `:root`.
+                  </div>
+                </div>
+                <div class="sg-kpi">
+                  <div class="sg-kpi-label">Interaktion</div>
+                  <div class="sg-kpi-value">zentral</div>
+                  <div class="sg-kpi-copy">
+                    Tabs, Modal und Demo-Werte kommen aus einem Script statt aus
+                    Inline-Handlern.
+                  </div>
+                </div>
+              </div>
+            </div>
+          </aside>
+        </div>
+      </section>
+
+      <section id="token" class="lum-section lum-section-alt">
+        <div class="lum-content sg-stack">
+          <header>
+            <div class="sg-number">01 · Token</div>
+            <h2 class="lum-h2">Farb-, Radius- und Groessensystem</h2>
+            <p class="sg-sub">
+              Die Kernregeln sitzen jetzt in einer zusammenhaengenden
+              Token-Schicht. Komponenten referenzieren semantische Variablen,
+              nicht mehr verstreute Hex- oder RGBA-Werte.
+            </p>
+          </header>
+
+          <div class="sg-token-grid">
+            <article class="sg-swatch">
+              <div class="sg-swatch-color sg-swatch-dark">#1C2530</div>
+              <div class="sg-swatch-meta">
+                <div class="sg-swatch-name">dark</div>
+                <div class="sg-swatch-token">--lum-dark</div>
+              </div>
+            </article>
+            <article class="sg-swatch">
+              <div class="sg-swatch-color sg-swatch-primary">#152C3E</div>
+              <div class="sg-swatch-meta">
+                <div class="sg-swatch-name">primary</div>
+                <div class="sg-swatch-token">--lum-primary</div>
+              </div>
+            </article>
+            <article class="sg-swatch">
+              <div class="sg-swatch-color sg-swatch-accent">#366A99</div>
+              <div class="sg-swatch-meta">
+                <div class="sg-swatch-name">accent</div>
+                <div class="sg-swatch-token">--lum-accent</div>
+              </div>
+            </article>
+            <article class="sg-swatch">
+              <div class="sg-swatch-color sg-swatch-teal">#3B92C7</div>
+              <div class="sg-swatch-meta">
+                <div class="sg-swatch-name">teal</div>
+                <div class="sg-swatch-token">--lum-teal</div>
+              </div>
+            </article>
+            <article class="sg-swatch">
+              <div class="sg-swatch-color sg-swatch-green">#22C55E</div>
+              <div class="sg-swatch-meta">
+                <div class="sg-swatch-name">green</div>
+                <div class="sg-swatch-token">--lum-green</div>
+              </div>
+            </article>
+            <article class="sg-swatch">
+              <div class="sg-swatch-color sg-swatch-yellow">#F59E0B</div>
+              <div class="sg-swatch-meta">
+                <div class="sg-swatch-name">yellow</div>
+                <div class="sg-swatch-token">--lum-yellow</div>
+              </div>
+            </article>
+            <article class="sg-swatch">
+              <div class="sg-swatch-color sg-swatch-light">#E4E8EC</div>
+              <div class="sg-swatch-meta">
+                <div class="sg-swatch-name">light</div>
+                <div class="sg-swatch-token">--lum-light</div>
+              </div>
+            </article>
+            <article class="sg-swatch">
+              <div class="sg-swatch-color sg-swatch-cream">#F2F3F4</div>
+              <div class="sg-swatch-meta">
+                <div class="sg-swatch-name">cream</div>
+                <div class="sg-swatch-token">--lum-cream</div>
+              </div>
+            </article>
+          </div>
+
+          <div class="lum-grid-2">
+            <article class="lum-card" data-sg-note>
+              <div class="lum-overline">Spacing Scale</div>
+              <div class="sg-scale-grid lum-mt-16">
+                <div class="sg-scale-row">
+                  <div class="sg-scale-label">space-4</div>
+                  <div class="sg-scale-bar" data-size="4"></div>
+                  <div class="sg-scale-value">4px</div>
+                </div>
+                <div class="sg-scale-row">
+                  <div class="sg-scale-label">space-8</div>
+                  <div class="sg-scale-bar" data-size="8"></div>
+                  <div class="sg-scale-value">8px</div>
+                </div>
+                <div class="sg-scale-row">
+                  <div class="sg-scale-label">space-12</div>
+                  <div class="sg-scale-bar" data-size="12"></div>
+                  <div class="sg-scale-value">12px</div>
+                </div>
+                <div class="sg-scale-row">
+                  <div class="sg-scale-label">space-16</div>
+                  <div class="sg-scale-bar" data-size="16"></div>
+                  <div class="sg-scale-value">16px</div>
+                </div>
+                <div class="sg-scale-row">
+                  <div class="sg-scale-label">space-24</div>
+                  <div class="sg-scale-bar" data-size="24"></div>
+                  <div class="sg-scale-value">24px</div>
+                </div>
+                <div class="sg-scale-row">
+                  <div class="sg-scale-label">space-32</div>
+                  <div class="sg-scale-bar" data-size="32"></div>
+                  <div class="sg-scale-value">32px</div>
+                </div>
+                <div class="sg-scale-row">
+                  <div class="sg-scale-label">space-48</div>
+                  <div class="sg-scale-bar" data-size="48"></div>
+                  <div class="sg-scale-value">48px</div>
+                </div>
+                <div class="sg-scale-row">
+                  <div class="sg-scale-label">space-64</div>
+                  <div class="sg-scale-bar" data-size="64"></div>
+                  <div class="sg-scale-value">64px</div>
+                </div>
+              </div>
+            </article>
+
+            <article class="lum-card" data-sg-note>
+              <div class="lum-overline">Radius Scale</div>
+              <div class="sg-radius-grid lum-mt-16">
+                <div class="sg-radius-card">
+                  <div class="sg-radius-preview" data-radius="btn"></div>
+                  <div class="sg-swatch-meta">
+                    <div class="sg-swatch-name">btn</div>
+                    <div class="sg-swatch-token">8px</div>
+                  </div>
+                </div>
+                <div class="sg-radius-card">
+                  <div class="sg-radius-preview" data-radius="sm"></div>
+                  <div class="sg-swatch-meta">
+                    <div class="sg-swatch-name">sm</div>
+                    <div class="sg-swatch-token">12px</div>
+                  </div>
+                </div>
+                <div class="sg-radius-card">
+                  <div class="sg-radius-preview" data-radius="md"></div>
+                  <div class="sg-swatch-meta">
+                    <div class="sg-swatch-name">md</div>
+                    <div class="sg-swatch-token">18px</div>
+                  </div>
+                </div>
+                <div class="sg-radius-card">
+                  <div class="sg-radius-preview" data-radius="lg"></div>
+                  <div class="sg-swatch-meta">
+                    <div class="sg-swatch-name">lg</div>
+                    <div class="sg-swatch-token">28px</div>
+                  </div>
+                </div>
+              </div>
+            </article>
+          </div>
+
+          <pre
+            class="lum-code-block"
+            data-sg-note
+          ><span class="lum-code-comment">/* Einbindung */</span>
+<span class="lum-code-keyword">&lt;link</span> rel=<span class="lum-code-string">"stylesheet"</span> href=<span class="lum-code-string">"./lumitronix-design-v2.css"</span><span class="lum-code-keyword">&gt;</span>
+
+<span class="lum-code-comment">/* Semantische Kerntoken */</span>
+<span class="lum-code-keyword">--lum-primary</span>: <span class="lum-code-value">#152C3E</span>;
+<span class="lum-code-keyword">--lum-accent</span>: <span class="lum-code-value">#366A99</span>;
+<span class="lum-code-keyword">--lum-teal</span>: <span class="lum-code-value">#3B92C7</span>;
+<span class="lum-code-keyword">--lum-space-24</span>: <span class="lum-code-value">24px</span>;
+<span class="lum-code-keyword">--lum-radius-md</span>: <span class="lum-code-value">18px</span>;</pre>
+        </div>
+      </section>
+
+      <section id="typography" class="lum-section">
+        <div class="lum-content sg-stack">
+          <header>
+            <div class="sg-number">02 · Typografie und Buttons</div>
+            <h2 class="lum-h2">
+              Typografie bleibt ruhig, Buttons erben jetzt sauber ueber
+              Variablen.
+            </h2>
+          </header>
+
+          <div class="lum-grid-2">
+            <article class="lum-card" data-sg-note>
+              <div class="lum-overline">Type Scale</div>
+              <div class="sg-stack lum-mt-16">
+                <div>
+                  <div class="lum-overline">display / 48</div>
+                  <div class="lum-display">4.200.000 €</div>
+                </div>
+                <div>
+                  <div class="lum-overline">h1 / 32</div>
+                  <div class="lum-h1">LED-Streifen Uebersicht</div>
+                </div>
+                <div>
+                  <div class="lum-overline">h2 / 24</div>
+                  <div class="lum-h2">Produktkategorien</div>
+                </div>
+                <div>
+                  <div class="lum-overline">h3 / 18</div>
+                  <div class="lum-h3">LumiFlex700 Pro Spezifikation</div>
+                </div>
+                <div>
+                  <div class="lum-overline">body / 14</div>
+                  <p class="lum-body">
+                    LUMITRONIX entwickelt LED-Module mit Fokus auf
+                    Platinenlayout, Lichtlenkung und industrieller
+                    Integrationsfaehigkeit.
+                  </p>
+                </div>
+                <div>
+                  <div class="lum-overline">caption / 12</div>
+                  <p class="lum-caption">
+                    Alle Masse in Millimetern, sofern nicht anders angegeben.
+                  </p>
+                </div>
+              </div>
+            </article>
+
+            <article class="lum-card" data-sg-note>
+              <div class="lum-overline">Buttons Light</div>
+              <div class="sg-demo-grid lum-mt-16">
+                <div class="sg-row">
+                  <a class="lum-btn lum-btn-primary" href="#forms">Primary</a>
+                  <a class="lum-btn lum-btn-accent" href="#data">Accent</a>
+                  <a class="lum-btn lum-btn-teal" href="#components">Teal</a>
+                </div>
+                <div class="sg-row">
+                  <button class="lum-btn lum-btn-outline" type="button">
+                    Outline
+                  </button>
+                  <button class="lum-btn lum-btn-outline-accent" type="button">
+                    Outline Accent
+                  </button>
+                  <button class="lum-btn lum-btn-ghost" type="button">
+                    Ghost
+                  </button>
+                </div>
+                <div class="sg-row">
+                  <button
+                    class="lum-btn-icon"
+                    type="button"
+                    data-tooltip="Einstellungen"
+                  >
+                    <svg viewBox="0 0 24 24">
+                      <path
+                        d="M12.012 2.25c.734.008 1.465.093 2.182.253a.75.75 0 0 1 .582.649l.17 1.527a1.384 1.384 0 0 0 1.927 1.116l1.4-.615a.75.75 0 0 1 .85.174a9.8 9.8 0 0 1 2.205 3.792a.75.75 0 0 1-.272.825l-1.241.916a1.38 1.38 0 0 0 0 2.226l1.243.915a.75.75 0 0 1 .272.826a9.8 9.8 0 0 1-2.204 3.792a.75.75 0 0 1-.849.175l-1.406-.617a1.38 1.38 0 0 0-1.926 1.114l-.17 1.526a.75.75 0 0 1-.571.647a9.5 9.5 0 0 1-4.406 0a.75.75 0 0 1-.572-.647l-.169-1.524a1.382 1.382 0 0 0-1.925-1.11l-1.406.616a.75.75 0 0 1-.85-.175a9.8 9.8 0 0 1-2.203-3.796a.75.75 0 0 1 .272-.826l1.243-.916a1.38 1.38 0 0 0 0-2.226l-1.243-.914a.75.75 0 0 1-.272-.826a9.8 9.8 0 0 1 2.205-3.792a.75.75 0 0 1 .85-.174l1.4.615a1.387 1.387 0 0 0 1.93-1.118l.17-1.526a.75.75 0 0 1 .583-.65q1.074-.238 2.201-.252M12 9a3 3 0 1 0 0 6a3 3 0 0 0 0-6"
+                      ></path>
+                    </svg>
+                  </button>
+                  <button
+                    class="lum-btn-icon"
+                    type="button"
+                    data-tooltip="Download"
+                  >
+                    <svg viewBox="0 0 24 24">
+                      <path
+                        d="M13 3a1 1 0 1 0-2 0v12.086l-3.293-3.293a1 1 0 0 0-1.414 1.414l5 5a1 1 0 0 0 1.414 0l5-5a1 1 0 0 0-1.414-1.414L13 15.086zM5 20a1 1 0 1 0 0 2h14a1 1 0 1 0 0-2z"
+                      ></path>
+                    </svg>
+                  </button>
+                  <button
+                    class="lum-btn-icon"
+                    type="button"
+                    data-tooltip="Suche"
+                  >
+                    <svg viewBox="0 0 24 24">
+                      <path
+                        d="M15.843 17.368a8 8 0 1 1 1.428-1.4l4.427 4.316a1 1 0 1 1-1.396 1.432zM17 11a6 6 0 1 0-12 0a6 6 0 0 0 12 0"
+                      ></path>
+                    </svg>
+                  </button>
+                </div>
+              </div>
+            </article>
+          </div>
+
+          <div class="sg-surface-dark">
+            <div class="lum-overline">Buttons Dark</div>
+            <div class="sg-row lum-mt-16">
+              <a class="lum-btn lum-btn-teal" href="#brand" data-sg-note
+                >Teal Solid</a
+              >
+              <button
+                class="lum-btn lum-btn-dark-glass"
+                type="button"
+                data-sg-note
+              >
+                Glass
+              </button>
+              <button
+                class="lum-btn lum-btn-dark-outline"
+                type="button"
+                data-sg-note
+              >
+                Outline
+              </button>
+              <button
+                class="lum-btn lum-btn-dark-ghost"
+                type="button"
+                data-sg-note
+              >
+                Ghost
+              </button>
+              <button
+                class="lum-btn-icon-dark"
+                type="button"
+                data-tooltip="Settings"
+                data-sg-note
+              >
+                <svg viewBox="0 0 24 24">
+                  <path
+                    d="M12.012 2.25c.734.008 1.465.093 2.182.253a.75.75 0 0 1 .582.649l.17 1.527a1.384 1.384 0 0 0 1.927 1.116l1.4-.615a.75.75 0 0 1 .85.174a9.8 9.8 0 0 1 2.205 3.792a.75.75 0 0 1-.272.825l-1.241.916a1.38 1.38 0 0 0 0 2.226l1.243.915a.75.75 0 0 1 .272.826a9.8 9.8 0 0 1-2.204 3.792a.75.75 0 0 1-.849.175l-1.406-.617a1.38 1.38 0 0 0-1.926 1.114l-.17 1.526a.75.75 0 0 1-.571.647a9.5 9.5 0 0 1-4.406 0a.75.75 0 0 1-.572-.647l-.169-1.524a1.382 1.382 0 0 0-1.925-1.11l-1.406.616a.75.75 0 0 1-.85-.175a9.8 9.8 0 0 1-2.203-3.796a.75.75 0 0 1 .272-.826l1.243-.916a1.38 1.38 0 0 0 0-2.226l-1.243-.914a.75.75 0 0 1-.272-.826a9.8 9.8 0 0 1 2.205-3.792a.75.75 0 0 1 .85-.174l1.4.615a1.387 1.387 0 0 0 1.93-1.118l.17-1.526a.75.75 0 0 1 .583-.65q1.074-.238 2.201-.252M12 9a3 3 0 1 0 0 6a3 3 0 0 0 0-6"
+                  ></path>
+                </svg>
+              </button>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <section id="forms" class="lum-section lum-section-alt">
+        <div class="lum-content sg-stack">
+          <header>
+            <div class="sg-number">03 · Formulare und Navigation</div>
+            <h2 class="lum-h2">
+              Formfelder teilen jetzt eine gemeinsame Basis. Navigationen nutzen
+              dieselbe Groessen- und Radiuslogik.
+            </h2>
+          </header>
+
+          <div class="lum-grid-2">
+            <article class="lum-card" data-sg-note>
+              <div class="lum-overline">Search</div>
+              <div class="sg-stack lum-mt-16">
+                <div class="lum-search-wrap">
+                  <svg viewBox="0 0 24 24">
+                    <path
+                      d="M15.843 17.368a8 8 0 1 1 1.428-1.4l4.427 4.316a1 1 0 1 1-1.396 1.432zM17 11a6 6 0 1 0-12 0a6 6 0 0 0 12 0"
+                    ></path>
+                  </svg>
+                  <input
+                    class="lum-search"
+                    type="text"
+                    placeholder="Produkte durchsuchen"
+                  />
+                </div>
+                <div class="sg-surface-dark">
+                  <div class="lum-search-wrap lum-search-dark-wrap">
+                    <svg viewBox="0 0 24 24">
+                      <path
+                        d="M15.843 17.368a8 8 0 1 1 1.428-1.4l4.427 4.316a1 1 0 1 1-1.396 1.432zM17 11a6 6 0 1 0-12 0a6 6 0 0 0 12 0"
+                      ></path>
+                    </svg>
+                    <input
+                      class="lum-search-dark"
+                      type="text"
+                      placeholder="Suche im dunklen Kontext"
+                    />
+                  </div>
+                </div>
+                <div class="lum-search-wrap lum-search-minimal-wrap">
+                  <svg viewBox="0 0 24 24">
+                    <path
+                      d="M15.843 17.368a8 8 0 1 1 1.428-1.4l4.427 4.316a1 1 0 1 1-1.396 1.432zM17 11a6 6 0 1 0-12 0a6 6 0 0 0 12 0"
+                    ></path>
+                  </svg>
+                  <input
+                    class="lum-search-minimal"
+                    type="text"
+                    placeholder="Minimalfilter"
+                  />
+                </div>
+              </div>
+            </article>
+
+            <article class="lum-card" data-sg-note>
+              <div class="lum-overline">Floating Label</div>
+              <div class="sg-control-grid lum-mt-16">
+                <div class="lum-float-field">
+                  <input
+                    class="lum-input"
+                    id="project-name"
+                    type="text"
+                    placeholder=" "
+                  />
+                  <label class="lum-float-label" for="project-name"
+                    >Projektname</label
+                  >
+                </div>
+                <div class="lum-float-field">
+                  <select class="lum-select" id="project-type">
+                    <option>LED-Streifen</option>
+                    <option>Starr-Module</option>
+                    <option>Steuerung</option>
+                  </select>
+                  <label class="lum-float-label" for="project-type"
+                    >Kategorie</label
+                  >
+                </div>
+                <div class="lum-float-field">
+                  <input
+                    class="lum-input"
+                    id="quantity"
+                    type="number"
+                    placeholder=" "
+                    value="500"
+                  />
+                  <label class="lum-float-label" for="quantity"
+                    >Stueckzahl
+                    <span
+                      class="lum-info-icon"
+                      data-tooltip="Mindestbestellmenge 100 Stueck."
+                      >?</span
+                    ></label
+                  >
+                </div>
+                <div class="lum-float-field">
+                  <input
+                    class="lum-input lum-input-error"
+                    id="article-number"
+                    type="text"
+                    placeholder=" "
+                    value="ungueltig"
+                  />
+                  <label class="lum-float-label" for="article-number"
+                    >Fehler</label
+                  >
+                  <div class="lum-float-error">
+                    <span class="lum-icon lum-icon-xs"
+                      ><svg viewBox="0 0 24 24">
+                        <path
+                          d="M12 2a10 10 0 1 1 0 20a10 10 0 0 1 0-20m0 5a1 1 0 0 0-1 1v5a1 1 0 1 0 2 0V8a1 1 0 0 0-1-1m0 9a1.25 1.25 0 1 0 0 2.5A1.25 1.25 0 0 0 12 16"
+                        ></path></svg
+                    ></span>
+                    Ungueltiges Format.
+                  </div>
+                </div>
+              </div>
+            </article>
+          </div>
+
+          <div class="lum-grid-2">
+            <article class="lum-card" data-sg-note>
+              <div class="lum-overline">Navigation Horizontal</div>
+              <nav class="lum-nav-h lum-mt-16">
+                <a class="active" href="#data">Alle Produkte</a>
+                <a href="#data">Neuheiten</a>
+                <a href="#components">Komponenten</a>
+                <a href="#brand">Marke</a>
+              </nav>
+            </article>
+            <article class="lum-card" data-sg-note>
+              <div class="lum-overline">Navigation Vertikal</div>
+              <div class="lum-grid-2 lum-mt-16">
+                <nav class="lum-nav-v">
+                  <a class="active" href="#forms">Produkte</a>
+                  <a href="#data">Daten</a>
+                  <a href="#components">Status</a>
+                  <a href="#brand">Assets</a>
+                </nav>
+                <div class="sg-surface-dark">
+                  <nav class="lum-nav-v lum-nav-v-dark">
+                    <a class="active" href="#forms">Produkte</a>
+                    <a href="#data">Daten</a>
+                    <a href="#components">Status</a>
+                    <a href="#brand">Assets</a>
+                  </nav>
+                </div>
+              </div>
+            </article>
+          </div>
+        </div>
+      </section>
+
+      <section id="data" class="lum-section">
+        <div class="lum-content sg-stack">
+          <header>
+            <div class="sg-number">04 · Tabellen und Charts</div>
+            <h2 class="lum-h2">
+              Datenansichten nutzen dieselben Farbrollen wie Buttons und Badges.
+            </h2>
+          </header>
+
+          <div class="lum-grid-2">
+            <div class="lum-table-wrap" data-sg-note>
+              <table class="lum-table">
+                <thead>
+                  <tr>
+                    <th>Artikel-Nr.</th>
+                    <th>Produkt</th>
+                    <th class="lum-col-group-a r">Leistung</th>
+                    <th class="lum-col-group-a r">Effizienz</th>
+                    <th class="lum-col-group-b r">Farbtemp.</th>
+                    <th>Status</th>
+                  </tr>
+                </thead>
+                <tbody>
+                  <tr>
+                    <td><span class="lum-code">LF700-P</span></td>
+                    <td><strong>LumiFlex700 Pro</strong></td>
+                    <td class="lum-col-group-a r">14,4 W</td>
+                    <td class="lum-col-group-a r">182 lm/W</td>
+                    <td class="lum-col-group-b r">4000K</td>
+                    <td>
+                      <span class="lum-badge lum-badge-green">Aktiv</span>
+                    </td>
+                  </tr>
+                  <tr>
+                    <td><span class="lum-code">MB44-N</span></td>
+                    <td><strong>MultiBar44</strong></td>
+                    <td class="lum-col-group-a r">11,2 W</td>
+                    <td class="lum-col-group-a r">195 lm/W</td>
+                    <td class="lum-col-group-b r">4000K</td>
+                    <td>
+                      <span class="lum-badge lum-badge-accent">Entwurf</span>
+                    </td>
+                  </tr>
+                  <tr>
+                    <td><span class="lum-code">IFX-20</span></td>
+                    <td><strong>iFlex 20m</strong></td>
+                    <td class="lum-col-group-a r">18,0 W</td>
+                    <td class="lum-col-group-a r">175 lm/W</td>
+                    <td class="lum-col-group-b r">5000K</td>
+                    <td>
+                      <span class="lum-badge lum-badge-orange">Pilot</span>
+                    </td>
+                  </tr>
+                </tbody>
+              </table>
+            </div>
+
+            <div class="lum-table-dark-wrap" data-sg-note>
+              <table class="lum-table-dark">
+                <thead>
+                  <tr>
+                    <th>Monat</th>
+                    <th class="lum-col-group-a r">Umsatz</th>
+                    <th class="lum-col-group-b r">Auftraege</th>
+                    <th>Trend</th>
+                  </tr>
+                </thead>
+                <tbody>
+                  <tr>
+                    <td><strong>Januar</strong></td>
+                    <td class="lum-col-group-a r">842.000 €</td>
+                    <td class="lum-col-group-b r">127</td>
+                    <td>
+                      <span class="lum-badge lum-badge-dark-green">+8%</span>
+                    </td>
+                  </tr>
+                  <tr>
+                    <td><strong>Februar</strong></td>
+                    <td class="lum-col-group-a r">915.000 €</td>
+                    <td class="lum-col-group-b r">143</td>
+                    <td>
+                      <span class="lum-badge lum-badge-dark-green">+12%</span>
+                    </td>
+                  </tr>
+                  <tr>
+                    <td><strong>Maerz</strong></td>
+                    <td class="lum-col-group-a r">780.000 €</td>
+                    <td class="lum-col-group-b r">118</td>
+                    <td>
+                      <span class="lum-badge lum-badge-dark-red">-4%</span>
+                    </td>
+                  </tr>
+                </tbody>
+              </table>
+            </div>
+          </div>
+
+          <div class="sg-chart-layout">
+            <article class="lum-card" data-sg-note>
+              <div class="lum-overline">Umsatz nach Produktlinie</div>
+              <div class="lum-chart lum-mt-16">
+                <div class="lum-chart-bar-row">
+                  <div class="lum-chart-label">LumiFlex</div>
+                  <div class="lum-chart-track">
+                    <div
+                      class="lum-chart-fill lum-chart-fill-primary"
+                      data-width="84"
+                    >
+                      2,4 Mio. €
+                    </div>
+                  </div>
+                </div>
+                <div class="lum-chart-bar-row">
+                  <div class="lum-chart-label">MultiBar</div>
+                  <div class="lum-chart-track">
+                    <div
+                      class="lum-chart-fill lum-chart-fill-accent"
+                      data-width="66"
+                    >
+                      1,8 Mio. €
+                    </div>
+                  </div>
+                </div>
+                <div class="lum-chart-bar-row">
+                  <div class="lum-chart-label">iFlex</div>
+                  <div class="lum-chart-track">
+                    <div
+                      class="lum-chart-fill lum-chart-fill-teal"
+                      data-width="49"
+                    >
+                      1,4 Mio. €
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </article>
+
+            <article class="lum-card" data-sg-note>
+              <div class="lum-overline">Auftraege 2026</div>
+              <div class="lum-chart-cols lum-mt-16">
+                <div class="lum-chart-col lum-col-primary" data-height="55">
+                  <span class="lum-chart-col-label">J</span
+                  ><span class="lum-chart-col-val">55</span>
+                </div>
+                <div class="lum-chart-col" data-height="68">
+                  <span class="lum-chart-col-label">F</span
+                  ><span class="lum-chart-col-val">68</span>
+                </div>
+                <div class="lum-chart-col lum-col-primary" data-height="50">
+                  <span class="lum-chart-col-label">M</span
+                  ><span class="lum-chart-col-val">50</span>
+                </div>
+                <div class="lum-chart-col" data-height="82">
+                  <span class="lum-chart-col-label">A</span
+                  ><span class="lum-chart-col-val">82</span>
+                </div>
+                <div class="lum-chart-col lum-col-primary" data-height="76">
+                  <span class="lum-chart-col-label">M</span
+                  ><span class="lum-chart-col-val">76</span>
+                </div>
+                <div class="lum-chart-col" data-height="92">
+                  <span class="lum-chart-col-label">J</span
+                  ><span class="lum-chart-col-val">92</span>
+                </div>
+                <div class="lum-chart-col lum-col-teal" data-height="97">
+                  <span class="lum-chart-col-label">J</span
+                  ><span class="lum-chart-col-val">97</span>
+                </div>
+                <div class="lum-chart-col" data-height="89">
+                  <span class="lum-chart-col-label">A</span
+                  ><span class="lum-chart-col-val">89</span>
+                </div>
+              </div>
+            </article>
+          </div>
+
+          <div class="lum-grid-2">
+            <article class="lum-card" data-sg-note>
+              <div class="lum-overline">Projektstatus</div>
+              <div class="sg-stack lum-mt-16">
+                <div>
+                  <div class="lum-flex-between lum-mb-8">
+                    <span class="lum-caption">Design</span
+                    ><span class="lum-caption"><strong>100%</strong></span>
+                  </div>
+                  <div class="lum-progress">
+                    <div
+                      class="lum-progress-fill lum-progress-accent"
+                      data-width="100"
+                    ></div>
+                  </div>
+                </div>
+                <div>
+                  <div class="lum-flex-between lum-mb-8">
+                    <span class="lum-caption">Entwicklung</span
+                    ><span class="lum-caption"><strong>72%</strong></span>
+                  </div>
+                  <div class="lum-progress">
+                    <div
+                      class="lum-progress-fill lum-progress-teal"
+                      data-width="72"
+                    ></div>
+                  </div>
+                </div>
+                <div>
+                  <div class="lum-flex-between lum-mb-8">
+                    <span class="lum-caption">QA</span
+                    ><span class="lum-caption"><strong>28%</strong></span>
+                  </div>
+                  <div class="lum-progress">
+                    <div
+                      class="lum-progress-fill lum-progress-green"
+                      data-width="28"
+                    ></div>
+                  </div>
+                </div>
+              </div>
+            </article>
+
+            <article class="lum-card" data-sg-note>
+              <div class="lum-overline">Auslastung</div>
+              <div class="lum-flex lum-gap-24 lum-mt-16">
+                <div class="lum-donut lum-donut-accent" data-progress="78">
+                  <div class="lum-donut-label">78%</div>
+                </div>
+                <div class="lum-donut lum-donut-teal" data-progress="94">
+                  <div class="lum-donut-label">94%</div>
+                </div>
+                <div class="sg-legend">
+                  <div class="sg-legend-item">
+                    <span class="sg-legend-dot sg-legend-dot-accent"></span>
+                    Fertigung L1
+                  </div>
+                  <div class="sg-legend-item">
+                    <span class="sg-legend-dot sg-legend-dot-teal"></span> QA
+                    Rate
+                  </div>
+                </div>
+              </div>
+            </article>
+          </div>
+        </div>
+      </section>
+
+      <section id="components" class="lum-section lum-section-alt">
+        <div class="lum-content sg-stack">
+          <header>
+            <div class="sg-number">05 · Komponenten</div>
+            <h2 class="lum-h2">
+              Badges, Alerts, Tabs, Modal und Hilfskomponenten folgen demselben
+              Muster.
+            </h2>
+          </header>
+
+          <div class="lum-grid-2">
+            <article class="lum-card" data-sg-note>
+              <div class="lum-overline">Badges und Alerts</div>
+              <div class="sg-stack lum-mt-16">
+                <div class="sg-row">
+                  <span class="lum-badge lum-badge-green">Aktiv</span>
+                  <span class="lum-badge lum-badge-accent">Entwurf</span>
+                  <span class="lum-badge lum-badge-teal">In Arbeit</span>
+                  <span class="lum-badge lum-badge-orange">Pilot</span>
+                </div>
+                <div class="sg-stack">
+                  <div class="lum-alert lum-alert-info">
+                    <span class="lum-icon lum-icon-sm lum-icon-teal"
+                      ><svg viewBox="0 0 24 24">
+                        <path
+                          d="M12 2a10 10 0 1 1 0 20a10 10 0 0 1 0-20m0 5a1 1 0 0 0-1 1v5a1 1 0 1 0 2 0V8a1 1 0 0 0-1-1m0 9a1.25 1.25 0 1 0 0 2.5A1.25 1.25 0 0 0 12 16"
+                        ></path></svg></span
+                    ><span>Firmware 3.2 ist verfuegbar.</span>
+                  </div>
+                  <div class="lum-alert lum-alert-success">
+                    <span class="lum-icon lum-icon-sm lum-icon-accent"
+                      ><svg viewBox="0 0 24 24">
+                        <path
+                          d="m8.5 16.586l-3.793-3.793a1 1 0 0 0-1.414 1.414l4.5 4.5a1 1 0 0 0 1.414 0l11-11a1 1 0 0 0-1.414-1.414z"
+                        ></path></svg></span
+                    ><span>Auftrag #LF700-2026-048 wurde vorbereitet.</span>
+                  </div>
+                  <div class="lum-alert lum-alert-warning">
+                    <span class="lum-icon lum-icon-sm lum-icon-gray"
+                      ><svg viewBox="0 0 24 24">
+                        <path
+                          d="M10.03 3.659c.856-1.548 3.081-1.548 3.937 0l7.746 14.001c.83 1.5-.255 3.34-1.969 3.34H4.254c-1.715 0-2.8-1.84-1.97-3.34zM12.997 17A.999.999 0 1 0 11 17a.999.999 0 0 0 1.997 0m-.259-7.853a.75.75 0 0 0-1.493.103l.004 4.501l.007.102a.75.75 0 0 0 1.493-.103l-.004-4.502z"
+                        ></path></svg></span
+                    ><span
+                      >Lieferzeit ab 500 Stueck verlaengert sich auf 3
+                      Werktage.</span
+                    >
+                  </div>
+                </div>
+              </div>
+            </article>
+
+            <article class="lum-card" data-sg-note>
+              <div class="lum-overline">Tooltips</div>
+              <div class="sg-stack lum-mt-16">
+                <div class="sg-row">
+                  <button
+                    class="lum-btn lum-btn-accent"
+                    type="button"
+                    data-tooltip="Datei herunterladen"
+                  >
+                    Hover mich
+                  </button>
+                  <span
+                    class="lum-tooltip-text lum-body"
+                    data-tooltip="Netto, ohne MwSt."
+                    >Listenpreis</span
+                  >
+                  <span class="lum-body"
+                    >Farbtemperatur<span
+                      class="lum-info-icon"
+                      data-tooltip="Kelvin-Wert der Lichtfarbe"
+                      >?</span
+                    ></span
+                  >
+                </div>
+                <div class="lum-tooltip-card">
+                  <span class="lum-badge lum-badge-accent"
+                    >LumiFlex700 Pro</span
+                  >
+                  <div class="lum-tooltip-content">
+                    <div class="lum-overline">Produktdetails</div>
+                    <div class="sg-stack lum-mt-16">
+                      <div class="lum-flex-between">
+                        <span>Leistung</span><strong>14,4 W/m</strong>
+                      </div>
+                      <div class="lum-flex-between">
+                        <span>Effizienz</span><strong>182 lm/W</strong>
+                      </div>
+                      <div class="lum-flex-between">
+                        <span>CRI</span><strong>90+</strong>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </article>
+          </div>
+
+          <div class="lum-grid-2">
+            <article class="lum-card" data-sg-note>
+              <div class="lum-overline">Tabs ohne Inline Handler</div>
+              <div class="lum-tabs lum-mt-16" data-tabs="product-tabs">
+                <button
+                  class="lum-tab active"
+                  type="button"
+                  role="tab"
+                  aria-selected="true"
+                  data-tab="overview"
+                >
+                  Uebersicht
+                </button>
+                <button
+                  class="lum-tab"
+                  type="button"
+                  role="tab"
+                  aria-selected="false"
+                  data-tab="specs"
+                >
+                  Spezifikation
+                </button>
+                <button
+                  class="lum-tab"
+                  type="button"
+                  role="tab"
+                  aria-selected="false"
+                  data-tab="downloads"
+                >
+                  Downloads
+                </button>
+              </div>
+              <div
+                class="lum-tab-panel lum-mt-16"
+                data-tab-group="product-tabs"
+                data-tab-panel="overview"
+              >
+                Kernbotschaft zuerst: Produktname, Leistungswerte, Status und
+                naechster Schritt.
+              </div>
+              <div
+                class="lum-tab-panel lum-mt-16"
+                data-tab-group="product-tabs"
+                data-tab-panel="specs"
+                hidden
+              >
+                Tabellen, Diagramme und technische Kernwerte sitzen in einem
+                ruhig formatierten Datenblock.
+              </div>
+              <div
+                class="lum-tab-panel lum-mt-16"
+                data-tab-group="product-tabs"
+                data-tab-panel="downloads"
+                hidden
+              >
+                Assets, Datenblaetter und Logo-Pakete werden als sekundaere
+                Aktion angeboten.
+              </div>
+            </article>
+
+            <article class="lum-card" data-sg-note>
+              <div class="lum-overline">Segmented Control</div>
+              <div class="lum-tabs-seg lum-mt-16" data-tabs="mode-tabs">
+                <button
+                  class="lum-tab-seg active"
+                  type="button"
+                  role="tab"
+                  aria-selected="true"
+                  data-tab="light"
+                >
+                  Hell
+                </button>
+                <button
+                  class="lum-tab-seg"
+                  type="button"
+                  role="tab"
+                  aria-selected="false"
+                  data-tab="dark"
+                >
+                  Dunkel
+                </button>
+                <button
+                  class="lum-tab-seg"
+                  type="button"
+                  role="tab"
+                  aria-selected="false"
+                  data-tab="compact"
+                >
+                  Kompakt
+                </button>
+              </div>
+              <div
+                class="lum-tab-panel lum-mt-16"
+                data-tab-group="mode-tabs"
+                data-tab-panel="light"
+              >
+                Standard fuer B2B-Dashboards und datenzentrierte Oberflaechen.
+              </div>
+              <div
+                class="lum-tab-panel lum-mt-16"
+                data-tab-group="mode-tabs"
+                data-tab-panel="dark"
+                hidden
+              >
+                Dunkle Flaechen fuer Hero, Markenkontext oder konzentrierte
+                Statusbereiche.
+              </div>
+              <div
+                class="lum-tab-panel lum-mt-16"
+                data-tab-group="mode-tabs"
+                data-tab-panel="compact"
+                hidden
+              >
+                Hohe Informationsdichte mit derselben Spacing-Skala in dichterer
+                Anwendung.
+              </div>
+            </article>
+          </div>
+
+          <div class="lum-grid-2">
+            <article class="lum-card" data-sg-note>
+              <div class="lum-overline">Breadcrumbs und Pagination</div>
+              <div class="sg-stack lum-mt-16">
+                <nav class="lum-breadcrumbs">
+                  <a href="#start">Start</a><span class="sep">/</span>
+                  <a href="#data">Produkte</a><span class="sep">/</span>
+                  <span class="current">LumiFlex700 Pro</span>
+                </nav>
+                <nav class="lum-pagination">
+                  <button class="lum-page disabled" type="button">&lt;</button>
+                  <button class="lum-page active" type="button">1</button>
+                  <button class="lum-page" type="button">2</button>
+                  <button class="lum-page" type="button">3</button>
+                  <span class="lum-page-dots">...</span>
+                  <button class="lum-page" type="button">12</button>
+                  <button class="lum-page" type="button">&gt;</button>
+                </nav>
+              </div>
+            </article>
+
+            <article class="lum-card" data-sg-note>
+              <div class="lum-overline">Modal und Loader</div>
+              <div class="sg-stack lum-mt-16">
+                <button
+                  class="lum-btn lum-btn-accent"
+                  type="button"
+                  data-modal-open="sg-modal"
+                >
+                  Modal oeffnen
+                </button>
+                <div class="sg-surface-dark">
+                  <div class="lum-loader lum-loader-lg">
+                    <svg
+                      class="lum-loader-sun"
+                      viewBox="0 0 47 48.5"
+                      fill="var(--lum-teal)"
+                    >
+                      <g transform="translate(-8.14,-12.67)">
+                        <path
+                          class="r0"
+                          d="M32.46,25.85l0.88-13.18H30l0.88,13.18h1.62Z"
+                        ></path>
+                        <path
+                          class="r1"
+                          d="M38.77,28.43l8.46-10.14-2.74-2-7,11.18Z"
+                        ></path>
+                        <path
+                          class="r2"
+                          d="M42.36,34.22l12.81-3.23-1-3.21-12.26,4.91Z"
+                        ></path>
+                        <path
+                          class="r3"
+                          d="M41.86,41l12.26,4.91,1-3.21L42.36,39.48Z"
+                        ></path>
+                        <path
+                          class="r4"
+                          d="M38.77,45.27l-1.31,1,7,11.18,2.74-2Z"
+                        ></path>
+                        <path
+                          class="r5"
+                          d="M30,61h3.38L32.46,47.85H30.84Z"
+                        ></path>
+                        <path
+                          class="r6"
+                          d="M18.81,57.4l7-11.18-1.31-1L16.08,55.41Z"
+                        ></path>
+                        <path
+                          class="r7"
+                          d="M20.94,39.48L8.14,42.71l1,3.21L21.44,41Z"
+                        ></path>
+                        <path
+                          class="r8"
+                          d="M21.44,32.68L9.18,27.77,8.14,31l12.81,3.23Z"
+                        ></path>
+                        <path
+                          class="r9"
+                          d="M24.54,28.43l1.31-1-7-11.18-2.73,2Z"
+                        ></path>
+                      </g>
+                    </svg>
+                    <div class="lum-loader-text">Laden ...</div>
+                  </div>
+                </div>
+              </div>
+            </article>
+          </div>
+
+          <div class="lum-grid-4">
+            <article class="lum-stat-card" data-sg-note>
+              <div class="lum-stat-card-label">Umsatz MTD</div>
+              <div class="lum-stat-card-value">1,24 Mio. €</div>
+              <div class="lum-stat-card-sub">
+                <span class="lum-stat-card-up">+12,4%</span> vs. Vormonat
+              </div>
+            </article>
+            <article class="lum-stat-card" data-sg-note>
+              <div class="lum-stat-card-label">Auftraege</div>
+              <div class="lum-stat-card-value">156</div>
+              <div class="lum-stat-card-sub">
+                <span class="lum-stat-card-up">+8%</span> vs. Vormonat
+              </div>
+            </article>
+            <article class="lum-stat-card" data-sg-note>
+              <div class="lum-stat-card-label">Durchschnitt</div>
+              <div class="lum-stat-card-value">7.948 €</div>
+              <div class="lum-stat-card-sub">
+                <span class="lum-stat-card-down">-2,1%</span> vs. Vormonat
+              </div>
+            </article>
+            <article class="lum-stat-card" data-sg-note>
+              <div class="lum-stat-card-label">QA Rate</div>
+              <div class="lum-stat-card-value">98,2%</div>
+              <div class="lum-stat-card-sub">
+                <span class="lum-stat-card-up">+0,4%</span> vs. Vormonat
+              </div>
+            </article>
+          </div>
+        </div>
+      </section>
+
+      <section id="brand" class="lum-section">
+        <div class="lum-content sg-stack">
+          <header>
+            <div class="sg-number">06 · Marke</div>
+            <h2 class="lum-h2">
+              Das Logo lebt in definierten Flaechen und nicht mehr in lose
+              gestylten Einzelcontainern.
+            </h2>
+          </header>
+
+          <div class="sg-logo-grid">
+            <article class="sg-logo-card">
+              <div class="sg-logo-preview">
+                <img
+                  src="./Logo_positiv_mit_Claim.svg"
+                  alt="LUMITRONIX positiv"
+                />
+              </div>
+              <div class="sg-swatch-meta">
+                <div class="sg-swatch-name">Positiv mit Claim</div>
+                <div class="sg-swatch-token">helle Flaechen</div>
+              </div>
+            </article>
+            <article class="sg-logo-card">
+              <div class="sg-logo-preview sg-logo-preview-dark">
+                <img
+                  src="./Logo_negativ_mit_Claim.svg"
+                  alt="LUMITRONIX negativ"
+                />
+              </div>
+              <div class="sg-swatch-meta">
+                <div class="sg-swatch-name">Negativ mit Claim</div>
+                <div class="sg-swatch-token">dunkle Flaechen</div>
+              </div>
+            </article>
+            <article class="sg-logo-card">
+              <div class="sg-logo-preview">
+                <img
+                  src="./Logo_positiv_ohne_Claim.svg"
+                  alt="LUMITRONIX kompakt"
+                />
+              </div>
+              <div class="sg-swatch-meta">
+                <div class="sg-swatch-name">Positiv ohne Claim</div>
+                <div class="sg-swatch-token">kompakt</div>
+              </div>
+            </article>
+            <article class="sg-logo-card">
+              <div class="sg-logo-preview sg-logo-preview-dark">
+                <img
+                  src="./Logo_negativ_ohne_Claim.svg"
+                  alt="LUMITRONIX kompakt negativ"
+                />
+              </div>
+              <div class="sg-swatch-meta">
+                <div class="sg-swatch-name">Negativ ohne Claim</div>
+                <div class="sg-swatch-token">kompakt</div>
+              </div>
+            </article>
+          </div>
+        </div>
+      </section>
+
+      <section id="ki" class="lum-section lum-section-dark">
+        <div class="lum-content sg-stack">
+          <header>
+            <div class="sg-number">07 · KI Briefing</div>
+            <h2 class="lum-h2">Leitplanken fuer Mensch und Maschine</h2>
+            <p class="sg-sub">
+              Die Regeln bleiben klar, aber sie leben in wiederverwendbaren
+              Regelkarten statt in mehrfach kopierten Inline-Strukturen.
+            </p>
+          </header>
+
+          <div class="sg-rule-grid">
+            <article class="sg-info-card">
+              <div class="sg-info-head">
+                <span
+                  class="lum-icon-circle lum-icon-circle-md lum-icon-circle-dark-teal"
+                  ><svg viewBox="0 0 24 24">
+                    <path
+                      d="M12 2c5.523 0 10 4.477 10 10s-4.477 10-10 10S2 17.523 2 12S6.477 2 12 2m1.252 11H8.75a.75.75 0 0 0 0 1.493h4.502a.75.75 0 0 0 0-1.486zm1.998-3.5h-6.5a.75.75 0 0 0 0 1.486h6.5a.75.75 0 0 0 0-1.486z"
+                    ></path></svg
+                ></span>
+                <div>
+                  <div class="sg-info-title">Tonfall</div>
+                  <div class="sg-info-copy">
+                    Direkt, sachlich, kollegial. Kein Marketing-Sprech, keine
+                    ueberladene Einleitung.
+                  </div>
+                </div>
+              </div>
+            </article>
+            <article class="sg-info-card">
+              <div class="sg-info-head">
+                <span
+                  class="lum-icon-circle lum-icon-circle-md lum-icon-circle-dark-teal"
+                  ><svg viewBox="0 0 24 24">
+                    <path
+                      d="M5.75 3a2.25 2.25 0 0 1 2.248 2.25v13.5a2.25 2.25 0 1 1-4.498 0V5.25A2.25 2.25 0 0 1 5.75 3m6.5 4a2.25 2.25 0 0 1 2.248 2.25v9.5a2.25 2.25 0 1 1-4.498 0v-9.5A2.25 2.25 0 0 1 12.25 7m6.5 4a2.25 2.25 0 0 1 2.248 2.25v5.5a2.25 2.25 0 1 1-4.498 0v-5.5A2.25 2.25 0 0 1 18.75 11"
+                    ></path></svg
+                ></span>
+                <div>
+                  <div class="sg-info-title">Zahlen sichtbar machen</div>
+                  <div class="sg-info-copy">
+                    KPIs, Tabellen und Charts haben Vorrang vor langem
+                    Fliesstext.
+                  </div>
+                </div>
+              </div>
+            </article>
+            <article class="sg-info-card">
+              <div class="sg-info-head">
+                <span
+                  class="lum-icon-circle lum-icon-circle-md lum-icon-circle-dark-teal"
+                  ><svg viewBox="0 0 24 24">
+                    <path
+                      d="M3.839 5.858c2.94-3.916 9.03-5.055 13.364-2.36c4.28 2.66 5.854 7.777 4.1 12.577c-1.655 4.533-6.016 6.328-9.159 4.048c-1.177-.854-1.634-1.925-1.854-3.664l-.106-.987c-.123-.934-.311-1.352-.705-1.572c-.535-.298-.892-.305-1.595-.033l-.351.146c-1.014.44-1.688.595-2.541.416l-.2-.047c-2.789-.864-3.202-4.647-.565-8.157"
+                    ></path></svg
+                ></span>
+                <div>
+                  <div class="sg-info-title">Farbwelt</div>
+                  <div class="sg-info-copy">
+                    Primary fuer Struktur, Accent fuer Aktion, Teal fuer Fokus.
+                    Orange nur punktuell.
+                  </div>
+                </div>
+              </div>
+            </article>
+            <article class="sg-info-card">
+              <div class="sg-info-head">
+                <span
+                  class="lum-icon-circle lum-icon-circle-md lum-icon-circle-dark-teal"
+                  ><svg viewBox="0 0 24 24">
+                    <path
+                      d="M13.45 2.533a2.25 2.25 0 0 0-2.9 0L3.8 8.228a2.25 2.25 0 0 0-.8 1.72v9.305c0 .966.784 1.75 1.75 1.75h3a1.75 1.75 0 0 0 1.75-1.75V15.25c0-.68.542-1.232 1.217-1.25h2.566a1.25 1.25 0 0 1 1.217 1.25v4.003c0 .966.784 1.75 1.75 1.75h3a1.75 1.75 0 0 0 1.75-1.75V9.947a2.25 2.25 0 0 0-.8-1.72z"
+                    ></path></svg
+                ></span>
+                <div>
+                  <div class="sg-info-title">Slide-Gefuehl</div>
+                  <div class="sg-info-copy">
+                    Jede Section ist als klare Buehne gedacht. Wechselnde
+                    Flaechen und starke Einstiege fuehren durch die Seite.
+                  </div>
+                </div>
+              </div>
+            </article>
+          </div>
+        </div>
+      </section>
+    </main>
+
+    <footer class="sg-footer">
+      <div class="lum-content sg-footer-copy">
+        <div class="lum-caption">
+          LUMITRONIX LED-Technik GmbH · Brunnenstrasse 14 · 72379 Hechingen
+        </div>
+        <div class="lum-caption lum-mt-8">Design System V2 · April 2026</div>
+      </div>
+    </footer>
+
+    <div class="lum-modal-backdrop" id="sg-modal" aria-hidden="true">
+      <div
+        class="lum-modal"
+        role="dialog"
+        aria-modal="true"
+        aria-labelledby="sg-modal-title"
+      >
+        <div class="lum-modal-header">
+          <div class="lum-modal-title" id="sg-modal-title">
+            Auftrag bestaetigen
+          </div>
+          <button
+            class="lum-btn-icon"
+            type="button"
+            data-modal-close
+            aria-label="Schliessen"
+          >
+            <svg viewBox="0 0 24 24">
+              <path
+                d="M4.397 4.554l.073-.084a.75.75 0 0 1 .976-.073l.084.073L12 10.939l6.47-6.47a.75.75 0 1 1 1.06 1.061L13.061 12l6.47 6.47a.75.75 0 0 1-1.061 1.06L12 13.061l-6.47 6.47a.75.75 0 0 1-1.06-1.061L10.939 12l-6.47-6.47a.75.75 0 0 1-.072-.976"
+              ></path>
+            </svg>
+          </button>
+        </div>
+        <div class="lum-modal-body">
+          Auftrag <strong>#LF700-2026-048</strong> ueber 2.400 Stueck
+          LumiFlex700 Pro an Meyer Lichttechnik senden?
+        </div>
+        <div class="lum-modal-footer">
+          <button
+            class="lum-btn lum-btn-outline"
+            type="button"
+            data-modal-close
+          >
+            Abbrechen
+          </button>
+          <button class="lum-btn lum-btn-accent" type="button" data-modal-close>
+            Senden
+          </button>
+        </div>
+      </div>
+    </div>
+
+    <script>
+      (() => {
+        const toggle = document.getElementById("sg-class-toggle");
+        const storageKey = "sg-show-classes-v2";
+
+        document.querySelectorAll("[data-sg-note]").forEach((target) => {
+          if (
+            target.parentElement &&
+            target.parentElement.classList.contains("sg-class-wrap")
+          )
+            return;
+          const wrapper = document.createElement("div");
+          wrapper.className = "sg-class-wrap";
+          target.parentNode.insertBefore(wrapper, target);
+          wrapper.appendChild(target);
+          const note = document.createElement("div");
+          note.className = "sg-class-note";
+          const label = document.createElement("span");
+          label.textContent = Array.from(target.classList).join(" ");
+          note.appendChild(label);
+          const copyButton = document.createElement("button");
+          copyButton.type = "button";
+          copyButton.className = "sg-class-copy";
+          copyButton.setAttribute("aria-label", "Klassen kopieren");
+          copyButton.innerHTML =
+            '<svg viewBox="0 0 24 24" aria-hidden="true"><path d="M9 4.75A2.75 2.75 0 0 1 11.75 2h6.5A2.75 2.75 0 0 1 21 4.75v9.5A2.75 2.75 0 0 1 18.25 17h-6.5A2.75 2.75 0 0 1 9 14.25zm2.75-1.25c-.69 0-1.25.56-1.25 1.25v9.5c0 .69.56 1.25 1.25 1.25h6.5c.69 0 1.25-.56 1.25-1.25v-9.5c0-.69-.56-1.25-1.25-1.25zM3 8.75A2.75 2.75 0 0 1 5.75 6h1.5a.75.75 0 0 1 0 1.5h-1.5C5.06 7.5 4.5 8.06 4.5 8.75v9.5c0 .69.56 1.25 1.25 1.25h6.5c.69 0 1.25-.56 1.25-1.25v-1.5a.75.75 0 0 1 1.5 0v1.5A2.75 2.75 0 0 1 12.25 21h-6.5A2.75 2.75 0 0 1 3 18.25z"></path></svg>';
+          copyButton.addEventListener("click", async () => {
+            try {
+              await navigator.clipboard.writeText(label.textContent);
+            } catch {
+              const fallback = document.createElement("textarea");
+              fallback.value = label.textContent;
+              fallback.setAttribute("readonly", "");
+              fallback.style.position = "absolute";
+              fallback.style.left = "-9999px";
+              document.body.appendChild(fallback);
+              fallback.select();
+              document.execCommand("copy");
+              document.body.removeChild(fallback);
+            }
+          });
+          note.appendChild(copyButton);
+          wrapper.appendChild(note);
+        });
+
+        const applyClassState = (enabled) => {
+          document.body.classList.toggle("sg-show-classes", enabled);
+          toggle.checked = enabled;
+          try {
+            localStorage.setItem(storageKey, enabled ? "1" : "0");
+          } catch {}
+        };
+
+        try {
+          applyClassState(localStorage.getItem(storageKey) === "1");
+        } catch {
+          applyClassState(false);
+        }
+        toggle.addEventListener("change", () =>
+          applyClassState(toggle.checked),
+        );
+
+        document
+          .querySelectorAll("[data-width]")
+          .forEach((element) =>
+            element.style.setProperty("--lum-value", element.dataset.width),
+          );
+        document
+          .querySelectorAll("[data-height]")
+          .forEach((element) =>
+            element.style.setProperty("--lum-height", element.dataset.height),
+          );
+        document
+          .querySelectorAll("[data-progress]")
+          .forEach((element) =>
+            element.style.setProperty(
+              "--lum-progress",
+              element.dataset.progress,
+            ),
+          );
+
+        document.querySelectorAll("[data-tabs]").forEach((group) => {
+          const groupName = group.dataset.tabs;
+          const tabs = Array.from(group.querySelectorAll("[data-tab]"));
+          const panels = Array.from(
+            document.querySelectorAll('[data-tab-group="' + groupName + '"]'),
+          );
+          const activate = (key) => {
+            tabs.forEach((tab) => {
+              const isActive = tab.dataset.tab === key;
+              tab.classList.toggle("active", isActive);
+              tab.setAttribute("aria-selected", isActive ? "true" : "false");
+            });
+            panels.forEach((panel) => {
+              panel.hidden = panel.dataset.tabPanel !== key;
+            });
+          };
+          tabs.forEach((tab) =>
+            tab.addEventListener("click", () => activate(tab.dataset.tab)),
+          );
+          if (tabs[0])
+            activate(
+              tabs.find((tab) => tab.classList.contains("active"))?.dataset
+                .tab || tabs[0].dataset.tab,
+            );
+        });
+
+        const closeModal = (backdrop) => {
+          backdrop.classList.remove("open");
+          backdrop.setAttribute("aria-hidden", "true");
+          document.body.classList.remove("lum-modal-open");
+        };
+
+        document.querySelectorAll("[data-modal-open]").forEach((trigger) => {
+          trigger.addEventListener("click", () => {
+            const backdrop = document.getElementById(trigger.dataset.modalOpen);
+            if (!backdrop) return;
+            backdrop.classList.add("open");
+            backdrop.setAttribute("aria-hidden", "false");
+            document.body.classList.add("lum-modal-open");
+          });
+        });
+
+        document.querySelectorAll(".lum-modal-backdrop").forEach((backdrop) => {
+          backdrop.addEventListener("click", (event) => {
+            if (
+              event.target === backdrop ||
+              event.target.closest("[data-modal-close]")
+            )
+              closeModal(backdrop);
+          });
+        });
+
+        document.addEventListener("keydown", (event) => {
+          if (event.key !== "Escape") return;
+          document
+            .querySelectorAll(".lum-modal-backdrop.open")
+            .forEach((backdrop) => closeModal(backdrop));
+        });
+      })();
+    </script>
+  </body>
+</html>
