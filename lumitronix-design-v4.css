@@ -2378,6 +2378,18 @@ a:not([class]):hover {
 
 /* Wertbasierte Komponenten bekommen sinnvolle Fallbacks,
    bleiben aber durch Inline-Style oder Custom Property übersteuerbar. */
+.lum-grid-2,
+.lum-grid-3,
+.lum-grid-4 {
+  align-items: start;
+}
+
+.lum-grid-2 > *,
+.lum-grid-3 > *,
+.lum-grid-4 > * {
+  min-width: 0;
+}
+
 .lum-chart-fill {
   width: var(--lum-chart-fill-width, var(--lum-chart-fill-default-width));
 }
@@ -2434,11 +2446,20 @@ a:not([class]):hover {
   --lum-chart-col-height: 90%;
 }
 
+.lum-chart-cols {
+  padding: 24px 4px 32px;
+  overflow: hidden;
+}
+
 .lum-sparkbar-col {
   height: var(
     --lum-sparkbar-col-height,
     var(--lum-sparkbar-col-default-height)
   );
+}
+
+.lum-donut {
+  width: fit-content;
 }
 
 .lum-sparkbar-col:nth-child(1) {

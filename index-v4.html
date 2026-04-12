@@ -1470,42 +1470,48 @@ V4-Demo zeigt nur Komponenten, die ohne Zusatz-CSS direkt nutzbar sind.</textare
               </div>
             </div>
 
-            <div class="lum-flex lum-gap-24 lum-flex-wrap">
-              <div class="lum-sparkbar" aria-label="Mini-Sparkbar">
-                <div class="lum-sparkbar-col"></div>
-                <div class="lum-sparkbar-col"></div>
-                <div class="lum-sparkbar-col"></div>
-                <div class="lum-sparkbar-col"></div>
-                <div class="lum-sparkbar-col"></div>
+            <div class="lum-grid-2 lum-gap-24">
+              <div class="lum-text-center">
+                <div class="lum-sparkbar" aria-label="Mini-Sparkbar">
+                  <div class="lum-sparkbar-col"></div>
+                  <div class="lum-sparkbar-col"></div>
+                  <div class="lum-sparkbar-col"></div>
+                  <div class="lum-sparkbar-col"></div>
+                  <div class="lum-sparkbar-col"></div>
+                </div>
+                <p class="lum-caption lum-mt-8">Sparkbar</p>
               </div>
 
-              <div class="lum-donut" aria-label="Donut Demo">
-                <svg
-                  width="120"
-                  height="120"
-                  viewBox="0 0 120 120"
-                  aria-hidden="true"
-                >
-                  <circle
-                    cx="60"
-                    cy="60"
-                    r="42"
-                    fill="none"
-                    stroke="var(--lum-light)"
-                    stroke-width="12"
-                  />
-                  <circle
-                    cx="60"
-                    cy="60"
-                    r="42"
-                    fill="none"
-                    stroke="var(--lum-accent)"
-                    stroke-width="12"
-                    stroke-linecap="round"
-                    stroke-dasharray="198 264"
-                  />
-                </svg>
-                <span class="lum-donut-label">75%</span>
+              <div class="lum-text-center">
+                <div class="lum-donut" aria-label="Donut Demo">
+                  <svg
+                    width="120"
+                    height="120"
+                    viewBox="0 0 120 120"
+                    aria-hidden="true"
+                  >
+                    <circle
+                      cx="60"
+                      cy="60"
+                      r="42"
+                      fill="none"
+                      stroke="var(--lum-light)"
+                      stroke-width="12"
+                    />
+                    <circle
+                      cx="60"
+                      cy="60"
+                      r="42"
+                      fill="none"
+                      stroke="var(--lum-accent)"
+                      stroke-width="12"
+                      stroke-linecap="round"
+                      stroke-dasharray="198 264"
+                    />
+                  </svg>
+                  <span class="lum-donut-label">75%</span>
+                </div>
+                <p class="lum-caption lum-mt-8">Donut</p>
               </div>
             </div>
           </article>
@@ -1558,7 +1564,7 @@ V4-Demo zeigt nur Komponenten, die ohne Zusatz-CSS direkt nutzbar sind.</textare
               >&gt;coverage&lt;/<span class="lum-code-keyword">span</span>&gt;
             </div>
 
-            <div class="lum-flex lum-gap-24 lum-flex-wrap">
+            <div class="lum-grid-2 lum-gap-24">
               <div class="lum-text-center lum-max-w-sm">
                 <span class="lum-icon lum-icon-2xl lum-icon-teal">
                   <svg viewBox="0 0 24 24" aria-hidden="true">
@@ -1570,15 +1576,17 @@ V4-Demo zeigt nur Komponenten, die ohne Zusatz-CSS direkt nutzbar sind.</textare
                 <p class="lum-caption lum-mt-8">2xl / teal</p>
               </div>
 
-              <div class="lum-max-w-sm lum-text-center">
+              <div class="lum-max-w-md lum-w-full">
                 <p class="lum-body-sm lum-text-center lum-mb-16">
                   Zentrierte und rechtsbündige Utility-Demo
                 </p>
                 <p class="lum-body lum-text-right">rechtsbündig</p>
               </div>
-
-              <div class="lum-skeleton lum-skeleton-card lum-max-w-md"></div>
             </div>
+
+            <div
+              class="lum-skeleton lum-skeleton-card lum-max-w-md lum-w-full"
+            ></div>
           </article>
         </div>
       </section>
