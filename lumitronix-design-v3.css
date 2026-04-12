@@ -1,0 +1,2341 @@
+/* ═══════════════════════════════════════════════════════════════
+   LUMITRONIX Design System — lumitronix-design-v3.css
+   Single Source of Truth · Zentral auf Netlify gehostet
+   Einbindung: <link rel="stylesheet" href="https://lum-styleguide.netlify.app/lumitronix-design-v3.css">
+   Version 3.0 · 2026-04
+   ═══════════════════════════════════════════════════════════════ */
+
+/* ─────────────────────────────────────
+   §1  DESIGN TOKEN
+   Zentral: Primitive Werte, semantische Rollen
+   und öffentliche V2/V3 Alias-Tokens.
+   ───────────────────────────────────── */
+:root {
+  /* Primitive Farbe */
+  --lum-color-navy-950: #0e1820;
+  --lum-color-navy-900: #152c3e;
+  --lum-color-navy-850: #1c2530;
+  --lum-color-navy-800: #1c3a52;
+  --lum-color-navy-700: #244b6a;
+  --lum-color-blue-700: #245070;
+  --lum-color-blue-600: #366a99;
+  --lum-color-blue-500: #3b92c7;
+  --lum-color-blue-450: #5bb5e0;
+  --lum-color-blue-800: #2874a0;
+  --lum-color-gray-900: #2c2c2c;
+  --lum-color-gray-700: #5a6b7d;
+  --lum-color-gray-500: #8b9baa;
+  --lum-color-gray-400: #b0bac4;
+  --lum-color-gray-200: #e4e8ec;
+  --lum-color-gray-100: #f2f3f4;
+  --lum-color-gray-050: #f8f9fa;
+  --lum-color-white: #ffffff;
+  --lum-color-green-500: #22c55e;
+  --lum-color-green-400: #4ade80;
+  --lum-color-red-500: #ef4444;
+  --lum-color-red-400: #f87171;
+  --lum-color-orange-500: #ff4d00;
+  --lum-color-yellow-500: #f59e0b;
+
+  /* Öffentliche Farb-API */
+  --lum-dark: var(--lum-color-navy-850);
+  --lum-primary: var(--lum-color-blue-600);
+  --lum-accent: var(--lum-color-blue-500);
+  --lum-teal: var(--lum-accent);
+  --lum-mint: var(--lum-color-gray-500);
+  --lum-light: var(--lum-color-gray-200);
+  --lum-cream: var(--lum-color-gray-100);
+  --lum-white: var(--lum-color-white);
+  --lum-text: var(--lum-color-gray-900);
+  --lum-gray: var(--lum-color-gray-700);
+  --lum-lgray: var(--lum-color-gray-400);
+  --lum-green: var(--lum-color-green-500);
+  --lum-red: var(--lum-color-red-500);
+  --lum-orange: var(--lum-color-orange-500);
+  --lum-yellow: var(--lum-color-yellow-500);
+
+  /* Semantische Rollen */
+  --lum-surface-page: var(--lum-cream);
+  --lum-surface-card: var(--lum-white);
+  --lum-surface-card-alt: var(--lum-color-gray-050);
+  --lum-surface-dark: var(--lum-dark);
+  --lum-surface-dark-weak: rgba(255, 255, 255, 0.06);
+  --lum-surface-dark-strong: rgba(255, 255, 255, 0.1);
+  --lum-surface-primary-soft: rgba(54, 106, 153, 0.08);
+  --lum-surface-accent-soft: rgba(59, 146, 199, 0.08);
+  --lum-surface-accent-soft-strong: rgba(59, 146, 199, 0.15);
+  --lum-surface-success-soft: rgba(34, 197, 94, 0.08);
+  --lum-surface-success-soft-strong: rgba(34, 197, 94, 0.15);
+  --lum-surface-danger-soft: rgba(239, 68, 68, 0.08);
+  --lum-surface-danger-soft-strong: rgba(239, 68, 68, 0.15);
+  --lum-surface-warning-soft: rgba(245, 158, 11, 0.08);
+  --lum-surface-neutral-soft: rgba(90, 107, 125, 0.08);
+
+  --lum-text-strong: var(--lum-dark);
+  --lum-text-body: var(--lum-text);
+  --lum-text-muted: var(--lum-gray);
+  --lum-text-soft: var(--lum-lgray);
+  --lum-text-inverse: var(--lum-white);
+  --lum-text-inverse-muted: rgba(255, 255, 255, 0.6);
+  --lum-text-inverse-soft: rgba(255, 255, 255, 0.4);
+
+  --lum-border-subtle: var(--lum-light);
+  --lum-border-muted: var(--lum-lgray);
+  --lum-border-accent: var(--lum-accent);
+  --lum-border-dark: rgba(255, 255, 255, 0.06);
+  --lum-border-dark-strong: rgba(255, 255, 255, 0.15);
+  --lum-border-inverse: rgba(255, 255, 255, 0.3);
+
+  /* Spacing */
+  --lum-space-1: 4px;
+  --lum-space-2: 8px;
+  --lum-space-3: 12px;
+  --lum-space-4: 16px;
+  --lum-space-5: 20px;
+  --lum-space-6: 24px;
+  --lum-space-7: 28px;
+  --lum-space-8: 32px;
+  --lum-space-9: 36px;
+  --lum-space-10: 40px;
+  --lum-space-12: 48px;
+  --lum-space-14: 56px;
+
+  /* Radius */
+  --lum-radius-xs: 4px;
+  --lum-radius-sm: 6px;
+  --lum-radius-md: 8px;
+  --lum-radius-lg: 12px;
+  --lum-radius-pill: 999px;
+  --lum-radius-btn: var(--lum-radius-sm);
+
+  /* Typografie */
+  --lum-font: "Montserrat", "Helvetica Neue", Helvetica, Arial, sans-serif;
+  --lum-font-condensed: "Oswald", "Montserrat", Helvetica, Arial, sans-serif;
+  --lum-font-mono: "Courier New", "Consolas", monospace;
+  --lum-font-size-display: 48px;
+  --lum-font-size-h1: 32px;
+  --lum-font-size-h2: 24px;
+  --lum-font-size-h3: 18px;
+  --lum-font-size-h4: 15px;
+  --lum-font-size-body: 14px;
+  --lum-font-size-body-sm: 13px;
+  --lum-font-size-caption: 12px;
+  --lum-font-size-overline: 11px;
+  --lum-font-size-stat: 36px;
+  --lum-font-weight-regular: 400;
+  --lum-font-weight-medium: 500;
+  --lum-font-weight-semibold: 600;
+  --lum-font-weight-bold: 700;
+  --lum-font-weight-heavy: 800;
+
+  /* Controls & Icons */
+  --lum-control-height-icon: 36px;
+  --lum-control-padding-y: 11px;
+  --lum-control-padding-x: 22px;
+  --lum-focus-ring-accent: 0 0 0 3px rgba(59, 146, 199, 0.1);
+  --lum-focus-ring-danger: 0 0 0 3px rgba(239, 68, 68, 0.1);
+  --lum-icon-size-xs: 14px;
+  --lum-icon-size-sm: 16px;
+  --lum-icon-size-md: 20px;
+  --lum-icon-size-lg: 24px;
+  --lum-icon-size-xl: 32px;
+  --lum-icon-size-2xl: 48px;
+
+  /* Schatten */
+  --lum-shadow: 0 1px 3px rgba(28, 37, 48, 0.08);
+  --lum-shadow-overlay: 0 16px 48px rgba(28, 37, 48, 0.2);
+
+  /* Gradienten */
+  --lum-grad-primary: linear-gradient(
+    135deg,
+    var(--lum-color-navy-900) 0%,
+    var(--lum-color-navy-800) 50%,
+    var(--lum-color-navy-700) 100%
+  );
+  --lum-grad-accent: linear-gradient(
+    135deg,
+    var(--lum-accent) 0%,
+    var(--lum-color-blue-450) 100%
+  );
+  --lum-grad-teal: var(--lum-grad-accent);
+  --lum-grad-dark: linear-gradient(
+    160deg,
+    var(--lum-color-navy-950) 0%,
+    var(--lum-dark) 40%,
+    #243344 100%
+  );
+  --lum-grad-hero: linear-gradient(
+    135deg,
+    var(--lum-color-navy-950) 0%,
+    var(--lum-color-navy-900) 35%,
+    #1d3c56 65%,
+    var(--lum-color-navy-700) 100%
+  );
+  --lum-grad-subtle: linear-gradient(
+    180deg,
+    var(--lum-cream) 0%,
+    var(--lum-light) 100%
+  );
+  --lum-grad-card: linear-gradient(
+    180deg,
+    var(--lum-white) 0%,
+    var(--lum-surface-card-alt) 100%
+  );
+  --lum-grad-glow: radial-gradient(
+    ellipse at 30% 20%,
+    rgba(59, 146, 199, 0.15) 0%,
+    transparent 60%
+  );
+
+  /* Motion */
+  --lum-ease: cubic-bezier(0.4, 0, 0.2, 1);
+  --lum-transition-fast: 0.15s var(--lum-ease);
+  --lum-transition: all 0.2s var(--lum-ease);
+}
+
+/* ─────────────────────────────────────
+   §2  RESET & BASIS
+   ───────────────────────────────────── */
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  font-family: var(--lum-font);
+  font-size: var(--lum-font-size-body);
+  line-height: 1.5;
+  color: var(--lum-text-body);
+  background: var(--lum-surface-page);
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+button,
+input,
+select,
+textarea {
+  font: inherit;
+  color: inherit;
+}
+
+img,
+svg {
+  display: block;
+}
+
+/* ─────────────────────────────────────
+   §3  TYPOGRAFIE
+   ───────────────────────────────────── */
+.lum-h1,
+.lum-h2,
+.lum-h3,
+.lum-h4,
+.lum-display {
+  color: var(--lum-text-strong);
+}
+
+.lum-h1 {
+  font-size: var(--lum-font-size-h1);
+  font-weight: var(--lum-font-weight-heavy);
+  line-height: 1.2;
+  letter-spacing: -0.3px;
+}
+
+.lum-h2 {
+  font-size: var(--lum-font-size-h2);
+  font-weight: var(--lum-font-weight-heavy);
+  line-height: 1.25;
+  letter-spacing: -0.2px;
+}
+
+.lum-h3 {
+  font-size: var(--lum-font-size-h3);
+  font-weight: var(--lum-font-weight-bold);
+  line-height: 1.3;
+}
+
+.lum-h4 {
+  font-size: var(--lum-font-size-h4);
+  font-weight: var(--lum-font-weight-bold);
+  line-height: 1.4;
+}
+
+.lum-body {
+  font-size: var(--lum-font-size-body);
+  font-weight: var(--lum-font-weight-regular);
+  color: var(--lum-text-body);
+  line-height: 1.5;
+}
+
+.lum-body-sm {
+  font-size: var(--lum-font-size-body-sm);
+  font-weight: var(--lum-font-weight-regular);
+  color: var(--lum-text-muted);
+  line-height: 1.5;
+}
+
+.lum-caption {
+  font-size: var(--lum-font-size-caption);
+  font-weight: var(--lum-font-weight-medium);
+  color: var(--lum-text-muted);
+  line-height: 1.4;
+}
+
+.lum-overline {
+  font-size: var(--lum-font-size-overline);
+  font-weight: var(--lum-font-weight-bold);
+  letter-spacing: 1.2px;
+  text-transform: uppercase;
+  color: var(--lum-text-muted);
+}
+
+.lum-display {
+  font-size: var(--lum-font-size-display);
+  font-weight: var(--lum-font-weight-heavy);
+  line-height: 1.1;
+  letter-spacing: -1px;
+}
+
+.lum-stat {
+  font-size: var(--lum-font-size-stat);
+  font-weight: var(--lum-font-weight-heavy);
+  color: var(--lum-accent);
+  line-height: 1;
+}
+
+a:not([class]) {
+  color: var(--lum-accent);
+  text-decoration: none;
+}
+
+a:not([class]):hover {
+  text-decoration: underline;
+}
+
+/* ─────────────────────────────────────
+   §4  BUTTONS
+   Basis + Varianten über Variablen.
+   ───────────────────────────────────── */
+.lum-btn {
+  --lum-btn-bg: transparent;
+  --lum-btn-color: var(--lum-primary);
+  --lum-btn-border-color: transparent;
+  --lum-btn-border-width: 1px;
+  --lum-btn-hover-bg: var(--lum-btn-bg);
+  --lum-btn-hover-color: var(--lum-btn-color);
+  --lum-btn-hover-border-color: var(--lum-btn-border-color);
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: var(--lum-space-2);
+  padding: var(--lum-control-padding-y) var(--lum-control-padding-x);
+  border: var(--lum-btn-border-width) solid var(--lum-btn-border-color);
+  border-radius: var(--lum-radius-btn);
+  background: var(--lum-btn-bg);
+  color: var(--lum-btn-color);
+  font-family: var(--lum-font);
+  font-size: var(--lum-font-size-body-sm);
+  font-weight: var(--lum-font-weight-bold);
+  letter-spacing: 0.3px;
+  line-height: 1;
+  cursor: pointer;
+  text-decoration: none;
+  transition: var(--lum-transition);
+}
+
+.lum-btn:hover {
+  background: var(--lum-btn-hover-bg);
+  color: var(--lum-btn-hover-color);
+  border-color: var(--lum-btn-hover-border-color);
+}
+
+.lum-btn:active {
+  transform: translateY(1px);
+}
+
+.lum-btn svg {
+  width: var(--lum-icon-size-sm);
+  height: var(--lum-icon-size-sm);
+  fill: currentColor;
+  flex-shrink: 0;
+}
+
+.lum-btn-sm {
+  padding: 7px 16px;
+  font-size: 12px;
+}
+
+.lum-btn-lg {
+  padding: 14px 28px;
+  font-size: 15px;
+}
+
+.lum-btn-primary {
+  --lum-btn-bg: var(--lum-primary);
+  --lum-btn-color: var(--lum-text-inverse);
+  --lum-btn-border-color: var(--lum-primary);
+  --lum-btn-hover-bg: var(--lum-color-blue-700);
+  --lum-btn-hover-border-color: var(--lum-color-blue-700);
+}
+
+.lum-btn-accent,
+.lum-btn-teal {
+  --lum-btn-bg: var(--lum-accent);
+  --lum-btn-color: var(--lum-text-inverse);
+  --lum-btn-border-color: var(--lum-accent);
+  --lum-btn-hover-bg: var(--lum-color-blue-800);
+  --lum-btn-hover-border-color: var(--lum-color-blue-800);
+}
+
+.lum-btn-outline {
+  --lum-btn-bg: transparent;
+  --lum-btn-color: var(--lum-primary);
+  --lum-btn-border-color: var(--lum-primary);
+  --lum-btn-border-width: 2px;
+  --lum-btn-hover-bg: var(--lum-surface-primary-soft);
+  --lum-btn-hover-color: var(--lum-color-blue-700);
+  --lum-btn-hover-border-color: var(--lum-color-blue-700);
+}
+
+.lum-btn-outline-accent {
+  --lum-btn-bg: transparent;
+  --lum-btn-color: var(--lum-accent);
+  --lum-btn-border-color: var(--lum-accent);
+  --lum-btn-border-width: 2px;
+  --lum-btn-hover-bg: rgba(59, 146, 199, 0.06);
+  --lum-btn-hover-color: var(--lum-color-blue-800);
+  --lum-btn-hover-border-color: var(--lum-color-blue-800);
+}
+
+.lum-btn-ghost {
+  --lum-btn-bg: transparent;
+  --lum-btn-color: var(--lum-primary);
+  --lum-btn-hover-bg: rgba(54, 106, 153, 0.05);
+  --lum-btn-hover-color: var(--lum-color-blue-700);
+}
+
+.lum-btn-ghost-accent {
+  --lum-btn-bg: transparent;
+  --lum-btn-color: var(--lum-accent);
+  --lum-btn-hover-bg: rgba(59, 146, 199, 0.05);
+  --lum-btn-hover-color: var(--lum-color-blue-800);
+}
+
+.lum-btn-dark-solid,
+.lum-btn-dark-accent {
+  --lum-btn-bg: var(--lum-accent);
+  --lum-btn-color: var(--lum-text-inverse);
+  --lum-btn-border-color: var(--lum-accent);
+  --lum-btn-border-width: 2px;
+  --lum-btn-hover-bg: var(--lum-color-blue-800);
+  --lum-btn-hover-border-color: var(--lum-color-blue-800);
+}
+
+.lum-btn-dark-glass {
+  --lum-btn-bg: rgba(255, 255, 255, 0.08);
+  --lum-btn-color: var(--lum-text-inverse);
+  --lum-btn-border-color: var(--lum-border-dark-strong);
+  --lum-btn-hover-bg: rgba(255, 255, 255, 0.14);
+  --lum-btn-hover-border-color: rgba(255, 255, 255, 0.25);
+}
+
+.lum-btn-dark-outline {
+  --lum-btn-bg: transparent;
+  --lum-btn-color: var(--lum-text-inverse);
+  --lum-btn-border-color: var(--lum-border-inverse);
+  --lum-btn-hover-border-color: rgba(255, 255, 255, 0.6);
+}
+
+.lum-btn-dark-ghost {
+  --lum-btn-bg: transparent;
+  --lum-btn-color: var(--lum-text-inverse-muted);
+  --lum-btn-hover-bg: var(--lum-surface-dark-weak);
+  --lum-btn-hover-color: var(--lum-text-inverse);
+}
+
+/* ─────────────────────────────────────
+   §5  ICON-BUTTONS
+   ───────────────────────────────────── */
+.lum-btn-icon,
+.lum-btn-icon-dark {
+  --lum-icon-btn-bg: var(--lum-surface-card);
+  --lum-icon-btn-color: var(--lum-text-muted);
+  --lum-icon-btn-border-color: var(--lum-border-subtle);
+  --lum-icon-btn-hover-bg: rgba(59, 146, 199, 0.04);
+  --lum-icon-btn-hover-color: var(--lum-accent);
+  --lum-icon-btn-hover-border-color: var(--lum-accent);
+  width: var(--lum-control-height-icon);
+  height: var(--lum-control-height-icon);
+  padding: 0;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  border: 1px solid var(--lum-icon-btn-border-color);
+  border-radius: var(--lum-radius-btn);
+  background: var(--lum-icon-btn-bg);
+  color: var(--lum-icon-btn-color);
+  cursor: pointer;
+  transition: var(--lum-transition);
+}
+
+.lum-btn-icon:hover,
+.lum-btn-icon-dark:hover {
+  background: var(--lum-icon-btn-hover-bg);
+  color: var(--lum-icon-btn-hover-color);
+  border-color: var(--lum-icon-btn-hover-border-color);
+}
+
+.lum-btn-icon:active,
+.lum-btn-icon-dark:active {
+  transform: translateY(1px);
+}
+
+.lum-btn-icon svg,
+.lum-btn-icon-dark svg {
+  width: var(--lum-icon-size-sm);
+  height: var(--lum-icon-size-sm);
+  fill: currentColor;
+}
+
+.lum-btn-icon-dark {
+  --lum-icon-btn-bg: var(--lum-surface-dark-weak);
+  --lum-icon-btn-color: rgba(255, 255, 255, 0.5);
+  --lum-icon-btn-border-color: var(--lum-border-dark-strong);
+  --lum-icon-btn-hover-bg: var(--lum-surface-accent-soft-strong);
+}
+
+/* ─────────────────────────────────────
+   §6  ICON-SYSTEM
+   Basis-Container + farbige Kreis-Modifier.
+   ───────────────────────────────────── */
+.lum-icon {
+  --lum-icon-current-size: var(--lum-icon-size-md);
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: var(--lum-icon-current-size);
+  height: var(--lum-icon-current-size);
+  flex-shrink: 0;
+  color: currentColor;
+}
+
+.lum-icon svg {
+  width: 100%;
+  height: 100%;
+  fill: currentColor;
+}
+
+.lum-icon-xs {
+  --lum-icon-current-size: var(--lum-icon-size-xs);
+}
+
+.lum-icon-sm {
+  --lum-icon-current-size: var(--lum-icon-size-sm);
+}
+
+.lum-icon-md {
+  --lum-icon-current-size: var(--lum-icon-size-md);
+}
+
+.lum-icon-lg {
+  --lum-icon-current-size: var(--lum-icon-size-lg);
+}
+
+.lum-icon-xl {
+  --lum-icon-current-size: var(--lum-icon-size-xl);
+}
+
+.lum-icon-2xl {
+  --lum-icon-current-size: var(--lum-icon-size-2xl);
+}
+
+.lum-icon-primary {
+  color: var(--lum-primary);
+}
+
+.lum-icon-accent,
+.lum-icon-teal {
+  color: var(--lum-accent);
+}
+
+.lum-icon-gray {
+  color: var(--lum-gray);
+}
+
+.lum-icon-white {
+  color: var(--lum-text-inverse);
+}
+
+.lum-icon-green {
+  color: var(--lum-green);
+}
+
+.lum-icon-red {
+  color: var(--lum-red);
+}
+
+.lum-icon-orange {
+  color: var(--lum-orange);
+}
+
+.lum-icon-circle {
+  --lum-icon-circle-size: 40px;
+  --lum-icon-circle-bg: transparent;
+  --lum-icon-circle-color: currentColor;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: var(--lum-icon-circle-size);
+  height: var(--lum-icon-circle-size);
+  border-radius: 50%;
+  background: var(--lum-icon-circle-bg);
+  color: var(--lum-icon-circle-color);
+  flex-shrink: 0;
+}
+
+.lum-icon-circle-sm {
+  --lum-icon-circle-size: 32px;
+}
+
+.lum-icon-circle-md {
+  --lum-icon-circle-size: 40px;
+}
+
+.lum-icon-circle-lg {
+  --lum-icon-circle-size: 56px;
+}
+
+.lum-icon-circle-primary {
+  --lum-icon-circle-bg: rgba(54, 106, 153, 0.1);
+  --lum-icon-circle-color: var(--lum-primary);
+}
+
+.lum-icon-circle-accent,
+.lum-icon-circle-teal {
+  --lum-icon-circle-bg: rgba(59, 146, 199, 0.1);
+  --lum-icon-circle-color: var(--lum-accent);
+}
+
+.lum-icon-circle-green {
+  --lum-icon-circle-bg: rgba(34, 197, 94, 0.1);
+  --lum-icon-circle-color: var(--lum-green);
+}
+
+.lum-icon-circle-red {
+  --lum-icon-circle-bg: rgba(239, 68, 68, 0.1);
+  --lum-icon-circle-color: var(--lum-red);
+}
+
+.lum-icon-circle-orange {
+  --lum-icon-circle-bg: rgba(255, 77, 0, 0.1);
+  --lum-icon-circle-color: var(--lum-orange);
+}
+
+.lum-icon-circle-dark {
+  --lum-icon-circle-bg: rgba(255, 255, 255, 0.08);
+  --lum-icon-circle-color: rgba(255, 255, 255, 0.7);
+}
+
+.lum-icon-circle-dark-accent,
+.lum-icon-circle-dark-teal {
+  --lum-icon-circle-bg: var(--lum-surface-accent-soft-strong);
+  --lum-icon-circle-color: var(--lum-accent);
+}
+
+.lum-icon-text {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  font-size: 13px;
+  font-weight: var(--lum-font-weight-medium);
+  color: var(--lum-text-body);
+}
+
+.lum-icon-text .lum-icon {
+  flex-shrink: 0;
+}
+
+/* ─────────────────────────────────────
+   §7  TOOLTIPS
+   ───────────────────────────────────── */
+/* T1 — Dunkel (heller BG) */
+[data-tooltip] {
+  position: relative;
+}
+[data-tooltip]::after {
+  content: attr(data-tooltip);
+  position: absolute;
+  bottom: calc(100% + 8px);
+  left: 50%;
+  transform: translateX(-50%) translateY(4px);
+  background: var(--lum-dark);
+  color: #fff;
+  font-size: 12px;
+  font-weight: 500;
+  padding: 8px 14px;
+  border-radius: var(--lum-radius-btn);
+  white-space: nowrap;
+  opacity: 0;
+  pointer-events: none;
+  transition: all 0.2s;
+  z-index: 50;
+}
+[data-tooltip]::before {
+  content: "";
+  position: absolute;
+  bottom: calc(100% + 2px);
+  left: 50%;
+  transform: translateX(-50%);
+  border: 5px solid transparent;
+  border-top-color: var(--lum-dark);
+  opacity: 0;
+  transition: all 0.2s;
+  z-index: 50;
+}
+[data-tooltip]:hover::after,
+[data-tooltip]:hover::before {
+  opacity: 1;
+}
+[data-tooltip]:hover::after {
+  transform: translateX(-50%) translateY(0);
+}
+
+/* T3 — Hell (dunkler BG) */
+.lum-tooltip-light[data-tooltip]::after {
+  background: var(--lum-white);
+  color: var(--lum-text);
+  font-weight: 600;
+  box-shadow: 0 4px 16px rgba(0, 0, 0, 0.2);
+}
+.lum-tooltip-light[data-tooltip]::before {
+  border-top-color: var(--lum-white);
+}
+
+/* Text-Tooltip — gepunktete Unterstreichung für Inline-Text */
+[data-tooltip].lum-tooltip-text {
+  text-decoration: underline;
+  text-decoration-style: dotted;
+  text-decoration-color: var(--lum-lgray);
+  text-underline-offset: 3px;
+}
+
+/* Info-Icon — Fragezeichen-Kreis hinter Fachbegriffen */
+.lum-info-icon {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 16px;
+  height: 16px;
+  border-radius: 50%;
+  background: var(--lum-light);
+  color: var(--lum-gray);
+  font-size: 10px;
+  font-weight: 800;
+  vertical-align: middle;
+  margin-left: 4px;
+  line-height: 1;
+  font-family: var(--lum-font);
+  transition: all 0.2s;
+}
+.lum-info-icon:hover {
+  background: var(--lum-accent);
+  color: #fff;
+}
+
+/* Rich-Tooltip — Karten-Tooltip mit strukturiertem Inhalt */
+.lum-tooltip-card {
+  position: relative;
+}
+.lum-tooltip-card .lum-tooltip-content {
+  position: absolute;
+  bottom: calc(100% + 10px);
+  left: 50%;
+  transform: translateX(-50%) translateY(4px);
+  background: var(--lum-dark);
+  color: #fff;
+  padding: 16px 20px;
+  border-radius: var(--lum-radius-sm);
+  min-width: 260px;
+  max-width: 320px;
+  opacity: 0;
+  pointer-events: none;
+  transition: all 0.2s;
+  z-index: 50;
+  box-shadow: 0 8px 32px rgba(0, 0, 0, 0.25);
+}
+.lum-tooltip-card:hover .lum-tooltip-content {
+  opacity: 1;
+  transform: translateX(-50%) translateY(0);
+  pointer-events: auto;
+}
+.lum-tooltip-card .lum-tooltip-content::after {
+  content: "";
+  position: absolute;
+  top: 100%;
+  left: 50%;
+  transform: translateX(-50%);
+  border: 6px solid transparent;
+  border-top-color: var(--lum-dark);
+}
+
+/* ─────────────────────────────────────
+   §8  SUCHLEISTEN
+   ───────────────────────────────────── */
+.lum-search-wrap,
+.lum-search-dark-wrap,
+.lum-search-minimal-wrap {
+  position: relative;
+  max-width: 480px;
+}
+
+.lum-search-wrap svg,
+.lum-search-dark-wrap svg,
+.lum-search-minimal-wrap svg {
+  position: absolute;
+  left: 14px;
+  top: 50%;
+  transform: translateY(-50%);
+  width: 18px;
+  height: 18px;
+  fill: var(--lum-text-soft);
+  pointer-events: none;
+  transition: fill 0.2s var(--lum-ease);
+}
+
+.lum-search-wrap:focus-within svg,
+.lum-search-dark-wrap:focus-within svg,
+.lum-search-minimal-wrap:focus-within svg {
+  fill: var(--lum-accent);
+}
+
+.lum-search,
+.lum-input,
+.lum-select,
+.lum-textarea {
+  --lum-field-border-color: var(--lum-border-muted);
+  --lum-field-bg: var(--lum-surface-card);
+  --lum-field-color: var(--lum-text-body);
+  --lum-field-placeholder: var(--lum-text-soft);
+  width: 100%;
+  border: 1px solid var(--lum-field-border-color);
+  border-radius: var(--lum-radius-btn);
+  background: var(--lum-field-bg);
+  color: var(--lum-field-color);
+  font-family: var(--lum-font);
+  font-size: var(--lum-font-size-body);
+  outline: none;
+  transition:
+    border-color var(--lum-transition-fast),
+    box-shadow var(--lum-transition-fast),
+    background-color var(--lum-transition-fast),
+    color var(--lum-transition-fast);
+}
+
+.lum-search::placeholder,
+.lum-input::placeholder,
+.lum-textarea::placeholder {
+  color: var(--lum-field-placeholder);
+}
+
+.lum-search:focus,
+.lum-input:focus,
+.lum-select:focus,
+.lum-textarea:focus {
+  border-color: var(--lum-accent);
+  box-shadow: var(--lum-focus-ring-accent);
+}
+
+.lum-search {
+  padding: 12px 14px 12px 42px;
+}
+
+.lum-search-dark {
+  width: 100%;
+  padding: 12px 14px 12px 42px;
+  border: 1px solid var(--lum-border-dark-strong);
+  border-radius: var(--lum-radius-btn);
+  background: var(--lum-surface-dark-weak);
+  color: var(--lum-text-inverse);
+  font-family: var(--lum-font);
+  font-size: var(--lum-font-size-body);
+  outline: none;
+  transition: var(--lum-transition);
+}
+
+.lum-search-dark::placeholder {
+  color: rgba(255, 255, 255, 0.3);
+}
+
+.lum-search-dark:focus {
+  border-color: var(--lum-accent);
+  background: var(--lum-surface-dark-strong);
+}
+
+.lum-search-dark-wrap svg {
+  fill: rgba(255, 255, 255, 0.3);
+}
+
+.lum-search-minimal {
+  width: 100%;
+  padding: 10px 4px 10px 32px;
+  border: none;
+  border-bottom: 2px solid var(--lum-border-subtle);
+  border-radius: 0;
+  background: transparent;
+  color: var(--lum-text-body);
+  font-family: var(--lum-font);
+  font-size: var(--lum-font-size-body-sm);
+  outline: none;
+  transition: var(--lum-transition);
+}
+
+.lum-search-minimal::placeholder {
+  color: var(--lum-text-soft);
+}
+
+.lum-search-minimal:focus {
+  border-bottom-color: var(--lum-accent);
+  box-shadow: none;
+}
+
+.lum-search-minimal-wrap svg {
+  left: 4px;
+  width: 16px;
+  height: 16px;
+}
+
+/* ─────────────────────────────────────
+   §9  FORMULARFELDER
+   ───────────────────────────────────── */
+.lum-input {
+  padding: 12px 16px;
+}
+
+.lum-input-error {
+  border-color: var(--lum-red);
+}
+
+.lum-input-error:focus {
+  border-color: var(--lum-red);
+  box-shadow: var(--lum-focus-ring-danger);
+}
+
+.lum-label {
+  display: block;
+  font-size: 12px;
+  font-weight: var(--lum-font-weight-semibold);
+  color: var(--lum-text-muted);
+  margin-bottom: 6px;
+}
+
+.lum-select {
+  padding: 12px 40px 12px 16px;
+  background: var(--lum-white)
+    url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='12' height='12' viewBox='0 0 24 24'%3E%3Cpath fill='%235A6B7D' d='M7 10l5 5 5-5z'/%3E%3C/svg%3E")
+    no-repeat right 14px center;
+  appearance: none;
+  cursor: pointer;
+}
+
+.lum-textarea {
+  padding: 12px 16px;
+  min-height: 100px;
+  resize: vertical;
+}
+
+/* Number input — native spinner arrows */
+.lum-input[type="number"] {
+  -moz-appearance: textfield;
+}
+.lum-input[type="number"]::-webkit-inner-spin-button,
+.lum-input[type="number"]::-webkit-outer-spin-button {
+  opacity: 1;
+  height: 28px;
+}
+
+/* Floating Label — Bevorzugte Formular-Variante
+   Wrapper um lum-input / lum-select / lum-textarea.
+   Spart vertikalen Platz, Label bleibt immer sichtbar.
+   Für neue Formulare immer lum-float-field verwenden. */
+.lum-float-field {
+  position: relative;
+}
+.lum-float-field .lum-input,
+.lum-float-field .lum-select {
+  padding: 16px;
+}
+.lum-float-field .lum-input:focus,
+.lum-float-field .lum-input:not(:placeholder-shown) {
+  padding: 22px 16px 10px;
+}
+.lum-float-field .lum-select {
+  padding: 22px 40px 10px 16px;
+}
+.lum-float-field .lum-textarea {
+  padding: 22px 16px 8px;
+  min-height: 110px;
+}
+
+.lum-float-field .lum-float-label {
+  position: absolute;
+  left: 16px;
+  top: 50%;
+  transform: translateY(-50%);
+  font-family: var(--lum-font);
+  font-size: var(--lum-font-size-body);
+  font-weight: var(--lum-font-weight-regular);
+  color: var(--lum-text-soft);
+  pointer-events: none;
+  transition: all 0.2s var(--lum-ease);
+  transform-origin: left center;
+  line-height: 1.4;
+}
+.lum-float-field .lum-textarea ~ .lum-float-label {
+  top: 16px;
+  transform: none;
+}
+
+/* Float up: focus or filled */
+.lum-float-field .lum-input:focus ~ .lum-float-label,
+.lum-float-field .lum-input:not(:placeholder-shown) ~ .lum-float-label,
+.lum-float-field .lum-textarea:focus ~ .lum-float-label,
+.lum-float-field .lum-textarea:not(:placeholder-shown) ~ .lum-float-label,
+.lum-float-field .lum-select:focus ~ .lum-float-label,
+.lum-float-field .lum-select ~ .lum-float-label {
+  top: 6px;
+  transform: none;
+  font-size: 10px;
+  font-weight: var(--lum-font-weight-regular);
+  letter-spacing: 0.2px;
+  color: var(--lum-text-soft);
+  line-height: 1;
+}
+
+/* Label tint on focus */
+.lum-float-field .lum-input:focus ~ .lum-float-label,
+.lum-float-field .lum-textarea:focus ~ .lum-float-label,
+.lum-float-field .lum-select:focus ~ .lum-float-label {
+  color: var(--lum-accent);
+}
+
+/* Error state */
+.lum-float-field .lum-input-error ~ .lum-float-label {
+  color: var(--lum-red) !important;
+}
+
+.lum-float-error {
+  font-size: 11px;
+  font-weight: var(--lum-font-weight-semibold);
+  color: var(--lum-red);
+  margin-top: 4px;
+  display: flex;
+  align-items: center;
+  gap: 4px;
+}
+
+/* Info-Icon inside floating label remains hoverable */
+.lum-float-field .lum-float-label .lum-info-icon {
+  pointer-events: auto;
+  width: 12px;
+  height: 12px;
+  margin-left: 3px;
+  font-size: 8px;
+  transform: translateY(-1px);
+}
+
+/* ─────────────────────────────────────
+   §10  CARDS
+   ───────────────────────────────────── */
+.lum-card,
+.lum-card-dark,
+.lum-card-gradient {
+  border-radius: var(--lum-radius-md);
+  padding: var(--lum-space-6);
+}
+
+.lum-card {
+  background: var(--lum-surface-card);
+  border: 1px solid var(--lum-border-subtle);
+  box-shadow: var(--lum-shadow);
+  transition: var(--lum-transition);
+}
+
+.lum-card:hover {
+  box-shadow: var(--lum-shadow);
+}
+
+.lum-card-dark {
+  background: var(--lum-surface-dark);
+  border: 1px solid var(--lum-border-dark);
+}
+
+.lum-card-gradient {
+  background: var(--lum-grad-card);
+  border: 1px solid var(--lum-border-subtle);
+}
+
+/* ─────────────────────────────────────
+   §11  BADGES & TAGS
+   ───────────────────────────────────── */
+.lum-badge {
+  --lum-badge-bg: var(--lum-surface-neutral-soft);
+  --lum-badge-color: var(--lum-text-muted);
+  display: inline-flex;
+  align-items: center;
+  gap: var(--lum-space-1);
+  padding: 4px 10px;
+  border-radius: var(--lum-radius-pill);
+  background: var(--lum-badge-bg);
+  color: var(--lum-badge-color);
+  font-size: var(--lum-font-size-overline);
+  font-weight: var(--lum-font-weight-bold);
+  line-height: 1;
+}
+
+.lum-badge-accent,
+.lum-badge-teal {
+  --lum-badge-bg: rgba(59, 146, 199, 0.1);
+  --lum-badge-color: var(--lum-accent);
+}
+
+.lum-badge-green {
+  --lum-badge-bg: rgba(34, 197, 94, 0.1);
+  --lum-badge-color: var(--lum-green);
+}
+
+.lum-badge-red {
+  --lum-badge-bg: rgba(239, 68, 68, 0.1);
+  --lum-badge-color: var(--lum-red);
+}
+
+.lum-badge-orange {
+  --lum-badge-bg: rgba(255, 77, 0, 0.1);
+  --lum-badge-color: var(--lum-orange);
+}
+
+.lum-badge-gray {
+  --lum-badge-bg: var(--lum-surface-neutral-soft);
+  --lum-badge-color: var(--lum-gray);
+}
+
+.lum-badge-primary {
+  --lum-badge-bg: rgba(21, 44, 62, 0.08);
+  --lum-badge-color: var(--lum-primary);
+}
+
+.lum-badge-dark-teal,
+.lum-badge-dark-accent {
+  --lum-badge-bg: var(--lum-surface-accent-soft-strong);
+  --lum-badge-color: var(--lum-accent);
+}
+
+.lum-badge-dark-green {
+  --lum-badge-bg: var(--lum-surface-success-soft-strong);
+  --lum-badge-color: var(--lum-color-green-400);
+}
+
+.lum-badge-dark-red {
+  --lum-badge-bg: var(--lum-surface-danger-soft-strong);
+  --lum-badge-color: var(--lum-color-red-400);
+}
+
+/* ─────────────────────────────────────
+   §12  ALERTS
+   ───────────────────────────────────── */
+.lum-alert {
+  --lum-alert-bg: var(--lum-surface-accent-soft);
+  --lum-alert-accent: var(--lum-accent);
+  display: flex;
+  align-items: flex-start;
+  gap: var(--lum-space-3);
+  padding: var(--lum-space-4) var(--lum-space-5);
+  border-radius: var(--lum-radius-sm);
+  border-left: 3px solid var(--lum-alert-accent);
+  background: var(--lum-alert-bg);
+  color: var(--lum-text-body);
+  font-size: var(--lum-font-size-body-sm);
+  line-height: 1.5;
+}
+
+.lum-alert-info {
+  --lum-alert-bg: var(--lum-surface-accent-soft);
+  --lum-alert-accent: var(--lum-accent);
+}
+
+.lum-alert-success {
+  --lum-alert-bg: var(--lum-surface-success-soft);
+  --lum-alert-accent: var(--lum-green);
+}
+
+.lum-alert-warning {
+  --lum-alert-bg: var(--lum-surface-warning-soft);
+  --lum-alert-accent: var(--lum-yellow);
+}
+
+.lum-alert-error {
+  --lum-alert-bg: var(--lum-surface-danger-soft);
+  --lum-alert-accent: var(--lum-red);
+}
+
+/* ─────────────────────────────────────
+   §13  TABELLEN — Ruhig, spaltenbasiert
+   Header: satte Farbfläche
+   Spaltengruppen: Textfarbe, nicht BG
+   ───────────────────────────────────── */
+.lum-table-wrap,
+.lum-table-dark-wrap {
+  overflow-x: auto;
+  border-radius: var(--lum-radius-md);
+}
+
+.lum-table-wrap {
+  border: 1px solid var(--lum-border-subtle);
+  background: var(--lum-surface-card);
+}
+
+.lum-table-dark-wrap {
+  border: 1px solid var(--lum-border-dark);
+  background: var(--lum-surface-dark);
+}
+
+.lum-table,
+.lum-table-dark {
+  --lum-table-header-bg: var(--lum-accent);
+  --lum-table-header-color: var(--lum-text-inverse);
+  --lum-table-cell-color: var(--lum-text-body);
+  --lum-table-cell-border: var(--lum-border-subtle);
+  --lum-table-row-hover: rgba(59, 146, 199, 0.04);
+  width: 100%;
+  border-collapse: collapse;
+  font-size: var(--lum-font-size-body-sm);
+  line-height: 1.5;
+}
+
+.lum-table-dark {
+  --lum-table-header-bg: rgba(59, 146, 199, 0.25);
+  --lum-table-header-color: rgba(255, 255, 255, 0.85);
+  --lum-table-cell-color: var(--lum-text-inverse-muted);
+  --lum-table-cell-border: var(--lum-border-dark);
+  --lum-table-row-hover: rgba(255, 255, 255, 0.03);
+}
+
+.lum-table th,
+.lum-table-dark th {
+  padding: 14px 20px;
+  font-weight: var(--lum-font-weight-bold);
+  font-size: var(--lum-font-size-caption);
+  color: var(--lum-table-header-color);
+  background: var(--lum-table-header-bg);
+  text-align: left;
+  border-bottom: none;
+  white-space: nowrap;
+}
+
+.lum-table td,
+.lum-table-dark td {
+  padding: 13px 20px;
+  border-bottom: 1px solid var(--lum-table-cell-border);
+  color: var(--lum-table-cell-color);
+  vertical-align: middle;
+}
+
+.lum-table tbody tr:last-child td,
+.lum-table-dark tbody tr:last-child td {
+  border-bottom: none;
+}
+
+.lum-table tbody tr:hover,
+.lum-table-dark tbody tr:hover {
+  background: var(--lum-table-row-hover);
+}
+
+.lum-table td.lum-col-group-a,
+.lum-table-dark td.lum-col-group-a {
+  color: var(--lum-accent);
+}
+
+.lum-table td.lum-col-group-b {
+  color: var(--lum-primary);
+  font-weight: var(--lum-font-weight-semibold);
+}
+
+.lum-table td.lum-col-group-c {
+  color: var(--lum-accent);
+}
+
+.lum-table-dark td.lum-col-group-b {
+  color: rgba(255, 255, 255, 0.85);
+  font-weight: var(--lum-font-weight-semibold);
+}
+
+.lum-table th.lum-col-group-a {
+  background: var(--lum-accent);
+}
+
+.lum-table th.lum-col-group-b {
+  background: var(--lum-primary);
+}
+
+.lum-table th.lum-col-group-c {
+  background: var(--lum-accent);
+}
+
+.lum-table-dark th.lum-col-group-a {
+  background: rgba(59, 146, 199, 0.3);
+}
+
+.lum-table-dark th.lum-col-group-b {
+  background: rgba(255, 255, 255, 0.08);
+  color: rgba(255, 255, 255, 0.7);
+}
+
+.lum-table-compact th {
+  padding: 10px 14px;
+  font-size: var(--lum-font-size-overline);
+}
+
+.lum-table-compact td {
+  padding: 9px 14px;
+  font-size: var(--lum-font-size-caption);
+}
+
+/* ─────────────────────────────────────
+   §14  CHARTS — CSS-basierte Balkendiagramme
+   ───────────────────────────────────── */
+.lum-chart {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+.lum-chart-bar-row {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  font-size: 13px;
+}
+.lum-chart-label {
+  width: 100px;
+  flex-shrink: 0;
+  text-align: right;
+  font-weight: 600;
+  color: var(--lum-gray);
+  font-size: 12px;
+}
+.lum-chart-track {
+  flex: 1;
+  height: 28px;
+  background: var(--lum-light);
+  border-radius: var(--lum-radius-btn);
+  overflow: hidden;
+  position: relative;
+}
+.lum-chart-fill {
+  --lum-chart-fill-bg: var(--lum-grad-accent);
+  height: 100%;
+  border-radius: var(--lum-radius-btn);
+  transition: width 0.8s var(--lum-ease);
+  display: flex;
+  align-items: center;
+  padding: 0 10px;
+  font-size: 11px;
+  font-weight: 700;
+  color: #fff;
+  white-space: nowrap;
+  background: var(--lum-chart-fill-bg);
+}
+.lum-chart-fill-primary {
+  --lum-chart-fill-bg: var(--lum-grad-primary);
+}
+.lum-chart-fill-accent,
+.lum-chart-fill-teal {
+  --lum-chart-fill-bg: var(--lum-grad-accent);
+}
+.lum-chart-fill-green {
+  --lum-chart-fill-bg: linear-gradient(
+    135deg,
+    var(--lum-green) 0%,
+    var(--lum-color-green-400) 100%
+  );
+}
+
+.lum-chart-dark .lum-chart-label {
+  color: rgba(255, 255, 255, 0.5);
+}
+
+.lum-chart-dark .lum-chart-track {
+  background: var(--lum-surface-dark-weak);
+}
+
+/* Mini-Sparkline-Bar */
+.lum-sparkbar {
+  display: inline-flex;
+  align-items: flex-end;
+  gap: 2px;
+  height: 24px;
+}
+.lum-sparkbar-col {
+  width: 4px;
+  border-radius: 2px;
+  background: var(--lum-accent);
+  transition: height 0.3s var(--lum-ease);
+}
+
+/* Donut / Ring via SVG Utility */
+.lum-donut {
+  position: relative;
+  display: inline-flex;
+}
+.lum-donut svg {
+  transform: rotate(-90deg);
+}
+.lum-donut-label {
+  position: absolute;
+  inset: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 16px;
+  font-weight: 800;
+  color: var(--lum-dark);
+}
+
+/* Vertikale Säulen */
+.lum-chart-cols {
+  display: flex;
+  align-items: flex-end;
+  gap: 8px;
+  height: 120px;
+  padding: 0 4px;
+}
+.lum-chart-col {
+  flex: 1;
+  border-radius: 4px 4px 0 0;
+  background: var(--lum-grad-accent);
+  transition: height 0.6s var(--lum-ease);
+  position: relative;
+  min-width: 20px;
+}
+.lum-chart-col-label {
+  position: absolute;
+  bottom: -22px;
+  left: 50%;
+  transform: translateX(-50%);
+  font-size: 10px;
+  color: var(--lum-gray);
+  white-space: nowrap;
+}
+.lum-chart-col-val {
+  position: absolute;
+  top: -18px;
+  left: 50%;
+  transform: translateX(-50%);
+  font-size: 10px;
+  font-weight: 700;
+  color: var(--lum-dark);
+  white-space: nowrap;
+}
+.lum-chart-col.lum-col-teal {
+  background: var(--lum-grad-teal);
+}
+.lum-chart-col.lum-col-primary {
+  background: var(--lum-grad-primary);
+}
+.lum-chart-col.lum-col-green {
+  background: linear-gradient(
+    180deg,
+    var(--lum-color-green-400) 0%,
+    var(--lum-green) 100%
+  );
+}
+
+/* ─────────────────────────────────────
+   §15  STAT-CARDS
+   ───────────────────────────────────── */
+.lum-stat-card {
+  display: flex;
+  flex-direction: column;
+  gap: var(--lum-space-1);
+  padding: var(--lum-space-5);
+  background: var(--lum-surface-card);
+  border: 1px solid var(--lum-border-subtle);
+  border-radius: var(--lum-radius-md);
+}
+.lum-stat-card-label {
+  font-size: var(--lum-font-size-overline);
+  font-weight: var(--lum-font-weight-bold);
+  letter-spacing: 0.8px;
+  text-transform: uppercase;
+  color: var(--lum-text-muted);
+}
+.lum-stat-card-value {
+  font-size: 28px;
+  font-weight: var(--lum-font-weight-heavy);
+  color: var(--lum-text-strong);
+  line-height: 1.1;
+}
+.lum-stat-card-sub {
+  font-size: var(--lum-font-size-caption);
+  color: var(--lum-text-muted);
+  display: flex;
+  align-items: center;
+  gap: var(--lum-space-1);
+}
+.lum-stat-card-up {
+  color: var(--lum-green);
+  font-weight: var(--lum-font-weight-bold);
+}
+.lum-stat-card-down {
+  color: var(--lum-red);
+  font-weight: var(--lum-font-weight-bold);
+}
+
+/* ─────────────────────────────────────
+   §16  AVATAR
+   ───────────────────────────────────── */
+.lum-avatar {
+  --lum-avatar-size: 36px;
+  --lum-avatar-font-size: 12px;
+  --lum-avatar-bg: var(--lum-primary);
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: var(--lum-avatar-size);
+  height: var(--lum-avatar-size);
+  border-radius: 50%;
+  background: var(--lum-avatar-bg);
+  color: var(--lum-text-inverse);
+  font-size: var(--lum-avatar-font-size);
+  font-weight: var(--lum-font-weight-bold);
+  flex-shrink: 0;
+  text-transform: uppercase;
+}
+.lum-avatar-sm {
+  --lum-avatar-size: 28px;
+  --lum-avatar-font-size: 10px;
+}
+.lum-avatar-md {
+  --lum-avatar-size: 36px;
+  --lum-avatar-font-size: 12px;
+}
+.lum-avatar-lg {
+  --lum-avatar-size: 48px;
+  --lum-avatar-font-size: 16px;
+}
+.lum-avatar-primary {
+  --lum-avatar-bg: var(--lum-primary);
+}
+.lum-avatar-accent,
+.lum-avatar-teal {
+  --lum-avatar-bg: var(--lum-accent);
+}
+
+/* ─────────────────────────────────────
+   §17  DIVIDER
+   ───────────────────────────────────── */
+.lum-divider,
+.lum-divider-dark {
+  --lum-divider-color: var(--lum-border-subtle);
+  height: 1px;
+  margin: var(--lum-space-12) 0;
+  background: var(--lum-divider-color);
+}
+
+.lum-divider-dark {
+  --lum-divider-color: rgba(255, 255, 255, 0.08);
+}
+
+/* ─────────────────────────────────────
+   §18  CODE-BLÖCKE
+   ───────────────────────────────────── */
+.lum-code {
+  background: rgba(21, 44, 62, 0.07);
+  padding: 2px 7px;
+  border-radius: var(--lum-radius-xs);
+  font-size: var(--lum-font-size-caption);
+  font-family: var(--lum-font-mono);
+}
+.lum-code-block {
+  display: block;
+  padding: var(--lum-space-5);
+  border-radius: var(--lum-radius-sm);
+  background: var(--lum-surface-dark);
+  color: rgba(255, 255, 255, 0.85);
+  font-family: var(--lum-font-mono);
+  font-size: var(--lum-font-size-caption);
+  line-height: 1.5;
+  overflow-x: auto;
+  white-space: pre;
+}
+.lum-code-block .lum-code-comment {
+  color: rgba(255, 255, 255, 0.3);
+}
+.lum-code-block .lum-code-string {
+  color: #4ade80;
+}
+.lum-code-block .lum-code-keyword {
+  color: var(--lum-accent);
+}
+.lum-code-block .lum-code-value {
+  color: #f59e0b;
+}
+
+/* ─────────────────────────────────────
+   §19  DARK-BG CONTAINER
+   ───────────────────────────────────── */
+.lum-dark-bg,
+.lum-dark-bg-gradient,
+.lum-hero-bg {
+  position: relative;
+  overflow: hidden;
+}
+
+.lum-dark-bg,
+.lum-dark-bg-gradient {
+  border-radius: var(--lum-radius-md);
+  padding: var(--lum-space-7);
+}
+
+.lum-dark-bg {
+  background: var(--lum-surface-dark);
+}
+
+.lum-dark-bg-gradient {
+  background: var(--lum-grad-dark);
+}
+
+.lum-hero-bg {
+  background: var(--lum-grad-hero);
+  border-radius: var(--lum-radius-lg);
+  padding: var(--lum-space-12);
+  position: relative;
+  overflow: hidden;
+}
+.lum-hero-bg::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background: var(--lum-grad-glow);
+  pointer-events: none;
+}
+
+/* ─────────────────────────────────────
+   §20  PROGRESS-BAR
+   ───────────────────────────────────── */
+.lum-progress {
+  width: 100%;
+  height: 8px;
+  background: var(--lum-border-subtle);
+  border-radius: var(--lum-radius-xs);
+  overflow: hidden;
+}
+.lum-progress-fill {
+  --lum-progress-fill-bg: var(--lum-grad-accent);
+  height: 100%;
+  border-radius: var(--lum-radius-xs);
+  background: var(--lum-progress-fill-bg);
+  transition: width 0.6s var(--lum-ease);
+}
+
+.lum-progress-accent,
+.lum-progress-teal {
+  --lum-progress-fill-bg: var(--lum-grad-accent);
+}
+
+.lum-progress-green {
+  --lum-progress-fill-bg: linear-gradient(
+    90deg,
+    var(--lum-green),
+    var(--lum-color-green-400)
+  );
+}
+
+/* ─────────────────────────────────────
+   §21  UTILITY
+   ───────────────────────────────────── */
+/* Gap */
+.lum-gap-10 {
+  gap: 10px;
+}
+
+/* Margin */
+.lum-mb-4 {
+  margin-bottom: 4px;
+}
+
+/* Table alignment */
+.lum-table td.r,
+.lum-table th.r,
+.lum-table-dark td.r,
+.lum-table-dark th.r {
+  text-align: right;
+}
+
+.lum-flex {
+  display: flex;
+}
+.lum-flex-center {
+  display: flex;
+  align-items: center;
+}
+.lum-flex-between {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+.lum-flex-col {
+  display: flex;
+  flex-direction: column;
+}
+.lum-flex-wrap {
+  flex-wrap: wrap;
+}
+.lum-gap-4 {
+  gap: 4px;
+}
+.lum-gap-8 {
+  gap: 8px;
+}
+.lum-gap-12 {
+  gap: 12px;
+}
+.lum-gap-16 {
+  gap: 16px;
+}
+.lum-gap-24 {
+  gap: 24px;
+}
+.lum-gap-32 {
+  gap: 32px;
+}
+.lum-grid-2 {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 24px;
+}
+.lum-grid-3 {
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr;
+  gap: 24px;
+}
+.lum-grid-4 {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 24px;
+}
+.lum-mt-8 {
+  margin-top: 8px;
+}
+.lum-mt-16 {
+  margin-top: 16px;
+}
+.lum-mt-24 {
+  margin-top: 24px;
+}
+.lum-mt-32 {
+  margin-top: 32px;
+}
+.lum-mb-8 {
+  margin-bottom: 8px;
+}
+.lum-mb-16 {
+  margin-bottom: 16px;
+}
+.lum-text-right {
+  text-align: right;
+}
+.lum-text-center {
+  text-align: center;
+}
+.lum-nowrap {
+  white-space: nowrap;
+}
+.lum-truncate {
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+.lum-w-full {
+  width: 100%;
+}
+.lum-max-w-sm {
+  max-width: 320px;
+}
+.lum-max-w-md {
+  max-width: 480px;
+}
+.lum-max-w-lg {
+  max-width: 640px;
+}
+.lum-max-w-xl {
+  max-width: 960px;
+}
+
+/* ─────────────────────────────────────
+   §22  MODAL / DIALOG
+   ───────────────────────────────────── */
+.lum-modal-backdrop {
+  position: fixed;
+  inset: 0;
+  background: rgba(28, 37, 48, 0.5);
+  backdrop-filter: blur(4px);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  z-index: 1000;
+  opacity: 0;
+  pointer-events: none;
+  transition: opacity 0.2s;
+}
+.lum-modal-backdrop.open {
+  opacity: 1;
+  pointer-events: auto;
+}
+.lum-modal {
+  background: var(--lum-white);
+  border-radius: var(--lum-radius-lg);
+  padding: 32px;
+  max-width: 480px;
+  width: 90%;
+  box-shadow: 0 16px 48px rgba(28, 37, 48, 0.2);
+  transform: translateY(8px) scale(0.98);
+  transition: transform 0.25s;
+}
+.lum-modal-backdrop.open .lum-modal {
+  transform: translateY(0) scale(1);
+}
+.lum-modal-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+  margin-bottom: 16px;
+}
+.lum-modal-title {
+  font-size: 18px;
+  font-weight: 800;
+  color: var(--lum-dark);
+}
+.lum-modal-close {
+  width: 32px;
+  height: 32px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border: none;
+  background: none;
+  color: var(--lum-gray);
+  cursor: pointer;
+  border-radius: var(--lum-radius-sm);
+  transition: all 0.15s;
+}
+.lum-modal-close:hover {
+  background: var(--lum-light);
+  color: var(--lum-primary);
+}
+.lum-modal-body {
+  font-size: 14px;
+  color: var(--lum-gray);
+  line-height: 1.5;
+  margin-bottom: 24px;
+}
+.lum-modal-footer {
+  display: flex;
+  gap: 8px;
+  justify-content: flex-end;
+}
+
+/* ─────────────────────────────────────
+   §23  BREADCRUMBS
+   ───────────────────────────────────── */
+.lum-breadcrumbs {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  font-size: var(--lum-font-size-body-sm);
+}
+.lum-breadcrumbs a {
+  color: var(--lum-text-muted);
+  text-decoration: none;
+  transition: color var(--lum-transition-fast);
+}
+.lum-breadcrumbs a:hover {
+  color: var(--lum-accent);
+  text-decoration: underline;
+}
+.lum-breadcrumbs .current {
+  color: var(--lum-text-strong);
+  font-weight: var(--lum-font-weight-semibold);
+}
+.lum-breadcrumbs .sep {
+  color: var(--lum-text-soft);
+  font-size: var(--lum-font-size-overline);
+}
+
+/* ─────────────────────────────────────
+   §24  PAGINATION
+   ───────────────────────────────────── */
+.lum-pagination {
+  display: flex;
+  align-items: center;
+  gap: var(--lum-space-1);
+}
+.lum-page {
+  --lum-page-bg: transparent;
+  --lum-page-color: var(--lum-text-muted);
+  --lum-page-border: transparent;
+  --lum-page-hover-bg: var(--lum-border-subtle);
+  --lum-page-hover-color: var(--lum-primary);
+  width: 36px;
+  height: 36px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: var(--lum-radius-btn);
+  background: var(--lum-page-bg);
+  color: var(--lum-page-color);
+  border: 1px solid var(--lum-page-border);
+  font-size: var(--lum-font-size-body-sm);
+  font-weight: var(--lum-font-weight-semibold);
+  cursor: pointer;
+  transition: var(--lum-transition-fast);
+  font-family: inherit;
+}
+.lum-page:hover {
+  background: var(--lum-page-hover-bg);
+  color: var(--lum-page-hover-color);
+}
+.lum-page.active {
+  --lum-page-bg: var(--lum-accent);
+  --lum-page-color: var(--lum-text-inverse);
+  --lum-page-border: var(--lum-accent);
+  background: var(--lum-page-bg);
+  color: var(--lum-page-color);
+  border-color: var(--lum-page-border);
+}
+.lum-page.disabled {
+  color: var(--lum-text-soft);
+  cursor: default;
+  pointer-events: none;
+}
+.lum-page-dots {
+  width: 36px;
+  height: 36px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: var(--lum-text-soft);
+  font-size: 14px;
+  letter-spacing: 2px;
+}
+
+/* ─────────────────────────────────────
+   §25  SKELETON / LOADING PLACEHOLDER
+   ───────────────────────────────────── */
+.lum-skeleton {
+  background: linear-gradient(
+    90deg,
+    var(--lum-light) 25%,
+    #eff1f3 37%,
+    var(--lum-light) 63%
+  );
+  background-size: 400% 100%;
+  animation: lum-shimmer 1.4s ease infinite;
+  border-radius: var(--lum-radius-btn);
+}
+.lum-skeleton-text {
+  height: 14px;
+  margin-bottom: 8px;
+  width: 100%;
+}
+.lum-skeleton-text:last-child {
+  width: 60%;
+}
+.lum-skeleton-heading {
+  height: 24px;
+  width: 40%;
+  margin-bottom: 16px;
+}
+.lum-skeleton-avatar {
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+}
+.lum-skeleton-card {
+  height: 160px;
+  border-radius: var(--lum-radius-md);
+}
+@keyframes lum-shimmer {
+  0% {
+    background-position: 100% 0;
+  }
+  100% {
+    background-position: -100% 0;
+  }
+}
+
+/* ─────────────────────────────────────
+   §26  TABS
+   ───────────────────────────────────── */
+.lum-tab {
+  --lum-tab-color: var(--lum-text-muted);
+  --lum-tab-hover-color: var(--lum-primary);
+  --lum-tab-active-color: var(--lum-accent);
+  padding: 12px 20px;
+  font-size: var(--lum-font-size-body-sm);
+  font-weight: var(--lum-font-weight-semibold);
+  color: var(--lum-tab-color);
+  cursor: pointer;
+  border: none;
+  border-bottom: 2px solid transparent;
+  margin-bottom: -2px;
+  transition: var(--lum-transition);
+  background: none;
+  font-family: inherit;
+}
+
+.lum-tabs,
+.lum-tabs-dark {
+  display: flex;
+  gap: 0;
+  border-bottom: 2px solid var(--lum-tabs-border, var(--lum-border-subtle));
+}
+
+.lum-tab:hover {
+  color: var(--lum-tab-hover-color);
+}
+
+.lum-tab.active {
+  color: var(--lum-tab-active-color);
+  border-bottom-color: var(--lum-tab-active-color);
+}
+.lum-tab-panel {
+  padding: 20px 0;
+  display: none;
+}
+.lum-tab-panel.active {
+  display: block;
+}
+
+.lum-tabs-dark {
+  --lum-tabs-border: rgba(255, 255, 255, 0.1);
+}
+.lum-tabs-dark .lum-tab {
+  --lum-tab-color: rgba(255, 255, 255, 0.4);
+  --lum-tab-hover-color: rgba(255, 255, 255, 0.7);
+}
+.lum-tabs-seg {
+  --lum-tabs-seg-bg: var(--lum-light);
+  display: flex;
+  gap: var(--lum-space-1);
+  background: var(--lum-tabs-seg-bg);
+  padding: 4px;
+  border-radius: var(--lum-radius-btn);
+}
+.lum-tab-seg {
+  --lum-tab-seg-bg: transparent;
+  --lum-tab-seg-color: var(--lum-text-muted);
+  --lum-tab-seg-hover-color: var(--lum-primary);
+  --lum-tab-seg-active-bg: var(--lum-white);
+  --lum-tab-seg-active-color: var(--lum-primary);
+  --lum-tab-seg-active-shadow: var(--lum-shadow);
+  padding: 8px 18px;
+  font-size: var(--lum-font-size-body-sm);
+  font-weight: var(--lum-font-weight-semibold);
+  color: var(--lum-tab-seg-color);
+  cursor: pointer;
+  border: none;
+  border-radius: calc(var(--lum-radius-btn) - 2px);
+  transition: var(--lum-transition);
+  background: var(--lum-tab-seg-bg);
+  font-family: inherit;
+}
+.lum-tab-seg:hover {
+  color: var(--lum-tab-seg-hover-color);
+}
+.lum-tab-seg.active {
+  background: var(--lum-tab-seg-active-bg);
+  color: var(--lum-tab-seg-active-color);
+  box-shadow: var(--lum-tab-seg-active-shadow);
+}
+
+.lum-tabs-seg-dark {
+  --lum-tabs-seg-bg: var(--lum-surface-dark-weak);
+}
+.lum-tabs-seg-dark .lum-tab-seg {
+  --lum-tab-seg-color: rgba(255, 255, 255, 0.4);
+  --lum-tab-seg-hover-color: rgba(255, 255, 255, 0.7);
+  --lum-tab-seg-active-bg: rgba(255, 255, 255, 0.1);
+  --lum-tab-seg-active-color: var(--lum-text-inverse);
+  --lum-tab-seg-active-shadow: none;
+}
+
+/* ─────────────────────────────────────
+   §27  LOADER – LUMITRONIX Sonne
+   ───────────────────────────────────── */
+.lum-loader {
+  display: inline-flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 12px;
+}
+.lum-loader-sun {
+  width: 40px;
+  height: 40px;
+}
+.lum-loader-sm .lum-loader-sun {
+  width: 24px;
+  height: 24px;
+}
+.lum-loader-lg .lum-loader-sun {
+  width: 64px;
+  height: 64px;
+}
+.lum-loader-sun path {
+  animation: lum-ray-dim 2s ease-in-out infinite;
+}
+.lum-loader-sun .r0 {
+  animation-delay: 0s;
+}
+.lum-loader-sun .r1 {
+  animation-delay: 0.2s;
+}
+.lum-loader-sun .r2 {
+  animation-delay: 0.4s;
+}
+.lum-loader-sun .r3 {
+  animation-delay: 0.6s;
+}
+.lum-loader-sun .r4 {
+  animation-delay: 0.8s;
+}
+.lum-loader-sun .r5 {
+  animation-delay: 1s;
+}
+.lum-loader-sun .r6 {
+  animation-delay: 1.2s;
+}
+.lum-loader-sun .r7 {
+  animation-delay: 1.4s;
+}
+.lum-loader-sun .r8 {
+  animation-delay: 1.6s;
+}
+.lum-loader-sun .r9 {
+  animation-delay: 1.8s;
+}
+@keyframes lum-ray-dim {
+  0%,
+  100% {
+    opacity: 1;
+  }
+  15% {
+    opacity: 0.1;
+  }
+  30% {
+    opacity: 1;
+  }
+}
+
+.lum-loader-text {
+  font-size: 12px;
+  font-weight: 600;
+  color: var(--lum-gray);
+  letter-spacing: 0.3px;
+}
+.lum-loader-inline {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  flex-direction: row;
+}
+.lum-loader-inline .lum-loader-sun {
+  width: 18px;
+  height: 18px;
+}
+.lum-loader-inline .lum-loader-text {
+  font-size: 13px;
+}
+
+/* ─────────────────────────────────────
+   §28  NAVIGATION – Submenüs, Sidebar, Filterlisten
+   ───────────────────────────────────── */
+.lum-nav-h {
+  display: flex;
+  gap: var(--lum-space-1);
+  padding: 4px 0;
+}
+
+.lum-nav-h a,
+.lum-nav-h button,
+.lum-nav-v a,
+.lum-nav-v button {
+  padding: 8px 16px;
+  font-size: var(--lum-font-size-body-sm);
+  font-weight: var(--lum-font-weight-semibold);
+  color: var(--lum-text-muted);
+  text-decoration: none;
+  border: none;
+  background: none;
+  border-radius: var(--lum-radius-btn);
+  cursor: pointer;
+  font-family: inherit;
+  transition: var(--lum-transition-fast);
+  white-space: nowrap;
+}
+
+.lum-nav-h a:hover,
+.lum-nav-h button:hover {
+  background: var(--lum-light);
+  color: var(--lum-primary);
+}
+.lum-nav-h .active {
+  background: var(--lum-accent);
+  color: var(--lum-text-inverse);
+}
+
+.lum-nav-v {
+  display: flex;
+  flex-direction: column;
+  gap: 2px;
+}
+
+.lum-nav-v a,
+.lum-nav-v button {
+  padding: 10px 14px;
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  text-align: left;
+  font-weight: var(--lum-font-weight-medium);
+}
+.lum-nav-v a:hover,
+.lum-nav-v button:hover {
+  background: var(--lum-light);
+  color: var(--lum-primary);
+}
+.lum-nav-v .active {
+  background: rgba(59, 146, 199, 0.08);
+  color: var(--lum-accent);
+  font-weight: var(--lum-font-weight-semibold);
+}
+.lum-nav-v .active::before {
+  content: "";
+  width: 3px;
+  height: 20px;
+  background: var(--lum-accent);
+  border-radius: 2px;
+  flex-shrink: 0;
+  margin-left: -14px;
+  margin-right: 4px;
+}
+
+.lum-nav-v-dark a,
+.lum-nav-v-dark button {
+  color: rgba(255, 255, 255, 0.4);
+}
+.lum-nav-v-dark a:hover,
+.lum-nav-v-dark button:hover {
+  background: rgba(255, 255, 255, 0.06);
+  color: rgba(255, 255, 255, 0.8);
+}
+.lum-nav-v-dark .active {
+  background: rgba(59, 146, 199, 0.1);
+  color: var(--lum-accent);
+}
+.lum-nav-v-dark .active::before {
+  background: var(--lum-accent);
+}
+
+.lum-filter-list {
+  display: flex;
+  flex-direction: column;
+}
+.lum-filter-item {
+  padding: 10px 12px;
+  font-size: var(--lum-font-size-body-sm);
+  color: var(--lum-text-body);
+  border-bottom: 1px solid var(--lum-border-subtle);
+  cursor: pointer;
+  transition: background var(--lum-transition-fast);
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+.lum-filter-item:last-child {
+  border-bottom: none;
+}
+.lum-filter-item:hover {
+  background: rgba(59, 146, 199, 0.04);
+}
+.lum-filter-item.active {
+  color: var(--lum-accent);
+  font-weight: var(--lum-font-weight-semibold);
+  background: rgba(59, 146, 199, 0.06);
+}
+
+/* Filterliste mit Avataren (Sidebar-Kontaktliste) */
+.lum-filter-item .lum-avatar {
+  width: 28px;
+  height: 28px;
+  font-size: 10px;
+}
+
+/* ─────────────────────────────────────
+   §29  RESPONSIVE
+   ───────────────────────────────────── */
+@media (max-width: 768px) {
+  .lum-grid-2,
+  .lum-grid-3,
+  .lum-grid-4 {
+    grid-template-columns: 1fr;
+  }
+  .lum-display {
+    font-size: 32px;
+  }
+  .lum-h1 {
+    font-size: 24px;
+  }
+  .lum-h2 {
+    font-size: 20px;
+  }
+}
+
+/* ─────────────────────────────────────
+   §30  V2 COMPATIBILITY LAYER
+   Bestehende `lum-*`-Klassen bleiben erhalten.
+   Diese Schicht zentralisiert Demo-Styles und
+   behebt offensichtliche Konsistenzprobleme.
+   ───────────────────────────────────── */
+:root {
+  --lum-brand-deep: #152c3e;
+  --lum-space-20: 20px;
+  --lum-space-28: 28px;
+  --lum-space-32: 32px;
+  --lum-space-36: 36px;
+  --lum-space-40: 40px;
+  --lum-space-56: 56px;
+  --lum-card-dark-border: rgba(255, 255, 255, 0.06);
+  --lum-card-dark-bg: rgba(255, 255, 255, 0.04);
+}
+
+.lum-btn-sm {
+  padding: 7px 16px;
+  font-size: 12px;
+}
+.lum-btn-lg {
+  padding: 14px 28px;
+  font-size: 15px;
+}
+.lum-btn-teal {
+  background: var(--lum-teal);
+}
+.lum-btn-teal:hover {
+  background: #2874a0;
+}
