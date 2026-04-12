@@ -61,8 +61,8 @@
     #1d3c56 65%,
     #244b6a 100%
   );
-  --lum-grad-subtle: linear-gradient(180deg, #f2f3f4 0%, #e4e8ec 100%);
-  --lum-grad-card: linear-gradient(180deg, #ffffff 0%, #f8f9fa 100%);
+  --lum-grad-subtle: #f2f3f4;
+  --lum-grad-card: #ffffff;
   --lum-grad-glow: radial-gradient(
     ellipse at 30% 20%,
     rgba(59, 146, 199, 0.15) 0%,
@@ -943,7 +943,7 @@ a:not([class]):hover {
   padding: 24px;
 }
 .lum-card-gradient {
-  background: var(--lum-grad-card);
+  background: var(--lum-white);
   border: 1px solid var(--lum-light);
   border-radius: var(--lum-radius-md);
   padding: 24px;
@@ -1992,6 +1992,8 @@ a:not([class]):hover {
   display: flex;
   gap: 4px;
   padding: 4px 0;
+  flex-wrap: wrap;
+  row-gap: 8px;
 }
 .lum-nav-h a,
 .lum-nav-h button {
@@ -2090,12 +2092,17 @@ a:not([class]):hover {
   padding: 10px 12px;
   font-size: 13px;
   color: var(--lum-text);
+  border: none;
   border-bottom: 1px solid var(--lum-light);
   cursor: pointer;
   transition: background 0.15s;
   display: flex;
   align-items: center;
   gap: 10px;
+  width: 100%;
+  background: transparent;
+  text-align: left;
+  font-family: inherit;
 }
 .lum-filter-item:last-child {
   border-bottom: none;
