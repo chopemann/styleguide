@@ -968,6 +968,627 @@ V4-Demo zeigt nur Komponenten, die ohne Zusatz-CSS direkt nutzbar sind.</textare
       </section>
 
       <section
+        id="vollabdeckung"
+        class="lum-card lum-flex lum-flex-col lum-gap-32 lum-max-w-xl"
+      >
+        <div class="lum-flex-between lum-gap-24">
+          <div class="lum-max-w-md">
+            <p class="lum-overline lum-mb-4">Vollabdeckung</p>
+            <h1 class="lum-h1 lum-mt-16">
+              Alle übrigen `lum-*` Klassen ohne Zusatz-CSS
+            </h1>
+            <p class="lum-caption lum-mt-16 lum-mb-16">
+              Dieser Bereich ergänzt die reine Basisdemo um die restlichen
+              Bestandsklassen, damit die HTML-Datei die komplette `lum-*` API
+              referenziert.
+            </p>
+          </div>
+          <div class="lum-text-right">
+            <div class="lum-stat">218</div>
+            <p class="lum-body-sm lum-nowrap">
+              Ziel: vollständige Klassenabdeckung
+            </p>
+          </div>
+        </div>
+
+        <div class="lum-grid-2">
+          <article class="lum-card-gradient lum-flex lum-flex-col lum-gap-24">
+            <div class="lum-flex-between lum-gap-16">
+              <div>
+                <h3 class="lum-h3">Light API Ergänzungen</h3>
+                <p class="lum-caption lum-mt-8">
+                  Utilities, kompakte Suche, Progress und zusätzliche States.
+                </p>
+              </div>
+              <span class="lum-avatar lum-avatar-lg lum-avatar-primary"
+                >V4</span
+              >
+            </div>
+
+            <div class="lum-flex lum-flex-wrap lum-gap-12">
+              <button class="lum-btn lum-btn-lg lum-btn-primary" type="button">
+                Große Primäraktion
+              </button>
+              <button class="lum-btn lum-btn-lg lum-btn-accent" type="button">
+                Große Accent-Aktion
+              </button>
+              <span class="lum-badge lum-badge-teal">Teal Badge</span>
+            </div>
+
+            <div class="lum-max-w-sm">
+              <p class="lum-body lum-mb-4">
+                Inline-Code mit
+                <code class="lum-code">lum-code</code>
+                und Truncation-Demo.
+              </p>
+              <p class="lum-body-sm lum-truncate">
+                Diese Zeile ist absichtlich länger formuliert, damit
+                `lum-truncate` auf einer schmaleren Maximalbreite sichtbar
+                arbeitet.
+              </p>
+            </div>
+
+            <div class="lum-flex lum-flex-col lum-gap-10 lum-max-w-md">
+              <label class="lum-label" for="minimal-search"
+                >Minimale Suche</label
+              >
+              <div class="lum-search-minimal-wrap">
+                <svg viewBox="0 0 24 24" aria-hidden="true">
+                  <path
+                    d="M15.843 17.368a8 8 0 1 1 1.428-1.4l4.427 4.316a1 1 0 1 1-1.396 1.432zM17 11a6 6 0 1 0-12 0a6 6 0 0 0 12 0"
+                  />
+                </svg>
+                <input
+                  id="minimal-search"
+                  class="lum-search-minimal"
+                  type="search"
+                  placeholder="Minimale Suche ohne Zusatz-CSS"
+                />
+              </div>
+            </div>
+
+            <div class="lum-flex lum-flex-col lum-gap-8">
+              <div class="lum-progress">
+                <div class="lum-progress-fill lum-progress-accent"></div>
+              </div>
+              <div class="lum-progress">
+                <div class="lum-progress-fill lum-progress-teal"></div>
+              </div>
+              <div class="lum-progress">
+                <div class="lum-progress-fill lum-progress-green"></div>
+              </div>
+            </div>
+
+            <div class="lum-flex lum-flex-wrap lum-gap-24">
+              <div class="lum-text-center">
+                <span class="lum-icon lum-icon-xs lum-icon-primary">
+                  <svg viewBox="0 0 24 24" aria-hidden="true">
+                    <path
+                      d="M12 2c5.523 0 10 4.477 10 10s-4.477 10-10 10S2 17.523 2 12S6.477 2 12 2m3.22 6.97l-4.47 4.47l-1.97-1.97a.75.75 0 0 0-1.06 1.06l2.5 2.5a.75.75 0 0 0 1.06 0l5-5a.75.75 0 1 0-1.06-1.06"
+                    />
+                  </svg>
+                </span>
+                <p class="lum-caption lum-mt-8">xs / primary</p>
+              </div>
+
+              <div class="lum-text-center">
+                <span class="lum-icon lum-icon-lg lum-icon-red">
+                  <svg viewBox="0 0 24 24" aria-hidden="true">
+                    <path
+                      d="M12 2c5.523 0 10 4.477 10 10s-4.477 10-10 10S2 17.523 2 12S6.477 2 12 2m3.53 6.47l-.084-.073a.75.75 0 0 0-.882-.007l-.094.08L12 10.939l-2.47-2.47l-.084-.072a.75.75 0 0 0-.882-.007l-.094.08l-.073.084a.75.75 0 0 0-.007.882l.08.094L10.939 12l-2.47 2.47l-.072.084a.75.75 0 0 0-.007.882l.08.094l.084.073a.75.75 0 0 0 .882.007l.094-.08L12 13.061l2.47 2.47l.084.072a.75.75 0 0 0 .882.007l.094-.08l.073-.084a.75.75 0 0 0 .007-.882l-.08-.094L13.061 12l2.47-2.47l.072-.084a.75.75 0 0 0 .007-.882z"
+                    />
+                  </svg>
+                </span>
+                <p class="lum-caption lum-mt-8">lg / red</p>
+              </div>
+
+              <div class="lum-text-center">
+                <span class="lum-icon lum-icon-xl lum-icon-teal">
+                  <svg viewBox="0 0 24 24" aria-hidden="true">
+                    <path
+                      d="M13 3a1 1 0 1 0-2 0v12.086l-3.293-3.293a1 1 0 0 0-1.414 1.414l5 5a1 1 0 0 0 1.414 0l5-5a1 1 0 0 0-1.414-1.414L13 15.086zM5 20a1 1 0 1 0 0 2h14a1 1 0 1 0 0-2z"
+                    />
+                  </svg>
+                </span>
+                <p class="lum-caption lum-mt-8">xl / teal</p>
+              </div>
+            </div>
+
+            <div class="lum-alert lum-alert-error">
+              <span class="lum-icon lum-icon-red lum-icon-md">
+                <svg viewBox="0 0 24 24" aria-hidden="true">
+                  <path
+                    d="M12 2c5.523 0 10 4.477 10 10s-4.477 10-10 10S2 17.523 2 12S6.477 2 12 2m3.53 6.47l-.084-.073a.75.75 0 0 0-.882-.007l-.094.08L12 10.939l-2.47-2.47l-.084-.072a.75.75 0 0 0-.882-.007l-.094.08l-.073.084a.75.75 0 0 0-.007.882l.08.094L10.939 12l-2.47 2.47l-.072.084a.75.75 0 0 0-.007.882l.08.094l.084.073a.75.75 0 0 0 .882.007l.094-.08L12 13.061l2.47 2.47l.084.072a.75.75 0 0 0 .882.007l.094-.08l.073-.084a.75.75 0 0 0 .007-.882l-.08-.094L13.061 12l2.47-2.47l.072-.084a.75.75 0 0 0 .007-.882z"
+                  />
+                </svg>
+              </span>
+              <div>
+                Fehlerzustände sind ebenfalls Teil der vollständigen
+                Klassenabdeckung.
+              </div>
+            </div>
+          </article>
+
+          <article
+            class="lum-dark-bg-gradient lum-flex lum-flex-col lum-gap-32"
+          >
+            <div>
+              <h3 class="lum-h3">Dark API Ergänzungen</h3>
+              <p class="lum-body-sm lum-mt-8">
+                Alias-Buttons, Dark Tabs, Dark Navigation und Dark Badges.
+              </p>
+            </div>
+
+            <div class="lum-card-dark lum-flex lum-flex-col lum-gap-12">
+              <div class="lum-flex lum-flex-wrap lum-gap-12">
+                <button class="lum-btn lum-btn-dark-accent" type="button">
+                  Dark Accent Alias
+                </button>
+                <span class="lum-badge lum-badge-dark-teal">Teal Dark</span>
+                <span class="lum-badge lum-badge-dark-red">Red Dark</span>
+              </div>
+
+              <div class="lum-divider-dark"></div>
+
+              <div
+                class="lum-tabs lum-tabs-dark"
+                data-tab-group="dark-tabs"
+                role="tablist"
+                aria-label="Dunkle Tabs"
+              >
+                <button
+                  class="lum-tab active"
+                  type="button"
+                  data-tab-trigger
+                  role="tab"
+                  aria-selected="true"
+                >
+                  Live
+                </button>
+                <button
+                  class="lum-tab"
+                  type="button"
+                  data-tab-trigger
+                  role="tab"
+                  aria-selected="false"
+                >
+                  Staging
+                </button>
+                <button
+                  class="lum-tab"
+                  type="button"
+                  data-tab-trigger
+                  role="tab"
+                  aria-selected="false"
+                >
+                  Archiv
+                </button>
+              </div>
+
+              <div
+                class="lum-tabs-seg lum-tabs-seg-dark"
+                data-tab-group="dark-seg"
+                role="tablist"
+                aria-label="Dunkle Segment-Tabs"
+              >
+                <button
+                  class="lum-tab-seg active"
+                  type="button"
+                  data-tab-trigger
+                  role="tab"
+                  aria-selected="true"
+                >
+                  Build
+                </button>
+                <button
+                  class="lum-tab-seg"
+                  type="button"
+                  data-tab-trigger
+                  role="tab"
+                  aria-selected="false"
+                >
+                  Deploy
+                </button>
+                <button
+                  class="lum-tab-seg"
+                  type="button"
+                  data-tab-trigger
+                  role="tab"
+                  aria-selected="false"
+                >
+                  Logs
+                </button>
+              </div>
+
+              <nav class="lum-nav-v lum-nav-v-dark" aria-label="Dunkle Sidebar">
+                <button class="active" type="button">Produktionsstand</button>
+                <button type="button">Statische Assets</button>
+                <button type="button">Rollback</button>
+              </nav>
+            </div>
+
+            <div class="lum-flex lum-flex-wrap lum-gap-24">
+              <span
+                class="lum-icon-circle lum-icon-circle-sm lum-icon-circle-primary"
+              >
+                <svg viewBox="0 0 24 24" aria-hidden="true">
+                  <path
+                    d="M13 3a1 1 0 1 0-2 0v12.086l-3.293-3.293a1 1 0 0 0-1.414 1.414l5 5a1 1 0 0 0 1.414 0l5-5a1 1 0 0 0-1.414-1.414L13 15.086zM5 20a1 1 0 1 0 0 2h14a1 1 0 1 0 0-2z"
+                  />
+                </svg>
+              </span>
+              <span
+                class="lum-icon-circle lum-icon-circle-md lum-icon-circle-accent"
+              >
+                <svg viewBox="0 0 24 24" aria-hidden="true">
+                  <path
+                    d="M12.002 1.999c5.523 0 10.001 4.478 10.001 10.002c0 5.523-4.478 10.001-10.001 10.001C6.478 22.002 2 17.524 2 12.001C2 6.477 6.478 1.999 12.002 1.999M12 10.5a.75.75 0 0 0-.75.75v5a.75.75 0 0 0 1.5 0v-5a.75.75 0 0 0-.75-.75M12 9a1 1 0 1 0 0-2a1 1 0 0 0 0 2"
+                  />
+                </svg>
+              </span>
+              <span
+                class="lum-icon-circle lum-icon-circle-md lum-icon-circle-teal"
+              >
+                <svg viewBox="0 0 24 24" aria-hidden="true">
+                  <path
+                    d="M14.003 5.5H21a1 1 0 0 1 .993.883L22 6.5v7a1 1 0 0 1-1.994.117L20 13.5l-.001-4.586l-7.292 7.293a1 1 0 0 1-1.32.084l-.094-.083l-2.296-2.292l-5.288 5.29a1 1 0 0 1-1.497-1.32l.083-.095l5.994-5.996a1 1 0 0 1 1.32-.084l.094.083l2.296 2.292L18.584 7.5h-4.581a1 1 0 0 1-.993-.883l-.007-.117a1 1 0 0 1 .883-.993z"
+                  />
+                </svg>
+              </span>
+              <span
+                class="lum-icon-circle lum-icon-circle-md lum-icon-circle-green"
+              >
+                <svg viewBox="0 0 24 24" aria-hidden="true">
+                  <path
+                    d="M12 2c5.523 0 10 4.477 10 10s-4.477 10-10 10S2 17.523 2 12S6.477 2 12 2m3.22 6.97l-4.47 4.47l-1.97-1.97a.75.75 0 0 0-1.06 1.06l2.5 2.5a.75.75 0 0 0 1.06 0l5-5a.75.75 0 1 0-1.06-1.06"
+                  />
+                </svg>
+              </span>
+              <span
+                class="lum-icon-circle lum-icon-circle-md lum-icon-circle-red"
+              >
+                <svg viewBox="0 0 24 24" aria-hidden="true">
+                  <path
+                    d="M12 2c5.523 0 10 4.477 10 10s-4.477 10-10 10S2 17.523 2 12S6.477 2 12 2m3.53 6.47l-.084-.073a.75.75 0 0 0-.882-.007l-.094.08L12 10.939l-2.47-2.47l-.084-.072a.75.75 0 0 0-.882-.007l-.094.08l-.073.084a.75.75 0 0 0-.007.882l.08.094L10.939 12l-2.47 2.47l-.072.084a.75.75 0 0 0-.007.882l.08.094l.084.073a.75.75 0 0 0 .882.007l.094-.08L12 13.061l2.47 2.47l.084.072a.75.75 0 0 0 .882.007l.094-.08l.073-.084a.75.75 0 0 0 .007-.882l-.08-.094L13.061 12l2.47-2.47l.072-.084a.75.75 0 0 0 .007-.882z"
+                  />
+                </svg>
+              </span>
+              <span
+                class="lum-icon-circle lum-icon-circle-md lum-icon-circle-orange"
+              >
+                <svg viewBox="0 0 24 24" aria-hidden="true">
+                  <path
+                    d="M10.03 3.659c.856-1.548 3.081-1.548 3.937 0l7.746 14.001c.83 1.5-.255 3.34-1.969 3.34H4.254c-1.715 0-2.8-1.84-1.97-3.34zM12.997 17A.999.999 0 1 0 11 17a.999.999 0 0 0 1.997 0m-.259-7.853a.75.75 0 0 0-1.493.103l.004 4.501l.007.102a.75.75 0 0 0 1.493-.103l-.004-4.502z"
+                  />
+                </svg>
+              </span>
+              <span
+                class="lum-icon-circle lum-icon-circle-lg lum-icon-circle-dark"
+              >
+                <span class="lum-icon lum-icon-2xl lum-icon-white">
+                  <svg viewBox="0 0 24 24" aria-hidden="true">
+                    <path
+                      d="M8.75 13A2.25 2.25 0 0 1 11 15.25v3.5A2.25 2.25 0 0 1 8.75 21h-3.5A2.25 2.25 0 0 1 3 18.75v-3.5A2.25 2.25 0 0 1 5.25 13zm10 0A2.25 2.25 0 0 1 21 15.25v3.5A2.25 2.25 0 0 1 18.75 21h-3.5A2.25 2.25 0 0 1 13 18.75v-3.5A2.25 2.25 0 0 1 15.25 13zm-10-10A2.25 2.25 0 0 1 11 5.25v3.5A2.25 2.25 0 0 1 8.75 11h-3.5A2.25 2.25 0 0 1 3 8.75v-3.5A2.25 2.25 0 0 1 5.25 3zm10 0A2.25 2.25 0 0 1 21 5.25v3.5A2.25 2.25 0 0 1 18.75 11h-3.5A2.25 2.25 0 0 1 13 8.75v-3.5A2.25 2.25 0 0 1 15.25 3z"
+                    />
+                  </svg>
+                </span>
+              </span>
+              <span
+                class="lum-icon-circle lum-icon-circle-lg lum-icon-circle-dark-accent"
+              >
+                <svg viewBox="0 0 24 24" aria-hidden="true">
+                  <path
+                    d="M13 3a1 1 0 1 0-2 0v12.086l-3.293-3.293a1 1 0 0 0-1.414 1.414l5 5a1 1 0 0 0 1.414 0l5-5a1 1 0 0 0-1.414-1.414L13 15.086zM5 20a1 1 0 1 0 0 2h14a1 1 0 1 0 0-2z"
+                  />
+                </svg>
+              </span>
+              <span
+                class="lum-icon-circle lum-icon-circle-lg lum-icon-circle-dark-teal"
+              >
+                <svg viewBox="0 0 24 24" aria-hidden="true">
+                  <path
+                    d="M14.003 5.5H21a1 1 0 0 1 .993.883L22 6.5v7a1 1 0 0 1-1.994.117L20 13.5l-.001-4.586l-7.292 7.293a1 1 0 0 1-1.32.084l-.094-.083l-2.296-2.292l-5.288 5.29a1 1 0 0 1-1.497-1.32l.083-.095l5.994-5.996a1 1 0 0 1 1.32-.084l.094.083l2.296 2.292L18.584 7.5h-4.581a1 1 0 0 1-.993-.883l-.007-.117a1 1 0 0 1 .883-.993z"
+                  />
+                </svg>
+              </span>
+            </div>
+
+            <div class="lum-flex lum-gap-32 lum-flex-wrap">
+              <div class="lum-loader lum-loader-sm">
+                <svg
+                  class="lum-loader-sun"
+                  viewBox="0 0 47 48.5"
+                  fill="currentColor"
+                  aria-hidden="true"
+                >
+                  <g transform="translate(-8.14,-12.67)">
+                    <path
+                      class="r0"
+                      d="M32.46,25.85l0.88-13.18H30l0.88,13.18h1.62Z"
+                    />
+                    <path
+                      class="r1"
+                      d="M38.77,28.43l8.46-10.14l-2.74-1.99l-7.03,11.18l1.31,0.95Z"
+                    />
+                    <path
+                      class="r2"
+                      d="M42.36,34.22l12.81-3.23l-1.05-3.21l-12.26,4.91l0.5,1.53Z"
+                    />
+                    <path
+                      class="r3"
+                      d="M41.86,41.02l12.26,4.9l1.05-3.21l-12.81-3.23l-0.5,1.54Z"
+                    />
+                    <path
+                      class="r4"
+                      d="M38.77,45.27l-1.31,0.95l7.03,11.18l2.74-1.99l-8.46-10.14Z"
+                    />
+                    <path
+                      class="r5"
+                      d="M32.46,47.85h-1.62l-0.88,13.18h3.38l-0.88-13.18Z"
+                    />
+                    <path
+                      class="r6"
+                      d="M25.84,46.22l-1.31-0.95L16.08,55.41l2.73,1.99l7.03-11.18Z"
+                    />
+                    <path
+                      class="r7"
+                      d="M20.95,34.46L8.14,31.22l1.04-3.21l12.27,4.91l-0.5,1.54Z"
+                    />
+                    <path
+                      class="r8"
+                      d="M21.45,40.56L9.18,45.46l-1.04-3.21l12.81-3.23l0.5,1.54Z"
+                    />
+                    <path
+                      class="r9"
+                      d="M24.54,27.48l-7.03-11.18l-2.73,1.99l8.46,10.14l1.3-0.95Z"
+                    />
+                  </g>
+                </svg>
+                <span class="lum-loader-text">sm</span>
+              </div>
+
+              <div class="lum-loader lum-loader-lg">
+                <svg
+                  class="lum-loader-sun"
+                  viewBox="0 0 47 48.5"
+                  fill="currentColor"
+                  aria-hidden="true"
+                >
+                  <g transform="translate(-8.14,-12.67)">
+                    <path
+                      class="r0"
+                      d="M32.46,25.85l0.88-13.18H30l0.88,13.18h1.62Z"
+                    />
+                    <path
+                      class="r1"
+                      d="M38.77,28.43l8.46-10.14l-2.74-1.99l-7.03,11.18l1.31,0.95Z"
+                    />
+                    <path
+                      class="r2"
+                      d="M42.36,34.22l12.81-3.23l-1.05-3.21l-12.26,4.91l0.5,1.53Z"
+                    />
+                    <path
+                      class="r3"
+                      d="M41.86,41.02l12.26,4.9l1.05-3.21l-12.81-3.23l-0.5,1.54Z"
+                    />
+                    <path
+                      class="r4"
+                      d="M38.77,45.27l-1.31,0.95l7.03,11.18l2.74-1.99l-8.46-10.14Z"
+                    />
+                    <path
+                      class="r5"
+                      d="M32.46,47.85h-1.62l-0.88,13.18h3.38l-0.88-13.18Z"
+                    />
+                    <path
+                      class="r6"
+                      d="M25.84,46.22l-1.31-0.95L16.08,55.41l2.73,1.99l7.03-11.18Z"
+                    />
+                    <path
+                      class="r7"
+                      d="M20.95,34.46L8.14,31.22l1.04-3.21l12.27,4.91l-0.5,1.54Z"
+                    />
+                    <path
+                      class="r8"
+                      d="M21.45,40.56L9.18,45.46l-1.04-3.21l12.81-3.23l0.5,1.54Z"
+                    />
+                    <path
+                      class="r9"
+                      d="M24.54,27.48l-7.03-11.18l-2.73,1.99l8.46,10.14l1.3-0.95Z"
+                    />
+                  </g>
+                </svg>
+                <span class="lum-loader-text">lg</span>
+              </div>
+            </div>
+          </article>
+        </div>
+
+        <div class="lum-grid-2">
+          <article class="lum-card lum-flex lum-flex-col lum-gap-24">
+            <div>
+              <h3 class="lum-h3">Charts, Columns und Sparkbar</h3>
+              <p class="lum-body-sm lum-mt-8">
+                Auch die wertgetriebenen Klassen werden ohne Inline-Styles
+                referenziert.
+              </p>
+            </div>
+
+            <div class="lum-chart lum-gap-12">
+              <div class="lum-chart-bar-row">
+                <div class="lum-chart-label">Primary</div>
+                <div class="lum-chart-track">
+                  <div class="lum-chart-fill lum-chart-fill-primary">
+                    Primary
+                  </div>
+                </div>
+              </div>
+              <div class="lum-chart-bar-row">
+                <div class="lum-chart-label">Accent</div>
+                <div class="lum-chart-track">
+                  <div class="lum-chart-fill lum-chart-fill-accent">Accent</div>
+                </div>
+              </div>
+              <div class="lum-chart-bar-row">
+                <div class="lum-chart-label">Teal</div>
+                <div class="lum-chart-track">
+                  <div class="lum-chart-fill lum-chart-fill-teal">Teal</div>
+                </div>
+              </div>
+              <div class="lum-chart-bar-row">
+                <div class="lum-chart-label">Green</div>
+                <div class="lum-chart-track">
+                  <div class="lum-chart-fill lum-chart-fill-green">Green</div>
+                </div>
+              </div>
+            </div>
+
+            <div class="lum-dark-bg">
+              <div class="lum-chart lum-chart-dark">
+                <div class="lum-chart-bar-row">
+                  <div class="lum-chart-label">Dark</div>
+                  <div class="lum-chart-track">
+                    <div class="lum-chart-fill lum-chart-fill-accent">
+                      Dark Chart
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            <div class="lum-chart-cols lum-mt-32">
+              <div class="lum-chart-col lum-col-primary">
+                <br /><br /><br /><br /><br /><span class="lum-chart-col-val"
+                  >64</span
+                ><span class="lum-chart-col-label">Q1</span>
+              </div>
+              <div class="lum-chart-col lum-col-teal">
+                <br /><br /><br /><br /><br /><br /><span
+                  class="lum-chart-col-val"
+                  >78</span
+                ><span class="lum-chart-col-label">Q2</span>
+              </div>
+              <div class="lum-chart-col lum-col-green">
+                <br /><br /><br /><br /><br /><br /><br /><span
+                  class="lum-chart-col-val"
+                  >91</span
+                ><span class="lum-chart-col-label">Q3</span>
+              </div>
+            </div>
+
+            <div class="lum-flex lum-gap-24 lum-flex-wrap">
+              <div class="lum-sparkbar" aria-label="Mini-Sparkbar">
+                <div class="lum-sparkbar-col"><br /></div>
+                <div class="lum-sparkbar-col"><br /><br /></div>
+                <div class="lum-sparkbar-col"><br /><br /><br /></div>
+                <div class="lum-sparkbar-col"><br /><br /></div>
+                <div class="lum-sparkbar-col"><br /><br /><br /><br /></div>
+              </div>
+
+              <div class="lum-donut" aria-label="Donut Demo">
+                <svg
+                  width="120"
+                  height="120"
+                  viewBox="0 0 120 120"
+                  aria-hidden="true"
+                >
+                  <circle
+                    cx="60"
+                    cy="60"
+                    r="42"
+                    fill="none"
+                    stroke="var(--lum-light)"
+                    stroke-width="12"
+                  />
+                  <circle
+                    cx="60"
+                    cy="60"
+                    r="42"
+                    fill="none"
+                    stroke="var(--lum-accent)"
+                    stroke-width="12"
+                    stroke-linecap="round"
+                    stroke-dasharray="198 264"
+                  />
+                </svg>
+                <span class="lum-donut-label">75%</span>
+              </div>
+            </div>
+          </article>
+
+          <article class="lum-card-gradient lum-flex lum-flex-col lum-gap-24">
+            <div>
+              <h3 class="lum-h3">Weitere Varianten und Tabellen</h3>
+              <p class="lum-body-sm lum-mt-8">
+                Kompaktabelle, Dark/Light-Utilities und zusätzliche
+                Inline-Token.
+              </p>
+            </div>
+
+            <div class="lum-table-wrap">
+              <table class="lum-table lum-table-compact">
+                <thead>
+                  <tr>
+                    <th class="lum-col-group-a">Token</th>
+                    <th class="lum-col-group-b">Rolle</th>
+                    <th class="lum-col-group-c">Scope</th>
+                    <th class="r">Status</th>
+                  </tr>
+                </thead>
+                <tbody>
+                  <tr>
+                    <td class="lum-col-group-a lum-nowrap">--lum-accent</td>
+                    <td class="lum-col-group-b">Akzentfarbe</td>
+                    <td class="lum-col-group-c">System</td>
+                    <td class="r">aktiv</td>
+                  </tr>
+                  <tr>
+                    <td class="lum-col-group-a">--lum-shadow</td>
+                    <td class="lum-col-group-b">Shadow</td>
+                    <td class="lum-col-group-c">System</td>
+                    <td class="r">aktiv</td>
+                  </tr>
+                </tbody>
+              </table>
+            </div>
+
+            <div class="lum-code-block">
+              <span class="lum-code-comment">&lt;!-- API Coverage --&gt;</span>
+              &lt;<span class="lum-code-keyword">span</span> class=<span
+                class="lum-code-string"
+                >"lum-code"</span
+              >&gt;lum-code&lt;/<span class="lum-code-keyword">span</span>&gt;
+              &lt;<span class="lum-code-keyword">span</span> class=<span
+                class="lum-code-value"
+                >"lum-code-value"</span
+              >&gt;coverage&lt;/<span class="lum-code-keyword">span</span>&gt;
+            </div>
+
+            <div class="lum-flex lum-gap-24 lum-flex-wrap">
+              <div class="lum-text-center lum-max-w-sm">
+                <span class="lum-icon lum-icon-2xl lum-icon-teal">
+                  <svg viewBox="0 0 24 24" aria-hidden="true">
+                    <path
+                      d="M14.003 5.5H21a1 1 0 0 1 .993.883L22 6.5v7a1 1 0 0 1-1.994.117L20 13.5l-.001-4.586l-7.292 7.293a1 1 0 0 1-1.32.084l-.094-.083l-2.296-2.292l-5.288 5.29a1 1 0 0 1-1.497-1.32l.083-.095l5.994-5.996a1 1 0 0 1 1.32-.084l.094.083l2.296 2.292L18.584 7.5h-4.581a1 1 0 0 1-.993-.883l-.007-.117a1 1 0 0 1 .883-.993z"
+                    />
+                  </svg>
+                </span>
+                <p class="lum-caption lum-mt-8">2xl / teal</p>
+              </div>
+
+              <div class="lum-max-w-sm lum-text-center">
+                <p class="lum-body-sm lum-text-center lum-mb-16">
+                  Zentrierte und rechtsbündige Utility-Demo
+                </p>
+                <p class="lum-body lum-text-right">rechtsbündig</p>
+              </div>
+
+              <div class="lum-skeleton lum-skeleton-card lum-max-w-md"></div>
+            </div>
+          </article>
+        </div>
+      </section>
+
+      <section
         id="integration"
         class="lum-card-gradient lum-flex lum-flex-col lum-gap-16"
       >
