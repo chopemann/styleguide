@@ -2351,22 +2351,37 @@ a:not([class]):hover {
 .lum-dark-bg .lum-card .lum-body-sm,
 .lum-dark-bg .lum-card .lum-caption,
 .lum-dark-bg .lum-card .lum-overline,
+.lum-dark-bg .lum-card .lum-code,
 .lum-dark-bg .lum-card-gradient .lum-body-sm,
 .lum-dark-bg .lum-card-gradient .lum-caption,
 .lum-dark-bg .lum-card-gradient .lum-overline,
+.lum-dark-bg .lum-card-gradient .lum-code,
 .lum-dark-bg-gradient .lum-card .lum-body-sm,
 .lum-dark-bg-gradient .lum-card .lum-caption,
 .lum-dark-bg-gradient .lum-card .lum-overline,
+.lum-dark-bg-gradient .lum-card .lum-code,
 .lum-dark-bg-gradient .lum-card-gradient .lum-body-sm,
 .lum-dark-bg-gradient .lum-card-gradient .lum-caption,
 .lum-dark-bg-gradient .lum-card-gradient .lum-overline,
+.lum-dark-bg-gradient .lum-card-gradient .lum-code,
 .lum-hero-bg .lum-card .lum-body-sm,
 .lum-hero-bg .lum-card .lum-caption,
 .lum-hero-bg .lum-card .lum-overline,
+.lum-hero-bg .lum-card .lum-code,
 .lum-hero-bg .lum-card-gradient .lum-body-sm,
 .lum-hero-bg .lum-card-gradient .lum-caption,
-.lum-hero-bg .lum-card-gradient .lum-overline {
+.lum-hero-bg .lum-card-gradient .lum-overline,
+.lum-hero-bg .lum-card-gradient .lum-code {
   color: var(--lum-gray);
+}
+
+.lum-dark-bg .lum-card .lum-code,
+.lum-dark-bg .lum-card-gradient .lum-code,
+.lum-dark-bg-gradient .lum-card .lum-code,
+.lum-dark-bg-gradient .lum-card-gradient .lum-code,
+.lum-hero-bg .lum-card .lum-code,
+.lum-hero-bg .lum-card-gradient .lum-code {
+  background: rgba(21, 44, 62, 0.07);
 }
 
 .lum-icon-circle > svg {
