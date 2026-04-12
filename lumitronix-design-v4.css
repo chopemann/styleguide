@@ -184,7 +184,8 @@ a:not([class]):hover {
   align-items: center;
   gap: 8px;
   border: none;
-  padding: 11px 22px;
+  min-height: 39px;
+  padding: 0 22px;
   border-radius: var(--lum-radius-btn);
   font-family: var(--lum-font);
   font-size: 13px;
@@ -205,12 +206,14 @@ a:not([class]):hover {
   flex-shrink: 0;
 }
 .lum-btn-sm {
-  padding: 11px 22px;
-  font-size: 13px;
+  min-height: 35px;
+  padding: 0 16px;
+  font-size: 12px;
 }
 .lum-btn-lg {
-  padding: 11px 22px;
-  font-size: 13px;
+  min-height: 47px;
+  padding: 0 28px;
+  font-size: 15px;
 }
 
 /* Filled */
