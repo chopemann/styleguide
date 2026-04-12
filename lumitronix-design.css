@@ -79,15 +79,15 @@ body {
 /* ─────────────────────────────────────
    §3  TYPOGRAFIE
    ───────────────────────────────────── */
-.lum-h1 { font-size: 32px; font-weight: 800; color: var(--lum-primary); line-height: 1.2; letter-spacing: -.3px; }
-.lum-h2 { font-size: 24px; font-weight: 800; color: var(--lum-primary); line-height: 1.25; letter-spacing: -.2px; }
-.lum-h3 { font-size: 18px; font-weight: 700; color: var(--lum-primary); line-height: 1.3; }
-.lum-h4 { font-size: 15px; font-weight: 700; color: var(--lum-primary); line-height: 1.4; }
+.lum-h1 { font-size: 32px; font-weight: 800; color: var(--lum-dark); line-height: 1.2; letter-spacing: -.3px; }
+.lum-h2 { font-size: 24px; font-weight: 800; color: var(--lum-dark); line-height: 1.25; letter-spacing: -.2px; }
+.lum-h3 { font-size: 18px; font-weight: 700; color: var(--lum-dark); line-height: 1.3; }
+.lum-h4 { font-size: 15px; font-weight: 700; color: var(--lum-dark); line-height: 1.4; }
 .lum-body { font-size: 14px; font-weight: 400; color: var(--lum-text); line-height: 1.5; }
 .lum-body-sm { font-size: 13px; font-weight: 400; color: var(--lum-gray); line-height: 1.5; }
 .lum-caption { font-size: 12px; font-weight: 500; color: var(--lum-gray); line-height: 1.4; }
 .lum-overline { font-size: 11px; font-weight: 700; letter-spacing: 1.2px; text-transform: uppercase; color: var(--lum-gray); }
-.lum-display { font-size: 48px; font-weight: 800; color: var(--lum-primary); line-height: 1.1; letter-spacing: -1px; }
+.lum-display { font-size: 48px; font-weight: 800; color: var(--lum-dark); line-height: 1.1; letter-spacing: -1px; }
 .lum-stat { font-size: 36px; font-weight: 800; color: var(--lum-teal); line-height: 1; }
 
 
@@ -636,7 +636,7 @@ a:not([class]):hover { text-decoration: underline; }
 .lum-donut-label {
   position: absolute; inset: 0; display: flex;
   align-items: center; justify-content: center;
-  font-size: 16px; font-weight: 800; color: var(--lum-primary);
+  font-size: 16px; font-weight: 800; color: var(--lum-dark);
 }
 
 /* Vertikale Säulen */
@@ -656,7 +656,7 @@ a:not([class]):hover { text-decoration: underline; }
 }
 .lum-chart-col-val {
   position: absolute; top: -18px; left: 50%; transform: translateX(-50%);
-  font-size: 10px; font-weight: 700; color: var(--lum-primary); white-space: nowrap;
+  font-size: 10px; font-weight: 700; color: var(--lum-dark); white-space: nowrap;
 }
 .lum-chart-col.lum-col-teal { background: var(--lum-grad-teal); }
 .lum-chart-col.lum-col-primary { background: var(--lum-grad-primary); }
@@ -672,7 +672,7 @@ a:not([class]):hover { text-decoration: underline; }
   border: 1px solid var(--lum-light); border-radius: var(--lum-radius-md);
 }
 .lum-stat-card-label { font-size: 11px; font-weight: 700; letter-spacing: .8px; text-transform: uppercase; color: var(--lum-gray); }
-.lum-stat-card-value { font-size: 28px; font-weight: 800; color: var(--lum-primary); line-height: 1.1; }
+.lum-stat-card-value { font-size: 28px; font-weight: 800; color: var(--lum-dark); line-height: 1.1; }
 .lum-stat-card-sub { font-size: 12px; color: var(--lum-gray); display: flex; align-items: center; gap: 4px; }
 .lum-stat-card-up { color: var(--lum-green); font-weight: 700; }
 .lum-stat-card-down { color: var(--lum-red); font-weight: 700; }
@@ -813,7 +813,7 @@ a:not([class]):hover { text-decoration: underline; }
   display: flex; justify-content: space-between;
   align-items: flex-start; margin-bottom: 16px;
 }
-.lum-modal-title { font-size: 18px; font-weight: 800; color: var(--lum-primary); }
+.lum-modal-title { font-size: 18px; font-weight: 800; color: var(--lum-dark); }
 .lum-modal-close {
   width: 32px; height: 32px; display: flex; align-items: center;
   justify-content: center; border: none; background: none;
@@ -832,7 +832,7 @@ a:not([class]):hover { text-decoration: underline; }
 .lum-breadcrumbs { display: flex; align-items: center; gap: 6px; font-size: 13px; }
 .lum-breadcrumbs a { color: var(--lum-gray); text-decoration: none; transition: color .15s; }
 .lum-breadcrumbs a:hover { color: var(--lum-accent); text-decoration: underline; }
-.lum-breadcrumbs .current { color: var(--lum-primary); font-weight: 600; }
+.lum-breadcrumbs .current { color: var(--lum-dark); font-weight: 600; }
 .lum-breadcrumbs .sep { color: var(--lum-lgray); font-size: 11px; }
 
 /* ─────────────────────────────────────
