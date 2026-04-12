@@ -57,8 +57,8 @@
             </p>
             <div class="sg-chip-row">
               <span class="lum-badge lum-badge-primary">Primary = #152C3E</span>
-              <span class="lum-badge lum-badge-accent">Accent = #366A99</span>
-              <span class="lum-badge lum-badge-teal">Spacing via Token</span>
+              <span class="lum-badge lum-badge-accent">Accent = #3B92C7</span>
+              <span class="lum-badge lum-badge-accent">Spacing via Token</span>
               <span class="lum-badge lum-badge-green">JS zentralisiert</span>
             </div>
             <div class="sg-hero-actions">
@@ -81,7 +81,7 @@
                   <div class="sg-kpi-label">Farbmodell</div>
                   <div class="sg-kpi-value">semantisch</div>
                   <div class="sg-kpi-copy">
-                    Primary, Accent und Teal haben jetzt klar getrennte Rollen.
+                    Accent basiert jetzt auf dem bisherigen Akzentton und ist der einzige Akzent.
                   </div>
                 </div>
                 <div class="sg-kpi">
@@ -134,17 +134,10 @@
               </div>
             </article>
             <article class="sg-swatch">
-              <div class="sg-swatch-color sg-swatch-accent">#366A99</div>
+              <div class="sg-swatch-color sg-swatch-accent">#3B92C7</div>
               <div class="sg-swatch-meta">
                 <div class="sg-swatch-name">accent</div>
                 <div class="sg-swatch-token">--lum-accent</div>
-              </div>
-            </article>
-            <article class="sg-swatch">
-              <div class="sg-swatch-color sg-swatch-teal">#3B92C7</div>
-              <div class="sg-swatch-meta">
-                <div class="sg-swatch-name">teal</div>
-                <div class="sg-swatch-token">--lum-teal</div>
               </div>
             </article>
             <article class="sg-swatch">
@@ -267,8 +260,7 @@
 
 <span class="lum-code-comment">/* Semantische Kerntoken */</span>
 <span class="lum-code-keyword">--lum-primary</span>: <span class="lum-code-value">#152C3E</span>;
-<span class="lum-code-keyword">--lum-accent</span>: <span class="lum-code-value">#366A99</span>;
-<span class="lum-code-keyword">--lum-teal</span>: <span class="lum-code-value">#3B92C7</span>;
+<span class="lum-code-keyword">--lum-accent</span>: <span class="lum-code-value">#3B92C7</span>;
 <span class="lum-code-keyword">--lum-space-24</span>: <span class="lum-code-value">24px</span>;
 <span class="lum-code-keyword">--lum-radius-md</span>: <span class="lum-code-value">18px</span>;</pre>
         </div>
@@ -327,7 +319,7 @@
                 <div class="sg-row">
                   <a class="lum-btn lum-btn-primary" href="#forms">Primary</a>
                   <a class="lum-btn lum-btn-accent" href="#data">Accent</a>
-                  <a class="lum-btn lum-btn-teal" href="#components">Teal</a>
+                  <a class="lum-btn lum-btn-accent" href="#components">Accent</a>
                 </div>
                 <div class="sg-row">
                   <button class="lum-btn lum-btn-outline" type="button">
@@ -382,8 +374,8 @@
           <div class="sg-surface-dark">
             <div class="lum-overline">Buttons Dark</div>
             <div class="sg-row lum-mt-16">
-              <a class="lum-btn lum-btn-teal" href="#brand" data-sg-note
-                >Teal Solid</a
+              <a class="lum-btn lum-btn-accent" href="#brand" data-sg-note
+                >Accent Solid</a
               >
               <button
                 class="lum-btn lum-btn-dark-glass"
@@ -704,7 +696,7 @@
                   <div class="lum-chart-label">iFlex</div>
                   <div class="lum-chart-track">
                     <div
-                      class="lum-chart-fill lum-chart-fill-teal"
+                      class="lum-chart-fill lum-chart-fill-accent"
                       data-width="49"
                     >
                       1,4 Mio. €
@@ -741,7 +733,7 @@
                   <span class="lum-chart-col-label">J</span
                   ><span class="lum-chart-col-val">92</span>
                 </div>
-                <div class="lum-chart-col lum-col-teal" data-height="97">
+                <div class="lum-chart-col" data-height="97">
                   <span class="lum-chart-col-label">J</span
                   ><span class="lum-chart-col-val">97</span>
                 </div>
@@ -776,7 +768,7 @@
                   </div>
                   <div class="lum-progress">
                     <div
-                      class="lum-progress-fill lum-progress-teal"
+                      class="lum-progress-fill lum-progress-accent"
                       data-width="72"
                     ></div>
                   </div>
@@ -802,7 +794,7 @@
                 <div class="lum-donut lum-donut-accent" data-progress="78">
                   <div class="lum-donut-label">78%</div>
                 </div>
-                <div class="lum-donut lum-donut-teal" data-progress="94">
+                <div class="lum-donut lum-donut-accent" data-progress="94">
                   <div class="lum-donut-label">94%</div>
                 </div>
                 <div class="sg-legend">
@@ -838,12 +830,12 @@
                 <div class="sg-row">
                   <span class="lum-badge lum-badge-green">Aktiv</span>
                   <span class="lum-badge lum-badge-accent">Entwurf</span>
-                  <span class="lum-badge lum-badge-teal">In Arbeit</span>
+                  <span class="lum-badge lum-badge-accent">In Arbeit</span>
                   <span class="lum-badge lum-badge-orange">Pilot</span>
                 </div>
                 <div class="sg-stack">
                   <div class="lum-alert lum-alert-info">
-                    <span class="lum-icon lum-icon-sm lum-icon-teal"
+                    <span class="lum-icon lum-icon-sm lum-icon-accent"
                       ><svg viewBox="0 0 24 24">
                         <path
                           d="M12 2a10 10 0 1 1 0 20a10 10 0 0 1 0-20m0 5a1 1 0 0 0-1 1v5a1 1 0 1 0 2 0V8a1 1 0 0 0-1-1m0 9a1.25 1.25 0 1 0 0 2.5A1.25 1.25 0 0 0 12 16"
@@ -1075,7 +1067,7 @@
                     <svg
                       class="lum-loader-sun"
                       viewBox="0 0 47 48.5"
-                      fill="var(--lum-teal)"
+                      fill="var(--lum-accent)"
                     >
                       <g transform="translate(-8.14,-12.67)">
                         <path
@@ -1238,7 +1230,7 @@
             <article class="sg-info-card">
               <div class="sg-info-head">
                 <span
-                  class="lum-icon-circle lum-icon-circle-md lum-icon-circle-dark-teal"
+                  class="lum-icon-circle lum-icon-circle-md lum-icon-circle-dark-accent"
                   ><svg viewBox="0 0 24 24">
                     <path
                       d="M12 2c5.523 0 10 4.477 10 10s-4.477 10-10 10S2 17.523 2 12S6.477 2 12 2m1.252 11H8.75a.75.75 0 0 0 0 1.493h4.502a.75.75 0 0 0 0-1.486zm1.998-3.5h-6.5a.75.75 0 0 0 0 1.486h6.5a.75.75 0 0 0 0-1.486z"
@@ -1256,7 +1248,7 @@
             <article class="sg-info-card">
               <div class="sg-info-head">
                 <span
-                  class="lum-icon-circle lum-icon-circle-md lum-icon-circle-dark-teal"
+                  class="lum-icon-circle lum-icon-circle-md lum-icon-circle-dark-accent"
                   ><svg viewBox="0 0 24 24">
                     <path
                       d="M5.75 3a2.25 2.25 0 0 1 2.248 2.25v13.5a2.25 2.25 0 1 1-4.498 0V5.25A2.25 2.25 0 0 1 5.75 3m6.5 4a2.25 2.25 0 0 1 2.248 2.25v9.5a2.25 2.25 0 1 1-4.498 0v-9.5A2.25 2.25 0 0 1 12.25 7m6.5 4a2.25 2.25 0 0 1 2.248 2.25v5.5a2.25 2.25 0 1 1-4.498 0v-5.5A2.25 2.25 0 0 1 18.75 11"
@@ -1274,7 +1266,7 @@
             <article class="sg-info-card">
               <div class="sg-info-head">
                 <span
-                  class="lum-icon-circle lum-icon-circle-md lum-icon-circle-dark-teal"
+                  class="lum-icon-circle lum-icon-circle-md lum-icon-circle-dark-accent"
                   ><svg viewBox="0 0 24 24">
                     <path
                       d="M3.839 5.858c2.94-3.916 9.03-5.055 13.364-2.36c4.28 2.66 5.854 7.777 4.1 12.577c-1.655 4.533-6.016 6.328-9.159 4.048c-1.177-.854-1.634-1.925-1.854-3.664l-.106-.987c-.123-.934-.311-1.352-.705-1.572c-.535-.298-.892-.305-1.595-.033l-.351.146c-1.014.44-1.688.595-2.541.416l-.2-.047c-2.789-.864-3.202-4.647-.565-8.157"
@@ -1283,7 +1275,7 @@
                 <div>
                   <div class="sg-info-title">Farbwelt</div>
                   <div class="sg-info-copy">
-                    Primary fuer Struktur, Accent fuer Aktion, Teal fuer Fokus.
+                    Primary fuer Struktur, Accent fuer Aktion.
                     Orange nur punktuell.
                   </div>
                 </div>
@@ -1292,7 +1284,7 @@
             <article class="sg-info-card">
               <div class="sg-info-head">
                 <span
-                  class="lum-icon-circle lum-icon-circle-md lum-icon-circle-dark-teal"
+                  class="lum-icon-circle lum-icon-circle-md lum-icon-circle-dark-accent"
                   ><svg viewBox="0 0 24 24">
                     <path
                       d="M13.45 2.533a2.25 2.25 0 0 0-2.9 0L3.8 8.228a2.25 2.25 0 0 0-.8 1.72v9.305c0 .966.784 1.75 1.75 1.75h3a1.75 1.75 0 0 0 1.75-1.75V15.25c0-.68.542-1.232 1.217-1.25h2.566a1.25 1.25 0 0 1 1.217 1.25v4.003c0 .966.784 1.75 1.75 1.75h3a1.75 1.75 0 0 0 1.75-1.75V9.947a2.25 2.25 0 0 0-.8-1.72z"
