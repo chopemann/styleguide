@@ -23,8 +23,9 @@ body{padding:0;margin:0;background:var(--lum-cream)}
 .sg-class-toggle input:checked{background:rgba(59,146,199,.32);border-color:rgba(59,146,199,.6)}
 .sg-class-toggle input:checked::after{transform:translateX(14px)}
 .sg-class-wrap{display:inline-flex;flex-direction:column;align-items:flex-start;gap:6px;max-width:100%}
-.sg-class-wrap-block{display:flex;width:100%}
+.sg-class-wrap-block{display:flex;flex-direction:column;align-items:stretch;width:100%}
 .sg-class-wrap-modal{width:auto;max-width:100%;align-items:center}
+.sg-class-wrap-modal .lum-modal{margin:0 auto}
 .sg-class-note{display:none;align-items:center;gap:6px;font-size:10px;line-height:1.35;color:var(--lum-lgray);font-family:var(--lum-font-mono);white-space:normal;word-break:break-word}
 .sg-class-note-text{display:inline}
 .sg-class-copy{display:inline-flex;align-items:center;justify-content:center;width:18px;height:18px;padding:0;border:1px solid var(--lum-light);border-radius:4px;background:var(--lum-white);color:var(--lum-gray);cursor:pointer;transition:all .15s;flex-shrink:0}
@@ -167,8 +168,8 @@ body.sg-show-classes .sg-class-note{display:inline-flex}
 <h2 class="lum-h2">Buttons – heller Hintergrund</h2>
 <p class="sg-sub">6px Radius, Darken-Hover, 1px Press-Effekt.</p>
 <div class="sg-lbl" style="margin-top:28px">Filled</div>
-<div class="sg-row"><a class="lum-btn lum-btn-primary" href="#">Primary</a><a class="lum-btn lum-btn-accent" href="#">Accent</a><a class="lum-btn lum-btn-teal" href="#">Teal</a></div>
-<div class="sg-row"><a class="lum-btn lum-btn-sm lum-btn-accent" href="#"><svg viewBox="0 0 24 24"><path d="M13 3a1 1 0 1 0-2 0v12.086l-3.293-3.293a1 1 0 0 0-1.414 1.414l5 5a1 1 0 0 0 1.414 0l5-5a1 1 0 0 0-1.414-1.414L13 15.086zM5 20a1 1 0 1 0 0 2h14a1 1 0 1 0 0-2z"/></svg> Download</a><a class="lum-btn lum-btn-lg lum-btn-accent" href="#">Großer Button</a></div>
+<div class="sg-row"><a class="lum-btn lum-btn-primary" href="#">Primary</a><a class="lum-btn lum-btn-accent" href="#">Accent</a></div>
+<div class="sg-row"><a class="lum-btn lum-btn-accent" href="#"><svg viewBox="0 0 24 24"><path d="M13 3a1 1 0 1 0-2 0v12.086l-3.293-3.293a1 1 0 0 0-1.414 1.414l5 5a1 1 0 0 0 1.414 0l5-5a1 1 0 0 0-1.414-1.414L13 15.086zM5 20a1 1 0 1 0 0 2h14a1 1 0 1 0 0-2z"/></svg> Download</a><a class="lum-btn lum-btn-accent" href="#">Standard Button</a></div>
 <div class="sg-lbl" style="margin-top:24px">Outline &amp; Ghost</div>
 <div class="sg-row"><a class="lum-btn lum-btn-outline" href="#">Outline Primary</a><a class="lum-btn lum-btn-outline-accent" href="#">Outline Accent</a><a class="lum-btn lum-btn-ghost" href="#">Ghost</a><a class="lum-btn lum-btn-ghost-accent" href="#">Ghost Accent</a></div>
 <div class="sg-lbl" style="margin-top:24px">Icon-Buttons</div>
@@ -270,7 +271,7 @@ body.sg-show-classes .sg-class-note{display:inline-flex}
 <div>
 <div style="font-weight:700;color:var(--lum-primary);font-size:14px">Microsoft Fluent Icons (MIT-Lizenz)</div>
 <div class="lum-body-sm" style="margin-top:2px">Vollständige Bibliothek mit Suche, Farbwahl und ZIP-Download.</div>
-<a class="lum-btn lum-btn-sm lum-btn-teal" href="https://fluent-icon-bib.netlify.app/" target="_blank" rel="noopener" style="margin-top:8px">Icon-Bibliothek öffnen</a>
+<a class="lum-btn lum-btn-accent" href="https://fluent-icon-bib.netlify.app/" target="_blank" rel="noopener" style="margin-top:8px">Icon-Bibliothek öffnen</a>
 </div>
 </div>
 </div></section>
@@ -877,6 +878,7 @@ Inaktiv
   ];
   const blockLikeSelectors = [
     ".sg-dl",
+    ".sg-ic",
     ".lum-card",
     ".lum-card-dark",
     ".lum-dark-bg",
