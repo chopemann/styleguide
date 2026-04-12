@@ -2149,6 +2149,10 @@ a:not([class]):hover {
   --lum-progress-fill-default-width: 72%;
   --lum-chart-col-default-height: 68%;
   --lum-sparkbar-col-default-height: 55%;
+  --lum-dark-heading: rgba(255, 255, 255, 0.92);
+  --lum-dark-body: rgba(255, 255, 255, 0.72);
+  --lum-dark-muted: rgba(255, 255, 255, 0.52);
+  --lum-dark-soft: rgba(255, 255, 255, 0.38);
 }
 
 /* Wrapper-Varianten werden selbsttragend */
@@ -2193,10 +2197,205 @@ a:not([class]):hover {
   height: 16px;
 }
 
+/* Dunkle Oberflächen bekommen sinnvolle Typografie-Kontraste */
+.lum-dark-bg,
+.lum-dark-bg-gradient,
+.lum-card-dark,
+.lum-hero-bg {
+  color: var(--lum-dark-body);
+}
+
+.lum-dark-bg .lum-h1,
+.lum-dark-bg .lum-h2,
+.lum-dark-bg .lum-h3,
+.lum-dark-bg .lum-h4,
+.lum-dark-bg .lum-display,
+.lum-dark-bg-gradient .lum-h1,
+.lum-dark-bg-gradient .lum-h2,
+.lum-dark-bg-gradient .lum-h3,
+.lum-dark-bg-gradient .lum-h4,
+.lum-dark-bg-gradient .lum-display,
+.lum-card-dark .lum-h1,
+.lum-card-dark .lum-h2,
+.lum-card-dark .lum-h3,
+.lum-card-dark .lum-h4,
+.lum-card-dark .lum-display,
+.lum-hero-bg .lum-h1,
+.lum-hero-bg .lum-h2,
+.lum-hero-bg .lum-h3,
+.lum-hero-bg .lum-h4,
+.lum-hero-bg .lum-display {
+  color: var(--lum-dark-heading);
+}
+
+.lum-dark-bg .lum-body,
+.lum-dark-bg-gradient .lum-body,
+.lum-card-dark .lum-body,
+.lum-hero-bg .lum-body {
+  color: var(--lum-dark-body);
+}
+
+.lum-dark-bg .lum-body-sm,
+.lum-dark-bg-gradient .lum-body-sm,
+.lum-card-dark .lum-body-sm,
+.lum-hero-bg .lum-body-sm,
+.lum-dark-bg .lum-caption,
+.lum-dark-bg-gradient .lum-caption,
+.lum-card-dark .lum-caption,
+.lum-hero-bg .lum-caption {
+  color: var(--lum-dark-muted);
+}
+
+.lum-dark-bg .lum-overline,
+.lum-dark-bg-gradient .lum-overline,
+.lum-card-dark .lum-overline,
+.lum-hero-bg .lum-overline {
+  color: var(--lum-dark-soft);
+}
+
+.lum-dark-bg .lum-stat,
+.lum-dark-bg-gradient .lum-stat,
+.lum-card-dark .lum-stat,
+.lum-hero-bg .lum-stat {
+  color: var(--lum-accent);
+}
+
+.lum-dark-bg .lum-divider,
+.lum-dark-bg-gradient .lum-divider,
+.lum-card-dark .lum-divider,
+.lum-hero-bg .lum-divider {
+  background: rgba(255, 255, 255, 0.08);
+}
+
+.lum-dark-bg .lum-code,
+.lum-dark-bg-gradient .lum-code,
+.lum-card-dark .lum-code,
+.lum-hero-bg .lum-code {
+  background: rgba(255, 255, 255, 0.08);
+  color: var(--lum-dark-heading);
+}
+
+.lum-dark-bg .lum-loader,
+.lum-dark-bg-gradient .lum-loader,
+.lum-card-dark .lum-loader,
+.lum-hero-bg .lum-loader {
+  color: var(--lum-dark-heading);
+}
+
+.lum-dark-bg .lum-loader-text,
+.lum-dark-bg-gradient .lum-loader-text,
+.lum-card-dark .lum-loader-text,
+.lum-hero-bg .lum-loader-text {
+  color: var(--lum-dark-muted);
+}
+
+.lum-dark-bg .lum-card-dark,
+.lum-dark-bg-gradient .lum-card-dark,
+.lum-hero-bg .lum-card-dark {
+  background: rgba(255, 255, 255, 0.04);
+  border-color: rgba(255, 255, 255, 0.08);
+}
+
+/* Helle Karten innerhalb dunkler Container bleiben hell lesbar */
+.lum-dark-bg .lum-card,
+.lum-dark-bg .lum-card-gradient,
+.lum-dark-bg-gradient .lum-card,
+.lum-dark-bg-gradient .lum-card-gradient,
+.lum-hero-bg .lum-card,
+.lum-hero-bg .lum-card-gradient {
+  color: var(--lum-text);
+}
+
+.lum-dark-bg .lum-card .lum-h1,
+.lum-dark-bg .lum-card .lum-h2,
+.lum-dark-bg .lum-card .lum-h3,
+.lum-dark-bg .lum-card .lum-h4,
+.lum-dark-bg .lum-card .lum-display,
+.lum-dark-bg .lum-card-gradient .lum-h1,
+.lum-dark-bg .lum-card-gradient .lum-h2,
+.lum-dark-bg .lum-card-gradient .lum-h3,
+.lum-dark-bg .lum-card-gradient .lum-h4,
+.lum-dark-bg .lum-card-gradient .lum-display,
+.lum-dark-bg-gradient .lum-card .lum-h1,
+.lum-dark-bg-gradient .lum-card .lum-h2,
+.lum-dark-bg-gradient .lum-card .lum-h3,
+.lum-dark-bg-gradient .lum-card .lum-h4,
+.lum-dark-bg-gradient .lum-card .lum-display,
+.lum-dark-bg-gradient .lum-card-gradient .lum-h1,
+.lum-dark-bg-gradient .lum-card-gradient .lum-h2,
+.lum-dark-bg-gradient .lum-card-gradient .lum-h3,
+.lum-dark-bg-gradient .lum-card-gradient .lum-h4,
+.lum-dark-bg-gradient .lum-card-gradient .lum-display,
+.lum-hero-bg .lum-card .lum-h1,
+.lum-hero-bg .lum-card .lum-h2,
+.lum-hero-bg .lum-card .lum-h3,
+.lum-hero-bg .lum-card .lum-h4,
+.lum-hero-bg .lum-card .lum-display,
+.lum-hero-bg .lum-card-gradient .lum-h1,
+.lum-hero-bg .lum-card-gradient .lum-h2,
+.lum-hero-bg .lum-card-gradient .lum-h3,
+.lum-hero-bg .lum-card-gradient .lum-h4,
+.lum-hero-bg .lum-card-gradient .lum-display {
+  color: var(--lum-dark);
+}
+
+.lum-dark-bg .lum-card .lum-body,
+.lum-dark-bg .lum-card-gradient .lum-body,
+.lum-dark-bg-gradient .lum-card .lum-body,
+.lum-dark-bg-gradient .lum-card-gradient .lum-body,
+.lum-hero-bg .lum-card .lum-body,
+.lum-hero-bg .lum-card-gradient .lum-body {
+  color: var(--lum-text);
+}
+
+.lum-dark-bg .lum-card .lum-body-sm,
+.lum-dark-bg .lum-card .lum-caption,
+.lum-dark-bg .lum-card .lum-overline,
+.lum-dark-bg .lum-card-gradient .lum-body-sm,
+.lum-dark-bg .lum-card-gradient .lum-caption,
+.lum-dark-bg .lum-card-gradient .lum-overline,
+.lum-dark-bg-gradient .lum-card .lum-body-sm,
+.lum-dark-bg-gradient .lum-card .lum-caption,
+.lum-dark-bg-gradient .lum-card .lum-overline,
+.lum-dark-bg-gradient .lum-card-gradient .lum-body-sm,
+.lum-dark-bg-gradient .lum-card-gradient .lum-caption,
+.lum-dark-bg-gradient .lum-card-gradient .lum-overline,
+.lum-hero-bg .lum-card .lum-body-sm,
+.lum-hero-bg .lum-card .lum-caption,
+.lum-hero-bg .lum-card .lum-overline,
+.lum-hero-bg .lum-card-gradient .lum-body-sm,
+.lum-hero-bg .lum-card-gradient .lum-caption,
+.lum-hero-bg .lum-card-gradient .lum-overline {
+  color: var(--lum-gray);
+}
+
+.lum-icon-circle > svg {
+  width: 50%;
+  height: 50%;
+  fill: currentColor;
+  flex-shrink: 0;
+}
+
 /* Wertbasierte Komponenten bekommen sinnvolle Fallbacks,
    bleiben aber durch Inline-Style oder Custom Property übersteuerbar. */
 .lum-chart-fill {
   width: var(--lum-chart-fill-width, var(--lum-chart-fill-default-width));
+}
+
+.lum-chart-fill-primary {
+  --lum-chart-fill-width: 68%;
+}
+
+.lum-chart-fill-accent {
+  --lum-chart-fill-width: 82%;
+}
+
+.lum-chart-fill-teal {
+  --lum-chart-fill-width: 74%;
+}
+
+.lum-chart-fill-green {
+  --lum-chart-fill-width: 91%;
 }
 
 .lum-chart-dark .lum-chart-fill {
@@ -2207,8 +2406,32 @@ a:not([class]):hover {
   width: var(--lum-progress-fill-width, var(--lum-progress-fill-default-width));
 }
 
+.lum-progress-accent {
+  --lum-progress-fill-width: 72%;
+}
+
+.lum-progress-teal {
+  --lum-progress-fill-width: 61%;
+}
+
+.lum-progress-green {
+  --lum-progress-fill-width: 83%;
+}
+
 .lum-chart-col {
   height: var(--lum-chart-col-height, var(--lum-chart-col-default-height));
+}
+
+.lum-chart-col.lum-col-primary {
+  --lum-chart-col-height: 62%;
+}
+
+.lum-chart-col.lum-col-teal {
+  --lum-chart-col-height: 76%;
+}
+
+.lum-chart-col.lum-col-green {
+  --lum-chart-col-height: 90%;
 }
 
 .lum-sparkbar-col {
@@ -2216,4 +2439,24 @@ a:not([class]):hover {
     --lum-sparkbar-col-height,
     var(--lum-sparkbar-col-default-height)
   );
+}
+
+.lum-sparkbar-col:nth-child(1) {
+  --lum-sparkbar-col-height: 28%;
+}
+
+.lum-sparkbar-col:nth-child(2) {
+  --lum-sparkbar-col-height: 46%;
+}
+
+.lum-sparkbar-col:nth-child(3) {
+  --lum-sparkbar-col-height: 66%;
+}
+
+.lum-sparkbar-col:nth-child(4) {
+  --lum-sparkbar-col-height: 52%;
+}
+
+.lum-sparkbar-col:nth-child(5) {
+  --lum-sparkbar-col-height: 82%;
 }
