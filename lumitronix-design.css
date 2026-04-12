@@ -31,7 +31,7 @@
   --lum-yellow:   #F59E0B;
 
   /* Radien */
-  --lum-radius-btn: 6px;   /* Buttons, Inputs, Badges */
+  --lum-radius-btn: var(--lum-radius-sm);   /* Buttons, Inputs, Badges */
   --lum-radius-sm:  6px;   /* Icon-Buttons, Tags, kleine Elemente */
   --lum-radius-md:  8px;   /* Cards, Alerts, Tabellen */
   --lum-radius-lg:  12px;  /* Große Container, Hero-Boxen */
