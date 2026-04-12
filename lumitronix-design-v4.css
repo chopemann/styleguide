@@ -2160,6 +2160,8 @@ a:not([class]):hover {
   --lum-dark-body: rgba(255, 255, 255, 0.72);
   --lum-dark-muted: rgba(255, 255, 255, 0.52);
   --lum-dark-soft: rgba(255, 255, 255, 0.38);
+  --lum-v4-box-border: rgba(28, 37, 48, 0.14);
+  --lum-v4-box-shadow: 0 2px 8px rgba(28, 37, 48, 0.1);
 }
 
 /* Wrapper-Varianten werden selbsttragend */
@@ -2301,6 +2303,26 @@ a:not([class]):hover {
 .lum-hero-bg .lum-card-dark {
   background: rgba(255, 255, 255, 0.04);
   border-color: rgba(255, 255, 255, 0.08);
+}
+
+.lum-card,
+.lum-card-gradient,
+.lum-stat-card,
+.lum-table-wrap,
+.lum-modal {
+  border-color: var(--lum-v4-box-border);
+  box-shadow: var(--lum-v4-box-shadow);
+}
+
+.lum-card-gradient {
+  background: var(--lum-white);
+  background-image: none;
+}
+
+.lum-hero-bg > .lum-card,
+.lum-hero-bg > .lum-card-gradient {
+  background: var(--lum-white);
+  background-image: none;
 }
 
 /* Helle Karten innerhalb dunkler Container bleiben hell lesbar */
