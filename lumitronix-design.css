@@ -11,7 +11,7 @@
 :root {
   /* Farben — Kernpalette */
   --lum-dark:     #1C2530;
-  --lum-primary:  #152C3E;
+  --lum-primary:  #366A99;
   --lum-accent:   #366A99;
   --lum-teal:     #3B92C7;
   --lum-mint:     #8B9BAA;
@@ -100,19 +100,19 @@ a:not([class]):hover { text-decoration: underline; }
    ───────────────────────────────────── */
 .lum-btn {
   display: inline-flex; align-items: center; gap: 8px;
-  border: none; padding: 13px 26px; border-radius: var(--lum-radius-btn);
+  border: none; padding: 11px 22px; border-radius: var(--lum-radius-btn);
   font-family: var(--lum-font); font-size: 13px; font-weight: 700; letter-spacing: .3px;
   cursor: pointer; text-decoration: none; transition: var(--lum-transition);
   line-height: 1;
 }
 .lum-btn:active { transform: translateY(1px); }
 .lum-btn svg { width: 16px; height: 16px; fill: currentColor; flex-shrink: 0; }
-.lum-btn-sm { padding: 9px 18px; font-size: 12px; }
-.lum-btn-lg { padding: 16px 32px; font-size: 15px; }
+.lum-btn-sm { padding: 7px 16px; font-size: 12px; }
+.lum-btn-lg { padding: 14px 28px; font-size: 15px; }
 
 /* Filled */
 .lum-btn-primary { background: var(--lum-primary); color: #fff; }
-.lum-btn-primary:hover { background: #081620; }
+.lum-btn-primary:hover { background: #245070; }
 .lum-btn-accent { background: var(--lum-accent); color: #fff; }
 .lum-btn-accent:hover { background: #245070; }
 .lum-btn-teal { background: var(--lum-teal); color: #fff; }
@@ -120,13 +120,13 @@ a:not([class]):hover { text-decoration: underline; }
 
 /* Outline */
 .lum-btn-outline { background: transparent; border: 2px solid var(--lum-primary); color: var(--lum-primary); }
-.lum-btn-outline:hover { background: rgba(21,44,62,.06); border-color: #081620; color: #081620; }
+.lum-btn-outline:hover { background: rgba(54,106,153,.08); border-color: #245070; color: #245070; }
 .lum-btn-outline-accent { background: transparent; border: 2px solid var(--lum-accent); color: var(--lum-accent); }
 .lum-btn-outline-accent:hover { background: rgba(54,106,153,.06); border-color: #245070; color: #245070; }
 
 /* Ghost */
 .lum-btn-ghost { background: transparent; color: var(--lum-primary); border: none; }
-.lum-btn-ghost:hover { color: #081620; background: rgba(21,44,62,.05); }
+.lum-btn-ghost:hover { color: #245070; background: rgba(54,106,153,.05); }
 .lum-btn-ghost-accent { background: transparent; color: var(--lum-accent); border: none; }
 .lum-btn-ghost-accent:hover { color: #245070; background: rgba(54,106,153,.05); }
 
@@ -147,7 +147,7 @@ a:not([class]):hover { text-decoration: underline; }
    §5  ICON-BUTTONS
    ───────────────────────────────────── */
 .lum-btn-icon {
-  width: 40px; height: 40px; padding: 0;
+  width: 36px; height: 36px; padding: 0;
   display: inline-flex; align-items: center; justify-content: center;
   border-radius: var(--lum-radius-btn); border: 1px solid var(--lum-light);
   background: var(--lum-white); color: var(--lum-gray);
@@ -155,10 +155,10 @@ a:not([class]):hover { text-decoration: underline; }
 }
 .lum-btn-icon:hover { border-color: var(--lum-accent); color: var(--lum-accent); background: rgba(54,106,153,.04); }
 .lum-btn-icon:active { transform: translateY(1px); }
-.lum-btn-icon svg { width: 18px; height: 18px; fill: currentColor; }
+.lum-btn-icon svg { width: 16px; height: 16px; fill: currentColor; }
 
 .lum-btn-icon-dark {
-  width: 40px; height: 40px; padding: 0;
+  width: 36px; height: 36px; padding: 0;
   display: inline-flex; align-items: center; justify-content: center;
   border-radius: var(--lum-radius-btn); border: 1px solid rgba(255,255,255,.15);
   background: rgba(255,255,255,.06); color: rgba(255,255,255,.5);
@@ -166,7 +166,7 @@ a:not([class]):hover { text-decoration: underline; }
 }
 .lum-btn-icon-dark:hover { border-color: var(--lum-teal); color: var(--lum-teal); background: rgba(59,146,199,.1); }
 .lum-btn-icon-dark:active { transform: translateY(1px); }
-.lum-btn-icon-dark svg { width: 18px; height: 18px; fill: currentColor; }
+.lum-btn-icon-dark svg { width: 16px; height: 16px; fill: currentColor; }
 
 
 /* ─────────────────────────────────────
@@ -206,7 +206,7 @@ a:not([class]):hover { text-decoration: underline; }
 .lum-icon-circle-md { width: 40px; height: 40px; }
 .lum-icon-circle-lg { width: 56px; height: 56px; }
 
-.lum-icon-circle-primary { background: rgba(21,44,62,.08); color: var(--lum-primary); }
+.lum-icon-circle-primary { background: rgba(54,106,153,.1); color: var(--lum-primary); }
 .lum-icon-circle-accent { background: rgba(54,106,153,.1); color: var(--lum-accent); }
 .lum-icon-circle-teal { background: rgba(59,146,199,.1); color: var(--lum-teal); }
 .lum-icon-circle-green { background: rgba(34,197,94,.1); color: var(--lum-green); }
@@ -391,26 +391,31 @@ a:not([class]):hover { text-decoration: underline; }
    Für neue Formulare immer lum-float-field verwenden. */
 .lum-float-field { position: relative; }
 .lum-float-field .lum-input,
-.lum-float-field .lum-select,
-.lum-float-field .lum-textarea {
-  padding: 22px 16px 8px;
+.lum-float-field .lum-select {
+  padding: 16px;
 }
 .lum-float-field .lum-select {
   padding-right: 40px;
 }
-.lum-float-field .lum-textarea { min-height: 110px; }
+.lum-float-field .lum-textarea {
+  padding: 22px 16px 8px;
+  min-height: 110px;
+}
 
 .lum-float-field .lum-float-label {
-  position: absolute; left: 16px; top: 16px;
-  font-size: 14px; font-weight: 500;
+  position: absolute; left: 16px; top: 50%;
+  transform: translateY(-50%);
+  font-family: var(--lum-font);
+  font-size: 14px; font-weight: 400;
   color: var(--lum-lgray);
   pointer-events: none;
   transition: all .2s var(--lum-ease);
   transform-origin: left center;
-  line-height: 1;
+  line-height: 1.4;
 }
 .lum-float-field .lum-textarea ~ .lum-float-label {
   top: 16px;
+  transform: none;
 }
 
 /* Float up: focus or filled */
@@ -421,7 +426,8 @@ a:not([class]):hover { text-decoration: underline; }
 .lum-float-field .lum-select:focus ~ .lum-float-label,
 .lum-float-field .lum-select ~ .lum-float-label {
   top: 6px;
-  font-size: 10px; font-weight: 500;
+  transform: none;
+  font-size: 10px; font-weight: 600;
   letter-spacing: .2px;
   color: var(--lum-lgray);
   line-height: 1;
@@ -431,7 +437,7 @@ a:not([class]):hover { text-decoration: underline; }
 .lum-float-field .lum-input:focus ~ .lum-float-label,
 .lum-float-field .lum-textarea:focus ~ .lum-float-label,
 .lum-float-field .lum-select:focus ~ .lum-float-label {
-  color: var(--lum-accent);
+  color: var(--lum-teal);
 }
 
 /* Error state */
@@ -448,6 +454,11 @@ a:not([class]):hover { text-decoration: underline; }
 /* Info-Icon inside floating label remains hoverable */
 .lum-float-field .lum-float-label .lum-info-icon {
   pointer-events: auto;
+  width: 12px;
+  height: 12px;
+  margin-left: 3px;
+  font-size: 8px;
+  transform: translateY(-1px);
 }
 
 
