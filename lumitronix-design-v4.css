@@ -1,0 +1,2219 @@
+/* ═══════════════════════════════════════════════════════════════
+   LUMITRONIX Design System — lumitronix-design-v4.css
+   Vergleichsstand mit additiver Härtungsschicht
+   Einbindung: <link rel="stylesheet" href="https://lum-styleguide.netlify.app/lumitronix-design-v4.css">
+   Version 4.0 · 2026-04
+   ═══════════════════════════════════════════════════════════════ */
+
+/* ─────────────────────────────────────
+   §1  DESIGN TOKEN
+   ───────────────────────────────────── */
+:root {
+  /* Farben — Kernpalette */
+  --lum-dark: #1c2530;
+  --lum-primary: #366a99;
+  --lum-accent: #3b92c7;
+  --lum-teal: #3b92c7;
+  --lum-mint: #8b9baa;
+  --lum-light: #e4e8ec;
+  --lum-cream: #f2f3f4;
+  --lum-white: #ffffff;
+
+  /* Farben — Text */
+  --lum-text: #2c2c2c;
+  --lum-gray: #5a6b7d;
+  --lum-lgray: #b0bac4;
+
+  /* Farben — Status */
+  --lum-green: #22c55e;
+  --lum-red: #ef4444;
+  --lum-orange: #ff4d00;
+  --lum-yellow: #f59e0b;
+
+  /* Radien */
+  --lum-radius-btn: var(--lum-radius-sm); /* Buttons, Inputs, Badges */
+  --lum-radius-sm: 6px; /* Icon-Buttons, Tags, kleine Elemente */
+  --lum-radius-md: 8px; /* Cards, Alerts, Tabellen */
+  --lum-radius-lg: 12px; /* Große Container, Hero-Boxen */
+
+  /* Schatten */
+  --lum-shadow: 0 1px 3px rgba(28, 37, 48, 0.08);
+
+  /* Gradienten */
+  --lum-grad-primary: linear-gradient(
+    135deg,
+    #152c3e 0%,
+    #1c3a52 50%,
+    #244b6a 100%
+  );
+  --lum-grad-accent: linear-gradient(135deg, #3b92c7 0%, #5bb5e0 100%);
+  --lum-grad-teal: linear-gradient(135deg, #3b92c7 0%, #5bb5e0 100%);
+  --lum-grad-dark: linear-gradient(
+    160deg,
+    #0e1820 0%,
+    #1c2530 40%,
+    #243344 100%
+  );
+  --lum-grad-hero: linear-gradient(
+    135deg,
+    #0e1820 0%,
+    #152c3e 35%,
+    #1d3c56 65%,
+    #244b6a 100%
+  );
+  --lum-grad-subtle: linear-gradient(180deg, #f2f3f4 0%, #e4e8ec 100%);
+  --lum-grad-card: linear-gradient(180deg, #ffffff 0%, #f8f9fa 100%);
+  --lum-grad-glow: radial-gradient(
+    ellipse at 30% 20%,
+    rgba(59, 146, 199, 0.15) 0%,
+    transparent 60%
+  );
+
+  /* Typografie */
+  --lum-font: "Montserrat", "Helvetica Neue", Helvetica, Arial, sans-serif;
+  --lum-font-condensed: "Oswald", "Montserrat", Helvetica, Arial, sans-serif;
+  --lum-font-mono: "Courier New", "Consolas", monospace;
+
+  /* Übergänge */
+  --lum-ease: cubic-bezier(0.4, 0, 0.2, 1);
+  --lum-transition: all 0.2s var(--lum-ease);
+}
+
+/* ─────────────────────────────────────
+   §2  RESET & BASIS
+   ───────────────────────────────────── */
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  font-family: var(--lum-font);
+  font-size: 14px;
+  line-height: 1.5;
+  color: var(--lum-text);
+  background: var(--lum-cream);
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+/* ─────────────────────────────────────
+   §3  TYPOGRAFIE
+   ───────────────────────────────────── */
+.lum-h1 {
+  font-size: 32px;
+  font-weight: 800;
+  color: var(--lum-dark);
+  line-height: 1.2;
+  letter-spacing: -0.3px;
+}
+.lum-h2 {
+  font-size: 24px;
+  font-weight: 800;
+  color: var(--lum-dark);
+  line-height: 1.25;
+  letter-spacing: -0.2px;
+}
+.lum-h3 {
+  font-size: 18px;
+  font-weight: 700;
+  color: var(--lum-dark);
+  line-height: 1.3;
+}
+.lum-h4 {
+  font-size: 15px;
+  font-weight: 700;
+  color: var(--lum-dark);
+  line-height: 1.4;
+}
+.lum-body {
+  font-size: 14px;
+  font-weight: 400;
+  color: var(--lum-text);
+  line-height: 1.5;
+}
+.lum-body-sm {
+  font-size: 13px;
+  font-weight: 400;
+  color: var(--lum-gray);
+  line-height: 1.5;
+}
+.lum-caption {
+  font-size: 12px;
+  font-weight: 500;
+  color: var(--lum-gray);
+  line-height: 1.4;
+}
+.lum-overline {
+  font-size: 11px;
+  font-weight: 700;
+  letter-spacing: 1.2px;
+  text-transform: uppercase;
+  color: var(--lum-gray);
+}
+.lum-display {
+  font-size: 48px;
+  font-weight: 800;
+  color: var(--lum-dark);
+  line-height: 1.1;
+  letter-spacing: -1px;
+}
+.lum-stat {
+  font-size: 36px;
+  font-weight: 800;
+  color: var(--lum-accent);
+  line-height: 1;
+}
+
+/* Links */
+a:not([class]) {
+  color: var(--lum-accent);
+  text-decoration: none;
+}
+a:not([class]):hover {
+  text-decoration: underline;
+}
+/* ─────────────────────────────────────
+   §4  BUTTONS
+   ───────────────────────────────────── */
+.lum-btn {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  border: none;
+  padding: 11px 22px;
+  border-radius: var(--lum-radius-btn);
+  font-family: var(--lum-font);
+  font-size: 13px;
+  font-weight: 700;
+  letter-spacing: 0.3px;
+  cursor: pointer;
+  text-decoration: none;
+  transition: var(--lum-transition);
+  line-height: 1;
+}
+.lum-btn:active {
+  transform: translateY(1px);
+}
+.lum-btn svg {
+  width: 16px;
+  height: 16px;
+  fill: currentColor;
+  flex-shrink: 0;
+}
+.lum-btn-sm {
+  padding: 11px 22px;
+  font-size: 13px;
+}
+.lum-btn-lg {
+  padding: 11px 22px;
+  font-size: 13px;
+}
+
+/* Filled */
+.lum-btn-primary {
+  background: var(--lum-primary);
+  color: #fff;
+}
+.lum-btn-primary:hover {
+  background: #245070;
+}
+.lum-btn-accent {
+  background: var(--lum-accent);
+  color: #fff;
+}
+.lum-btn-accent:hover {
+  background: #2874a0;
+}
+.lum-btn-teal {
+  background: var(--lum-accent);
+  color: #fff;
+}
+.lum-btn-teal:hover {
+  background: #2874a0;
+}
+
+/* Outline */
+.lum-btn-outline {
+  background: transparent;
+  border: 2px solid var(--lum-primary);
+  color: var(--lum-primary);
+}
+.lum-btn-outline:hover {
+  background: rgba(54, 106, 153, 0.08);
+  border-color: #245070;
+  color: #245070;
+}
+.lum-btn-outline-accent {
+  background: transparent;
+  border: 2px solid var(--lum-accent);
+  color: var(--lum-accent);
+}
+.lum-btn-outline-accent:hover {
+  background: rgba(59, 146, 199, 0.06);
+  border-color: #2874a0;
+  color: #2874a0;
+}
+
+/* Ghost */
+.lum-btn-ghost {
+  background: transparent;
+  color: var(--lum-primary);
+  border: none;
+}
+.lum-btn-ghost:hover {
+  color: #245070;
+  background: rgba(54, 106, 153, 0.05);
+}
+.lum-btn-ghost-accent {
+  background: transparent;
+  color: var(--lum-accent);
+  border: none;
+}
+.lum-btn-ghost-accent:hover {
+  color: #2874a0;
+  background: rgba(59, 146, 199, 0.05);
+}
+
+/* Dark BG variants */
+.lum-btn-dark-solid {
+  background: var(--lum-accent);
+  color: #fff;
+  border: 2px solid var(--lum-accent);
+}
+.lum-btn-dark-solid:hover {
+  background: #2874a0;
+  border-color: #2874a0;
+}
+.lum-btn-dark-accent {
+  background: var(--lum-accent);
+  color: #fff;
+  border: 2px solid var(--lum-accent);
+}
+.lum-btn-dark-accent:hover {
+  background: #2874a0;
+  border-color: #2874a0;
+}
+.lum-btn-dark-glass {
+  background: rgba(255, 255, 255, 0.08);
+  color: #fff;
+  border: 1px solid rgba(255, 255, 255, 0.15);
+}
+.lum-btn-dark-glass:hover {
+  background: rgba(255, 255, 255, 0.14);
+  border-color: rgba(255, 255, 255, 0.25);
+}
+.lum-btn-dark-outline {
+  background: transparent;
+  border: 1px solid rgba(255, 255, 255, 0.3);
+  color: #fff;
+}
+.lum-btn-dark-outline:hover {
+  border-color: rgba(255, 255, 255, 0.6);
+}
+.lum-btn-dark-ghost {
+  background: transparent;
+  color: rgba(255, 255, 255, 0.6);
+  border: none;
+}
+.lum-btn-dark-ghost:hover {
+  color: #fff;
+  background: rgba(255, 255, 255, 0.06);
+}
+
+/* ─────────────────────────────────────
+   §5  ICON-BUTTONS
+   ───────────────────────────────────── */
+.lum-btn-icon {
+  width: 36px;
+  height: 36px;
+  padding: 0;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: var(--lum-radius-btn);
+  border: 1px solid var(--lum-light);
+  background: var(--lum-white);
+  color: var(--lum-gray);
+  transition: var(--lum-transition);
+  cursor: pointer;
+}
+.lum-btn-icon:hover {
+  border-color: var(--lum-accent);
+  color: var(--lum-accent);
+  background: rgba(59, 146, 199, 0.04);
+}
+.lum-btn-icon:active {
+  transform: translateY(1px);
+}
+.lum-btn-icon svg {
+  width: 16px;
+  height: 16px;
+  fill: currentColor;
+}
+
+.lum-btn-icon-dark {
+  width: 36px;
+  height: 36px;
+  padding: 0;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: var(--lum-radius-btn);
+  border: 1px solid rgba(255, 255, 255, 0.15);
+  background: rgba(255, 255, 255, 0.06);
+  color: rgba(255, 255, 255, 0.5);
+  transition: var(--lum-transition);
+  cursor: pointer;
+}
+.lum-btn-icon-dark:hover {
+  border-color: var(--lum-accent);
+  color: var(--lum-accent);
+  background: rgba(59, 146, 199, 0.1);
+}
+.lum-btn-icon-dark:active {
+  transform: translateY(1px);
+}
+.lum-btn-icon-dark svg {
+  width: 16px;
+  height: 16px;
+  fill: currentColor;
+}
+
+/* ─────────────────────────────────────
+   §6  ICON-SYSTEM
+   Icons via SVG inline oder als CSS-Klassen.
+   Basis-Container für konsistente Größe & Farbe.
+   ───────────────────────────────────── */
+.lum-icon {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 20px;
+  height: 20px;
+  flex-shrink: 0;
+  color: currentColor;
+}
+.lum-icon svg {
+  width: 100%;
+  height: 100%;
+  fill: currentColor;
+}
+.lum-icon-xs {
+  width: 14px;
+  height: 14px;
+}
+.lum-icon-sm {
+  width: 16px;
+  height: 16px;
+}
+.lum-icon-md {
+  width: 20px;
+  height: 20px;
+}
+.lum-icon-lg {
+  width: 24px;
+  height: 24px;
+}
+.lum-icon-xl {
+  width: 32px;
+  height: 32px;
+}
+.lum-icon-2xl {
+  width: 48px;
+  height: 48px;
+}
+
+/* Farbvarianten */
+.lum-icon-primary {
+  color: var(--lum-primary);
+}
+.lum-icon-accent {
+  color: var(--lum-accent);
+}
+.lum-icon-teal {
+  color: var(--lum-accent);
+}
+.lum-icon-gray {
+  color: var(--lum-gray);
+}
+.lum-icon-white {
+  color: #fff;
+}
+.lum-icon-green {
+  color: var(--lum-green);
+}
+.lum-icon-red {
+  color: var(--lum-red);
+}
+.lum-icon-orange {
+  color: var(--lum-orange);
+}
+
+/* Icon im Kreis-Container */
+.lum-icon-circle {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 50%;
+  flex-shrink: 0;
+}
+.lum-icon-circle-sm {
+  width: 32px;
+  height: 32px;
+}
+.lum-icon-circle-md {
+  width: 40px;
+  height: 40px;
+}
+.lum-icon-circle-lg {
+  width: 56px;
+  height: 56px;
+}
+
+.lum-icon-circle-primary {
+  background: rgba(54, 106, 153, 0.1);
+  color: var(--lum-primary);
+}
+.lum-icon-circle-accent {
+  background: rgba(59, 146, 199, 0.1);
+  color: var(--lum-accent);
+}
+.lum-icon-circle-teal {
+  background: rgba(59, 146, 199, 0.1);
+  color: var(--lum-accent);
+}
+.lum-icon-circle-green {
+  background: rgba(34, 197, 94, 0.1);
+  color: var(--lum-green);
+}
+.lum-icon-circle-red {
+  background: rgba(239, 68, 68, 0.1);
+  color: var(--lum-red);
+}
+.lum-icon-circle-orange {
+  background: rgba(255, 77, 0, 0.1);
+  color: var(--lum-orange);
+}
+
+/* Icon auf dunklem Hintergrund */
+.lum-icon-circle-dark {
+  background: rgba(255, 255, 255, 0.08);
+  color: rgba(255, 255, 255, 0.7);
+}
+.lum-icon-circle-dark-teal {
+  background: rgba(59, 146, 199, 0.15);
+  color: var(--lum-accent);
+}
+.lum-icon-circle-dark-accent {
+  background: rgba(59, 146, 199, 0.15);
+  color: var(--lum-accent);
+}
+
+/* Icon + Text inline */
+.lum-icon-text {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  font-size: 13px;
+  font-weight: 500;
+  color: var(--lum-text);
+}
+.lum-icon-text .lum-icon {
+  flex-shrink: 0;
+}
+
+/* ─────────────────────────────────────
+   §7  TOOLTIPS
+   ───────────────────────────────────── */
+/* T1 — Dunkel (heller BG) */
+[data-tooltip] {
+  position: relative;
+}
+[data-tooltip]::after {
+  content: attr(data-tooltip);
+  position: absolute;
+  bottom: calc(100% + 8px);
+  left: 50%;
+  transform: translateX(-50%) translateY(4px);
+  background: var(--lum-dark);
+  color: #fff;
+  font-size: 12px;
+  font-weight: 500;
+  padding: 8px 14px;
+  border-radius: var(--lum-radius-btn);
+  white-space: nowrap;
+  opacity: 0;
+  pointer-events: none;
+  transition: all 0.2s;
+  z-index: 50;
+}
+[data-tooltip]::before {
+  content: "";
+  position: absolute;
+  bottom: calc(100% + 2px);
+  left: 50%;
+  transform: translateX(-50%);
+  border: 5px solid transparent;
+  border-top-color: var(--lum-dark);
+  opacity: 0;
+  transition: all 0.2s;
+  z-index: 50;
+}
+[data-tooltip]:hover::after,
+[data-tooltip]:hover::before {
+  opacity: 1;
+}
+[data-tooltip]:hover::after {
+  transform: translateX(-50%) translateY(0);
+}
+
+/* T3 — Hell (dunkler BG) */
+.lum-tooltip-light[data-tooltip]::after {
+  background: var(--lum-white);
+  color: var(--lum-text);
+  font-weight: 600;
+  box-shadow: 0 4px 16px rgba(0, 0, 0, 0.2);
+}
+.lum-tooltip-light[data-tooltip]::before {
+  border-top-color: var(--lum-white);
+}
+
+/* Text-Tooltip — gepunktete Unterstreichung für Inline-Text */
+[data-tooltip].lum-tooltip-text {
+  text-decoration: underline;
+  text-decoration-style: dotted;
+  text-decoration-color: var(--lum-lgray);
+  text-underline-offset: 3px;
+}
+
+/* Info-Icon — Fragezeichen-Kreis hinter Fachbegriffen */
+.lum-info-icon {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 16px;
+  height: 16px;
+  border-radius: 50%;
+  background: var(--lum-light);
+  color: var(--lum-gray);
+  font-size: 10px;
+  font-weight: 800;
+  vertical-align: middle;
+  margin-left: 4px;
+  line-height: 1;
+  font-family: var(--lum-font);
+  transition: all 0.2s;
+}
+.lum-info-icon:hover {
+  background: var(--lum-accent);
+  color: #fff;
+}
+
+/* Rich-Tooltip — Karten-Tooltip mit strukturiertem Inhalt */
+.lum-tooltip-card {
+  position: relative;
+}
+.lum-tooltip-card .lum-tooltip-content {
+  position: absolute;
+  bottom: calc(100% + 10px);
+  left: 50%;
+  transform: translateX(-50%) translateY(4px);
+  background: var(--lum-dark);
+  color: #fff;
+  padding: 16px 20px;
+  border-radius: var(--lum-radius-sm);
+  min-width: 260px;
+  max-width: 320px;
+  opacity: 0;
+  pointer-events: none;
+  transition: all 0.2s;
+  z-index: 50;
+  box-shadow: 0 8px 32px rgba(0, 0, 0, 0.25);
+}
+.lum-tooltip-card:hover .lum-tooltip-content {
+  opacity: 1;
+  transform: translateX(-50%) translateY(0);
+  pointer-events: auto;
+}
+.lum-tooltip-card .lum-tooltip-content::after {
+  content: "";
+  position: absolute;
+  top: 100%;
+  left: 50%;
+  transform: translateX(-50%);
+  border: 6px solid transparent;
+  border-top-color: var(--lum-dark);
+}
+
+/* ─────────────────────────────────────
+   §8  SUCHLEISTEN
+   ───────────────────────────────────── */
+.lum-search-wrap {
+  position: relative;
+  max-width: 480px;
+}
+.lum-search-wrap svg {
+  position: absolute;
+  left: 14px;
+  top: 50%;
+  transform: translateY(-50%);
+  width: 18px;
+  height: 18px;
+  fill: var(--lum-lgray);
+  pointer-events: none;
+  transition: fill 0.2s;
+}
+.lum-search-wrap:focus-within svg {
+  fill: var(--lum-accent);
+}
+
+/* S1 — Border, primäre Suche */
+.lum-search {
+  width: 100%;
+  padding: 12px 14px 12px 42px;
+  border: 1px solid var(--lum-lgray);
+  border-radius: var(--lum-radius-btn);
+  font-family: var(--lum-font);
+  font-size: 14px;
+  color: var(--lum-text);
+  background: var(--lum-white);
+  outline: none;
+  transition: var(--lum-transition);
+}
+.lum-search::placeholder {
+  color: var(--lum-lgray);
+}
+.lum-search:focus {
+  border-color: var(--lum-accent);
+  box-shadow: 0 0 0 3px rgba(59, 146, 199, 0.1);
+}
+
+/* S4 — Dunkel */
+.lum-search-dark {
+  width: 100%;
+  padding: 12px 14px 12px 42px;
+  border: 1px solid rgba(255, 255, 255, 0.15);
+  border-radius: var(--lum-radius-btn);
+  font-family: var(--lum-font);
+  font-size: 14px;
+  color: #fff;
+  background: rgba(255, 255, 255, 0.06);
+  outline: none;
+  transition: var(--lum-transition);
+}
+.lum-search-dark::placeholder {
+  color: rgba(255, 255, 255, 0.3);
+}
+.lum-search-dark:focus {
+  border-color: var(--lum-accent);
+  background: rgba(255, 255, 255, 0.1);
+}
+.lum-search-dark-wrap svg {
+  fill: rgba(255, 255, 255, 0.3);
+}
+.lum-search-dark-wrap:focus-within svg {
+  fill: var(--lum-accent);
+}
+
+/* S5 — Minimal, Unterstrich */
+.lum-search-minimal {
+  width: 100%;
+  padding: 10px 4px 10px 32px;
+  border: none;
+  border-bottom: 2px solid var(--lum-light);
+  border-radius: 0;
+  font-family: var(--lum-font);
+  font-size: 13px;
+  color: var(--lum-text);
+  background: transparent;
+  outline: none;
+  transition: var(--lum-transition);
+}
+.lum-search-minimal::placeholder {
+  color: var(--lum-lgray);
+}
+.lum-search-minimal:focus {
+  border-bottom-color: var(--lum-accent);
+}
+.lum-search-minimal-wrap svg {
+  left: 4px;
+  width: 16px;
+  height: 16px;
+}
+
+/* ─────────────────────────────────────
+   §9  FORMULARFELDER
+   ───────────────────────────────────── */
+.lum-input {
+  width: 100%;
+  padding: 12px 16px;
+  border: 1px solid var(--lum-lgray);
+  border-radius: var(--lum-radius-btn);
+  font-family: var(--lum-font);
+  font-size: 14px;
+  color: var(--lum-text);
+  background: var(--lum-white);
+  outline: none;
+  transition: var(--lum-transition);
+}
+.lum-input::placeholder {
+  color: var(--lum-lgray);
+}
+.lum-input:focus {
+  border-color: var(--lum-accent);
+  box-shadow: 0 0 0 3px rgba(59, 146, 199, 0.1);
+}
+.lum-input-error {
+  border-color: var(--lum-red);
+}
+.lum-input-error:focus {
+  box-shadow: 0 0 0 3px rgba(239, 68, 68, 0.1);
+}
+
+.lum-label {
+  display: block;
+  font-size: 12px;
+  font-weight: 600;
+  color: var(--lum-gray);
+  margin-bottom: 6px;
+}
+
+.lum-select {
+  width: 100%;
+  padding: 12px 40px 12px 16px;
+  border: 1px solid var(--lum-lgray);
+  border-radius: var(--lum-radius-btn);
+  font-family: var(--lum-font);
+  font-size: 14px;
+  color: var(--lum-text);
+  background: var(--lum-white)
+    url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='12' height='12' viewBox='0 0 24 24'%3E%3Cpath fill='%235A6B7D' d='M7 10l5 5 5-5z'/%3E%3C/svg%3E")
+    no-repeat right 14px center;
+  appearance: none;
+  outline: none;
+  transition: var(--lum-transition);
+  cursor: pointer;
+}
+.lum-select:focus {
+  border-color: var(--lum-accent);
+  box-shadow: 0 0 0 3px rgba(59, 146, 199, 0.1);
+}
+
+.lum-textarea {
+  width: 100%;
+  padding: 12px 16px;
+  min-height: 100px;
+  resize: vertical;
+  border: 1px solid var(--lum-lgray);
+  border-radius: var(--lum-radius-btn);
+  font-family: var(--lum-font);
+  font-size: 14px;
+  color: var(--lum-text);
+  background: var(--lum-white);
+  outline: none;
+  transition: var(--lum-transition);
+}
+.lum-textarea:focus {
+  border-color: var(--lum-accent);
+  box-shadow: 0 0 0 3px rgba(59, 146, 199, 0.1);
+}
+
+/* Number input — native spinner arrows */
+.lum-input[type="number"] {
+  -moz-appearance: textfield;
+}
+.lum-input[type="number"]::-webkit-inner-spin-button,
+.lum-input[type="number"]::-webkit-outer-spin-button {
+  opacity: 1;
+  height: 28px;
+}
+
+/* Floating Label — Bevorzugte Formular-Variante
+   Wrapper um lum-input / lum-select / lum-textarea.
+   Spart vertikalen Platz, Label bleibt immer sichtbar.
+   Für neue Formulare immer lum-float-field verwenden. */
+.lum-float-field {
+  position: relative;
+}
+.lum-float-field .lum-input,
+.lum-float-field .lum-select {
+  padding: 16px;
+}
+.lum-float-field .lum-input:focus,
+.lum-float-field .lum-input:not(:placeholder-shown) {
+  padding: 22px 16px 10px;
+}
+.lum-float-field .lum-select {
+  padding: 22px 40px 10px 16px;
+}
+.lum-float-field .lum-textarea {
+  padding: 22px 16px 8px;
+  min-height: 110px;
+}
+
+.lum-float-field .lum-float-label {
+  position: absolute;
+  left: 16px;
+  top: 50%;
+  transform: translateY(-50%);
+  font-family: var(--lum-font);
+  font-size: 14px;
+  font-weight: 400;
+  color: var(--lum-lgray);
+  pointer-events: none;
+  transition: all 0.2s var(--lum-ease);
+  transform-origin: left center;
+  line-height: 1.4;
+}
+.lum-float-field .lum-textarea ~ .lum-float-label {
+  top: 16px;
+  transform: none;
+}
+
+/* Float up: focus or filled */
+.lum-float-field .lum-input:focus ~ .lum-float-label,
+.lum-float-field .lum-input:not(:placeholder-shown) ~ .lum-float-label,
+.lum-float-field .lum-textarea:focus ~ .lum-float-label,
+.lum-float-field .lum-textarea:not(:placeholder-shown) ~ .lum-float-label,
+.lum-float-field .lum-select:focus ~ .lum-float-label,
+.lum-float-field .lum-select ~ .lum-float-label {
+  top: 6px;
+  transform: none;
+  font-size: 10px;
+  font-weight: 400;
+  letter-spacing: 0.2px;
+  color: var(--lum-lgray);
+  line-height: 1;
+}
+
+/* Label tint on focus */
+.lum-float-field .lum-input:focus ~ .lum-float-label,
+.lum-float-field .lum-textarea:focus ~ .lum-float-label,
+.lum-float-field .lum-select:focus ~ .lum-float-label {
+  color: var(--lum-accent);
+}
+
+/* Error state */
+.lum-float-field .lum-input-error ~ .lum-float-label {
+  color: var(--lum-red) !important;
+}
+
+.lum-float-error {
+  font-size: 11px;
+  font-weight: 600;
+  color: var(--lum-red);
+  margin-top: 4px;
+  display: flex;
+  align-items: center;
+  gap: 4px;
+}
+
+/* Info-Icon inside floating label remains hoverable */
+.lum-float-field .lum-float-label .lum-info-icon {
+  pointer-events: auto;
+  width: 12px;
+  height: 12px;
+  margin-left: 3px;
+  font-size: 8px;
+  transform: translateY(-1px);
+}
+
+/* ─────────────────────────────────────
+   §10  CARDS
+   ───────────────────────────────────── */
+.lum-card {
+  background: var(--lum-white);
+  border: 1px solid var(--lum-light);
+  border-radius: var(--lum-radius-md);
+  padding: 24px;
+  box-shadow: var(--lum-shadow);
+  transition: var(--lum-transition);
+}
+.lum-card:hover {
+  box-shadow: var(--lum-shadow);
+}
+.lum-card-dark {
+  background: var(--lum-dark);
+  border: 1px solid rgba(255, 255, 255, 0.06);
+  border-radius: var(--lum-radius-md);
+  padding: 24px;
+}
+.lum-card-gradient {
+  background: var(--lum-grad-card);
+  border: 1px solid var(--lum-light);
+  border-radius: var(--lum-radius-md);
+  padding: 24px;
+}
+
+/* ─────────────────────────────────────
+   §11  BADGES & TAGS
+   ───────────────────────────────────── */
+.lum-badge {
+  display: inline-flex;
+  align-items: center;
+  gap: 4px;
+  padding: 4px 10px;
+  border-radius: 20px;
+  font-size: 11px;
+  font-weight: 700;
+  line-height: 1;
+}
+.lum-badge-accent {
+  background: rgba(59, 146, 199, 0.1);
+  color: var(--lum-accent);
+}
+.lum-badge-teal {
+  background: rgba(59, 146, 199, 0.1);
+  color: var(--lum-accent);
+}
+.lum-badge-green {
+  background: rgba(34, 197, 94, 0.1);
+  color: var(--lum-green);
+}
+.lum-badge-red {
+  background: rgba(239, 68, 68, 0.1);
+  color: var(--lum-red);
+}
+.lum-badge-orange {
+  background: rgba(255, 77, 0, 0.1);
+  color: var(--lum-orange);
+}
+.lum-badge-gray {
+  background: rgba(90, 107, 125, 0.08);
+  color: var(--lum-gray);
+}
+.lum-badge-primary {
+  background: rgba(21, 44, 62, 0.08);
+  color: var(--lum-primary);
+}
+
+/* Badges auf dunklem BG */
+.lum-badge-dark-teal {
+  background: rgba(59, 146, 199, 0.15);
+  color: var(--lum-accent);
+}
+.lum-badge-dark-green {
+  background: rgba(34, 197, 94, 0.15);
+  color: #4ade80;
+}
+.lum-badge-dark-red {
+  background: rgba(239, 68, 68, 0.15);
+  color: #f87171;
+}
+.lum-badge-dark-accent {
+  background: rgba(59, 146, 199, 0.15);
+  color: #8fc7e6;
+}
+
+/* ─────────────────────────────────────
+   §12  ALERTS
+   ───────────────────────────────────── */
+.lum-alert {
+  display: flex;
+  align-items: flex-start;
+  gap: 12px;
+  padding: 16px 20px;
+  border-radius: var(--lum-radius-sm);
+  font-size: 13px;
+  line-height: 1.5;
+}
+.lum-alert-info {
+  background: rgba(59, 146, 199, 0.08);
+  border-left: 3px solid var(--lum-accent);
+  color: var(--lum-text);
+}
+.lum-alert-success {
+  background: rgba(34, 197, 94, 0.08);
+  border-left: 3px solid var(--lum-green);
+  color: var(--lum-text);
+}
+.lum-alert-warning {
+  background: rgba(245, 158, 11, 0.08);
+  border-left: 3px solid var(--lum-yellow);
+  color: var(--lum-text);
+}
+.lum-alert-error {
+  background: rgba(239, 68, 68, 0.08);
+  border-left: 3px solid var(--lum-red);
+  color: var(--lum-text);
+}
+
+/* ─────────────────────────────────────
+   §13  TABELLEN — Ruhig, spaltenbasiert
+   Header: satte Farbfläche
+   Spaltengruppen: Textfarbe, nicht BG
+   ───────────────────────────────────── */
+.lum-table-wrap {
+  overflow-x: auto;
+  border-radius: var(--lum-radius-md);
+  border: 1px solid var(--lum-light);
+  background: var(--lum-white);
+}
+.lum-table {
+  width: 100%;
+  border-collapse: collapse;
+  font-size: 13px;
+  line-height: 1.5;
+}
+.lum-table th {
+  padding: 14px 20px;
+  font-weight: 700;
+  font-size: 12px;
+  color: #fff;
+  background: var(--lum-accent);
+  text-align: left;
+  border-bottom: none;
+  white-space: nowrap;
+}
+.lum-table td {
+  padding: 13px 20px;
+  border-bottom: 1px solid var(--lum-light);
+  color: var(--lum-text);
+  vertical-align: middle;
+}
+.lum-table tbody tr:last-child td {
+  border-bottom: none;
+}
+.lum-table tbody tr:hover {
+  background: rgba(59, 146, 199, 0.04);
+}
+
+/* Spaltengruppen — über Textfarbe, nicht Hintergrund */
+.lum-table td.lum-col-group-a {
+  color: var(--lum-accent);
+}
+.lum-table td.lum-col-group-b {
+  color: var(--lum-primary);
+  font-weight: 600;
+}
+.lum-table td.lum-col-group-c {
+  color: var(--lum-accent);
+}
+
+/* Header-Varianten für Spaltengruppen (dunklerer/hellerer Akzent) */
+.lum-table th.lum-col-group-a {
+  background: var(--lum-accent);
+}
+.lum-table th.lum-col-group-b {
+  background: var(--lum-primary);
+}
+.lum-table th.lum-col-group-c {
+  background: var(--lum-accent);
+}
+
+/* Kompakte Variante */
+.lum-table-compact th {
+  padding: 10px 14px;
+  font-size: 11px;
+}
+.lum-table-compact td {
+  padding: 9px 14px;
+  font-size: 12px;
+}
+
+/* Dunkle Tabelle */
+.lum-table-dark-wrap {
+  overflow-x: auto;
+  border-radius: var(--lum-radius-md);
+  border: 1px solid rgba(255, 255, 255, 0.06);
+  background: var(--lum-dark);
+}
+.lum-table-dark th {
+  padding: 14px 20px;
+  font-weight: 700;
+  font-size: 12px;
+  color: rgba(255, 255, 255, 0.85);
+  background: rgba(59, 146, 199, 0.25);
+  text-align: left;
+  border-bottom: none;
+  white-space: nowrap;
+}
+.lum-table-dark td {
+  padding: 13px 20px;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.06);
+  color: rgba(255, 255, 255, 0.6);
+  vertical-align: middle;
+}
+.lum-table-dark tbody tr:last-child td {
+  border-bottom: none;
+}
+.lum-table-dark tbody tr:hover {
+  background: rgba(255, 255, 255, 0.03);
+}
+
+/* Dunkle Spaltengruppen — Textfarbe */
+.lum-table-dark td.lum-col-group-a {
+  color: var(--lum-accent);
+}
+.lum-table-dark td.lum-col-group-b {
+  color: rgba(255, 255, 255, 0.85);
+  font-weight: 600;
+}
+.lum-table-dark th.lum-col-group-a {
+  background: rgba(59, 146, 199, 0.3);
+}
+.lum-table-dark th.lum-col-group-b {
+  background: rgba(255, 255, 255, 0.08);
+  color: rgba(255, 255, 255, 0.7);
+}
+
+/* ─────────────────────────────────────
+   §14  CHARTS — CSS-basierte Balkendiagramme
+   ───────────────────────────────────── */
+.lum-chart {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+.lum-chart-bar-row {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  font-size: 13px;
+}
+.lum-chart-label {
+  width: 100px;
+  flex-shrink: 0;
+  text-align: right;
+  font-weight: 600;
+  color: var(--lum-gray);
+  font-size: 12px;
+}
+.lum-chart-track {
+  flex: 1;
+  height: 28px;
+  background: var(--lum-light);
+  border-radius: var(--lum-radius-btn);
+  overflow: hidden;
+  position: relative;
+}
+.lum-chart-fill {
+  height: 100%;
+  border-radius: var(--lum-radius-btn);
+  transition: width 0.8s var(--lum-ease);
+  display: flex;
+  align-items: center;
+  padding: 0 10px;
+  font-size: 11px;
+  font-weight: 700;
+  color: #fff;
+  white-space: nowrap;
+}
+.lum-chart-fill-primary {
+  background: var(--lum-grad-primary);
+}
+.lum-chart-fill-accent {
+  background: var(--lum-grad-accent);
+}
+.lum-chart-fill-teal {
+  background: var(--lum-grad-teal);
+}
+.lum-chart-fill-green {
+  background: linear-gradient(135deg, #22c55e 0%, #4ade80 100%);
+}
+
+/* Dunkle Chart-Variante */
+.lum-chart-dark .lum-chart-label {
+  color: rgba(255, 255, 255, 0.5);
+}
+.lum-chart-dark .lum-chart-track {
+  background: rgba(255, 255, 255, 0.06);
+}
+
+/* Mini-Sparkline-Bar */
+.lum-sparkbar {
+  display: inline-flex;
+  align-items: flex-end;
+  gap: 2px;
+  height: 24px;
+}
+.lum-sparkbar-col {
+  width: 4px;
+  border-radius: 2px;
+  background: var(--lum-accent);
+  transition: height 0.3s var(--lum-ease);
+}
+
+/* Donut / Ring via SVG Utility */
+.lum-donut {
+  position: relative;
+  display: inline-flex;
+}
+.lum-donut svg {
+  transform: rotate(-90deg);
+}
+.lum-donut-label {
+  position: absolute;
+  inset: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 16px;
+  font-weight: 800;
+  color: var(--lum-dark);
+}
+
+/* Vertikale Säulen */
+.lum-chart-cols {
+  display: flex;
+  align-items: flex-end;
+  gap: 8px;
+  height: 120px;
+  padding: 0 4px;
+}
+.lum-chart-col {
+  flex: 1;
+  border-radius: 4px 4px 0 0;
+  background: var(--lum-grad-accent);
+  transition: height 0.6s var(--lum-ease);
+  position: relative;
+  min-width: 20px;
+}
+.lum-chart-col-label {
+  position: absolute;
+  bottom: -22px;
+  left: 50%;
+  transform: translateX(-50%);
+  font-size: 10px;
+  color: var(--lum-gray);
+  white-space: nowrap;
+}
+.lum-chart-col-val {
+  position: absolute;
+  top: -18px;
+  left: 50%;
+  transform: translateX(-50%);
+  font-size: 10px;
+  font-weight: 700;
+  color: var(--lum-dark);
+  white-space: nowrap;
+}
+.lum-chart-col.lum-col-teal {
+  background: var(--lum-grad-teal);
+}
+.lum-chart-col.lum-col-primary {
+  background: var(--lum-grad-primary);
+}
+.lum-chart-col.lum-col-green {
+  background: linear-gradient(180deg, #4ade80 0%, #22c55e 100%);
+}
+
+/* ─────────────────────────────────────
+   §15  STAT-CARDS
+   ───────────────────────────────────── */
+.lum-stat-card {
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+  padding: 20px;
+  background: var(--lum-white);
+  border: 1px solid var(--lum-light);
+  border-radius: var(--lum-radius-md);
+}
+.lum-stat-card-label {
+  font-size: 11px;
+  font-weight: 700;
+  letter-spacing: 0.8px;
+  text-transform: uppercase;
+  color: var(--lum-gray);
+}
+.lum-stat-card-value {
+  font-size: 28px;
+  font-weight: 800;
+  color: var(--lum-dark);
+  line-height: 1.1;
+}
+.lum-stat-card-sub {
+  font-size: 12px;
+  color: var(--lum-gray);
+  display: flex;
+  align-items: center;
+  gap: 4px;
+}
+.lum-stat-card-up {
+  color: var(--lum-green);
+  font-weight: 700;
+}
+.lum-stat-card-down {
+  color: var(--lum-red);
+  font-weight: 700;
+}
+
+/* ─────────────────────────────────────
+   §16  AVATAR
+   ───────────────────────────────────── */
+.lum-avatar {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 50%;
+  font-weight: 700;
+  flex-shrink: 0;
+  color: #fff;
+  text-transform: uppercase;
+}
+.lum-avatar-sm {
+  width: 28px;
+  height: 28px;
+  font-size: 10px;
+}
+.lum-avatar-md {
+  width: 36px;
+  height: 36px;
+  font-size: 12px;
+}
+.lum-avatar-lg {
+  width: 48px;
+  height: 48px;
+  font-size: 16px;
+}
+.lum-avatar-primary {
+  background: var(--lum-primary);
+}
+.lum-avatar-accent {
+  background: var(--lum-accent);
+}
+.lum-avatar-teal {
+  background: var(--lum-accent);
+}
+
+/* ─────────────────────────────────────
+   §17  DIVIDER
+   ───────────────────────────────────── */
+.lum-divider {
+  height: 1px;
+  background: var(--lum-light);
+  margin: 48px 0;
+}
+.lum-divider-dark {
+  height: 1px;
+  background: rgba(255, 255, 255, 0.08);
+  margin: 48px 0;
+}
+
+/* ─────────────────────────────────────
+   §18  CODE-BLÖCKE
+   ───────────────────────────────────── */
+.lum-code {
+  background: rgba(21, 44, 62, 0.07);
+  padding: 2px 7px;
+  border-radius: 4px;
+  font-size: 12px;
+  font-family: var(--lum-font-mono);
+}
+.lum-code-block {
+  display: block;
+  padding: 20px;
+  border-radius: var(--lum-radius-sm);
+  background: var(--lum-dark);
+  color: rgba(255, 255, 255, 0.85);
+  font-family: var(--lum-font-mono);
+  font-size: 12px;
+  line-height: 1.5;
+  overflow-x: auto;
+  white-space: pre;
+}
+.lum-code-block .lum-code-comment {
+  color: rgba(255, 255, 255, 0.3);
+}
+.lum-code-block .lum-code-string {
+  color: #4ade80;
+}
+.lum-code-block .lum-code-keyword {
+  color: var(--lum-accent);
+}
+.lum-code-block .lum-code-value {
+  color: #f59e0b;
+}
+
+/* ─────────────────────────────────────
+   §19  DARK-BG CONTAINER
+   ───────────────────────────────────── */
+.lum-dark-bg {
+  background: var(--lum-dark);
+  border-radius: var(--lum-radius-md);
+  padding: 28px;
+}
+.lum-dark-bg-gradient {
+  background: var(--lum-grad-dark);
+  border-radius: var(--lum-radius-md);
+  padding: 28px;
+}
+.lum-hero-bg {
+  background: var(--lum-grad-hero);
+  border-radius: var(--lum-radius-lg);
+  padding: 48px;
+  position: relative;
+  overflow: hidden;
+}
+.lum-hero-bg::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background: var(--lum-grad-glow);
+  pointer-events: none;
+}
+
+/* ─────────────────────────────────────
+   §20  PROGRESS-BAR
+   ───────────────────────────────────── */
+.lum-progress {
+  width: 100%;
+  height: 8px;
+  background: var(--lum-light);
+  border-radius: 4px;
+  overflow: hidden;
+}
+.lum-progress-fill {
+  height: 100%;
+  border-radius: 4px;
+  transition: width 0.6s var(--lum-ease);
+}
+.lum-progress-teal {
+  background: var(--lum-grad-teal);
+}
+.lum-progress-accent {
+  background: var(--lum-grad-accent);
+}
+.lum-progress-green {
+  background: linear-gradient(90deg, #22c55e, #4ade80);
+}
+
+/* ─────────────────────────────────────
+   §21  UTILITY
+   ───────────────────────────────────── */
+/* Gap */
+.lum-gap-10 {
+  gap: 10px;
+}
+
+/* Margin */
+.lum-mb-4 {
+  margin-bottom: 4px;
+}
+
+/* Table alignment */
+.lum-table td.r,
+.lum-table th.r,
+.lum-table-dark td.r,
+.lum-table-dark th.r {
+  text-align: right;
+}
+
+.lum-flex {
+  display: flex;
+}
+.lum-flex-center {
+  display: flex;
+  align-items: center;
+}
+.lum-flex-between {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+.lum-flex-col {
+  display: flex;
+  flex-direction: column;
+}
+.lum-flex-wrap {
+  flex-wrap: wrap;
+}
+.lum-gap-4 {
+  gap: 4px;
+}
+.lum-gap-8 {
+  gap: 8px;
+}
+.lum-gap-12 {
+  gap: 12px;
+}
+.lum-gap-16 {
+  gap: 16px;
+}
+.lum-gap-24 {
+  gap: 24px;
+}
+.lum-gap-32 {
+  gap: 32px;
+}
+.lum-grid-2 {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 24px;
+}
+.lum-grid-3 {
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr;
+  gap: 24px;
+}
+.lum-grid-4 {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 24px;
+}
+.lum-mt-8 {
+  margin-top: 8px;
+}
+.lum-mt-16 {
+  margin-top: 16px;
+}
+.lum-mt-24 {
+  margin-top: 24px;
+}
+.lum-mt-32 {
+  margin-top: 32px;
+}
+.lum-mb-8 {
+  margin-bottom: 8px;
+}
+.lum-mb-16 {
+  margin-bottom: 16px;
+}
+.lum-text-right {
+  text-align: right;
+}
+.lum-text-center {
+  text-align: center;
+}
+.lum-nowrap {
+  white-space: nowrap;
+}
+.lum-truncate {
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+.lum-w-full {
+  width: 100%;
+}
+.lum-max-w-sm {
+  max-width: 320px;
+}
+.lum-max-w-md {
+  max-width: 480px;
+}
+.lum-max-w-lg {
+  max-width: 640px;
+}
+.lum-max-w-xl {
+  max-width: 960px;
+}
+
+/* ─────────────────────────────────────
+   §22  MODAL / DIALOG
+   ───────────────────────────────────── */
+.lum-modal-backdrop {
+  position: fixed;
+  inset: 0;
+  background: rgba(28, 37, 48, 0.5);
+  backdrop-filter: blur(4px);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  z-index: 1000;
+  opacity: 0;
+  pointer-events: none;
+  transition: opacity 0.2s;
+}
+.lum-modal-backdrop.open {
+  opacity: 1;
+  pointer-events: auto;
+}
+.lum-modal {
+  background: var(--lum-white);
+  border-radius: var(--lum-radius-lg);
+  padding: 32px;
+  max-width: 480px;
+  width: 90%;
+  box-shadow: 0 16px 48px rgba(28, 37, 48, 0.2);
+  transform: translateY(8px) scale(0.98);
+  transition: transform 0.25s;
+}
+.lum-modal-backdrop.open .lum-modal {
+  transform: translateY(0) scale(1);
+}
+.lum-modal-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+  margin-bottom: 16px;
+}
+.lum-modal-title {
+  font-size: 18px;
+  font-weight: 800;
+  color: var(--lum-dark);
+}
+.lum-modal-close {
+  width: 32px;
+  height: 32px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border: none;
+  background: none;
+  color: var(--lum-gray);
+  cursor: pointer;
+  border-radius: var(--lum-radius-sm);
+  transition: all 0.15s;
+}
+.lum-modal-close:hover {
+  background: var(--lum-light);
+  color: var(--lum-primary);
+}
+.lum-modal-body {
+  font-size: 14px;
+  color: var(--lum-gray);
+  line-height: 1.5;
+  margin-bottom: 24px;
+}
+.lum-modal-footer {
+  display: flex;
+  gap: 8px;
+  justify-content: flex-end;
+}
+
+/* ─────────────────────────────────────
+   §23  BREADCRUMBS
+   ───────────────────────────────────── */
+.lum-breadcrumbs {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  font-size: 13px;
+}
+.lum-breadcrumbs a {
+  color: var(--lum-gray);
+  text-decoration: none;
+  transition: color 0.15s;
+}
+.lum-breadcrumbs a:hover {
+  color: var(--lum-accent);
+  text-decoration: underline;
+}
+.lum-breadcrumbs .current {
+  color: var(--lum-dark);
+  font-weight: 600;
+}
+.lum-breadcrumbs .sep {
+  color: var(--lum-lgray);
+  font-size: 11px;
+}
+
+/* ─────────────────────────────────────
+   §24  PAGINATION
+   ───────────────────────────────────── */
+.lum-pagination {
+  display: flex;
+  align-items: center;
+  gap: 4px;
+}
+.lum-page {
+  width: 36px;
+  height: 36px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: var(--lum-radius-btn);
+  font-size: 13px;
+  font-weight: 600;
+  color: var(--lum-gray);
+  cursor: pointer;
+  border: 1px solid transparent;
+  transition: all 0.15s;
+  background: none;
+  font-family: inherit;
+}
+.lum-page:hover {
+  background: var(--lum-light);
+  color: var(--lum-primary);
+}
+.lum-page.active {
+  background: var(--lum-accent);
+  color: #fff;
+  border-color: var(--lum-accent);
+}
+.lum-page.disabled {
+  color: var(--lum-lgray);
+  cursor: default;
+  pointer-events: none;
+}
+.lum-page-dots {
+  width: 36px;
+  height: 36px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: var(--lum-lgray);
+  font-size: 14px;
+  letter-spacing: 2px;
+}
+
+/* ─────────────────────────────────────
+   §25  SKELETON / LOADING PLACEHOLDER
+   ───────────────────────────────────── */
+.lum-skeleton {
+  background: linear-gradient(
+    90deg,
+    var(--lum-light) 25%,
+    #eff1f3 37%,
+    var(--lum-light) 63%
+  );
+  background-size: 400% 100%;
+  animation: lum-shimmer 1.4s ease infinite;
+  border-radius: var(--lum-radius-btn);
+}
+.lum-skeleton-text {
+  height: 14px;
+  margin-bottom: 8px;
+  width: 100%;
+}
+.lum-skeleton-text:last-child {
+  width: 60%;
+}
+.lum-skeleton-heading {
+  height: 24px;
+  width: 40%;
+  margin-bottom: 16px;
+}
+.lum-skeleton-avatar {
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+}
+.lum-skeleton-card {
+  height: 160px;
+  border-radius: var(--lum-radius-md);
+}
+@keyframes lum-shimmer {
+  0% {
+    background-position: 100% 0;
+  }
+  100% {
+    background-position: -100% 0;
+  }
+}
+
+/* ─────────────────────────────────────
+   §26  TABS
+   ───────────────────────────────────── */
+
+/* Variante A – Unterstrich */
+.lum-tabs {
+  display: flex;
+  border-bottom: 2px solid var(--lum-light);
+  gap: 0;
+}
+.lum-tab {
+  padding: 12px 20px;
+  font-size: 13px;
+  font-weight: 600;
+  color: var(--lum-gray);
+  cursor: pointer;
+  border: none;
+  border-bottom: 2px solid transparent;
+  margin-bottom: -2px;
+  transition: all 0.2s;
+  background: none;
+  font-family: inherit;
+}
+.lum-tab:hover {
+  color: var(--lum-primary);
+}
+.lum-tab.active {
+  color: var(--lum-accent);
+  border-bottom-color: var(--lum-accent);
+}
+.lum-tab-panel {
+  padding: 20px 0;
+  display: none;
+}
+.lum-tab-panel.active {
+  display: block;
+}
+
+/* Variante A – Dunkel */
+.lum-tabs-dark {
+  border-bottom-color: rgba(255, 255, 255, 0.1);
+}
+.lum-tabs-dark .lum-tab {
+  color: rgba(255, 255, 255, 0.4);
+}
+.lum-tabs-dark .lum-tab:hover {
+  color: rgba(255, 255, 255, 0.7);
+}
+.lum-tabs-dark .lum-tab.active {
+  color: var(--lum-accent);
+  border-bottom-color: var(--lum-accent);
+}
+
+/* Variante B – Segmented / Pill */
+.lum-tabs-seg {
+  display: flex;
+  gap: 4px;
+  background: var(--lum-light);
+  padding: 4px;
+  border-radius: var(--lum-radius-btn);
+}
+.lum-tab-seg {
+  padding: 8px 18px;
+  font-size: 13px;
+  font-weight: 600;
+  color: var(--lum-gray);
+  cursor: pointer;
+  border: none;
+  border-radius: calc(var(--lum-radius-btn) - 2px);
+  transition: all 0.2s;
+  background: none;
+  font-family: inherit;
+}
+.lum-tab-seg:hover {
+  color: var(--lum-primary);
+}
+.lum-tab-seg.active {
+  background: var(--lum-white);
+  color: var(--lum-primary);
+  box-shadow: var(--lum-shadow);
+}
+
+/* Variante B – Dunkel */
+.lum-tabs-seg-dark {
+  background: rgba(255, 255, 255, 0.06);
+}
+.lum-tabs-seg-dark .lum-tab-seg {
+  color: rgba(255, 255, 255, 0.4);
+}
+.lum-tabs-seg-dark .lum-tab-seg:hover {
+  color: rgba(255, 255, 255, 0.7);
+}
+.lum-tabs-seg-dark .lum-tab-seg.active {
+  background: rgba(255, 255, 255, 0.1);
+  color: #fff;
+  box-shadow: none;
+}
+
+/* ─────────────────────────────────────
+   §27  LOADER – LUMITRONIX Sonne
+   ───────────────────────────────────── */
+.lum-loader {
+  display: inline-flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 12px;
+}
+.lum-loader-sun {
+  width: 40px;
+  height: 40px;
+}
+.lum-loader-sm .lum-loader-sun {
+  width: 24px;
+  height: 24px;
+}
+.lum-loader-lg .lum-loader-sun {
+  width: 64px;
+  height: 64px;
+}
+.lum-loader-sun path {
+  animation: lum-ray-dim 2s ease-in-out infinite;
+}
+.lum-loader-sun .r0 {
+  animation-delay: 0s;
+}
+.lum-loader-sun .r1 {
+  animation-delay: 0.2s;
+}
+.lum-loader-sun .r2 {
+  animation-delay: 0.4s;
+}
+.lum-loader-sun .r3 {
+  animation-delay: 0.6s;
+}
+.lum-loader-sun .r4 {
+  animation-delay: 0.8s;
+}
+.lum-loader-sun .r5 {
+  animation-delay: 1s;
+}
+.lum-loader-sun .r6 {
+  animation-delay: 1.2s;
+}
+.lum-loader-sun .r7 {
+  animation-delay: 1.4s;
+}
+.lum-loader-sun .r8 {
+  animation-delay: 1.6s;
+}
+.lum-loader-sun .r9 {
+  animation-delay: 1.8s;
+}
+@keyframes lum-ray-dim {
+  0%,
+  100% {
+    opacity: 1;
+  }
+  15% {
+    opacity: 0.1;
+  }
+  30% {
+    opacity: 1;
+  }
+}
+
+.lum-loader-text {
+  font-size: 12px;
+  font-weight: 600;
+  color: var(--lum-gray);
+  letter-spacing: 0.3px;
+}
+.lum-loader-inline {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  flex-direction: row;
+}
+.lum-loader-inline .lum-loader-sun {
+  width: 18px;
+  height: 18px;
+}
+.lum-loader-inline .lum-loader-text {
+  font-size: 13px;
+}
+
+/* ─────────────────────────────────────
+   §28  NAVIGATION – Submenüs, Sidebar, Filterlisten
+   ───────────────────────────────────── */
+
+/* Horizontales Submenü */
+.lum-nav-h {
+  display: flex;
+  gap: 4px;
+  padding: 4px 0;
+}
+.lum-nav-h a,
+.lum-nav-h button {
+  padding: 8px 16px;
+  font-size: 13px;
+  font-weight: 600;
+  color: var(--lum-gray);
+  text-decoration: none;
+  border: none;
+  background: none;
+  border-radius: var(--lum-radius-btn);
+  cursor: pointer;
+  font-family: inherit;
+  transition: all 0.15s;
+  white-space: nowrap;
+}
+.lum-nav-h a:hover,
+.lum-nav-h button:hover {
+  background: var(--lum-light);
+  color: var(--lum-primary);
+}
+.lum-nav-h .active {
+  background: var(--lum-accent);
+  color: #fff;
+}
+
+/* Vertikales Submenü / Sidebar-Navigation */
+.lum-nav-v {
+  display: flex;
+  flex-direction: column;
+  gap: 2px;
+}
+.lum-nav-v a,
+.lum-nav-v button {
+  padding: 10px 14px;
+  font-size: 13px;
+  font-weight: 500;
+  color: var(--lum-gray);
+  text-decoration: none;
+  border: none;
+  background: none;
+  border-radius: var(--lum-radius-btn);
+  cursor: pointer;
+  font-family: inherit;
+  transition: all 0.15s;
+  text-align: left;
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+.lum-nav-v a:hover,
+.lum-nav-v button:hover {
+  background: var(--lum-light);
+  color: var(--lum-primary);
+}
+.lum-nav-v .active {
+  background: rgba(59, 146, 199, 0.08);
+  color: var(--lum-accent);
+  font-weight: 600;
+}
+.lum-nav-v .active::before {
+  content: "";
+  width: 3px;
+  height: 20px;
+  background: var(--lum-accent);
+  border-radius: 2px;
+  flex-shrink: 0;
+  margin-left: -14px;
+  margin-right: 4px;
+}
+
+/* Vertikales Menü – Dunkel */
+.lum-nav-v-dark a,
+.lum-nav-v-dark button {
+  color: rgba(255, 255, 255, 0.4);
+}
+.lum-nav-v-dark a:hover,
+.lum-nav-v-dark button:hover {
+  background: rgba(255, 255, 255, 0.06);
+  color: rgba(255, 255, 255, 0.8);
+}
+.lum-nav-v-dark .active {
+  background: rgba(59, 146, 199, 0.1);
+  color: var(--lum-accent);
+}
+.lum-nav-v-dark .active::before {
+  background: var(--lum-accent);
+}
+
+/* Filterliste */
+.lum-filter-list {
+  display: flex;
+  flex-direction: column;
+}
+.lum-filter-item {
+  padding: 10px 12px;
+  font-size: 13px;
+  color: var(--lum-text);
+  border-bottom: 1px solid var(--lum-light);
+  cursor: pointer;
+  transition: background 0.15s;
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+.lum-filter-item:last-child {
+  border-bottom: none;
+}
+.lum-filter-item:hover {
+  background: rgba(59, 146, 199, 0.04);
+}
+.lum-filter-item.active {
+  color: var(--lum-accent);
+  font-weight: 600;
+  background: rgba(59, 146, 199, 0.06);
+}
+
+/* Filterliste mit Avataren (Sidebar-Kontaktliste) */
+.lum-filter-item .lum-avatar {
+  width: 28px;
+  height: 28px;
+  font-size: 10px;
+}
+
+/* ─────────────────────────────────────
+   §29  RESPONSIVE
+   ───────────────────────────────────── */
+@media (max-width: 768px) {
+  .lum-grid-2,
+  .lum-grid-3,
+  .lum-grid-4 {
+    grid-template-columns: 1fr;
+  }
+  .lum-display {
+    font-size: 32px;
+  }
+  .lum-h1 {
+    font-size: 24px;
+  }
+  .lum-h2 {
+    font-size: 20px;
+  }
+}
+
+/* ─────────────────────────────────────
+   §30  V4 HARDENING LAYER
+   Nur additive Ergänzungen für robustere
+   Nutzung durch Demos, Generatoren und AI.
+   ───────────────────────────────────── */
+
+:root {
+  --lum-search-wrap-max-width: 480px;
+  --lum-chart-fill-default-width: 72%;
+  --lum-chart-fill-dark-default-width: 64%;
+  --lum-progress-fill-default-width: 72%;
+  --lum-chart-col-default-height: 68%;
+  --lum-sparkbar-col-default-height: 55%;
+}
+
+/* Wrapper-Varianten werden selbsttragend */
+.lum-search-wrap,
+.lum-search-dark-wrap,
+.lum-search-minimal-wrap {
+  position: relative;
+  max-width: var(--lum-search-wrap-max-width);
+}
+
+.lum-search-wrap svg,
+.lum-search-dark-wrap svg,
+.lum-search-minimal-wrap svg {
+  position: absolute;
+  top: 50%;
+  left: 14px;
+  width: 18px;
+  height: 18px;
+  transform: translateY(-50%);
+  pointer-events: none;
+  transition: fill 0.2s;
+}
+
+.lum-search-wrap svg,
+.lum-search-minimal-wrap svg {
+  fill: var(--lum-lgray);
+}
+
+.lum-search-dark-wrap svg {
+  fill: rgba(255, 255, 255, 0.3);
+}
+
+.lum-search-wrap:focus-within svg,
+.lum-search-dark-wrap:focus-within svg,
+.lum-search-minimal-wrap:focus-within svg {
+  fill: var(--lum-accent);
+}
+
+.lum-search-minimal-wrap svg {
+  left: 4px;
+  width: 16px;
+  height: 16px;
+}
+
+/* Wertbasierte Komponenten bekommen sinnvolle Fallbacks,
+   bleiben aber durch Inline-Style oder Custom Property übersteuerbar. */
+.lum-chart-fill {
+  width: var(--lum-chart-fill-width, var(--lum-chart-fill-default-width));
+}
+
+.lum-chart-dark .lum-chart-fill {
+  width: var(--lum-chart-fill-width, var(--lum-chart-fill-dark-default-width));
+}
+
+.lum-progress-fill {
+  width: var(--lum-progress-fill-width, var(--lum-progress-fill-default-width));
+}
+
+.lum-chart-col {
+  height: var(--lum-chart-col-height, var(--lum-chart-col-default-height));
+}
+
+.lum-sparkbar-col {
+  height: var(
+    --lum-sparkbar-col-height,
+    var(--lum-sparkbar-col-default-height)
+  );
+}
