@@ -229,7 +229,7 @@ a:not([class]):hover { text-decoration: underline; }
    §7  TOOLTIPS
    ───────────────────────────────────── */
 /* T1 — Dunkel (heller BG) */
-[data-tooltip] { position: relative; cursor: help; }
+[data-tooltip] { position: relative; }
 [data-tooltip]::after {
   content: attr(data-tooltip);
   position: absolute; bottom: calc(100% + 8px); left: 50%;
@@ -259,7 +259,7 @@ a:not([class]):hover { text-decoration: underline; }
 /* Text-Tooltip — gepunktete Unterstreichung für Inline-Text */
 [data-tooltip].lum-tooltip-text {
   text-decoration: underline; text-decoration-style: dotted;
-  text-decoration-color: var(--lum-lgray); text-underline-offset: 3px; cursor: help;
+  text-decoration-color: var(--lum-lgray); text-underline-offset: 3px;
 }
 
 /* Info-Icon — Fragezeichen-Kreis hinter Fachbegriffen */
@@ -267,14 +267,14 @@ a:not([class]):hover { text-decoration: underline; }
   display: inline-flex; align-items: center; justify-content: center;
   width: 16px; height: 16px; border-radius: 50%;
   background: var(--lum-light); color: var(--lum-gray);
-  font-size: 10px; font-weight: 800; cursor: help;
+  font-size: 10px; font-weight: 800;
   vertical-align: middle; margin-left: 4px; line-height: 1;
   font-family: var(--lum-font); transition: all .2s;
 }
 .lum-info-icon:hover { background: var(--lum-teal); color: #fff; }
 
 /* Rich-Tooltip — Karten-Tooltip mit strukturiertem Inhalt */
-.lum-tooltip-card { position: relative; cursor: help; }
+.lum-tooltip-card { position: relative; }
 .lum-tooltip-card .lum-tooltip-content {
   position: absolute; bottom: calc(100% + 10px); left: 50%;
   transform: translateX(-50%) translateY(4px);

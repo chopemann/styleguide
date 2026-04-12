@@ -24,8 +24,13 @@ body{padding:0;margin:0;background:var(--lum-cream)}
 .sg-class-toggle input:checked::after{transform:translateX(14px)}
 .sg-class-wrap{display:inline-flex;flex-direction:column;align-items:flex-start;gap:6px;max-width:100%}
 .sg-class-wrap-block{display:flex;width:100%}
-.sg-class-note{display:none;font-size:10px;line-height:1.35;color:var(--lum-lgray);font-family:var(--lum-font-mono);white-space:normal;word-break:break-word}
-body.sg-show-classes .sg-class-note{display:block}
+.sg-class-wrap-modal{width:auto;max-width:100%;align-items:center}
+.sg-class-note{display:none;align-items:center;gap:6px;font-size:10px;line-height:1.35;color:var(--lum-lgray);font-family:var(--lum-font-mono);white-space:normal;word-break:break-word}
+.sg-class-note-text{display:inline}
+.sg-class-copy{display:inline-flex;align-items:center;justify-content:center;width:18px;height:18px;padding:0;border:1px solid var(--lum-light);border-radius:4px;background:var(--lum-white);color:var(--lum-gray);cursor:pointer;transition:all .15s;flex-shrink:0}
+.sg-class-copy:hover{border-color:var(--lum-teal);color:var(--lum-teal);background:rgba(59,146,199,.06)}
+.sg-class-copy svg{width:11px;height:11px;fill:currentColor}
+body.sg-show-classes .sg-class-note{display:inline-flex}
 .sg-slide{min-height:100vh;padding:100px 40px 80px;display:flex;flex-direction:column;justify-content:center;position:relative;overflow:hidden}
 .sg-slide-inner{max-width:1200px;margin:0 auto;width:100%;position:relative;z-index:1}
 .sg-sec{min-height:100vh;padding:80px 40px;position:relative;display:flex;flex-direction:column;justify-content:center}
@@ -846,6 +851,9 @@ Inaktiv
     ".lum-badge",
     ".lum-icon-text",
     ".lum-icon-circle",
+    ".lum-tooltip-text",
+    ".lum-tooltip-card",
+    ".lum-info-icon",
     ".lum-avatar",
     ".lum-table",
     ".lum-table-dark",
@@ -912,19 +920,60 @@ Inaktiv
     wrapper.className = target.matches(blockSelectorText)
       ? "sg-class-wrap sg-class-wrap-block"
       : "sg-class-wrap";
+    if (target.matches(".lum-modal")) {
+      wrapper.classList.add("sg-class-wrap-modal");
+    }
 
     target.parentNode.insertBefore(wrapper, target);
     wrapper.appendChild(target);
 
     const note = document.createElement("div");
     note.className = "sg-class-note";
-    note.textContent = classes.join(" ");
+    const noteText = document.createElement("span");
+    noteText.className = "sg-class-note-text";
+    noteText.textContent = classes.join(" ");
+    note.appendChild(noteText);
+
+    const copyButton = document.createElement("button");
+    copyButton.type = "button";
+    copyButton.className = "sg-class-copy";
+    copyButton.setAttribute("aria-label", "Klassen kopieren");
+    copyButton.setAttribute("title", "Klassen kopieren");
+    copyButton.setAttribute("data-sg-class-skip", "");
+    copyButton.innerHTML =
+      '<svg viewBox="0 0 24 24" aria-hidden="true"><path d="M9 4.75A2.75 2.75 0 0 1 11.75 2h6.5A2.75 2.75 0 0 1 21 4.75v9.5A2.75 2.75 0 0 1 18.25 17h-6.5A2.75 2.75 0 0 1 9 14.25zm2.75-1.25c-.69 0-1.25.56-1.25 1.25v9.5c0 .69.56 1.25 1.25 1.25h6.5c.69 0 1.25-.56 1.25-1.25v-9.5c0-.69-.56-1.25-1.25-1.25zM3 8.75A2.75 2.75 0 0 1 5.75 6h1.5a.75.75 0 0 1 0 1.5h-1.5C5.06 7.5 4.5 8.06 4.5 8.75v9.5c0 .69.56 1.25 1.25 1.25h6.5c.69 0 1.25-.56 1.25-1.25v-1.5a.75.75 0 0 1 1.5 0v1.5A2.75 2.75 0 0 1 12.25 21h-6.5A2.75 2.75 0 0 1 3 18.25z"/></svg>';
+    copyButton.addEventListener("click", async () => {
+      const text = classes.join(" ");
+      try {
+        if (navigator.clipboard?.writeText) {
+          await navigator.clipboard.writeText(text);
+        } else {
+          const fallback = document.createElement("textarea");
+          fallback.value = text;
+          fallback.setAttribute("readonly", "");
+          fallback.style.position = "absolute";
+          fallback.style.left = "-9999px";
+          document.body.appendChild(fallback);
+          fallback.select();
+          document.execCommand("copy");
+          document.body.removeChild(fallback);
+        }
+        copyButton.setAttribute("title", "Kopiert");
+      } catch {
+        copyButton.setAttribute("title", "Kopieren fehlgeschlagen");
+      }
+    });
+    copyButton.addEventListener("mouseleave", () => {
+      copyButton.setAttribute("title", "Klassen kopieren");
+    });
+    note.appendChild(copyButton);
     wrapper.appendChild(note);
   };
 
   document.querySelectorAll(selectorText).forEach((target) => {
     if (target.closest("[data-sg-class-skip]")) return;
     if (target.closest(".sg-class-wrap")) return;
+    if (target.matches(".lum-info-icon") && target.closest(".lum-float-label")) return;
     if (
       target.matches(".lum-input, .lum-select, .lum-textarea") &&
       target.closest(".lum-float-field")
