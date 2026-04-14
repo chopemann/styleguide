@@ -429,8 +429,8 @@ a:not([class]):hover {
    §5  ICON-BUTTONS
    ───────────────────────────────────── */
 .lum-btn-icon {
-  width: var(--lum-size-avatar-md);
-  height: var(--lum-size-avatar-md);
+  width: var(--lum-btn-height);
+  height: var(--lum-btn-height);
   padding: 0;
   display: inline-flex;
   align-items: center;
@@ -457,8 +457,8 @@ a:not([class]):hover {
 }
 
 .lum-btn-icon-dark {
-  width: var(--lum-size-avatar-md);
-  height: var(--lum-size-avatar-md);
+  width: var(--lum-btn-height);
+  height: var(--lum-btn-height);
   padding: 0;
   display: inline-flex;
   align-items: center;
@@ -1814,8 +1814,8 @@ a:not([class]):hover {
   gap: var(--lum-space-2);
 }
 .lum-page {
-  width: var(--lum-size-avatar-md);
-  height: var(--lum-size-avatar-md);
+  width: var(--lum-btn-height);
+  height: var(--lum-btn-height);
   display: flex;
   align-items: center;
   justify-content: center;
@@ -1844,8 +1844,8 @@ a:not([class]):hover {
   pointer-events: none;
 }
 .lum-page-dots {
-  width: var(--lum-size-avatar-md);
-  height: var(--lum-size-avatar-md);
+  width: var(--lum-btn-height);
+  height: var(--lum-btn-height);
   display: flex;
   align-items: center;
   justify-content: center;
