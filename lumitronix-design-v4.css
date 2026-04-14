@@ -206,7 +206,7 @@ a:not([class]):hover {
   flex-shrink: 0;
 }
 .lum-btn-sm {
-  min-height: 30px;
+  min-height: 20px;
   padding: 0 16px;
   font-size: 12px;
 }
