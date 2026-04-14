@@ -114,10 +114,10 @@
   --lum-space-16: 32px;
   --lum-space-24: 48px;
 
-  /* Komponentengrößen — Buttons */
-  --lum-btn-height-sm: 28px;
-  --lum-btn-height: 39px;
-  --lum-btn-height-lg: 47px;
+  /* Komponentenhöhen — Buttons, Inputs, Icon-Buttons */
+  --lum-height-sm: 28px;
+  --lum-height-md: 39px;
+  --lum-height-lg: 47px;
 
   /* Komponentengrößen — Icons */
   --lum-size-icon-xs: 14px;
@@ -282,7 +282,7 @@ a:not([class]):hover {
   align-items: center;
   gap: var(--lum-space-4);
   border: none;
-  min-height: var(--lum-btn-height);
+  min-height: var(--lum-height-md);
   padding: 0 22px;
   border-radius: var(--lum-radius-btn);
   font-family: var(--lum-font);
@@ -304,12 +304,12 @@ a:not([class]):hover {
   flex-shrink: 0;
 }
 .lum-btn-sm {
-  min-height: var(--lum-btn-height-sm);
+  min-height: var(--lum-height-sm);
   padding: 0 var(--lum-space-8);
   font-size: var(--lum-font-xs);
 }
 .lum-btn-lg {
-  min-height: var(--lum-btn-height-lg);
+  min-height: var(--lum-height-lg);
   padding: 0 var(--lum-space-14);
   font-size: var(--lum-font-lg);
 }
@@ -429,8 +429,8 @@ a:not([class]):hover {
    §5  ICON-BUTTONS
    ───────────────────────────────────── */
 .lum-btn-icon {
-  width: var(--lum-btn-height);
-  height: var(--lum-btn-height);
+  width: var(--lum-height-md);
+  height: var(--lum-height-md);
   padding: 0;
   display: inline-flex;
   align-items: center;
@@ -457,8 +457,8 @@ a:not([class]):hover {
 }
 
 .lum-btn-icon-dark {
-  width: var(--lum-btn-height);
-  height: var(--lum-btn-height);
+  width: var(--lum-height-md);
+  height: var(--lum-height-md);
   padding: 0;
   display: inline-flex;
   align-items: center;
@@ -851,6 +851,7 @@ a:not([class]):hover {
    ───────────────────────────────────── */
 .lum-input {
   width: 100%;
+  min-height: var(--lum-height-md);
   padding: var(--lum-space-6) var(--lum-space-8);
   border: 1px solid var(--lum-lgray);
   border-radius: var(--lum-radius-btn);
@@ -885,6 +886,7 @@ a:not([class]):hover {
 
 .lum-select {
   width: 100%;
+  min-height: var(--lum-height-md);
   padding: var(--lum-space-6) 40px var(--lum-space-6) var(--lum-space-8);
   border: 1px solid var(--lum-lgray);
   border-radius: var(--lum-radius-btn);
@@ -921,6 +923,20 @@ a:not([class]):hover {
 .lum-textarea:focus {
   border-color: var(--lum-accent);
   box-shadow: 0 0 0 3px rgba(59, 146, 199, 0.1);
+}
+
+/* Größenvarianten — sm / lg */
+.lum-input-sm,
+.lum-select-sm {
+  min-height: var(--lum-height-sm);
+  padding: var(--lum-space-2) var(--lum-space-6);
+  font-size: var(--lum-font-xs);
+}
+.lum-input-lg,
+.lum-select-lg {
+  min-height: var(--lum-height-lg);
+  padding: var(--lum-space-6) var(--lum-space-10);
+  font-size: var(--lum-font-lg);
 }
 
 /* Number input — native spinner arrows */
@@ -1814,8 +1830,8 @@ a:not([class]):hover {
   gap: var(--lum-space-2);
 }
 .lum-page {
-  width: var(--lum-btn-height);
-  height: var(--lum-btn-height);
+  width: var(--lum-height-md);
+  height: var(--lum-height-md);
   display: flex;
   align-items: center;
   justify-content: center;
@@ -1844,8 +1860,8 @@ a:not([class]):hover {
   pointer-events: none;
 }
 .lum-page-dots {
-  width: var(--lum-btn-height);
-  height: var(--lum-btn-height);
+  width: var(--lum-height-md);
+  height: var(--lum-height-md);
   display: flex;
   align-items: center;
   justify-content: center;
