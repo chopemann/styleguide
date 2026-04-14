@@ -77,6 +77,104 @@
   /* Übergänge */
   --lum-ease: cubic-bezier(0.4, 0, 0.2, 1);
   --lum-transition: all 0.2s var(--lum-ease);
+
+  /* Schriftgrößen */
+  --lum-font-2xs: 11px;
+  --lum-font-xs: 12px;
+  --lum-font-sm: 13px;
+  --lum-font-md: 14px;
+  --lum-font-lg: 15px;
+  --lum-font-xl: 16px;
+  --lum-font-2xl: 18px;
+  --lum-font-3xl: 24px;
+  --lum-font-4xl: 28px;
+  --lum-font-5xl: 32px;
+  --lum-font-6xl: 36px;
+  --lum-font-7xl: 48px;
+
+  /* Schriftgewichte */
+  --lum-weight-normal: 400;
+  --lum-weight-medium: 500;
+  --lum-weight-semibold: 600;
+  --lum-weight-bold: 700;
+  --lum-weight-black: 800;
+
+  /* Abstände */
+  --lum-space-1: 2px;
+  --lum-space-2: 4px;
+  --lum-space-3: 6px;
+  --lum-space-4: 8px;
+  --lum-space-5: 10px;
+  --lum-space-6: 12px;
+  --lum-space-7: 14px;
+  --lum-space-8: 16px;
+  --lum-space-10: 20px;
+  --lum-space-12: 24px;
+  --lum-space-14: 28px;
+  --lum-space-16: 32px;
+  --lum-space-24: 48px;
+
+  /* Komponentengrößen — Buttons */
+  --lum-btn-height-sm: 25px;
+  --lum-btn-height: 39px;
+  --lum-btn-height-lg: 47px;
+
+  /* Komponentengrößen — Icons */
+  --lum-size-icon-xs: 14px;
+  --lum-size-icon-sm: 16px;
+  --lum-size-icon-md: 20px;
+  --lum-size-icon-lg: 24px;
+  --lum-size-icon-xl: 32px;
+  --lum-size-icon-2xl: 48px;
+
+  /* Komponentengrößen — Avatare */
+  --lum-size-avatar-sm: 28px;
+  --lum-size-avatar-md: 36px;
+  --lum-size-avatar-lg: 48px;
+
+  /* Komponentengrößen — Icon-Kreise */
+  --lum-size-icon-circle-sm: 32px;
+  --lum-size-icon-circle-md: 40px;
+  --lum-size-icon-circle-lg: 56px;
+
+  /* Container max-widths */
+  --lum-max-w-sm: 320px;
+  --lum-max-w-md: 480px;
+  --lum-max-w-lg: 640px;
+  --lum-max-w-xl: 960px;
+
+  /* Schatten-Skala */
+  --lum-shadow-sm: 0 1px 3px rgba(28, 37, 48, 0.08);
+  --lum-shadow-md: 0 2px 8px rgba(28, 37, 48, 0.1);
+  --lum-shadow-lg: 0 4px 16px rgba(0, 0, 0, 0.2);
+  --lum-shadow-xl: 0 8px 32px rgba(0, 0, 0, 0.25);
+  --lum-shadow-2xl: 0 16px 48px rgba(28, 37, 48, 0.2);
+
+  /* Dauern */
+  --lum-duration-fast: 0.15s;
+  --lum-duration-base: 0.2s;
+  --lum-duration-slow: 0.3s;
+  --lum-duration-slower: 0.6s;
+  --lum-duration-slowest: 0.8s;
+
+  /* Z-Index */
+  --lum-z-tooltip: 50;
+  --lum-z-modal: 1000;
+
+  /* Zeilenhöhen */
+  --lum-leading-none: 1;
+  --lum-leading-tight: 1.1;
+  --lum-leading-snug: 1.3;
+  --lum-leading-normal: 1.4;
+  --lum-leading-relaxed: 1.5;
+
+  /* Zeichenabstände */
+  --lum-tracking-tighter: -1px;
+  --lum-tracking-tight: -0.3px;
+  --lum-tracking-normal: 0.3px;
+  --lum-tracking-wide: 0.8px;
+  --lum-tracking-wider: 1.2px;
+  --lum-tracking-widest: 2px;
 }
 
 /* ─────────────────────────────────────
@@ -92,8 +190,8 @@
 
 body {
   font-family: var(--lum-font);
-  font-size: 14px;
-  line-height: 1.5;
+  font-size: var(--lum-font-md);
+  line-height: var(--lum-leading-relaxed);
   color: var(--lum-text);
   background: var(--lum-cream);
   -webkit-font-smoothing: antialiased;
@@ -104,68 +202,68 @@ body {
    §3  TYPOGRAFIE
    ───────────────────────────────────── */
 .lum-h1 {
-  font-size: 32px;
-  font-weight: 800;
+  font-size: var(--lum-font-5xl);
+  font-weight: var(--lum-weight-black);
   color: var(--lum-dark);
   line-height: 1.2;
-  letter-spacing: -0.3px;
+  letter-spacing: var(--lum-tracking-tight);
 }
 .lum-h2 {
-  font-size: 24px;
-  font-weight: 800;
+  font-size: var(--lum-font-3xl);
+  font-weight: var(--lum-weight-black);
   color: var(--lum-dark);
   line-height: 1.25;
   letter-spacing: -0.2px;
 }
 .lum-h3 {
-  font-size: 18px;
-  font-weight: 700;
+  font-size: var(--lum-font-2xl);
+  font-weight: var(--lum-weight-bold);
   color: var(--lum-dark);
-  line-height: 1.3;
+  line-height: var(--lum-leading-snug);
 }
 .lum-h4 {
-  font-size: 15px;
-  font-weight: 700;
+  font-size: var(--lum-font-lg);
+  font-weight: var(--lum-weight-bold);
   color: var(--lum-dark);
-  line-height: 1.4;
+  line-height: var(--lum-leading-normal);
 }
 .lum-body {
-  font-size: 14px;
-  font-weight: 400;
+  font-size: var(--lum-font-md);
+  font-weight: var(--lum-weight-normal);
   color: var(--lum-text);
-  line-height: 1.5;
+  line-height: var(--lum-leading-relaxed);
 }
 .lum-body-sm {
-  font-size: 13px;
-  font-weight: 400;
+  font-size: var(--lum-font-sm);
+  font-weight: var(--lum-weight-normal);
   color: var(--lum-gray);
-  line-height: 1.5;
+  line-height: var(--lum-leading-relaxed);
 }
 .lum-caption {
-  font-size: 12px;
-  font-weight: 500;
+  font-size: var(--lum-font-xs);
+  font-weight: var(--lum-weight-medium);
   color: var(--lum-gray);
-  line-height: 1.4;
+  line-height: var(--lum-leading-normal);
 }
 .lum-overline {
-  font-size: 11px;
-  font-weight: 700;
-  letter-spacing: 1.2px;
+  font-size: var(--lum-font-2xs);
+  font-weight: var(--lum-weight-bold);
+  letter-spacing: var(--lum-tracking-wider);
   text-transform: uppercase;
   color: var(--lum-gray);
 }
 .lum-display {
-  font-size: 48px;
-  font-weight: 800;
+  font-size: var(--lum-font-7xl);
+  font-weight: var(--lum-weight-black);
   color: var(--lum-dark);
-  line-height: 1.1;
-  letter-spacing: -1px;
+  line-height: var(--lum-leading-tight);
+  letter-spacing: var(--lum-tracking-tighter);
 }
 .lum-stat {
-  font-size: 36px;
-  font-weight: 800;
+  font-size: var(--lum-font-6xl);
+  font-weight: var(--lum-weight-black);
   color: var(--lum-accent);
-  line-height: 1;
+  line-height: var(--lum-leading-none);
 }
 
 /* Links */
@@ -182,38 +280,38 @@ a:not([class]):hover {
 .lum-btn {
   display: inline-flex;
   align-items: center;
-  gap: 8px;
+  gap: var(--lum-space-4);
   border: none;
-  min-height: 39px;
+  min-height: var(--lum-btn-height);
   padding: 0 22px;
   border-radius: var(--lum-radius-btn);
   font-family: var(--lum-font);
-  font-size: 13px;
-  font-weight: 700;
-  letter-spacing: 0.3px;
+  font-size: var(--lum-font-sm);
+  font-weight: var(--lum-weight-bold);
+  letter-spacing: var(--lum-tracking-normal);
   cursor: pointer;
   text-decoration: none;
   transition: var(--lum-transition);
-  line-height: 1;
+  line-height: var(--lum-leading-none);
 }
 .lum-btn:active {
   transform: translateY(1px);
 }
 .lum-btn svg {
-  width: 16px;
-  height: 16px;
+  width: var(--lum-size-icon-sm);
+  height: var(--lum-size-icon-sm);
   fill: currentColor;
   flex-shrink: 0;
 }
 .lum-btn-sm {
-  min-height: 35px;
-  padding: 0 16px;
-  font-size: 12px;
+  min-height: var(--lum-btn-height-sm);
+  padding: 0 var(--lum-space-8);
+  font-size: var(--lum-font-xs);
 }
 .lum-btn-lg {
-  min-height: 47px;
-  padding: 0 28px;
-  font-size: 15px;
+  min-height: var(--lum-btn-height-lg);
+  padding: 0 var(--lum-space-14);
+  font-size: var(--lum-font-lg);
 }
 
 /* Filled */
@@ -331,8 +429,8 @@ a:not([class]):hover {
    §5  ICON-BUTTONS
    ───────────────────────────────────── */
 .lum-btn-icon {
-  width: 36px;
-  height: 36px;
+  width: var(--lum-size-avatar-md);
+  height: var(--lum-size-avatar-md);
   padding: 0;
   display: inline-flex;
   align-items: center;
@@ -353,14 +451,14 @@ a:not([class]):hover {
   transform: translateY(1px);
 }
 .lum-btn-icon svg {
-  width: 16px;
-  height: 16px;
+  width: var(--lum-size-icon-sm);
+  height: var(--lum-size-icon-sm);
   fill: currentColor;
 }
 
 .lum-btn-icon-dark {
-  width: 36px;
-  height: 36px;
+  width: var(--lum-size-avatar-md);
+  height: var(--lum-size-avatar-md);
   padding: 0;
   display: inline-flex;
   align-items: center;
@@ -381,8 +479,8 @@ a:not([class]):hover {
   transform: translateY(1px);
 }
 .lum-btn-icon-dark svg {
-  width: 16px;
-  height: 16px;
+  width: var(--lum-size-icon-sm);
+  height: var(--lum-size-icon-sm);
   fill: currentColor;
 }
 
@@ -395,8 +493,8 @@ a:not([class]):hover {
   display: inline-flex;
   align-items: center;
   justify-content: center;
-  width: 20px;
-  height: 20px;
+  width: var(--lum-size-icon-md);
+  height: var(--lum-size-icon-md);
   flex-shrink: 0;
   color: currentColor;
 }
@@ -406,28 +504,28 @@ a:not([class]):hover {
   fill: currentColor;
 }
 .lum-icon-xs {
-  width: 14px;
-  height: 14px;
+  width: var(--lum-size-icon-xs);
+  height: var(--lum-size-icon-xs);
 }
 .lum-icon-sm {
-  width: 16px;
-  height: 16px;
+  width: var(--lum-size-icon-sm);
+  height: var(--lum-size-icon-sm);
 }
 .lum-icon-md {
-  width: 20px;
-  height: 20px;
+  width: var(--lum-size-icon-md);
+  height: var(--lum-size-icon-md);
 }
 .lum-icon-lg {
-  width: 24px;
-  height: 24px;
+  width: var(--lum-size-icon-lg);
+  height: var(--lum-size-icon-lg);
 }
 .lum-icon-xl {
-  width: 32px;
-  height: 32px;
+  width: var(--lum-size-icon-xl);
+  height: var(--lum-size-icon-xl);
 }
 .lum-icon-2xl {
-  width: 48px;
-  height: 48px;
+  width: var(--lum-size-icon-2xl);
+  height: var(--lum-size-icon-2xl);
 }
 
 /* Farbvarianten */
@@ -465,16 +563,16 @@ a:not([class]):hover {
   flex-shrink: 0;
 }
 .lum-icon-circle-sm {
-  width: 32px;
-  height: 32px;
+  width: var(--lum-size-icon-circle-sm);
+  height: var(--lum-size-icon-circle-sm);
 }
 .lum-icon-circle-md {
-  width: 40px;
-  height: 40px;
+  width: var(--lum-size-icon-circle-md);
+  height: var(--lum-size-icon-circle-md);
 }
 .lum-icon-circle-lg {
-  width: 56px;
-  height: 56px;
+  width: var(--lum-size-icon-circle-lg);
+  height: var(--lum-size-icon-circle-lg);
 }
 
 .lum-icon-circle-primary {
@@ -520,9 +618,9 @@ a:not([class]):hover {
 .lum-icon-text {
   display: inline-flex;
   align-items: center;
-  gap: 6px;
-  font-size: 13px;
-  font-weight: 500;
+  gap: var(--lum-space-3);
+  font-size: var(--lum-font-sm);
+  font-weight: var(--lum-weight-medium);
   color: var(--lum-text);
 }
 .lum-icon-text .lum-icon {
@@ -539,20 +637,20 @@ a:not([class]):hover {
 [data-tooltip]::after {
   content: attr(data-tooltip);
   position: absolute;
-  bottom: calc(100% + 8px);
+  bottom: calc(100% + var(--lum-space-4));
   left: 50%;
   transform: translateX(-50%) translateY(4px);
   background: var(--lum-dark);
   color: #fff;
-  font-size: 12px;
-  font-weight: 500;
-  padding: 8px 14px;
+  font-size: var(--lum-font-xs);
+  font-weight: var(--lum-weight-medium);
+  padding: var(--lum-space-4) var(--lum-space-7);
   border-radius: var(--lum-radius-btn);
   white-space: nowrap;
   opacity: 0;
   pointer-events: none;
-  transition: all 0.2s;
-  z-index: 50;
+  transition: all var(--lum-duration-base);
+  z-index: var(--lum-z-tooltip);
 }
 [data-tooltip]::before {
   content: "";
@@ -563,8 +661,8 @@ a:not([class]):hover {
   border: 5px solid transparent;
   border-top-color: var(--lum-dark);
   opacity: 0;
-  transition: all 0.2s;
-  z-index: 50;
+  transition: all var(--lum-duration-base);
+  z-index: var(--lum-z-tooltip);
 }
 [data-tooltip]:hover::after,
 [data-tooltip]:hover::before {
@@ -578,8 +676,8 @@ a:not([class]):hover {
 .lum-tooltip-light[data-tooltip]::after {
   background: var(--lum-white);
   color: var(--lum-text);
-  font-weight: 600;
-  box-shadow: 0 4px 16px rgba(0, 0, 0, 0.2);
+  font-weight: var(--lum-weight-semibold);
+  box-shadow: var(--lum-shadow-lg);
 }
 .lum-tooltip-light[data-tooltip]::before {
   border-top-color: var(--lum-white);
@@ -598,18 +696,18 @@ a:not([class]):hover {
   display: inline-flex;
   align-items: center;
   justify-content: center;
-  width: 16px;
-  height: 16px;
+  width: var(--lum-size-icon-sm);
+  height: var(--lum-size-icon-sm);
   border-radius: 50%;
   background: var(--lum-light);
   color: var(--lum-gray);
   font-size: 10px;
-  font-weight: 800;
+  font-weight: var(--lum-weight-black);
   vertical-align: middle;
-  margin-left: 4px;
-  line-height: 1;
+  margin-left: var(--lum-space-2);
+  line-height: var(--lum-leading-none);
   font-family: var(--lum-font);
-  transition: all 0.2s;
+  transition: all var(--lum-duration-base);
 }
 .lum-info-icon:hover {
   background: var(--lum-accent);
@@ -627,15 +725,15 @@ a:not([class]):hover {
   transform: translateX(-50%) translateY(4px);
   background: var(--lum-dark);
   color: #fff;
-  padding: 16px 20px;
+  padding: var(--lum-space-8) var(--lum-space-10);
   border-radius: var(--lum-radius-sm);
   min-width: 260px;
-  max-width: 320px;
+  max-width: var(--lum-max-w-sm);
   opacity: 0;
   pointer-events: none;
-  transition: all 0.2s;
-  z-index: 50;
-  box-shadow: 0 8px 32px rgba(0, 0, 0, 0.25);
+  transition: all var(--lum-duration-base);
+  z-index: var(--lum-z-tooltip);
+  box-shadow: var(--lum-shadow-xl);
 }
 .lum-tooltip-card:hover .lum-tooltip-content {
   opacity: 1;
@@ -657,18 +755,18 @@ a:not([class]):hover {
    ───────────────────────────────────── */
 .lum-search-wrap {
   position: relative;
-  max-width: 480px;
+  max-width: var(--lum-max-w-md);
 }
 .lum-search-wrap svg {
   position: absolute;
-  left: 14px;
+  left: var(--lum-space-7);
   top: 50%;
   transform: translateY(-50%);
   width: 18px;
   height: 18px;
   fill: var(--lum-lgray);
   pointer-events: none;
-  transition: fill 0.2s;
+  transition: fill var(--lum-duration-base);
 }
 .lum-search-wrap:focus-within svg {
   fill: var(--lum-accent);
@@ -677,11 +775,11 @@ a:not([class]):hover {
 /* S1 — Border, primäre Suche */
 .lum-search {
   width: 100%;
-  padding: 12px 14px 12px 42px;
+  padding: var(--lum-space-6) var(--lum-space-7) var(--lum-space-6) 42px;
   border: 1px solid var(--lum-lgray);
   border-radius: var(--lum-radius-btn);
   font-family: var(--lum-font);
-  font-size: 14px;
+  font-size: var(--lum-font-md);
   color: var(--lum-text);
   background: var(--lum-white);
   outline: none;
@@ -698,11 +796,11 @@ a:not([class]):hover {
 /* S4 — Dunkel */
 .lum-search-dark {
   width: 100%;
-  padding: 12px 14px 12px 42px;
+  padding: var(--lum-space-6) var(--lum-space-7) var(--lum-space-6) 42px;
   border: 1px solid rgba(255, 255, 255, 0.15);
   border-radius: var(--lum-radius-btn);
   font-family: var(--lum-font);
-  font-size: 14px;
+  font-size: var(--lum-font-md);
   color: #fff;
   background: rgba(255, 255, 255, 0.06);
   outline: none;
@@ -730,7 +828,7 @@ a:not([class]):hover {
   border-bottom: 2px solid var(--lum-light);
   border-radius: 0;
   font-family: var(--lum-font);
-  font-size: 13px;
+  font-size: var(--lum-font-sm);
   color: var(--lum-text);
   background: transparent;
   outline: none;
@@ -743,9 +841,9 @@ a:not([class]):hover {
   border-bottom-color: var(--lum-accent);
 }
 .lum-search-minimal-wrap svg {
-  left: 4px;
-  width: 16px;
-  height: 16px;
+  left: var(--lum-space-2);
+  width: var(--lum-size-icon-sm);
+  height: var(--lum-size-icon-sm);
 }
 
 /* ─────────────────────────────────────
@@ -753,11 +851,11 @@ a:not([class]):hover {
    ───────────────────────────────────── */
 .lum-input {
   width: 100%;
-  padding: 12px 16px;
+  padding: var(--lum-space-6) var(--lum-space-8);
   border: 1px solid var(--lum-lgray);
   border-radius: var(--lum-radius-btn);
   font-family: var(--lum-font);
-  font-size: 14px;
+  font-size: var(--lum-font-md);
   color: var(--lum-text);
   background: var(--lum-white);
   outline: none;
@@ -779,19 +877,19 @@ a:not([class]):hover {
 
 .lum-label {
   display: block;
-  font-size: 12px;
-  font-weight: 600;
+  font-size: var(--lum-font-xs);
+  font-weight: var(--lum-weight-semibold);
   color: var(--lum-gray);
-  margin-bottom: 6px;
+  margin-bottom: var(--lum-space-3);
 }
 
 .lum-select {
   width: 100%;
-  padding: 12px 40px 12px 16px;
+  padding: var(--lum-space-6) 40px var(--lum-space-6) var(--lum-space-8);
   border: 1px solid var(--lum-lgray);
   border-radius: var(--lum-radius-btn);
   font-family: var(--lum-font);
-  font-size: 14px;
+  font-size: var(--lum-font-md);
   color: var(--lum-text);
   background: var(--lum-white)
     url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='12' height='12' viewBox='0 0 24 24'%3E%3Cpath fill='%235A6B7D' d='M7 10l5 5 5-5z'/%3E%3C/svg%3E")
@@ -808,13 +906,13 @@ a:not([class]):hover {
 
 .lum-textarea {
   width: 100%;
-  padding: 12px 16px;
+  padding: var(--lum-space-6) var(--lum-space-8);
   min-height: 100px;
   resize: vertical;
   border: 1px solid var(--lum-lgray);
   border-radius: var(--lum-radius-btn);
   font-family: var(--lum-font);
-  font-size: 14px;
+  font-size: var(--lum-font-md);
   color: var(--lum-text);
   background: var(--lum-white);
   outline: none;
@@ -844,36 +942,36 @@ a:not([class]):hover {
 }
 .lum-float-field .lum-input,
 .lum-float-field .lum-select {
-  padding: 16px;
+  padding: var(--lum-space-8);
 }
 .lum-float-field .lum-input:focus,
 .lum-float-field .lum-input:not(:placeholder-shown) {
-  padding: 22px 16px 10px;
+  padding: 22px var(--lum-space-8) var(--lum-space-5);
 }
 .lum-float-field .lum-select {
-  padding: 22px 40px 10px 16px;
+  padding: 22px 40px var(--lum-space-5) var(--lum-space-8);
 }
 .lum-float-field .lum-textarea {
-  padding: 22px 16px 8px;
+  padding: 22px var(--lum-space-8) var(--lum-space-4);
   min-height: 110px;
 }
 
 .lum-float-field .lum-float-label {
   position: absolute;
-  left: 16px;
+  left: var(--lum-space-8);
   top: 50%;
   transform: translateY(-50%);
   font-family: var(--lum-font);
-  font-size: 14px;
-  font-weight: 400;
+  font-size: var(--lum-font-md);
+  font-weight: var(--lum-weight-normal);
   color: var(--lum-lgray);
   pointer-events: none;
-  transition: all 0.2s var(--lum-ease);
+  transition: all var(--lum-duration-base) var(--lum-ease);
   transform-origin: left center;
-  line-height: 1.4;
+  line-height: var(--lum-leading-normal);
 }
 .lum-float-field .lum-textarea ~ .lum-float-label {
-  top: 16px;
+  top: var(--lum-space-8);
   transform: none;
 }
 
@@ -887,10 +985,10 @@ a:not([class]):hover {
   top: 6px;
   transform: none;
   font-size: 10px;
-  font-weight: 400;
+  font-weight: var(--lum-weight-normal);
   letter-spacing: 0.2px;
   color: var(--lum-lgray);
-  line-height: 1;
+  line-height: var(--lum-leading-none);
 }
 
 /* Label tint on focus */
@@ -906,13 +1004,13 @@ a:not([class]):hover {
 }
 
 .lum-float-error {
-  font-size: 11px;
-  font-weight: 600;
+  font-size: var(--lum-font-2xs);
+  font-weight: var(--lum-weight-semibold);
   color: var(--lum-red);
-  margin-top: 4px;
+  margin-top: var(--lum-space-2);
   display: flex;
   align-items: center;
-  gap: 4px;
+  gap: var(--lum-space-2);
 }
 
 /* Info-Icon inside floating label remains hoverable */
@@ -932,7 +1030,7 @@ a:not([class]):hover {
   background: var(--lum-white);
   border: 1px solid var(--lum-light);
   border-radius: var(--lum-radius-md);
-  padding: 24px;
+  padding: var(--lum-space-12);
   box-shadow: var(--lum-shadow);
   transition: var(--lum-transition);
 }
@@ -943,13 +1041,13 @@ a:not([class]):hover {
   background: var(--lum-dark);
   border: 1px solid rgba(255, 255, 255, 0.06);
   border-radius: var(--lum-radius-md);
-  padding: 24px;
+  padding: var(--lum-space-12);
 }
 .lum-card-gradient {
   background: var(--lum-white);
   border: 1px solid var(--lum-light);
   border-radius: var(--lum-radius-md);
-  padding: 24px;
+  padding: var(--lum-space-12);
 }
 
 /* ─────────────────────────────────────
@@ -958,12 +1056,12 @@ a:not([class]):hover {
 .lum-badge {
   display: inline-flex;
   align-items: center;
-  gap: 4px;
-  padding: 4px 10px;
+  gap: var(--lum-space-2);
+  padding: var(--lum-space-2) var(--lum-space-5);
   border-radius: 20px;
-  font-size: 11px;
-  font-weight: 700;
-  line-height: 1;
+  font-size: var(--lum-font-2xs);
+  font-weight: var(--lum-weight-bold);
+  line-height: var(--lum-leading-none);
 }
 .lum-badge-accent {
   background: rgba(59, 146, 199, 0.1);
@@ -1018,11 +1116,11 @@ a:not([class]):hover {
 .lum-alert {
   display: flex;
   align-items: flex-start;
-  gap: 12px;
-  padding: 16px 20px;
+  gap: var(--lum-space-6);
+  padding: var(--lum-space-8) var(--lum-space-10);
   border-radius: var(--lum-radius-sm);
-  font-size: 13px;
-  line-height: 1.5;
+  font-size: var(--lum-font-sm);
+  line-height: var(--lum-leading-relaxed);
 }
 .lum-alert-info {
   background: rgba(59, 146, 199, 0.08);
@@ -1059,13 +1157,13 @@ a:not([class]):hover {
 .lum-table {
   width: 100%;
   border-collapse: collapse;
-  font-size: 13px;
-  line-height: 1.5;
+  font-size: var(--lum-font-sm);
+  line-height: var(--lum-leading-relaxed);
 }
 .lum-table th {
-  padding: 14px 20px;
-  font-weight: 700;
-  font-size: 12px;
+  padding: var(--lum-space-7) var(--lum-space-10);
+  font-weight: var(--lum-weight-bold);
+  font-size: var(--lum-font-xs);
   color: #fff;
   background: var(--lum-accent);
   text-align: left;
@@ -1073,7 +1171,7 @@ a:not([class]):hover {
   white-space: nowrap;
 }
 .lum-table td {
-  padding: 13px 20px;
+  padding: 13px var(--lum-space-10);
   border-bottom: 1px solid var(--lum-light);
   color: var(--lum-text);
   vertical-align: middle;
@@ -1091,7 +1189,7 @@ a:not([class]):hover {
 }
 .lum-table td.lum-col-group-b {
   color: var(--lum-primary);
-  font-weight: 600;
+  font-weight: var(--lum-weight-semibold);
 }
 .lum-table td.lum-col-group-c {
   color: var(--lum-accent);
@@ -1110,12 +1208,12 @@ a:not([class]):hover {
 
 /* Kompakte Variante */
 .lum-table-compact th {
-  padding: 10px 14px;
-  font-size: 11px;
+  padding: var(--lum-space-5) var(--lum-space-7);
+  font-size: var(--lum-font-2xs);
 }
 .lum-table-compact td {
-  padding: 9px 14px;
-  font-size: 12px;
+  padding: 9px var(--lum-space-7);
+  font-size: var(--lum-font-xs);
 }
 
 /* Dunkle Tabelle */
@@ -1126,9 +1224,9 @@ a:not([class]):hover {
   background: var(--lum-dark);
 }
 .lum-table-dark th {
-  padding: 14px 20px;
-  font-weight: 700;
-  font-size: 12px;
+  padding: var(--lum-space-7) var(--lum-space-10);
+  font-weight: var(--lum-weight-bold);
+  font-size: var(--lum-font-xs);
   color: rgba(255, 255, 255, 0.85);
   background: rgba(59, 146, 199, 0.25);
   text-align: left;
@@ -1136,7 +1234,7 @@ a:not([class]):hover {
   white-space: nowrap;
 }
 .lum-table-dark td {
-  padding: 13px 20px;
+  padding: 13px var(--lum-space-10);
   border-bottom: 1px solid rgba(255, 255, 255, 0.06);
   color: rgba(255, 255, 255, 0.6);
   vertical-align: middle;
@@ -1154,7 +1252,7 @@ a:not([class]):hover {
 }
 .lum-table-dark td.lum-col-group-b {
   color: rgba(255, 255, 255, 0.85);
-  font-weight: 600;
+  font-weight: var(--lum-weight-semibold);
 }
 .lum-table-dark th.lum-col-group-a {
   background: rgba(59, 146, 199, 0.3);
@@ -1170,25 +1268,25 @@ a:not([class]):hover {
 .lum-chart {
   display: flex;
   flex-direction: column;
-  gap: 10px;
+  gap: var(--lum-space-5);
 }
 .lum-chart-bar-row {
   display: flex;
   align-items: center;
-  gap: 12px;
-  font-size: 13px;
+  gap: var(--lum-space-6);
+  font-size: var(--lum-font-sm);
 }
 .lum-chart-label {
   width: 100px;
   flex-shrink: 0;
   text-align: right;
-  font-weight: 600;
+  font-weight: var(--lum-weight-semibold);
   color: var(--lum-gray);
-  font-size: 12px;
+  font-size: var(--lum-font-xs);
 }
 .lum-chart-track {
   flex: 1;
-  height: 28px;
+  height: var(--lum-space-14);
   background: var(--lum-light);
   border-radius: var(--lum-radius-btn);
   overflow: hidden;
@@ -1197,12 +1295,12 @@ a:not([class]):hover {
 .lum-chart-fill {
   height: 100%;
   border-radius: var(--lum-radius-btn);
-  transition: width 0.8s var(--lum-ease);
+  transition: width var(--lum-duration-slowest) var(--lum-ease);
   display: flex;
   align-items: center;
-  padding: 0 10px;
-  font-size: 11px;
-  font-weight: 700;
+  padding: 0 var(--lum-space-5);
+  font-size: var(--lum-font-2xs);
+  font-weight: var(--lum-weight-bold);
   color: #fff;
   white-space: nowrap;
 }
@@ -1231,14 +1329,14 @@ a:not([class]):hover {
 .lum-sparkbar {
   display: inline-flex;
   align-items: flex-end;
-  gap: 2px;
-  height: 24px;
+  gap: var(--lum-space-1);
+  height: var(--lum-space-12);
 }
 .lum-sparkbar-col {
-  width: 4px;
+  width: var(--lum-space-2);
   border-radius: 2px;
   background: var(--lum-accent);
-  transition: height 0.3s var(--lum-ease);
+  transition: height var(--lum-duration-slow) var(--lum-ease);
 }
 
 /* Donut / Ring via SVG Utility */
@@ -1255,8 +1353,8 @@ a:not([class]):hover {
   display: flex;
   align-items: center;
   justify-content: center;
-  font-size: 16px;
-  font-weight: 800;
+  font-size: var(--lum-font-xl);
+  font-weight: var(--lum-weight-black);
   color: var(--lum-dark);
 }
 
@@ -1264,17 +1362,17 @@ a:not([class]):hover {
 .lum-chart-cols {
   display: flex;
   align-items: flex-end;
-  gap: 8px;
+  gap: var(--lum-space-4);
   height: 120px;
-  padding: 0 4px;
+  padding: 0 var(--lum-space-2);
 }
 .lum-chart-col {
   flex: 1;
   border-radius: 4px 4px 0 0;
   background: var(--lum-grad-accent);
-  transition: height 0.6s var(--lum-ease);
+  transition: height var(--lum-duration-slower) var(--lum-ease);
   position: relative;
-  min-width: 20px;
+  min-width: var(--lum-space-10);
 }
 .lum-chart-col-label {
   position: absolute;
@@ -1291,7 +1389,7 @@ a:not([class]):hover {
   left: 50%;
   transform: translateX(-50%);
   font-size: 10px;
-  font-weight: 700;
+  font-weight: var(--lum-weight-bold);
   color: var(--lum-dark);
   white-space: nowrap;
 }
@@ -1311,39 +1409,39 @@ a:not([class]):hover {
 .lum-stat-card {
   display: flex;
   flex-direction: column;
-  gap: 4px;
-  padding: 20px;
+  gap: var(--lum-space-2);
+  padding: var(--lum-space-10);
   background: var(--lum-white);
   border: 1px solid var(--lum-light);
   border-radius: var(--lum-radius-md);
 }
 .lum-stat-card-label {
-  font-size: 11px;
-  font-weight: 700;
-  letter-spacing: 0.8px;
+  font-size: var(--lum-font-2xs);
+  font-weight: var(--lum-weight-bold);
+  letter-spacing: var(--lum-tracking-wide);
   text-transform: uppercase;
   color: var(--lum-gray);
 }
 .lum-stat-card-value {
-  font-size: 28px;
-  font-weight: 800;
+  font-size: var(--lum-font-4xl);
+  font-weight: var(--lum-weight-black);
   color: var(--lum-dark);
-  line-height: 1.1;
+  line-height: var(--lum-leading-tight);
 }
 .lum-stat-card-sub {
-  font-size: 12px;
+  font-size: var(--lum-font-xs);
   color: var(--lum-gray);
   display: flex;
   align-items: center;
-  gap: 4px;
+  gap: var(--lum-space-2);
 }
 .lum-stat-card-up {
   color: var(--lum-green);
-  font-weight: 700;
+  font-weight: var(--lum-weight-bold);
 }
 .lum-stat-card-down {
   color: var(--lum-red);
-  font-weight: 700;
+  font-weight: var(--lum-weight-bold);
 }
 
 /* ─────────────────────────────────────
@@ -1354,25 +1452,25 @@ a:not([class]):hover {
   align-items: center;
   justify-content: center;
   border-radius: 50%;
-  font-weight: 700;
+  font-weight: var(--lum-weight-bold);
   flex-shrink: 0;
   color: #fff;
   text-transform: uppercase;
 }
 .lum-avatar-sm {
-  width: 28px;
-  height: 28px;
+  width: var(--lum-size-avatar-sm);
+  height: var(--lum-size-avatar-sm);
   font-size: 10px;
 }
 .lum-avatar-md {
-  width: 36px;
-  height: 36px;
-  font-size: 12px;
+  width: var(--lum-size-avatar-md);
+  height: var(--lum-size-avatar-md);
+  font-size: var(--lum-font-xs);
 }
 .lum-avatar-lg {
-  width: 48px;
-  height: 48px;
-  font-size: 16px;
+  width: var(--lum-size-avatar-lg);
+  height: var(--lum-size-avatar-lg);
+  font-size: var(--lum-font-xl);
 }
 .lum-avatar-primary {
   background: var(--lum-primary);
@@ -1390,12 +1488,12 @@ a:not([class]):hover {
 .lum-divider {
   height: 1px;
   background: var(--lum-light);
-  margin: 48px 0;
+  margin: var(--lum-space-24) 0;
 }
 .lum-divider-dark {
   height: 1px;
   background: rgba(255, 255, 255, 0.08);
-  margin: 48px 0;
+  margin: var(--lum-space-24) 0;
 }
 
 /* ─────────────────────────────────────
@@ -1403,20 +1501,20 @@ a:not([class]):hover {
    ───────────────────────────────────── */
 .lum-code {
   background: rgba(21, 44, 62, 0.07);
-  padding: 2px 7px;
+  padding: var(--lum-space-1) 7px;
   border-radius: 4px;
-  font-size: 12px;
+  font-size: var(--lum-font-xs);
   font-family: var(--lum-font-mono);
 }
 .lum-code-block {
   display: block;
-  padding: 20px;
+  padding: var(--lum-space-10);
   border-radius: var(--lum-radius-sm);
   background: var(--lum-dark);
   color: rgba(255, 255, 255, 0.85);
   font-family: var(--lum-font-mono);
-  font-size: 12px;
-  line-height: 1.5;
+  font-size: var(--lum-font-xs);
+  line-height: var(--lum-leading-relaxed);
   overflow-x: auto;
   white-space: pre;
 }
@@ -1439,17 +1537,17 @@ a:not([class]):hover {
 .lum-dark-bg {
   background: var(--lum-dark);
   border-radius: var(--lum-radius-md);
-  padding: 28px;
+  padding: var(--lum-space-14);
 }
 .lum-dark-bg-gradient {
   background: var(--lum-grad-dark);
   border-radius: var(--lum-radius-md);
-  padding: 28px;
+  padding: var(--lum-space-14);
 }
 .lum-hero-bg {
   background: var(--lum-grad-hero);
   border-radius: var(--lum-radius-lg);
-  padding: 48px;
+  padding: var(--lum-space-24);
   position: relative;
   overflow: hidden;
 }
@@ -1466,7 +1564,7 @@ a:not([class]):hover {
    ───────────────────────────────────── */
 .lum-progress {
   width: 100%;
-  height: 8px;
+  height: var(--lum-space-4);
   background: var(--lum-light);
   border-radius: 4px;
   overflow: hidden;
@@ -1474,7 +1572,7 @@ a:not([class]):hover {
 .lum-progress-fill {
   height: 100%;
   border-radius: 4px;
-  transition: width 0.6s var(--lum-ease);
+  transition: width var(--lum-duration-slower) var(--lum-ease);
 }
 .lum-progress-teal {
   background: var(--lum-grad-teal);
@@ -1491,12 +1589,12 @@ a:not([class]):hover {
    ───────────────────────────────────── */
 /* Gap */
 .lum-gap-10 {
-  gap: 10px;
+  gap: var(--lum-space-5);
 }
 
 /* Margin */
 .lum-mb-4 {
-  margin-bottom: 4px;
+  margin-bottom: var(--lum-space-2);
 }
 
 /* Table alignment */
@@ -1527,55 +1625,55 @@ a:not([class]):hover {
   flex-wrap: wrap;
 }
 .lum-gap-4 {
-  gap: 4px;
+  gap: var(--lum-space-2);
 }
 .lum-gap-8 {
-  gap: 8px;
+  gap: var(--lum-space-4);
 }
 .lum-gap-12 {
-  gap: 12px;
+  gap: var(--lum-space-6);
 }
 .lum-gap-16 {
-  gap: 16px;
+  gap: var(--lum-space-8);
 }
 .lum-gap-24 {
-  gap: 24px;
+  gap: var(--lum-space-12);
 }
 .lum-gap-32 {
-  gap: 32px;
+  gap: var(--lum-space-16);
 }
 .lum-grid-2 {
   display: grid;
   grid-template-columns: 1fr 1fr;
-  gap: 24px;
+  gap: var(--lum-space-12);
 }
 .lum-grid-3 {
   display: grid;
   grid-template-columns: 1fr 1fr 1fr;
-  gap: 24px;
+  gap: var(--lum-space-12);
 }
 .lum-grid-4 {
   display: grid;
   grid-template-columns: repeat(4, 1fr);
-  gap: 24px;
+  gap: var(--lum-space-12);
 }
 .lum-mt-8 {
-  margin-top: 8px;
+  margin-top: var(--lum-space-4);
 }
 .lum-mt-16 {
-  margin-top: 16px;
+  margin-top: var(--lum-space-8);
 }
 .lum-mt-24 {
-  margin-top: 24px;
+  margin-top: var(--lum-space-12);
 }
 .lum-mt-32 {
-  margin-top: 32px;
+  margin-top: var(--lum-space-16);
 }
 .lum-mb-8 {
-  margin-bottom: 8px;
+  margin-bottom: var(--lum-space-4);
 }
 .lum-mb-16 {
-  margin-bottom: 16px;
+  margin-bottom: var(--lum-space-8);
 }
 .lum-text-right {
   text-align: right;
@@ -1595,16 +1693,16 @@ a:not([class]):hover {
   width: 100%;
 }
 .lum-max-w-sm {
-  max-width: 320px;
+  max-width: var(--lum-max-w-sm);
 }
 .lum-max-w-md {
-  max-width: 480px;
+  max-width: var(--lum-max-w-md);
 }
 .lum-max-w-lg {
-  max-width: 640px;
+  max-width: var(--lum-max-w-lg);
 }
 .lum-max-w-xl {
-  max-width: 960px;
+  max-width: var(--lum-max-w-xl);
 }
 
 /* ─────────────────────────────────────
@@ -1618,10 +1716,10 @@ a:not([class]):hover {
   display: flex;
   align-items: center;
   justify-content: center;
-  z-index: 1000;
+  z-index: var(--lum-z-modal);
   opacity: 0;
   pointer-events: none;
-  transition: opacity 0.2s;
+  transition: opacity var(--lum-duration-base);
 }
 .lum-modal-backdrop.open {
   opacity: 1;
@@ -1630,10 +1728,10 @@ a:not([class]):hover {
 .lum-modal {
   background: var(--lum-white);
   border-radius: var(--lum-radius-lg);
-  padding: 32px;
-  max-width: 480px;
+  padding: var(--lum-space-16);
+  max-width: var(--lum-max-w-md);
   width: 90%;
-  box-shadow: 0 16px 48px rgba(28, 37, 48, 0.2);
+  box-shadow: var(--lum-shadow-2xl);
   transform: translateY(8px) scale(0.98);
   transition: transform 0.25s;
 }
@@ -1644,16 +1742,16 @@ a:not([class]):hover {
   display: flex;
   justify-content: space-between;
   align-items: flex-start;
-  margin-bottom: 16px;
+  margin-bottom: var(--lum-space-8);
 }
 .lum-modal-title {
-  font-size: 18px;
-  font-weight: 800;
+  font-size: var(--lum-font-2xl);
+  font-weight: var(--lum-weight-black);
   color: var(--lum-dark);
 }
 .lum-modal-close {
-  width: 32px;
-  height: 32px;
+  width: var(--lum-size-icon-xl);
+  height: var(--lum-size-icon-xl);
   display: flex;
   align-items: center;
   justify-content: center;
@@ -1662,21 +1760,21 @@ a:not([class]):hover {
   color: var(--lum-gray);
   cursor: pointer;
   border-radius: var(--lum-radius-sm);
-  transition: all 0.15s;
+  transition: all var(--lum-duration-fast);
 }
 .lum-modal-close:hover {
   background: var(--lum-light);
   color: var(--lum-primary);
 }
 .lum-modal-body {
-  font-size: 14px;
+  font-size: var(--lum-font-md);
   color: var(--lum-gray);
-  line-height: 1.5;
-  margin-bottom: 24px;
+  line-height: var(--lum-leading-relaxed);
+  margin-bottom: var(--lum-space-12);
 }
 .lum-modal-footer {
   display: flex;
-  gap: 8px;
+  gap: var(--lum-space-4);
   justify-content: flex-end;
 }
 
@@ -1686,13 +1784,13 @@ a:not([class]):hover {
 .lum-breadcrumbs {
   display: flex;
   align-items: center;
-  gap: 6px;
-  font-size: 13px;
+  gap: var(--lum-space-3);
+  font-size: var(--lum-font-sm);
 }
 .lum-breadcrumbs a {
   color: var(--lum-gray);
   text-decoration: none;
-  transition: color 0.15s;
+  transition: color var(--lum-duration-fast);
 }
 .lum-breadcrumbs a:hover {
   color: var(--lum-accent);
@@ -1700,11 +1798,11 @@ a:not([class]):hover {
 }
 .lum-breadcrumbs .current {
   color: var(--lum-dark);
-  font-weight: 600;
+  font-weight: var(--lum-weight-semibold);
 }
 .lum-breadcrumbs .sep {
   color: var(--lum-lgray);
-  font-size: 11px;
+  font-size: var(--lum-font-2xs);
 }
 
 /* ─────────────────────────────────────
@@ -1713,21 +1811,21 @@ a:not([class]):hover {
 .lum-pagination {
   display: flex;
   align-items: center;
-  gap: 4px;
+  gap: var(--lum-space-2);
 }
 .lum-page {
-  width: 36px;
-  height: 36px;
+  width: var(--lum-size-avatar-md);
+  height: var(--lum-size-avatar-md);
   display: flex;
   align-items: center;
   justify-content: center;
   border-radius: var(--lum-radius-btn);
-  font-size: 13px;
-  font-weight: 600;
+  font-size: var(--lum-font-sm);
+  font-weight: var(--lum-weight-semibold);
   color: var(--lum-gray);
   cursor: pointer;
   border: 1px solid transparent;
-  transition: all 0.15s;
+  transition: all var(--lum-duration-fast);
   background: none;
   font-family: inherit;
 }
@@ -1746,14 +1844,14 @@ a:not([class]):hover {
   pointer-events: none;
 }
 .lum-page-dots {
-  width: 36px;
-  height: 36px;
+  width: var(--lum-size-avatar-md);
+  height: var(--lum-size-avatar-md);
   display: flex;
   align-items: center;
   justify-content: center;
   color: var(--lum-lgray);
-  font-size: 14px;
-  letter-spacing: 2px;
+  font-size: var(--lum-font-md);
+  letter-spacing: var(--lum-tracking-widest);
 }
 
 /* ─────────────────────────────────────
@@ -1771,21 +1869,21 @@ a:not([class]):hover {
   border-radius: var(--lum-radius-btn);
 }
 .lum-skeleton-text {
-  height: 14px;
-  margin-bottom: 8px;
+  height: var(--lum-space-7);
+  margin-bottom: var(--lum-space-4);
   width: 100%;
 }
 .lum-skeleton-text:last-child {
   width: 60%;
 }
 .lum-skeleton-heading {
-  height: 24px;
+  height: var(--lum-space-12);
   width: 40%;
-  margin-bottom: 16px;
+  margin-bottom: var(--lum-space-8);
 }
 .lum-skeleton-avatar {
-  width: 40px;
-  height: 40px;
+  width: var(--lum-size-icon-circle-md);
+  height: var(--lum-size-icon-circle-md);
   border-radius: 50%;
 }
 .lum-skeleton-card {
@@ -1812,15 +1910,15 @@ a:not([class]):hover {
   gap: 0;
 }
 .lum-tab {
-  padding: 12px 20px;
-  font-size: 13px;
-  font-weight: 600;
+  padding: var(--lum-space-6) var(--lum-space-10);
+  font-size: var(--lum-font-sm);
+  font-weight: var(--lum-weight-semibold);
   color: var(--lum-gray);
   cursor: pointer;
   border: none;
   border-bottom: 2px solid transparent;
   margin-bottom: -2px;
-  transition: all 0.2s;
+  transition: all var(--lum-duration-base);
   background: none;
   font-family: inherit;
 }
@@ -1832,7 +1930,7 @@ a:not([class]):hover {
   border-bottom-color: var(--lum-accent);
 }
 .lum-tab-panel {
-  padding: 20px 0;
+  padding: var(--lum-space-10) 0;
   display: none;
 }
 .lum-tab-panel.active {
@@ -1857,20 +1955,20 @@ a:not([class]):hover {
 /* Variante B – Segmented / Pill */
 .lum-tabs-seg {
   display: flex;
-  gap: 4px;
+  gap: var(--lum-space-2);
   background: var(--lum-light);
-  padding: 4px;
+  padding: var(--lum-space-2);
   border-radius: var(--lum-radius-btn);
 }
 .lum-tab-seg {
-  padding: 8px 18px;
-  font-size: 13px;
-  font-weight: 600;
+  padding: var(--lum-space-4) 18px;
+  font-size: var(--lum-font-sm);
+  font-weight: var(--lum-weight-semibold);
   color: var(--lum-gray);
   cursor: pointer;
   border: none;
   border-radius: calc(var(--lum-radius-btn) - 2px);
-  transition: all 0.2s;
+  transition: all var(--lum-duration-base);
   background: none;
   font-family: inherit;
 }
@@ -1906,15 +2004,15 @@ a:not([class]):hover {
   display: inline-flex;
   flex-direction: column;
   align-items: center;
-  gap: 12px;
+  gap: var(--lum-space-6);
 }
 .lum-loader-sun {
-  width: 40px;
-  height: 40px;
+  width: var(--lum-size-icon-circle-md);
+  height: var(--lum-size-icon-circle-md);
 }
 .lum-loader-sm .lum-loader-sun {
-  width: 24px;
-  height: 24px;
+  width: var(--lum-size-icon-lg);
+  height: var(--lum-size-icon-lg);
 }
 .lum-loader-lg .lum-loader-sun {
   width: 64px;
@@ -1967,15 +2065,15 @@ a:not([class]):hover {
 }
 
 .lum-loader-text {
-  font-size: 12px;
-  font-weight: 600;
+  font-size: var(--lum-font-xs);
+  font-weight: var(--lum-weight-semibold);
   color: var(--lum-gray);
-  letter-spacing: 0.3px;
+  letter-spacing: var(--lum-tracking-normal);
 }
 .lum-loader-inline {
   display: inline-flex;
   align-items: center;
-  gap: 8px;
+  gap: var(--lum-space-4);
   flex-direction: row;
 }
 .lum-loader-inline .lum-loader-sun {
@@ -1983,7 +2081,7 @@ a:not([class]):hover {
   height: 18px;
 }
 .lum-loader-inline .lum-loader-text {
-  font-size: 13px;
+  font-size: var(--lum-font-sm);
 }
 
 /* ─────────────────────────────────────
@@ -1993,16 +2091,16 @@ a:not([class]):hover {
 /* Horizontales Submenü */
 .lum-nav-h {
   display: flex;
-  gap: 4px;
-  padding: 4px 0;
+  gap: var(--lum-space-2);
+  padding: var(--lum-space-2) 0;
   flex-wrap: wrap;
-  row-gap: 8px;
+  row-gap: var(--lum-space-4);
 }
 .lum-nav-h a,
 .lum-nav-h button {
-  padding: 8px 16px;
-  font-size: 13px;
-  font-weight: 600;
+  padding: var(--lum-space-4) var(--lum-space-8);
+  font-size: var(--lum-font-sm);
+  font-weight: var(--lum-weight-semibold);
   color: var(--lum-gray);
   text-decoration: none;
   border: none;
@@ -2010,7 +2108,7 @@ a:not([class]):hover {
   border-radius: var(--lum-radius-btn);
   cursor: pointer;
   font-family: inherit;
-  transition: all 0.15s;
+  transition: all var(--lum-duration-fast);
   white-space: nowrap;
 }
 .lum-nav-h a:hover,
@@ -2027,13 +2125,13 @@ a:not([class]):hover {
 .lum-nav-v {
   display: flex;
   flex-direction: column;
-  gap: 2px;
+  gap: var(--lum-space-1);
 }
 .lum-nav-v a,
 .lum-nav-v button {
-  padding: 10px 14px;
-  font-size: 13px;
-  font-weight: 500;
+  padding: var(--lum-space-5) var(--lum-space-7);
+  font-size: var(--lum-font-sm);
+  font-weight: var(--lum-weight-medium);
   color: var(--lum-gray);
   text-decoration: none;
   border: none;
@@ -2041,11 +2139,11 @@ a:not([class]):hover {
   border-radius: var(--lum-radius-btn);
   cursor: pointer;
   font-family: inherit;
-  transition: all 0.15s;
+  transition: all var(--lum-duration-fast);
   text-align: left;
   display: flex;
   align-items: center;
-  gap: 10px;
+  gap: var(--lum-space-5);
 }
 .lum-nav-v a:hover,
 .lum-nav-v button:hover {
@@ -2055,12 +2153,12 @@ a:not([class]):hover {
 .lum-nav-v .active {
   background: rgba(59, 146, 199, 0.08);
   color: var(--lum-accent);
-  font-weight: 600;
+  font-weight: var(--lum-weight-semibold);
 }
 .lum-nav-v .active::before {
   content: "";
   width: 3px;
-  height: 20px;
+  height: var(--lum-space-10);
   background: var(--lum-accent);
   border-radius: 2px;
   flex-shrink: 0;
@@ -2092,16 +2190,16 @@ a:not([class]):hover {
   flex-direction: column;
 }
 .lum-filter-item {
-  padding: 10px 12px;
-  font-size: 13px;
+  padding: var(--lum-space-5) var(--lum-space-6);
+  font-size: var(--lum-font-sm);
   color: var(--lum-text);
   border: none;
   border-bottom: 1px solid var(--lum-light);
   cursor: pointer;
-  transition: background 0.15s;
+  transition: background var(--lum-duration-fast);
   display: flex;
   align-items: center;
-  gap: 10px;
+  gap: var(--lum-space-5);
   width: 100%;
   background: transparent;
   text-align: left;
@@ -2115,14 +2213,14 @@ a:not([class]):hover {
 }
 .lum-filter-item.active {
   color: var(--lum-accent);
-  font-weight: 600;
+  font-weight: var(--lum-weight-semibold);
   background: rgba(59, 146, 199, 0.06);
 }
 
 /* Filterliste mit Avataren (Sidebar-Kontaktliste) */
 .lum-filter-item .lum-avatar {
-  width: 28px;
-  height: 28px;
+  width: var(--lum-size-avatar-sm);
+  height: var(--lum-size-avatar-sm);
   font-size: 10px;
 }
 
@@ -2136,10 +2234,10 @@ a:not([class]):hover {
     grid-template-columns: 1fr;
   }
   .lum-display {
-    font-size: 32px;
+    font-size: var(--lum-font-5xl);
   }
   .lum-h1 {
-    font-size: 24px;
+    font-size: var(--lum-font-3xl);
   }
   .lum-h2 {
     font-size: 20px;
@@ -2180,12 +2278,12 @@ a:not([class]):hover {
 .lum-search-minimal-wrap svg {
   position: absolute;
   top: 50%;
-  left: 14px;
+  left: var(--lum-space-7);
   width: 18px;
   height: 18px;
   transform: translateY(-50%);
   pointer-events: none;
-  transition: fill 0.2s;
+  transition: fill var(--lum-duration-base);
 }
 
 .lum-search-wrap svg,
@@ -2204,9 +2302,9 @@ a:not([class]):hover {
 }
 
 .lum-search-minimal-wrap svg {
-  left: 4px;
-  width: 16px;
-  height: 16px;
+  left: var(--lum-space-2);
+  width: var(--lum-size-icon-sm);
+  height: var(--lum-size-icon-sm);
 }
 
 /* Dunkle Oberflächen bekommen sinnvolle Typografie-Kontraste */
@@ -2494,7 +2592,7 @@ a:not([class]):hover {
 }
 
 .lum-chart-cols {
-  padding: 24px 4px 32px;
+  padding: var(--lum-space-12) var(--lum-space-2) var(--lum-space-16);
   overflow: hidden;
 }
 
