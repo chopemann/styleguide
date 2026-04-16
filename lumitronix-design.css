@@ -10,7 +10,7 @@
    ───────────────────────────────────── */
 :root {
   /* Farben — Kernpalette */
-  --lum-dark: #1c2530;
+  --lum-dark: #152c3e;
   --lum-primary: #366a99;
   --lum-accent: #3b92c7;
   --lum-teal: #3b92c7;
@@ -958,14 +958,15 @@ a:not([class]):hover {
 }
 .lum-float-field .lum-input,
 .lum-float-field .lum-select {
-  padding: var(--lum-space-8);
+  min-height: var(--lum-height-lg);
+  padding: var(--lum-space-6) var(--lum-space-8);
 }
 .lum-float-field .lum-input:focus,
 .lum-float-field .lum-input:not(:placeholder-shown) {
-  padding: 22px var(--lum-space-8) var(--lum-space-5);
+  padding: 20px var(--lum-space-8) var(--lum-space-2);
 }
 .lum-float-field .lum-select {
-  padding: 22px 40px var(--lum-space-5) var(--lum-space-8);
+  padding: 20px 40px var(--lum-space-2) var(--lum-space-8);
 }
 .lum-float-field .lum-textarea {
   padding: 22px var(--lum-space-8) var(--lum-space-4);

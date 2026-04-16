@@ -1,0 +1,1046 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width,initial-scale=1.0">
+<title>LUMITRONIX – Tabellen-Komponentenbibliothek</title>
+<link rel="stylesheet" href="./lumitronix-design.css">
+<link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Oswald:wght@400;500;600;700&display=swap" rel="stylesheet">
+</head>
+<body>
+
+<!-- ═══════════════════════════════════════════════════════════
+     HEADER
+     ═══════════════════════════════════════════════════════════ -->
+<div class="lum-dark-bg lum-mb-16">
+  <div class="lum-flex-col lum-gap-8">
+    <span class="lum-overline">Komponentenbibliothek</span>
+    <span class="lum-h1">Tabellen</span>
+    <span class="lum-body-sm">10 Tabellenvarianten auf Basis der lumitronix-design.css — ohne Inline-CSS oder eigene Klassen.</span>
+  </div>
+</div>
+
+
+<!-- ═══════════════════════════════════════════════════════════
+     TABELLE 1 — Standard-Artikelliste
+     ═══════════════════════════════════════════════════════════ -->
+<div class="lum-flex-col lum-gap-8 lum-mb-16">
+  <div class="lum-flex-col lum-gap-4">
+    <span class="lum-overline">Tabelle 1</span>
+    <div class="lum-flex-center lum-gap-8">
+      <span class="lum-h3">Standard-Artikelliste</span>
+      <span class="lum-badge lum-badge-accent">5 Eintraege</span>
+    </div>
+    <span class="lum-body-sm">Die einfachste Tabellenform fuer allgemeine Artikeluebersichten. Zeigt Artikelname mit Nummer, Sachbearbeiter, Liefertermin, Status und Preis.</span>
+  </div>
+
+  <div class="lum-table-wrap">
+    <table class="lum-table">
+      <thead>
+        <tr>
+          <th>Artikel</th>
+          <th>Sachbearbeiter</th>
+          <th>Liefertermin</th>
+          <th>Status</th>
+          <th class="r">Preis</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td>
+            <div class="lum-flex-col">
+              <span class="lum-body">Nichia 757G LED Strip 24V</span>
+              <span class="lum-caption"><span class="lum-code">LUM-2481</span></span>
+            </div>
+          </td>
+          <td>M. Weber</td>
+          <td>18.04.2026</td>
+          <td><span class="lum-badge lum-badge-green">Lieferbar</span></td>
+          <td class="r">42,90 &euro;</td>
+        </tr>
+        <tr>
+          <td>
+            <div class="lum-flex-col">
+              <span class="lum-body">Samsung LM301H Modul 3000K</span>
+              <span class="lum-caption"><span class="lum-code">LUM-3392</span></span>
+            </div>
+          </td>
+          <td>K. Schmidt</td>
+          <td>22.04.2026</td>
+          <td><span class="lum-badge lum-badge-orange">Bestellt</span></td>
+          <td class="r">67,50 &euro;</td>
+        </tr>
+        <tr>
+          <td>
+            <div class="lum-flex-col">
+              <span class="lum-body">LED Profil CORNER 2m eloxiert</span>
+              <span class="lum-caption"><span class="lum-code">LUM-1105</span></span>
+            </div>
+          </td>
+          <td>S. Braun</td>
+          <td>25.04.2026</td>
+          <td><span class="lum-badge lum-badge-green">Lieferbar</span></td>
+          <td class="r">18,70 &euro;</td>
+        </tr>
+        <tr>
+          <td>
+            <div class="lum-flex-col">
+              <span class="lum-body">MeanWell HLG-150H-24A Netzteil</span>
+              <span class="lum-caption"><span class="lum-code">LUM-5540</span></span>
+            </div>
+          </td>
+          <td>M. Weber</td>
+          <td>02.05.2026</td>
+          <td><span class="lum-badge lum-badge-red">Vergriffen</span></td>
+          <td class="r">54,20 &euro;</td>
+        </tr>
+        <tr>
+          <td>
+            <div class="lum-flex-col">
+              <span class="lum-body">CREE XP-G3 Einzelemitter CRI90</span>
+              <span class="lum-caption"><span class="lum-code">LUM-0877</span></span>
+            </div>
+          </td>
+          <td>A. Fischer</td>
+          <td>28.04.2026</td>
+          <td><span class="lum-badge lum-badge-accent">In Produktion</span></td>
+          <td class="r">3,45 &euro;</td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+</div>
+
+
+<!-- ═══════════════════════════════════════════════════════════
+     TABELLE 2 — Kompakte Tabelle mit Avatar
+     ═══════════════════════════════════════════════════════════ -->
+<div class="lum-flex-col lum-gap-8 lum-mb-16">
+  <div class="lum-flex-col lum-gap-4">
+    <span class="lum-overline">Tabelle 2</span>
+    <div class="lum-flex-center lum-gap-8">
+      <span class="lum-h3">Kompakte Tabelle mit Avatar</span>
+      <span class="lum-badge lum-badge-primary">5 Eintraege</span>
+    </div>
+    <span class="lum-body-sm">Kompakte Darstellung mit Avatar-Initialen fuer den Sachbearbeiter. Ideal fuer Listen, bei denen Personen schnell visuell zugeordnet werden sollen.</span>
+  </div>
+
+  <div class="lum-table-wrap">
+    <table class="lum-table lum-table-compact">
+      <thead>
+        <tr>
+          <th>Artikel</th>
+          <th>Sachbearbeiter</th>
+          <th>Status</th>
+          <th class="r">Preis</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td>
+            <div class="lum-flex-col">
+              <span class="lum-body">Osram Duris E5 Strip CRI97</span>
+              <span class="lum-caption"><span class="lum-code">LUM-4210</span></span>
+            </div>
+          </td>
+          <td>
+            <span class="lum-flex-center lum-gap-8">
+              <span class="lum-avatar lum-avatar-sm lum-avatar-primary">KS</span>
+              K. Schmidt
+            </span>
+          </td>
+          <td><span class="lum-badge lum-badge-green">Lieferbar</span></td>
+          <td class="r">38,90 &euro;</td>
+        </tr>
+        <tr>
+          <td>
+            <div class="lum-flex-col">
+              <span class="lum-body">Osram Duris E5 Strip CRI80</span>
+              <span class="lum-caption"><span class="lum-code">LUM-4211</span></span>
+            </div>
+          </td>
+          <td>
+            <span class="lum-flex-center lum-gap-8">
+              <span class="lum-avatar lum-avatar-sm lum-avatar-accent">MW</span>
+              M. Weber
+            </span>
+          </td>
+          <td><span class="lum-badge lum-badge-orange">Bestellt</span></td>
+          <td class="r">32,50 &euro;</td>
+        </tr>
+        <tr>
+          <td>
+            <div class="lum-flex-col">
+              <span class="lum-body">Osram Duris E5 Strip 5000K</span>
+              <span class="lum-caption"><span class="lum-code">LUM-4212</span></span>
+            </div>
+          </td>
+          <td>
+            <span class="lum-flex-center lum-gap-8">
+              <span class="lum-avatar lum-avatar-sm lum-avatar-primary">SB</span>
+              S. Braun
+            </span>
+          </td>
+          <td><span class="lum-badge lum-badge-accent">In Produktion</span></td>
+          <td class="r">35,00 &euro;</td>
+        </tr>
+        <tr>
+          <td>
+            <div class="lum-flex-col">
+              <span class="lum-body">Osram Duris E5 Strip 2700K</span>
+              <span class="lum-caption"><span class="lum-code">LUM-4213</span></span>
+            </div>
+          </td>
+          <td>
+            <span class="lum-flex-center lum-gap-8">
+              <span class="lum-avatar lum-avatar-sm lum-avatar-accent">AF</span>
+              A. Fischer
+            </span>
+          </td>
+          <td><span class="lum-badge lum-badge-green">Lieferbar</span></td>
+          <td class="r">34,20 &euro;</td>
+        </tr>
+        <tr>
+          <td>
+            <div class="lum-flex-col">
+              <span class="lum-body">Osram Duris E5 Strip Tunable</span>
+              <span class="lum-caption"><span class="lum-code">LUM-4214</span></span>
+            </div>
+          </td>
+          <td>
+            <span class="lum-flex-center lum-gap-8">
+              <span class="lum-avatar lum-avatar-sm lum-avatar-primary">JK</span>
+              J. Keller
+            </span>
+          </td>
+          <td><span class="lum-badge lum-badge-red">Vergriffen</span></td>
+          <td class="r">48,70 &euro;</td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+</div>
+
+
+<!-- ═══════════════════════════════════════════════════════════
+     TABELLE 3 — Dunkle Tabelle
+     ═══════════════════════════════════════════════════════════ -->
+<div class="lum-flex-col lum-gap-8 lum-mb-16">
+  <div class="lum-flex-col lum-gap-4">
+    <span class="lum-overline">Tabelle 3</span>
+    <div class="lum-flex-center lum-gap-8">
+      <span class="lum-h3">Dunkle Tabelle (Dark Mode)</span>
+      <span class="lum-badge lum-badge-gray">4 Eintraege</span>
+    </div>
+    <span class="lum-body-sm">Tabelle fuer dunkle Hintergruende und eingebettete Dashboards. Nutzt lum-table-dark mit Spaltengruppen zur farblichen Hervorhebung.</span>
+  </div>
+
+  <div class="lum-table-dark-wrap">
+    <table class="lum-table lum-table-dark">
+      <thead>
+        <tr>
+          <th>Artikel</th>
+          <th>Liefertermin</th>
+          <th>Sachbearbeiter</th>
+          <th>Status</th>
+          <th class="r">Preis</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td>
+            <div class="lum-flex-col">
+              <span class="lum-col-group-b">Zhaga Book 18 LED Modul</span>
+              <span class="lum-col-group-a">LUM-7810</span>
+            </div>
+          </td>
+          <td>20.04.2026</td>
+          <td>S. Braun</td>
+          <td><span class="lum-badge lum-badge-dark-green">Lieferbar</span></td>
+          <td class="r">29,90 &euro;</td>
+        </tr>
+        <tr>
+          <td>
+            <div class="lum-flex-col">
+              <span class="lum-col-group-b">Zhaga Book 11 COB Modul</span>
+              <span class="lum-col-group-a">LUM-7811</span>
+            </div>
+          </td>
+          <td>03.05.2026</td>
+          <td>K. Schmidt</td>
+          <td><span class="lum-badge lum-badge-dark-teal">In Produktion</span></td>
+          <td class="r">45,30 &euro;</td>
+        </tr>
+        <tr>
+          <td>
+            <div class="lum-flex-col">
+              <span class="lum-col-group-b">Zhaga Book 3 Connector Set</span>
+              <span class="lum-col-group-a">LUM-7812</span>
+            </div>
+          </td>
+          <td>15.04.2026</td>
+          <td>M. Weber</td>
+          <td><span class="lum-badge lum-badge-dark-green">Lieferbar</span></td>
+          <td class="r">8,50 &euro;</td>
+        </tr>
+        <tr>
+          <td>
+            <div class="lum-flex-col">
+              <span class="lum-col-group-b">Zhaga LED Treiber 700mA</span>
+              <span class="lum-col-group-a">LUM-7813</span>
+            </div>
+          </td>
+          <td>10.05.2026</td>
+          <td>A. Fischer</td>
+          <td><span class="lum-badge lum-badge-dark-red">Vergriffen</span></td>
+          <td class="r">38,00 &euro;</td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+</div>
+
+
+<!-- ═══════════════════════════════════════════════════════════
+     TABELLE 4 — Spaltengruppen
+     ═══════════════════════════════════════════════════════════ -->
+<div class="lum-flex-col lum-gap-8 lum-mb-16">
+  <div class="lum-flex-col lum-gap-4">
+    <span class="lum-overline">Tabelle 4</span>
+    <div class="lum-flex-center lum-gap-8">
+      <span class="lum-h3">Spaltengruppen (A / B / C)</span>
+      <span class="lum-badge lum-badge-accent">4 Eintraege</span>
+    </div>
+    <span class="lum-body-sm">Farbliche Spaltentrennung durch lum-col-group-a, -b und -c. Erleichtert das Scannen zusammengehoeriger Datengruppen in breiten Tabellen.</span>
+  </div>
+
+  <div class="lum-table-wrap">
+    <table class="lum-table">
+      <thead>
+        <tr>
+          <th class="lum-col-group-a">Artikel</th>
+          <th class="lum-col-group-b">Sachbearbeiter</th>
+          <th class="lum-col-group-b">Liefertermin</th>
+          <th class="lum-col-group-c">Status</th>
+          <th class="lum-col-group-c r">Preis</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td>
+            <div class="lum-flex-col">
+              <span class="lum-col-group-a">COB LED Strip 24V 3000K</span>
+              <span class="lum-caption">LUM-6001</span>
+            </div>
+          </td>
+          <td class="lum-col-group-b">J. Keller</td>
+          <td class="lum-col-group-b">19.04.2026</td>
+          <td><span class="lum-badge lum-badge-green">Lieferbar</span></td>
+          <td class="r">56,80 &euro;</td>
+        </tr>
+        <tr>
+          <td>
+            <div class="lum-flex-col">
+              <span class="lum-col-group-a">COB LED Strip 24V 4000K</span>
+              <span class="lum-caption">LUM-6002</span>
+            </div>
+          </td>
+          <td class="lum-col-group-b">M. Weber</td>
+          <td class="lum-col-group-b">21.04.2026</td>
+          <td><span class="lum-badge lum-badge-green">Lieferbar</span></td>
+          <td class="r">56,80 &euro;</td>
+        </tr>
+        <tr>
+          <td>
+            <div class="lum-flex-col">
+              <span class="lum-col-group-a">COB LED Strip 24V RGBW</span>
+              <span class="lum-caption">LUM-6003</span>
+            </div>
+          </td>
+          <td class="lum-col-group-b">S. Braun</td>
+          <td class="lum-col-group-b">08.05.2026</td>
+          <td><span class="lum-badge lum-badge-orange">Bestellt</span></td>
+          <td class="r">72,40 &euro;</td>
+        </tr>
+        <tr>
+          <td>
+            <div class="lum-flex-col">
+              <span class="lum-col-group-a">COB LED Strip 12V 6500K</span>
+              <span class="lum-caption">LUM-6004</span>
+            </div>
+          </td>
+          <td class="lum-col-group-b">A. Fischer</td>
+          <td class="lum-col-group-b">16.04.2026</td>
+          <td><span class="lum-badge lum-badge-accent">In Produktion</span></td>
+          <td class="r">49,90 &euro;</td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+</div>
+
+
+<!-- ═══════════════════════════════════════════════════════════
+     TABELLE 5 — Tabelle in Card
+     ═══════════════════════════════════════════════════════════ -->
+<div class="lum-flex-col lum-gap-8 lum-mb-16">
+  <div class="lum-flex-col lum-gap-4">
+    <span class="lum-overline">Tabelle 5</span>
+    <div class="lum-flex-center lum-gap-8">
+      <span class="lum-h3">Card-Container mit Tabelle</span>
+      <span class="lum-badge lum-badge-orange">5 Eintraege</span>
+    </div>
+    <span class="lum-body-sm">Tabelle eingebettet in eine lum-card mit eigenem Titel, Zeitstempel und Positions-Badge. Geeignet fuer Dashboard-Widgets und eingebettete Listen.</span>
+  </div>
+
+  <div class="lum-card">
+    <div class="lum-flex-between lum-mb-16">
+      <div class="lum-flex-col lum-gap-4">
+        <span class="lum-h4">Offene Bestellungen</span>
+        <span class="lum-caption">Letzte Aktualisierung: 16.04.2026</span>
+      </div>
+      <span class="lum-badge lum-badge-accent">5 Positionen</span>
+    </div>
+
+    <div class="lum-table-wrap">
+      <table class="lum-table">
+        <thead>
+          <tr>
+            <th>Artikel</th>
+            <th>Sachbearbeiter</th>
+            <th>Liefertermin</th>
+            <th>Status</th>
+            <th class="r">Preis</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td>
+              <div class="lum-flex-col">
+                <span class="lum-body">Bridgelux Thrive SMD 3030</span>
+                <span class="lum-caption"><span class="lum-code">LUM-9110</span></span>
+              </div>
+            </td>
+            <td>K. Schmidt</td>
+            <td>23.04.2026</td>
+            <td><span class="lum-badge lum-badge-orange">Bestellt</span></td>
+            <td class="r">2,15 &euro;</td>
+          </tr>
+          <tr>
+            <td>
+              <div class="lum-flex-col">
+                <span class="lum-body">Konstantstromquelle 350mA</span>
+                <span class="lum-caption"><span class="lum-code">LUM-9111</span></span>
+              </div>
+            </td>
+            <td>M. Weber</td>
+            <td>25.04.2026</td>
+            <td><span class="lum-badge lum-badge-orange">Bestellt</span></td>
+            <td class="r">12,80 &euro;</td>
+          </tr>
+          <tr>
+            <td>
+              <div class="lum-flex-col">
+                <span class="lum-body">Aluminium Kuehlkoerper 100mm</span>
+                <span class="lum-caption"><span class="lum-code">LUM-9112</span></span>
+              </div>
+            </td>
+            <td>S. Braun</td>
+            <td>19.04.2026</td>
+            <td><span class="lum-badge lum-badge-accent">In Produktion</span></td>
+            <td class="r">7,90 &euro;</td>
+          </tr>
+          <tr>
+            <td>
+              <div class="lum-flex-col">
+                <span class="lum-body">Waermeleitpaste Arctic MX-6</span>
+                <span class="lum-caption"><span class="lum-code">LUM-9113</span></span>
+              </div>
+            </td>
+            <td>A. Fischer</td>
+            <td>17.04.2026</td>
+            <td><span class="lum-badge lum-badge-green">Lieferbar</span></td>
+            <td class="r">4,50 &euro;</td>
+          </tr>
+          <tr>
+            <td>
+              <div class="lum-flex-col">
+                <span class="lum-body">DALI Dimmer 4-Kanal</span>
+                <span class="lum-caption"><span class="lum-code">LUM-9114</span></span>
+              </div>
+            </td>
+            <td>J. Keller</td>
+            <td>30.04.2026</td>
+            <td><span class="lum-badge lum-badge-red">Vergriffen</span></td>
+            <td class="r">89,00 &euro;</td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+  </div>
+</div>
+
+
+<!-- ═══════════════════════════════════════════════════════════
+     TABELLE 6 — Tabelle mit Pagination
+     ═══════════════════════════════════════════════════════════ -->
+<div class="lum-flex-col lum-gap-8 lum-mb-16">
+  <div class="lum-flex-col lum-gap-4">
+    <span class="lum-overline">Tabelle 6</span>
+    <div class="lum-flex-center lum-gap-8">
+      <span class="lum-h3">Tabelle mit Pagination</span>
+      <span class="lum-badge lum-badge-gray">5 von 58</span>
+    </div>
+    <span class="lum-body-sm">Seitennavigation unterhalb der Tabelle mit lum-pagination. Fuer grosse Datensaetze, bei denen nicht alle Eintraege auf einmal angezeigt werden koennen.</span>
+  </div>
+
+  <div class="lum-table-wrap">
+    <table class="lum-table">
+      <thead>
+        <tr>
+          <th>Artikel</th>
+          <th>Sachbearbeiter</th>
+          <th>Status</th>
+          <th class="r">Preis</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td>
+            <div class="lum-flex-col">
+              <span class="lum-body">Linse 60&deg; PMMA klar</span>
+              <span class="lum-caption"><span class="lum-code">LUM-0301</span></span>
+            </div>
+          </td>
+          <td>S. Braun</td>
+          <td><span class="lum-badge lum-badge-green">Lieferbar</span></td>
+          <td class="r">1,20 &euro;</td>
+        </tr>
+        <tr>
+          <td>
+            <div class="lum-flex-col">
+              <span class="lum-body">Linse 25&deg; PMMA klar</span>
+              <span class="lum-caption"><span class="lum-code">LUM-0302</span></span>
+            </div>
+          </td>
+          <td>S. Braun</td>
+          <td><span class="lum-badge lum-badge-green">Lieferbar</span></td>
+          <td class="r">1,20 &euro;</td>
+        </tr>
+        <tr>
+          <td>
+            <div class="lum-flex-col">
+              <span class="lum-body">Linse 120&deg; PMMA satiniert</span>
+              <span class="lum-caption"><span class="lum-code">LUM-0303</span></span>
+            </div>
+          </td>
+          <td>K. Schmidt</td>
+          <td><span class="lum-badge lum-badge-orange">Bestellt</span></td>
+          <td class="r">1,45 &euro;</td>
+        </tr>
+        <tr>
+          <td>
+            <div class="lum-flex-col">
+              <span class="lum-body">Reflektor 45&deg; Aluminium</span>
+              <span class="lum-caption"><span class="lum-code">LUM-0304</span></span>
+            </div>
+          </td>
+          <td>A. Fischer</td>
+          <td><span class="lum-badge lum-badge-green">Lieferbar</span></td>
+          <td class="r">2,80 &euro;</td>
+        </tr>
+        <tr>
+          <td>
+            <div class="lum-flex-col">
+              <span class="lum-body">Reflektor 15&deg; verchromt</span>
+              <span class="lum-caption"><span class="lum-code">LUM-0305</span></span>
+            </div>
+          </td>
+          <td>M. Weber</td>
+          <td><span class="lum-badge lum-badge-accent">In Produktion</span></td>
+          <td class="r">3,10 &euro;</td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+
+  <div class="lum-flex-between lum-mt-8">
+    <span class="lum-caption">Seite 1 von 12 &mdash; 58 Ergebnisse</span>
+    <div class="lum-pagination">
+      <button class="lum-page disabled">&laquo;</button>
+      <button class="lum-page active">1</button>
+      <button class="lum-page">2</button>
+      <button class="lum-page">3</button>
+      <span class="lum-page-dots">&hellip;</span>
+      <button class="lum-page">12</button>
+      <button class="lum-page">&raquo;</button>
+    </div>
+  </div>
+</div>
+
+
+<!-- ═══════════════════════════════════════════════════════════
+     TABELLE 7 — Kompakte Preisliste
+     ═══════════════════════════════════════════════════════════ -->
+<div class="lum-flex-col lum-gap-8 lum-mb-16">
+  <div class="lum-flex-col lum-gap-4">
+    <span class="lum-overline">Tabelle 7</span>
+    <div class="lum-flex-center lum-gap-8">
+      <span class="lum-h3">Kompakte Staffelpreisliste</span>
+      <span class="lum-badge lum-badge-green">6 Eintraege</span>
+    </div>
+    <span class="lum-body-sm">Preisvergleich mit Staffelmengen in lum-table-compact. Preisspalten rechtsbuendig fuer optimale Lesbarkeit bei Zahlenkolonnen.</span>
+  </div>
+
+  <div class="lum-table-wrap">
+    <table class="lum-table lum-table-compact">
+      <thead>
+        <tr>
+          <th>Artikel</th>
+          <th class="r">ab 1 Stk.</th>
+          <th class="r">ab 10 Stk.</th>
+          <th class="r">ab 100 Stk.</th>
+          <th>Lieferzeit</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td>
+            <div class="lum-flex-col">
+              <span class="lum-body">Nichia 219C D320 CRI90+</span>
+              <span class="lum-caption"><span class="lum-code">LUM-8001</span></span>
+            </div>
+          </td>
+          <td class="r">2,45 &euro;</td>
+          <td class="r">2,10 &euro;</td>
+          <td class="r">1,85 &euro;</td>
+          <td>sofort</td>
+        </tr>
+        <tr>
+          <td>
+            <div class="lum-flex-col">
+              <span class="lum-body">Nichia 219C D280 CRI80+</span>
+              <span class="lum-caption"><span class="lum-code">LUM-8002</span></span>
+            </div>
+          </td>
+          <td class="r">2,20 &euro;</td>
+          <td class="r">1,90 &euro;</td>
+          <td class="r">1,65 &euro;</td>
+          <td>sofort</td>
+        </tr>
+        <tr>
+          <td>
+            <div class="lum-flex-col">
+              <span class="lum-body">Nichia 757G V3 4000K</span>
+              <span class="lum-caption"><span class="lum-code">LUM-8003</span></span>
+            </div>
+          </td>
+          <td class="r">1,80 &euro;</td>
+          <td class="r">1,55 &euro;</td>
+          <td class="r">1,30 &euro;</td>
+          <td>3-5 Tage</td>
+        </tr>
+        <tr>
+          <td>
+            <div class="lum-flex-col">
+              <span class="lum-body">Samsung LM301B 3000K S6</span>
+              <span class="lum-caption"><span class="lum-code">LUM-8004</span></span>
+            </div>
+          </td>
+          <td class="r">0,95 &euro;</td>
+          <td class="r">0,80 &euro;</td>
+          <td class="r">0,65 &euro;</td>
+          <td>sofort</td>
+        </tr>
+        <tr>
+          <td>
+            <div class="lum-flex-col">
+              <span class="lum-body">Samsung LM301H 4000K S8</span>
+              <span class="lum-caption"><span class="lum-code">LUM-8005</span></span>
+            </div>
+          </td>
+          <td class="r">1,10 &euro;</td>
+          <td class="r">0,92 &euro;</td>
+          <td class="r">0,78 &euro;</td>
+          <td>sofort</td>
+        </tr>
+        <tr>
+          <td>
+            <div class="lum-flex-col">
+              <span class="lum-body">CREE XP-L2 V6 3A 6500K</span>
+              <span class="lum-caption"><span class="lum-code">LUM-8006</span></span>
+            </div>
+          </td>
+          <td class="r">3,80 &euro;</td>
+          <td class="r">3,40 &euro;</td>
+          <td class="r">2,95 &euro;</td>
+          <td>7-10 Tage</td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+</div>
+
+
+<!-- ═══════════════════════════════════════════════════════════
+     TABELLE 8 — Dark Card mit Tabelle + Stat-Cards
+     ═══════════════════════════════════════════════════════════ -->
+<div class="lum-flex-col lum-gap-8 lum-mb-16">
+  <div class="lum-flex-col lum-gap-4">
+    <span class="lum-overline">Tabelle 8</span>
+    <div class="lum-flex-center lum-gap-8">
+      <span class="lum-h3">Dark Card mit Lager-Warnungen</span>
+      <span class="lum-badge lum-badge-red">4 Eintraege</span>
+    </div>
+    <span class="lum-body-sm">Dunkler Gradient-Container mit eingebetteter Dark-Tabelle. Fuer Warnsysteme und Monitoring-Ansichten, die sofort Aufmerksamkeit erfordern.</span>
+  </div>
+
+  <div class="lum-dark-bg-gradient">
+    <div class="lum-flex-col lum-gap-16">
+      <div class="lum-flex-between">
+        <span class="lum-h4">Lagerbestand Kritisch</span>
+        <span class="lum-badge lum-badge-dark-red">4 Warnungen</span>
+      </div>
+
+      <div class="lum-table-dark-wrap">
+        <table class="lum-table lum-table-dark lum-table-compact">
+          <thead>
+            <tr>
+              <th>Artikel</th>
+              <th>Sachbearbeiter</th>
+              <th>Status</th>
+              <th class="r">Restbestand</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td>
+                <div class="lum-flex-col">
+                  <span class="lum-col-group-b">LED Trafo 12V 60W IP67</span>
+                  <span class="lum-col-group-a">LUM-1401</span>
+                </div>
+              </td>
+              <td>M. Weber</td>
+              <td><span class="lum-badge lum-badge-dark-red">Kritisch</span></td>
+              <td class="r">3 Stk.</td>
+            </tr>
+            <tr>
+              <td>
+                <div class="lum-flex-col">
+                  <span class="lum-col-group-b">LED Trafo 24V 100W IP67</span>
+                  <span class="lum-col-group-a">LUM-1402</span>
+                </div>
+              </td>
+              <td>K. Schmidt</td>
+              <td><span class="lum-badge lum-badge-dark-red">Kritisch</span></td>
+              <td class="r">1 Stk.</td>
+            </tr>
+            <tr>
+              <td>
+                <div class="lum-flex-col">
+                  <span class="lum-col-group-b">Anschlusskabel 2-pol. 30cm</span>
+                  <span class="lum-col-group-a">LUM-1403</span>
+                </div>
+              </td>
+              <td>S. Braun</td>
+              <td><span class="lum-badge lum-badge-dark-teal">Nachbestellt</span></td>
+              <td class="r">12 Stk.</td>
+            </tr>
+            <tr>
+              <td>
+                <div class="lum-flex-col">
+                  <span class="lum-col-group-b">Endkappe Profil SLIM offen</span>
+                  <span class="lum-col-group-a">LUM-1404</span>
+                </div>
+              </td>
+              <td>A. Fischer</td>
+              <td><span class="lum-badge lum-badge-dark-red">Kritisch</span></td>
+              <td class="r">5 Stk.</td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+    </div>
+  </div>
+</div>
+
+
+<!-- ═══════════════════════════════════════════════════════════
+     TABELLE 9 — Tabelle mit Progress-Bars
+     ═══════════════════════════════════════════════════════════ -->
+<div class="lum-flex-col lum-gap-8 lum-mb-16">
+  <div class="lum-flex-col lum-gap-4">
+    <span class="lum-overline">Tabelle 9</span>
+    <div class="lum-flex-center lum-gap-8">
+      <span class="lum-h3">Projektstatus mit Fortschrittsbalken</span>
+      <span class="lum-badge lum-badge-accent">4 Eintraege</span>
+    </div>
+    <span class="lum-body-sm">Erweiterte Tabelle mit lum-progress Balken und Avataren. Zeigt den Fertigstellungsgrad laufender Projekte auf einen Blick.</span>
+  </div>
+
+  <div class="lum-table-wrap">
+    <table class="lum-table">
+      <thead>
+        <tr>
+          <th>Artikel</th>
+          <th>Sachbearbeiter</th>
+          <th>Fortschritt</th>
+          <th>Liefertermin</th>
+          <th>Status</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td>
+            <div class="lum-flex-col">
+              <span class="lum-body">Custom LED Panel 600x600</span>
+              <span class="lum-caption"><span class="lum-code">PRJ-001</span></span>
+            </div>
+          </td>
+          <td>
+            <span class="lum-flex-center lum-gap-8">
+              <span class="lum-avatar lum-avatar-sm lum-avatar-accent">KS</span>
+              K. Schmidt
+            </span>
+          </td>
+          <td>
+            <div class="lum-flex-col lum-gap-4">
+              <div class="lum-progress">
+                <div class="lum-progress-fill lum-progress-green"></div>
+              </div>
+              <span class="lum-caption">83%</span>
+            </div>
+          </td>
+          <td>20.04.2026</td>
+          <td><span class="lum-badge lum-badge-green">Im Plan</span></td>
+        </tr>
+        <tr>
+          <td>
+            <div class="lum-flex-col">
+              <span class="lum-body">Sonderprofil FLEX 3m</span>
+              <span class="lum-caption"><span class="lum-code">PRJ-002</span></span>
+            </div>
+          </td>
+          <td>
+            <span class="lum-flex-center lum-gap-8">
+              <span class="lum-avatar lum-avatar-sm lum-avatar-primary">MW</span>
+              M. Weber
+            </span>
+          </td>
+          <td>
+            <div class="lum-flex-col lum-gap-4">
+              <div class="lum-progress">
+                <div class="lum-progress-fill lum-progress-accent"></div>
+              </div>
+              <span class="lum-caption">61%</span>
+            </div>
+          </td>
+          <td>05.05.2026</td>
+          <td><span class="lum-badge lum-badge-accent">In Arbeit</span></td>
+        </tr>
+        <tr>
+          <td>
+            <div class="lum-flex-col">
+              <span class="lum-body">Grow-Light Modul 120W</span>
+              <span class="lum-caption"><span class="lum-code">PRJ-003</span></span>
+            </div>
+          </td>
+          <td>
+            <span class="lum-flex-center lum-gap-8">
+              <span class="lum-avatar lum-avatar-sm lum-avatar-accent">SB</span>
+              S. Braun
+            </span>
+          </td>
+          <td>
+            <div class="lum-flex-col lum-gap-4">
+              <div class="lum-progress">
+                <div class="lum-progress-fill lum-progress-teal"></div>
+              </div>
+              <span class="lum-caption">45%</span>
+            </div>
+          </td>
+          <td>15.05.2026</td>
+          <td><span class="lum-badge lum-badge-orange">Verzoegert</span></td>
+        </tr>
+        <tr>
+          <td>
+            <div class="lum-flex-col">
+              <span class="lum-body">UV-C Desinfektionsleiste</span>
+              <span class="lum-caption"><span class="lum-code">PRJ-004</span></span>
+            </div>
+          </td>
+          <td>
+            <span class="lum-flex-center lum-gap-8">
+              <span class="lum-avatar lum-avatar-sm lum-avatar-primary">AF</span>
+              A. Fischer
+            </span>
+          </td>
+          <td>
+            <div class="lum-flex-col lum-gap-4">
+              <div class="lum-progress">
+                <div class="lum-progress-fill lum-progress-green"></div>
+              </div>
+              <span class="lum-caption">92%</span>
+            </div>
+          </td>
+          <td>18.04.2026</td>
+          <td><span class="lum-badge lum-badge-green">Im Plan</span></td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+</div>
+
+
+<!-- ═══════════════════════════════════════════════════════════
+     TABELLE 10 — Tabelle mit Alert + Suchleiste
+     ═══════════════════════════════════════════════════════════ -->
+<div class="lum-flex-col lum-gap-8 lum-mb-16">
+  <div class="lum-flex-col lum-gap-4">
+    <span class="lum-overline">Tabelle 10</span>
+    <div class="lum-flex-center lum-gap-8">
+      <span class="lum-h3">Tabelle mit Suchleiste und Warnmeldung</span>
+      <span class="lum-badge lum-badge-red">6 Eintraege</span>
+    </div>
+    <span class="lum-body-sm">Vollstaendiges Tabellen-Pattern mit lum-alert als Hinweis, lum-search als Filterfeld und Status-Badges als Zusammenfassung ueber der Tabelle.</span>
+  </div>
+
+  <div class="lum-alert lum-alert-warning">
+    <span class="lum-body-sm">3 Artikel haben den geplanten Liefertermin ueberschritten. Bitte pruefen Sie die markierten Eintraege.</span>
+  </div>
+
+  <div class="lum-flex-between">
+    <div class="lum-search-wrap">
+      <svg viewBox="0 0 24 24"><path d="M15.5 14h-.79l-.28-.27A6.471 6.471 0 0016 9.5 6.5 6.5 0 109.5 16c1.61 0 3.09-.59 4.23-1.57l.27.28v.79l5 4.99L20.49 19l-4.99-5zm-6 0C7.01 14 5 11.99 5 9.5S7.01 5 9.5 5 14 7.01 14 9.5 11.99 14 9.5 14z"/></svg>
+      <input type="text" class="lum-search" placeholder="Artikel suchen...">
+    </div>
+    <div class="lum-flex-center lum-gap-8">
+      <span class="lum-badge lum-badge-green">3 Lieferbar</span>
+      <span class="lum-badge lum-badge-red">2 Ueberfaellig</span>
+      <span class="lum-badge lum-badge-gray">1 Geplant</span>
+    </div>
+  </div>
+
+  <div class="lum-table-wrap">
+    <table class="lum-table">
+      <thead>
+        <tr>
+          <th>Artikel</th>
+          <th>Sachbearbeiter</th>
+          <th>Liefertermin</th>
+          <th>Status</th>
+          <th class="r">Preis</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td>
+            <div class="lum-flex-col">
+              <span class="lum-body">IP68 LED Strip RGBW 24V</span>
+              <span class="lum-caption"><span class="lum-code">LUM-5001</span></span>
+            </div>
+          </td>
+          <td>
+            <span class="lum-flex-center lum-gap-8">
+              <span class="lum-avatar lum-avatar-sm lum-avatar-primary">MW</span>
+              M. Weber
+            </span>
+          </td>
+          <td>10.04.2026</td>
+          <td><span class="lum-badge lum-badge-red">Ueberfaellig</span></td>
+          <td class="r">78,90 &euro;</td>
+        </tr>
+        <tr>
+          <td>
+            <div class="lum-flex-col">
+              <span class="lum-body">IP68 LED Strip WW 12V</span>
+              <span class="lum-caption"><span class="lum-code">LUM-5002</span></span>
+            </div>
+          </td>
+          <td>
+            <span class="lum-flex-center lum-gap-8">
+              <span class="lum-avatar lum-avatar-sm lum-avatar-accent">KS</span>
+              K. Schmidt
+            </span>
+          </td>
+          <td>16.04.2026</td>
+          <td><span class="lum-badge lum-badge-green">Lieferbar</span></td>
+          <td class="r">52,30 &euro;</td>
+        </tr>
+        <tr>
+          <td>
+            <div class="lum-flex-col">
+              <span class="lum-body">IP68 Endkappen-Set 10mm</span>
+              <span class="lum-caption"><span class="lum-code">LUM-5003</span></span>
+            </div>
+          </td>
+          <td>
+            <span class="lum-flex-center lum-gap-8">
+              <span class="lum-avatar lum-avatar-sm lum-avatar-primary">SB</span>
+              S. Braun
+            </span>
+          </td>
+          <td>18.04.2026</td>
+          <td><span class="lum-badge lum-badge-green">Lieferbar</span></td>
+          <td class="r">4,50 &euro;</td>
+        </tr>
+        <tr>
+          <td>
+            <div class="lum-flex-col">
+              <span class="lum-body">IP68 Verbinder 4-pol.</span>
+              <span class="lum-caption"><span class="lum-code">LUM-5004</span></span>
+            </div>
+          </td>
+          <td>
+            <span class="lum-flex-center lum-gap-8">
+              <span class="lum-avatar lum-avatar-sm lum-avatar-accent">AF</span>
+              A. Fischer
+            </span>
+          </td>
+          <td>12.04.2026</td>
+          <td><span class="lum-badge lum-badge-red">Ueberfaellig</span></td>
+          <td class="r">6,20 &euro;</td>
+        </tr>
+        <tr>
+          <td>
+            <div class="lum-flex-col">
+              <span class="lum-body">IP68 Anschlusskabel 50cm</span>
+              <span class="lum-caption"><span class="lum-code">LUM-5005</span></span>
+            </div>
+          </td>
+          <td>
+            <span class="lum-flex-center lum-gap-8">
+              <span class="lum-avatar lum-avatar-sm lum-avatar-primary">JK</span>
+              J. Keller
+            </span>
+          </td>
+          <td>17.04.2026</td>
+          <td><span class="lum-badge lum-badge-green">Lieferbar</span></td>
+          <td class="r">3,80 &euro;</td>
+        </tr>
+        <tr>
+          <td>
+            <div class="lum-flex-col">
+              <span class="lum-body">IP68 Netzanschluss IP67</span>
+              <span class="lum-caption"><span class="lum-code">LUM-5006</span></span>
+            </div>
+          </td>
+          <td>
+            <span class="lum-flex-center lum-gap-8">
+              <span class="lum-avatar lum-avatar-sm lum-avatar-accent">MW</span>
+              M. Weber
+            </span>
+          </td>
+          <td>28.04.2026</td>
+          <td><span class="lum-badge lum-badge-gray">Geplant</span></td>
+          <td class="r">9,40 &euro;</td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+</div>
+
+
+</body>
+</html>
