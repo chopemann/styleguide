@@ -41,6 +41,7 @@
       <a href="#forms">Formulare <span>06</span></a>
       <a href="#data">Daten <span>07</span></a>
       <a href="#feedback">Feedback <span>08</span></a>
+      <a href="#migration">Migration <span>09</span></a>
     </nav>
 
     <div class="sg-sidebar-footer">
@@ -66,6 +67,7 @@
           <option value="#forms">Formulare</option>
           <option value="#data">Daten</option>
           <option value="#feedback">Feedback</option>
+          <option value="#migration">Migration</option>
         </select>
       </div>
     </header>
@@ -555,6 +557,10 @@
     <svg><use href="#i-warning"></use></svg>
     <span>Nichia 757G liegt unter Sicherheitsbestand.</span>
   </div>
+  <div class="lum-alert lum-alert-error">
+    <svg><use href="#i-warning"></use></svg>
+    <span>Pruefprotokoll fehlt fuer die Freigabe.</span>
+  </div>
 </div>
             </template>
           </article>
@@ -572,10 +578,15 @@
               </div>
             </div>
             <template>
-<div class="lum-tabs" role="tablist" aria-label="Produktdetails">
-  <button class="lum-tab is-active" role="tab" aria-selected="true" type="button">Übersicht</button>
-  <button class="lum-tab" role="tab" aria-selected="false" type="button">Spezifikation</button>
-  <button class="lum-tab" role="tab" aria-selected="false" type="button">Downloads</button>
+<div>
+  <div class="lum-tabs" role="tablist" aria-label="Produktdetails">
+    <button class="lum-tab is-active" id="tab-overview" role="tab" aria-selected="true" aria-controls="panel-overview" type="button">Übersicht</button>
+    <button class="lum-tab" id="tab-specs" role="tab" aria-selected="false" aria-controls="panel-specs" type="button">Spezifikation</button>
+    <button class="lum-tab" id="tab-downloads" role="tab" aria-selected="false" aria-controls="panel-downloads" type="button">Downloads</button>
+  </div>
+  <div class="lum-tab-panel" id="panel-overview" role="tabpanel" aria-labelledby="tab-overview">
+    <p class="lum-body-sm">COB-Modul mit stabiler Liefersituation und aktueller Freigabe.</p>
+  </div>
 </div>
             </template>
           </article>
@@ -639,6 +650,200 @@
   <div class="lum-skeleton lum-skeleton-line"></div>
   <div class="lum-skeleton lum-skeleton-line"></div>
   <div class="lum-skeleton lum-skeleton-line" style="width:74%;margin-bottom:0"></div>
+</div>
+            </template>
+          </article>
+        </div>
+      </section>
+
+      <section class="sg-section" id="migration">
+        <div class="sg-section-header">
+          <div>
+            <div class="sg-section-kicker">09 Migration</div>
+            <h2 class="lum-h2">Legacy-Muster, neu benannt</h2>
+          </div>
+          <span class="lum-badge lum-badge-accent">Refactoring</span>
+        </div>
+        <div class="sg-section-body">
+          <article class="sg-component" data-component="migration legacy breadcrumbs pagination filter navigation lookup">
+            <div class="sg-component-head">
+              <div class="sg-component-title"><h3>Breadcrumbs, Pagination und Filterliste</h3><p>Navigation fuer Listen- und Detailansichten ohne App-spezifische Shell-Klassen.</p></div>
+              <div class="sg-component-tags"><span class="lum-badge">Navigation</span><span class="lum-badge lum-badge-accent">Legacy Lookup</span></div>
+            </div>
+            <div class="sg-component-body">
+              <div class="sg-preview"><div class="sg-preview-inner" style="--sg-preview-width:560px"></div></div>
+              <div class="sg-code-panel">
+                <div class="sg-code-toolbar"><span class="sg-code-label">Canonical HTML</span><button class="sg-copy" type="button" aria-label="Code kopieren"><svg><use href="#i-copy"></use></svg></button></div>
+                <pre><code></code></pre>
+              </div>
+            </div>
+            <template>
+<div class="lum-stack" style="--lum-stack-gap:18px">
+  <nav class="lum-breadcrumbs" aria-label="Breadcrumb">
+    <a href="#">Auftraege</a>
+    <a href="#">Fertigung</a>
+    <span aria-current="page">LF700-048</span>
+  </nav>
+  <div class="lum-filter-list" aria-label="Status filtern">
+    <button class="lum-filter-item is-active" type="button" aria-pressed="true">
+      <span>Alle Workitems</span>
+      <span class="lum-badge">128</span>
+    </button>
+    <button class="lum-filter-item" type="button" aria-pressed="false">
+      <span>Blockiert</span>
+      <span class="lum-badge lum-badge-orange">9</span>
+    </button>
+    <button class="lum-filter-item" type="button" aria-pressed="false">
+      <span>Freigegeben</span>
+      <span class="lum-badge lum-badge-green">73</span>
+    </button>
+  </div>
+  <nav class="lum-pagination" aria-label="Seitennavigation">
+    <button class="lum-page is-disabled" type="button" disabled aria-label="Vorherige Seite">&lsaquo;</button>
+    <a class="lum-page" href="#" aria-current="page">1</a>
+    <a class="lum-page" href="#">2</a>
+    <span class="lum-page-dots">...</span>
+    <a class="lum-page" href="#">8</a>
+    <button class="lum-page" type="button" aria-label="Naechste Seite">&rsaquo;</button>
+  </nav>
+</div>
+            </template>
+          </article>
+
+          <article class="sg-component" data-component="migration legacy table compact dark dense data">
+            <div class="sg-component-head">
+              <div class="sg-component-title"><h3>Kompakte und dunkle Tabellen</h3><p>Verdichtete Datenansichten bleiben verfuegbar, Dark Tables nur fuer passende dunkle Arbeitsflaechen.</p></div>
+              <div class="sg-component-tags"><span class="lum-badge">Table</span><span class="lum-badge lum-badge-orange">Konsolidiert</span></div>
+            </div>
+            <div class="sg-component-body">
+              <div class="sg-preview"><div class="sg-preview-inner" style="--sg-preview-width:900px"></div></div>
+              <div class="sg-code-panel">
+                <div class="sg-code-toolbar"><span class="sg-code-label">Canonical HTML</span><button class="sg-copy" type="button" aria-label="Code kopieren"><svg><use href="#i-copy"></use></svg></button></div>
+                <pre><code></code></pre>
+              </div>
+            </div>
+            <template>
+<div class="lum-stack">
+  <div class="lum-table-wrap">
+    <table class="lum-table lum-table-compact">
+      <thead>
+        <tr>
+          <th>Artikel</th>
+          <th>Charge</th>
+          <th>Status</th>
+          <th>Rest</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td>COB 19 mm</td>
+          <td>LF700-048</td>
+          <td><span class="lum-badge lum-badge-green">OK</span></td>
+          <td>2.400</td>
+        </tr>
+        <tr>
+          <td>Linearmodul 24 V</td>
+          <td>LF700-052</td>
+          <td><span class="lum-badge lum-badge-orange">Pruefen</span></td>
+          <td>180</td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+  <div class="lum-table-dark-wrap">
+    <table class="lum-table-dark">
+      <thead>
+        <tr>
+          <th>Linie</th>
+          <th>Rueckstand</th>
+          <th>ETA</th>
+          <th>Owner</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td>SMD 2</td>
+          <td>9 Workitems</td>
+          <td>14:30</td>
+          <td>AV</td>
+        </tr>
+        <tr>
+          <td>Endtest</td>
+          <td>3 Workitems</td>
+          <td>16:00</td>
+          <td>QS</td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+</div>
+            </template>
+          </article>
+
+          <article class="sg-component" data-component="migration legacy form error invalid progress validation loading">
+            <div class="sg-component-head">
+              <div class="sg-component-title"><h3>Form-Error und Progress</h3><p>Validierung wird direkt am Feld markiert; Fortschritt nutzt denselben schmalen Balken wie alte Progress-Muster.</p></div>
+              <div class="sg-component-tags"><span class="lum-badge">Form</span><span class="lum-badge">Progress</span></div>
+            </div>
+            <div class="sg-component-body">
+              <div class="sg-preview"><div class="sg-preview-inner" style="--sg-preview-width:480px"></div></div>
+              <div class="sg-code-panel">
+                <div class="sg-code-toolbar"><span class="sg-code-label">Canonical HTML</span><button class="sg-copy" type="button" aria-label="Code kopieren"><svg><use href="#i-copy"></use></svg></button></div>
+                <pre><code></code></pre>
+              </div>
+            </div>
+            <template>
+<div class="lum-card">
+  <div class="lum-stack">
+    <div class="lum-field">
+      <label class="lum-label" for="migration-order">Auftragsnummer</label>
+      <input class="lum-input lum-input-error" id="migration-order" type="text" value="LF700" aria-invalid="true" aria-describedby="migration-order-error">
+      <p class="lum-field-error" id="migration-order-error">Bitte eine vollstaendige Auftragsnummer eingeben.</p>
+    </div>
+    <div class="lum-stack" style="--lum-stack-gap:8px">
+      <div class="lum-cluster">
+        <span class="lum-body-sm">Migration global.css</span>
+        <span class="lum-badge lum-badge-accent">64%</span>
+      </div>
+      <div class="lum-progress" aria-label="Migration global.css" aria-valuemin="0" aria-valuemax="100" aria-valuenow="64" role="progressbar">
+        <div class="lum-progress-fill" style="--lum-progress-value:64%"></div>
+      </div>
+    </div>
+  </div>
+</div>
+            </template>
+          </article>
+
+          <article class="sg-component" data-component="migration legacy avatar tooltip info code block owner help">
+            <div class="sg-component-head">
+              <div class="sg-component-title"><h3>Avatar, Tooltip und Codeblock</h3><p>Owner-Indikatoren, kurze Hilfen und technische Notizen sind jetzt als einfache App-Komponenten verfuegbar.</p></div>
+              <div class="sg-component-tags"><span class="lum-badge">Support UI</span></div>
+            </div>
+            <div class="sg-component-body">
+              <div class="sg-preview"><div class="sg-preview-inner" style="--sg-preview-width:620px"></div></div>
+              <div class="sg-code-panel">
+                <div class="sg-code-toolbar"><span class="sg-code-label">Canonical HTML</span><button class="sg-copy" type="button" aria-label="Code kopieren"><svg><use href="#i-copy"></use></svg></button></div>
+                <pre><code></code></pre>
+              </div>
+            </div>
+            <template>
+<div class="lum-stack">
+  <div class="lum-cluster">
+    <span class="lum-avatar lum-avatar-accent" aria-label="Arbeitsvorbereitung">AV</span>
+    <span class="lum-avatar lum-avatar-green" aria-label="Qualitaetssicherung">QS</span>
+    <span class="lum-avatar lum-avatar-orange" aria-label="Einkauf">EK</span>
+    <span class="lum-tooltip">
+      <button class="lum-info-icon" type="button" aria-label="Info zu Ownern">
+        <svg><use href="#i-info"></use></svg>
+      </button>
+      <span class="lum-tooltip-content" role="tooltip">Initialen zeigen die verantwortliche Rolle, nicht zwingend eine einzelne Person.</span>
+    </span>
+  </div>
+  <hr class="lum-divider">
+  <pre class="lum-code-block"><code>lookup:
+  lum-avatar* -> lum-avatar
+  lum-code-block -> technischer Hinweis
+  lum-tooltip-* -> lum-tooltip</code></pre>
 </div>
             </template>
           </article>

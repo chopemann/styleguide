@@ -39,8 +39,10 @@ Neue Apps sollen mit bestehenden Templates beginnen:
 - KPI-Gruppe
 - Alerts
 - Tabs
+- Tab-Panels
 - Modal
 - Skeleton
+- Divider
 - Layout-Primitives
 
 Wenn ein Layout anders wirkt, zuerst Inhalte und Primitive kombinieren. Neue CSS-Komponenten nur ergänzen, wenn ein wiederholbares Muster entsteht.
@@ -160,23 +162,24 @@ Gut abgedeckt:
 - sichtbare Formularlabels
 - KPI-Karten
 - Tabellen
+- kompakte und dunkle Tabellen
 - Balken-Charts
+- Progress
 - Alerts
 - Tabs
 - Modal
 - Skeleton
-
-Noch offen oder nur teilweise abgedeckt:
-
 - Breadcrumbs und Pagination
-- Filterlisten und App-Navigation
-- kompakte Tabellen
-- dunkle Tabellen
+- Filterlisten
 - Form-Error-State
 - Tooltips/Info-Disclosure
 - Avatare
-- Donut/Säulen/Sparkbar-Charts
 - Codeblock-Komponente
+
+Noch offen oder nur teilweise abgedeckt:
+
+- App-Navigation/Shells
+- Donut/Säulen/Sparkbar-Charts
 - Logo-Regeln als kopierbares Template
 
 Diese offenen Punkte sind keine Pflicht zur 1:1-Übernahme. Sie sind Kandidaten, wenn echte Apps sie benötigen.
