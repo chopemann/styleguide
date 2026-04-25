@@ -1,0 +1,564 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Workitem-Logik und Fallstatus</title>
+<link rel="stylesheet" href="../global.css">
+<link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+<style>
+  body {
+    margin: 0;
+    background: var(--lum-cream);
+  }
+
+  [data-page] {
+    min-height: 100vh;
+  }
+
+  [data-shell] {
+    width: min(1180px, calc(100% - 32px));
+    max-width: calc(100vw - 32px);
+    margin: 0 auto;
+  }
+
+  [data-topbar] {
+    position: sticky;
+    top: 0;
+    z-index: 20;
+    background: rgba(21, 44, 62, .96);
+    border-bottom: 1px solid rgba(255, 255, 255, .08);
+    backdrop-filter: blur(12px);
+  }
+
+  [data-topbar] [data-shell] {
+    min-height: 64px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 20px;
+  }
+
+  [data-brand] {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    color: #fff;
+    font-weight: 800;
+    font-size: 13px;
+    letter-spacing: .2px;
+  }
+
+  [data-brand] img {
+    width: 28px;
+    height: 28px;
+  }
+
+  [data-nav] {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    justify-content: flex-end;
+    gap: 16px;
+  }
+
+  [data-nav] a {
+    color: rgba(255, 255, 255, .66);
+    font-size: 12px;
+    font-weight: 700;
+    text-decoration: none;
+  }
+
+  [data-nav] a:hover {
+    color: #fff;
+  }
+
+  [data-hero] {
+    background: var(--lum-dark);
+    color: #fff;
+    padding: clamp(56px, 8vw, 96px) 0;
+  }
+
+  [data-hero-grid] {
+    display: grid;
+    grid-template-columns: minmax(0, 1.4fr) minmax(320px, .8fr);
+    gap: 32px;
+    align-items: center;
+  }
+
+  [data-section] {
+    padding: clamp(48px, 7vw, 80px) 0;
+  }
+
+  [data-section="light"] {
+    background: var(--lum-white);
+  }
+
+  [data-section="dark"] {
+    background: var(--lum-dark);
+    color: #fff;
+  }
+
+  [data-section-head] {
+    display: flex;
+    align-items: end;
+    justify-content: space-between;
+    gap: 20px;
+    margin-bottom: 24px;
+  }
+
+  [data-card-head] {
+    display: flex;
+    justify-content: space-between;
+    align-items: start;
+    gap: 16px;
+    margin-bottom: 18px;
+  }
+
+  [data-note-list] {
+    margin: 0;
+    padding-left: 18px;
+  }
+
+  [data-note-list] li {
+    margin-bottom: 8px;
+    color: var(--lum-gray);
+    font-size: 13px;
+    line-height: 1.55;
+  }
+
+  [data-dark-card] {
+    background: rgba(255, 255, 255, .05);
+    border: 1px solid rgba(255, 255, 255, .09);
+    border-radius: var(--lum-radius-md);
+    padding: 24px;
+  }
+
+  [data-dark-card] h3 {
+    color: #fff;
+  }
+
+  [data-dark-card] p {
+    color: rgba(255, 255, 255, .68);
+  }
+
+  .lum-layout-grid,
+  .lum-layout-grid > *,
+  .lum-card,
+  .lum-card-dark,
+  .lum-alert,
+  [data-dark-card] {
+    min-width: 0;
+    max-width: 100%;
+  }
+
+  .lum-table-wrap {
+    width: 100%;
+    max-width: 100%;
+    overflow-x: auto;
+  }
+
+  .lum-table-wrap .lum-table {
+    min-width: 720px;
+  }
+
+  code {
+    font-family: ui-monospace, SFMono-Regular, Consolas, "Liberation Mono", monospace;
+    font-size: .92em;
+    color: var(--lum-primary);
+    background: rgba(21, 44, 62, .06);
+    border-radius: 4px;
+    padding: 1px 5px;
+  }
+
+  [data-section="dark"] code {
+    color: #fff;
+    background: rgba(255, 255, 255, .1);
+  }
+
+  @media (max-width: 860px) {
+    [data-hero-grid],
+    [data-section-head] {
+      grid-template-columns: 1fr;
+      display: grid;
+      align-items: start;
+    }
+
+    [data-nav] {
+      display: none;
+    }
+  }
+</style>
+</head>
+<body>
+<div data-page>
+  <header data-topbar>
+    <div data-shell>
+      <div data-brand>
+        <img src="../Logo_negativ_ohne_Claim.svg" alt="">
+        <span>LUMITRONIX</span>
+      </div>
+      <nav data-nav aria-label="Dokumentabschnitte">
+        <a href="#modell">Modell</a>
+        <a href="#herleitung">Herleitung</a>
+        <a href="#admin">Admin</a>
+        <a href="#aktionen">Aktionsvorlagen</a>
+        <a href="#architektur">Architektur</a>
+      </nav>
+    </div>
+  </header>
+
+  <main>
+    <section data-hero id="start">
+      <div data-shell data-hero-grid>
+        <div class="lum-stack" style="--lum-stack-gap:18px">
+          <p class="lum-overline" style="color:rgba(255,255,255,.62)">Einfaches Zielbild für Vertrieb und Umsetzung</p>
+          <h1 class="lum-h1" style="color:#fff;max-width:720px">Ein Fall ist offen, auf Wiedervorlage oder erledigt.</h1>
+          <p class="lum-body" style="color:rgba(255,255,255,.72);max-width:760px">Das Cockpit trennt fachlichen Fallstatus und Dringlichkeit. Der Status kommt aus <code>CaseEntries</code>: <code>open</code>, <code>followup</code> oder <code>closed</code>. Die Dringlichkeit sagt nur, ob etwas heute ruhig, überfällig oder eskaliert ist.</p>
+          <div class="lum-cluster">
+            <a class="lum-btn lum-btn-dark" href="#modell">Modell ansehen</a>
+            <a class="lum-btn lum-btn-ghost" style="color:#fff" href="#herleitung">Herleitung ansehen</a>
+          </div>
+        </div>
+
+        <div class="lum-card-dark">
+          <div class="lum-stack" style="--lum-stack-gap:18px">
+            <div class="lum-cluster" style="justify-content:space-between">
+              <span class="lum-overline" style="color:rgba(255,255,255,.48)">Stand</span>
+              <span class="lum-badge lum-badge-accent">25.04.2026</span>
+            </div>
+            <div>
+              <div class="lum-stat-label" style="color:rgba(255,255,255,.52)">Fallstatus</div>
+              <div class="lum-display" style="color:#fff">3</div>
+            </div>
+            <div class="lum-layout-grid" style="--lum-columns:2">
+              <div class="lum-stat-card"><div class="lum-stat-value">1</div><div class="lum-stat-label">offen</div></div>
+              <div class="lum-stat-card"><div class="lum-stat-value">2</div><div class="lum-stat-label">Wiedervorlage</div></div>
+              <div class="lum-stat-card"><div class="lum-stat-value">3</div><div class="lum-stat-label">erledigt</div></div>
+              <div class="lum-stat-card"><div class="lum-stat-value">2</div><div class="lum-stat-label">Admin-Schalter je Aktion</div></div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section data-section="light" id="modell">
+      <div data-shell>
+        <div data-section-head>
+          <div>
+            <p class="lum-overline">Kernmodell</p>
+            <h2 class="lum-h2">Status und Dringlichkeit sind getrennt.</h2>
+          </div>
+          <span class="lum-badge lum-badge-accent">CaseEntries + Client-Logik</span>
+        </div>
+
+        <div class="lum-stack" style="--lum-stack-gap:22px">
+          <div class="lum-alert lum-alert-info">
+            <span>Ein Workitem kann fachlich erledigt sein und trotzdem ein technisches Sicherheitsnetz haben. Umgekehrt kann ein Fall offen sein, aber ruhig bleiben, weil eine Wiedervorlage erst in der Zukunft fällig ist.</span>
+          </div>
+
+          <div class="lum-layout-grid" style="--lum-columns:2">
+            <article class="lum-card">
+              <div data-card-head>
+                <div>
+                  <p class="lum-overline">Die drei Stufen</p>
+                  <h3 class="lum-h3">Wo sie entstehen, was sie zeigen</h3>
+                </div>
+                <span class="lum-badge">Gesamtmodell</span>
+              </div>
+              <div class="lum-table-wrap">
+                <table class="lum-table">
+                  <thead>
+                    <tr><th>Stufe</th><th>Bedeutung</th><th>Signal</th></tr>
+                  </thead>
+                  <tbody>
+                    <tr><td><strong>1. Workitem entsteht</strong></td><td>Typspezifische Eintrittsbedingung ist erfüllt.</td><td>Zeile erscheint in der Liste.</td></tr>
+                    <tr><td><strong>2. Überfällig</strong></td><td>Trigger-Datum liegt in der Vergangenheit.</td><td>Rote Tagesangabe <code>-X T.</code>.</td></tr>
+                    <tr><td><strong>3. Eskaliert</strong></td><td>Eine der globalen Eskalationsregeln greift.</td><td>Rotes Warnsignal mit konkretem Tooltip.</td></tr>
+                  </tbody>
+                </table>
+              </div>
+            </article>
+
+            <article class="lum-card">
+              <div data-card-head>
+                <div>
+                  <p class="lum-overline">Fallstatus</p>
+                  <h3 class="lum-h3">Drei Status, drei Bedeutungen</h3>
+                </div>
+                <span class="lum-badge">CaseEntries</span>
+              </div>
+              <div class="lum-table-wrap">
+                <table class="lum-table">
+                  <thead>
+                    <tr><th>Status</th><th>Bedeutung</th><th>UI-Signal</th></tr>
+                  </thead>
+                  <tbody>
+                    <tr><td><code>open</code></td><td>Der Fall liegt offen. Eine Aktion wird erwartet.</td><td>Offen-Badge, normale Arbeitsfall-Liste.</td></tr>
+                    <tr><td><code>followup</code></td><td>Jemand hat bewusst eine Wiedervorlage gesetzt.</td><td>Wiedervorlage-Badge, Termin und später Posteingang.</td></tr>
+                    <tr><td><code>closed</code></td><td>Aus User-Sicht ist der Fall erledigt.</td><td>Erledigt-Badge. Sicherheitsnetz kann im Hintergrund weiterlaufen.</td></tr>
+                  </tbody>
+                </table>
+              </div>
+            </article>
+          </div>
+
+          <div class="lum-layout-grid" style="--lum-columns:2">
+            <article class="lum-card">
+              <div data-card-head>
+                <div>
+                  <p class="lum-overline">Stufe 3 - Eskalation</p>
+                  <h3 class="lum-h3">Drei Regeln, global identisch</h3>
+                </div>
+                <span class="lum-badge lum-badge-red">Rot-Auslöser</span>
+              </div>
+              <div class="lum-table-wrap">
+                <table class="lum-table">
+                  <thead>
+                    <tr><th>Regel</th><th>Auslöser</th><th>Admin-Parameter</th></tr>
+                  </thead>
+                  <tbody>
+                    <tr><td><strong>Trigger überzogen</strong></td><td>Tage nach Trigger-Datum erreichen die typspezifische Eskalations-Schwelle.</td><td><code>eskalationTage[Typ]</code></td></tr>
+                    <tr><td><strong>Zu oft vertagt</strong></td><td>Anzahl Wiedervorlagen am Fall erreicht die Grenze.</td><td><code>eskalationWvAnzahl</code></td></tr>
+                    <tr><td><strong>Zu lange vertagt</strong></td><td>Kumulierte Tage in Wiedervorlage erreichen die Grenze.</td><td><code>eskalationWvTage</code></td></tr>
+                  </tbody>
+                </table>
+              </div>
+            </article>
+
+            <article class="lum-card">
+              <div data-card-head>
+                <div>
+                  <p class="lum-overline">Wiedervorlage-Verhalten</p>
+                  <h3 class="lum-h3">Laufende WV pausiert, Missbrauch wird erkannt</h3>
+                </div>
+                <span class="lum-badge lum-badge-accent">Bewegliches Trigger-Datum</span>
+              </div>
+              <p class="lum-body-sm">Aktive Wiedervorlage hat Vorrang vor dem typspezifischen Basis-Datum. Die WV-Overrides verhindern, dass die Eskalation durch Dauer-Vertagen umgangen wird.</p>
+              <div class="lum-table-wrap" style="margin-top:16px">
+                <table class="lum-table">
+                  <thead>
+                    <tr><th>Situation</th><th>Trigger</th><th>Stufe</th></tr>
+                  </thead>
+                  <tbody>
+                    <tr><td>Aktive WV, Termin in Zukunft, wenig WV-Historie</td><td>WV-Termin</td><td>1 ruhig</td></tr>
+                    <tr><td>Aktive WV, Termin überschritten</td><td>WV-Termin</td><td>2 oder 3 je nach Überziehung</td></tr>
+                    <tr><td>Keine aktive WV, Basis-Datum in Vergangenheit</td><td>Basis-Datum</td><td>2 oder 3 je nach Schwelle</td></tr>
+                    <tr><td>Aktive WV, aber schon 3+ WV oder 14+ Tage in WV</td><td>WV-Termin</td><td>3 Override</td></tr>
+                  </tbody>
+                </table>
+              </div>
+            </article>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section data-section id="herleitung">
+      <div data-shell>
+        <div data-section-head>
+          <div>
+            <p class="lum-overline">Stufe 1</p>
+            <h2 class="lum-h2">Welche Bedingungen führen zu welchem Workitemtyp?</h2>
+          </div>
+          <span class="lum-badge">Lakehouse und Overlay</span>
+        </div>
+
+        <article class="lum-card">
+          <div data-card-head>
+            <div>
+              <p class="lum-overline">Readmodel, Sichtbarkeit und Basis-Trigger</p>
+              <h3 class="lum-h3">Herleitung der Falltypen</h3>
+            </div>
+          </div>
+          <div class="lum-table-wrap">
+            <table class="lum-table">
+              <thead>
+                <tr><th>Typ</th><th>Vollbedeutung</th><th>Quelle</th><th>Bedingung für Workitem</th><th>Basis-Trigger</th></tr>
+              </thead>
+              <tbody>
+                <tr><td><span class="lum-badge lum-badge-orange">MA</span></td><td>Mahnfall mit offener Forderung</td><td>Lakehouse aus Kunden- und Forderungsdaten</td><td>Kunde hat eine überfällige Forderung größer <code>0</code>.</td><td>Fälligkeitsdatum der ältesten offenen Forderung.</td></tr>
+                <tr><td><span class="lum-badge lum-badge-accent">AN</span></td><td>Angebot mit ausstehender Kundenrückmeldung</td><td>SAP Angebotspositionen</td><td>Offene Angebotspositionen seit dem Cutoff-Datum.</td><td>Angebotsdatum.</td></tr>
+                <tr><td><span class="lum-badge">OP</span></td><td>Opportunity mit offenem Folgeschritt oder Inaktivität</td><td>Salesforce über Lakehouse plus lokale Opportunities</td><td>Offene Opportunity mit Wert größer <code>0</code>, nicht gewonnen oder verloren, nicht eigenes Unternehmen.</td><td>Datum der letzten Aktivität.</td></tr>
+                <tr><td><span class="lum-badge lum-badge-red">IN</span></td><td>Inaktiver Kunde mit Reaktivierungsbedarf</td><td>Lakehouse aus Kunden- und Umsatzdaten</td><td>Umsatz der letzten 12 Monate größer <code>0</code>, kein offener Auftrag mit zukünftigem Liefertermin.</td><td>Datum der letzten Aktivität.</td></tr>
+                <tr><td><span class="lum-badge lum-badge-green">AU</span></td><td>Auftrag mit überfälligem Liefertermin</td><td>SAP Auftragspositionen</td><td>Offene Auftragsposition mit Liefertermin vor heute.</td><td>Frühester überfälliger Liefertermin des Auftrags.</td></tr>
+              </tbody>
+            </table>
+          </div>
+        </article>
+
+        <div class="lum-layout-grid" style="--lum-columns:3;margin-top:22px">
+          <article class="lum-card">
+            <p class="lum-overline">Trigger-Ideen</p>
+            <h3 class="lum-h3">Mahnfall</h3>
+            <ul data-note-list>
+              <li><strong>Kreditrisiko:</strong> <code>KreditAuslastungPct</code> &gt; 80 %.</li>
+              <li><strong>Mehrfach offen:</strong> <code>AnzOffenRechnungen</code> >= 3.</li>
+              <li><strong>Absolute Intervention:</strong> <code>UeberfaelligerBetrag</code> >= X Euro.</li>
+            </ul>
+          </article>
+          <article class="lum-card">
+            <p class="lum-overline">Trigger-Ideen</p>
+            <h3 class="lum-h3">Angebot und Opportunity</h3>
+            <ul data-note-list>
+              <li><strong>Hochwert-Angebot:</strong> <code>Angebotswert</code> >= 50.000 Euro.</li>
+              <li><strong>Spätphase ohne Bewegung:</strong> <code>Phase_Detail</code> in Spätphase und keine Aktivität.</li>
+              <li><strong>Liefertermin-Annäherung:</strong> Tage bis <code>ErwLiefertermin</code> <= 14.</li>
+            </ul>
+          </article>
+          <article class="lum-card">
+            <p class="lum-overline">Trigger-Ideen</p>
+            <h3 class="lum-h3">Inaktivität und Auftrag</h3>
+            <ul data-note-list>
+              <li><strong>Umsatz-Einbruch:</strong> <code>Umsatzentwicklung_Pct</code> &lt; -30 %.</li>
+              <li><strong>Mehrere Positionen überfällig:</strong> Anzahl Positionen mit Liefertermin vor heute &gt; 1.</li>
+              <li><strong>Kunde mit Zahlungsrückstand:</strong> <code>UeberfaelligerBetrag</code> &gt; 0.</li>
+            </ul>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <section data-section="light" id="admin">
+      <div data-shell>
+        <div data-section-head>
+          <div>
+            <p class="lum-overline">Admin-Bereich</p>
+            <h2 class="lum-h2">Pflegepunkte für Eskalation.</h2>
+          </div>
+          <span class="lum-badge lum-badge-green">Ohne Redeploy steuerbar</span>
+        </div>
+
+        <div class="lum-layout-grid" style="--lum-columns:2">
+          <article class="lum-card">
+            <div data-card-head>
+              <div>
+                <p class="lum-overline">Eskalations-Schwellen je Workitemtyp</p>
+                <h3 class="lum-h3">Ab wann eskaliert das Trigger-Datum</h3>
+              </div>
+              <span class="lum-badge">Card im Admin</span>
+            </div>
+            <div class="lum-table-wrap">
+              <table class="lum-table">
+                <thead>
+                  <tr><th>Typ</th><th>Vollbedeutung</th><th>Eskalation nach</th><th>Config-Schlüssel</th></tr>
+                </thead>
+                <tbody>
+                  <tr><td><span class="lum-badge lum-badge-accent">AN</span></td><td>Angebote</td><td><code>28</code> Tage</td><td><code>eskalationTage.AN</code></td></tr>
+                  <tr><td><span class="lum-badge">OP</span></td><td>Opportunities</td><td><code>14</code> Tage</td><td><code>eskalationTage.OP</code></td></tr>
+                  <tr><td><span class="lum-badge lum-badge-red">IN</span></td><td>Inaktive Kunden</td><td><code>90</code> Tage</td><td><code>eskalationTage.IN</code></td></tr>
+                  <tr><td><span class="lum-badge lum-badge-green">AU</span></td><td>Überfällige Aufträge</td><td><code>7</code> Tage</td><td><code>eskalationTage.AU</code></td></tr>
+                  <tr><td><span class="lum-badge lum-badge-orange">MA</span></td><td>Mahnfälle</td><td><code>14</code> Tage</td><td><code>eskalationTage.MA</code></td></tr>
+                </tbody>
+              </table>
+            </div>
+          </article>
+
+          <article class="lum-card">
+            <div data-card-head>
+              <div>
+                <p class="lum-overline">Globale Override-Regeln</p>
+                <h3 class="lum-h3">Zu oft oder zu lange vertagt</h3>
+              </div>
+              <span class="lum-badge lum-badge-accent">Card im Admin</span>
+            </div>
+            <div class="lum-table-wrap">
+              <table class="lum-table">
+                <thead>
+                  <tr><th>Regel</th><th>Default</th><th>Config-Schlüssel</th></tr>
+                </thead>
+                <tbody>
+                  <tr><td>Ab Wiedervorlage-Anzahl</td><td><code>3</code></td><td><code>eskalationWvAnzahl</code></td></tr>
+                  <tr><td>Ab Wiedervorlage-Gesamtdauer in Tagen</td><td><code>14</code></td><td><code>eskalationWvTage</code></td></tr>
+                </tbody>
+              </table>
+            </div>
+            <div class="lum-alert lum-alert-warning" style="margin-top:18px">
+              <span>Keine Staffelung nach Kundengruppe. Alle Typen nutzen dieselben globalen WV-Regeln.</span>
+            </div>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <section data-section id="aktionen">
+      <div data-shell>
+        <div data-section-head>
+          <div>
+            <p class="lum-overline">Aktionsvorlagen</p>
+            <h2 class="lum-h2">Welche kurzen Aktionsvorlagen je Typ?</h2>
+          </div>
+          <span class="lum-badge">Overlay only</span>
+        </div>
+
+        <article class="lum-card">
+          <p class="lum-body-sm">Aktionsvorlagen sind Admin-Daten. Gepflegt werden Label, Tage, Notizvorlage, Hinweis und drei fachliche Felder: <code>closesCase</code>, <code>awaitsSourceResolution</code> und <code>closeReason</code>. Button-Icons sind kein Admin-Feld mehr.</p>
+          <div class="lum-table-wrap" style="margin-top:18px">
+            <table class="lum-table">
+              <thead>
+                <tr><th>Typ</th><th>Aktionsvorlage</th><th>Wirkung</th><th>Sicherheitsnetz</th><th>Reporting-Grund</th></tr>
+              </thead>
+              <tbody>
+                <tr><td>AU</td><td>Verzögerung klären</td><td><span class="lum-badge lum-badge-green">closed</span></td><td>ja, +3 Tage</td><td><code>informed</code></td></tr>
+                <tr><td>AU</td><td>Termin verschieben</td><td><span class="lum-badge lum-badge-green">closed</span></td><td>ja, +1 Tag</td><td><code>date_confirmed</code></td></tr>
+                <tr><td>AN</td><td>Nachfassen</td><td><span class="lum-badge">followup</span></td><td>nein, normale WVL +3 Tage</td><td>-</td></tr>
+                <tr><td>AN</td><td>Verloren nachziehen</td><td><span class="lum-badge lum-badge-red">closed</span></td><td>nein</td><td><code>lost</code></td></tr>
+                <tr><td>OP</td><td>Nächsten Schritt planen</td><td><span class="lum-badge">followup</span></td><td>nein, normale WVL +7 Tage</td><td>-</td></tr>
+                <tr><td>MA</td><td>Zahlungsstatus klären</td><td><span class="lum-badge lum-badge-green">closed</span></td><td>ja, +2 Tage</td><td><code>informed</code></td></tr>
+                <tr><td>IN</td><td>Später erneut</td><td><span class="lum-badge">followup</span></td><td>nein, normale WVL +30 Tage</td><td>-</td></tr>
+              </tbody>
+            </table>
+          </div>
+        </article>
+
+        <div class="lum-alert lum-alert-info" style="margin-top:22px">
+          <span>Leseregel: <code>closesCase=true</code> macht den Button grün, außer <code>closeReason=lost</code>; dann ist er rot. <code>closesCase=false</code> ist neutral und setzt eine normale Wiedervorlage.</span>
+        </div>
+      </div>
+    </section>
+
+    <section data-section="dark" id="architektur">
+      <div data-shell>
+        <div data-section-head>
+          <div>
+            <p class="lum-overline" style="color:rgba(255,255,255,.55)">Architekturplan</p>
+            <h2 class="lum-h2" style="color:#fff">Wie die Dringlichkeitslogik eingehängt ist.</h2>
+          </div>
+        </div>
+
+        <div class="lum-layout-grid" style="--lum-columns:3">
+          <article data-dark-card>
+            <h3 class="lum-h3">1. Eine Funktion, eine Quelle</h3>
+            <p class="lum-body-sm">Die Funktion <code>getEffectiveUrgency(task, stats, cfg)</code> liefert <code>{ level, reasons }</code>. Seiten und Renderer greifen nur über diese Funktion zu.</p>
+          </article>
+          <article data-dark-card>
+            <h3 class="lum-h3">2. Quelle bleibt read-only</h3>
+            <p class="lum-body-sm">SAP und Salesforce bleiben fachliche Quellsysteme. Das Cockpit zeigt importierte Workitems an und schreibt keine Quellmutationen zurück.</p>
+          </article>
+          <article data-dark-card>
+            <h3 class="lum-h3">3. Lokale Wirkung nur im Overlay</h3>
+            <p class="lum-body-sm">Eine Aktion erzeugt Notiz, Statuswechsel und ggf. Wiedervorlage im Cockpit. <code>Notes</code> bleibt nur Kompatibilitätsansicht.</p>
+          </article>
+          <article data-dark-card>
+            <h3 class="lum-h3">4. Schwellen im Client</h3>
+            <p class="lum-body-sm">Admin-Config wird zur Laufzeit ausgewertet. Änderungen wirken sofort, ohne Redeploy der Netlify-Function oder Notebook-Run.</p>
+          </article>
+          <article data-dark-card>
+            <h3 class="lum-h3">5. Tooltip mit echten Zahlen</h3>
+            <p class="lum-body-sm">Jede Eskalationsregel liefert eine <code>describe</code>-Funktion. Der Tooltip listet alle aktiven Gründe mit konkreten Werten.</p>
+          </article>
+          <article data-dark-card>
+            <h3 class="lum-h3">6. Admin-freundlich, kontrolliert</h3>
+            <p class="lum-body-sm">Texte, Standardtage, Reihenfolge und Schalter sind administrierbar. Icons sind bewusst kein Bedeutungsträger für Aktionsvorlagen.</p>
+          </article>
+        </div>
+
+        <div class="lum-card-dark" style="margin-top:28px">
+          <p class="lum-body" style="color:rgba(255,255,255,.78)">Einfach merken: Status sagt, was mit dem Fall fachlich los ist. Dringlichkeit sagt, ob heute Aufmerksamkeit nötig ist. Aktionsvorlagen sind kurze Admin-gepflegte Entscheidungen, die daraus sauber <code>CaseEntries</code> schreiben.</p>
+        </div>
+      </div>
+    </section>
+  </main>
+</div>
+</body>
+</html>
