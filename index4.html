@@ -1,0 +1,613 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>LUMITRONIX AI Component Library</title>
+<link rel="stylesheet" href="./global.css">
+<link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+</head>
+<body>
+<svg width="0" height="0" aria-hidden="true" focusable="false" style="position:absolute">
+  <symbol id="i-copy" viewBox="0 0 24 24"><path d="M9 4.75A2.75 2.75 0 0 1 11.75 2h6.5A2.75 2.75 0 0 1 21 4.75v9.5A2.75 2.75 0 0 1 18.25 17h-6.5A2.75 2.75 0 0 1 9 14.25zm2.75-1.25c-.69 0-1.25.56-1.25 1.25v9.5c0 .69.56 1.25 1.25 1.25h6.5c.69 0 1.25-.56 1.25-1.25v-9.5c0-.69-.56-1.25-1.25-1.25zM3 8.75A2.75 2.75 0 0 1 5.75 6h1.5a.75.75 0 0 1 0 1.5h-1.5C5.06 7.5 4.5 8.06 4.5 8.75v9.5c0 .69.56 1.25 1.25 1.25h6.5c.69 0 1.25-.56 1.25-1.25v-1.5a.75.75 0 0 1 1.5 0v1.5A2.75 2.75 0 0 1 12.25 21h-6.5A2.75 2.75 0 0 1 3 18.25z"/></symbol>
+  <symbol id="i-search" viewBox="0 0 24 24"><path d="M15.843 17.368a8 8 0 1 1 1.428-1.4l4.427 4.316a1 1 0 1 1-1.396 1.432zM17 11a6 6 0 1 0-12 0a6 6 0 0 0 12 0"/></symbol>
+  <symbol id="i-check" viewBox="0 0 24 24"><path d="M12 2c5.523 0 10 4.477 10 10s-4.477 10-10 10S2 17.523 2 12S6.477 2 12 2m3.22 6.97l-4.47 4.47l-1.97-1.97a.75.75 0 0 0-1.06 1.06l2.5 2.5a.75.75 0 0 0 1.06 0l5-5a.75.75 0 1 0-1.06-1.06"/></symbol>
+  <symbol id="i-info" viewBox="0 0 24 24"><path d="M12.002 1.999c5.523 0 10.001 4.478 10.001 10.002c0 5.523-4.478 10.001-10.001 10.001C6.478 22.002 2 17.524 2 12.001C2 6.477 6.478 1.999 12.002 1.999M12 10.5a.75.75 0 0 0-.75.75v5a.75.75 0 0 0 1.5 0v-5a.75.75 0 0 0-.75-.75M12 9a1 1 0 1 0 0-2a1 1 0 0 0 0 2"/></symbol>
+  <symbol id="i-warning" viewBox="0 0 24 24"><path d="M10.03 3.659c.856-1.548 3.081-1.548 3.937 0l7.746 14.001c.83 1.5-.255 3.34-1.969 3.34H4.254c-1.715 0-2.8-1.84-1.97-3.34zM12.997 17A.999.999 0 1 0 11 17a.999.999 0 0 0 1.997 0m-.259-7.853a.75.75 0 0 0-1.493.103l.004 4.501l.007.102a.75.75 0 0 0 1.493-.103l-.004-4.502z"/></symbol>
+  <symbol id="i-close" viewBox="0 0 24 24"><path d="M4.397 4.554l.073-.084a.75.75 0 0 1 .976-.073l.084.073L12 10.939l6.47-6.47a.75.75 0 1 1 1.06 1.061L13.061 12l6.47 6.47a.75.75 0 0 1-1.061 1.06L12 13.061l-6.47 6.47a.75.75 0 0 1-1.06-1.061L10.939 12l-6.47-6.47a.75.75 0 0 1-.072-.976"/></symbol>
+  <symbol id="i-download" viewBox="0 0 24 24"><path d="M13 3a1 1 0 1 0-2 0v12.086l-3.293-3.293a1 1 0 0 0-1.414 1.414l5 5a1 1 0 0 0 1.414 0l5-5a1 1 0 0 0-1.414-1.414L13 15.086zM5 20a1 1 0 1 0 0 2h14a1 1 0 1 0 0-2z"/></symbol>
+  <symbol id="i-settings" viewBox="0 0 24 24"><path d="M12.012 2.25c.734.008 1.465.093 2.182.253a.75.75 0 0 1 .582.649l.17 1.527a1.384 1.384 0 0 0 1.927 1.116l1.4-.615a.75.75 0 0 1 .85.174a9.8 9.8 0 0 1 2.205 3.792a.75.75 0 0 1-.272.825l-1.241.916a1.38 1.38 0 0 0 0 2.226l1.243.915a.75.75 0 0 1 .272.826a9.8 9.8 0 0 1-2.204 3.792a.75.75 0 0 1-.849.175l-1.406-.617a1.38 1.38 0 0 0-1.926 1.114l-.17 1.526a.75.75 0 0 1-.571.647a9.5 9.5 0 0 1-4.406 0a.75.75 0 0 1-.572-.647l-.169-1.524a1.382 1.382 0 0 0-1.925-1.11l-1.406.616a.75.75 0 0 1-.85-.175a9.8 9.8 0 0 1-2.203-3.796a.75.75 0 0 1 .272-.826l1.243-.916a1.38 1.38 0 0 0 0-2.226l-1.243-.914a.75.75 0 0 1-.272-.826a9.8 9.8 0 0 1 2.205-3.792a.75.75 0 0 1 .85-.174l1.4.615a1.387 1.387 0 0 0 1.93-1.118l.17-1.526a.75.75 0 0 1 .583-.65q1.074-.238 2.201-.252M12 9a3 3 0 1 0 0 6a3 3 0 0 0 0-6"/></symbol>
+</svg>
+
+<div class="sg-app">
+  <aside class="sg-sidebar">
+    <div class="sg-brand">
+      <img class="sg-logo" src="./Logo_negativ_ohne_Claim.svg" alt="LUMITRONIX">
+      <div>
+        <h1 class="sg-title">AI Component Library</h1>
+        <p class="sg-subtitle">Vorschau für index4.html und global.css</p>
+      </div>
+    </div>
+
+    <nav class="sg-nav" aria-label="Komponenten">
+      <a href="#contract">Vertrag <span>01</span></a>
+      <a href="#tokens">Token <span>02</span></a>
+      <a href="#layout">Layout <span>03</span></a>
+      <a href="#actions">Aktionen <span>04</span></a>
+      <a href="#forms">Formulare <span>05</span></a>
+      <a href="#data">Daten <span>06</span></a>
+      <a href="#feedback">Feedback <span>07</span></a>
+    </nav>
+
+    <div class="sg-sidebar-footer">
+      <p class="lum-overline" style="color:rgba(255,255,255,.42)">Kernprinzip</p>
+      <p class="lum-body-sm" style="color:rgba(255,255,255,.66);margin-top:8px">KI soll Templates kopieren, Varianten austauschen und Layout-Primitives nutzen. Keine neuen Ad-hoc-Komponenten.</p>
+    </div>
+  </aside>
+
+  <main class="sg-main">
+    <header class="sg-toolbar">
+      <h2 class="sg-toolbar-title">LUMITRONIX Baukasten</h2>
+      <div class="sg-toolbar-actions">
+        <label class="lum-search sg-search" aria-label="Komponenten filtern">
+          <svg><use href="#i-search"></use></svg>
+          <input class="lum-input" id="component-search" type="search" placeholder="Komponente suchen">
+        </label>
+        <select class="lum-select sg-mobile-nav" id="mobile-nav" aria-label="Abschnitt wechseln">
+          <option value="#contract">Vertrag</option>
+          <option value="#tokens">Token</option>
+          <option value="#layout">Layout</option>
+          <option value="#actions">Aktionen</option>
+          <option value="#forms">Formulare</option>
+          <option value="#data">Daten</option>
+          <option value="#feedback">Feedback</option>
+        </select>
+      </div>
+    </header>
+
+    <div class="sg-content">
+      <section class="sg-intro" id="contract">
+        <div class="sg-intro-panel">
+          <p class="lum-overline">Komponentenvertrag</p>
+          <h1 class="lum-h1">Eine Seite für Menschen, Templates für KI.</h1>
+          <p class="lum-body">Jeder Baustein wird als kanonisches Template gepflegt. Die Vorschau und der Codeblock entstehen daraus automatisch. Dadurch sieht die Seite gut aus, bleibt aber für KI eindeutig kopierbar.</p>
+          <div class="lum-cluster">
+            <span class="lum-badge lum-badge-accent">Nur lum-* kopieren</span>
+            <span class="lum-badge">sg-* ist Dokumentation</span>
+            <span class="lum-badge lum-badge-green">Responsive per Primitive</span>
+          </div>
+        </div>
+        <div class="sg-contract-panel">
+          <p class="lum-overline">Regeln für Generatoren</p>
+          <ol class="sg-rule-list">
+            <li><span class="sg-rule-index">1</span><span><strong>Template zuerst.</strong> Für Buttons, Tabellen, Cards, Alerts, Tabs und Formulare immer den passenden Block kopieren.</span></li>
+            <li><span class="sg-rule-index">2</span><span><strong>Layout getrennt halten.</strong> Breite und Spalten über <code class="sg-code-inline">lum-layout-grid</code>, <code class="sg-code-inline">lum-stack</code> und <code class="sg-code-inline">lum-cluster</code>.</span></li>
+            <li><span class="sg-rule-index">3</span><span><strong>Keine Inline-Deko.</strong> Inline-Styles nur für echte Werte wie Prozentbreiten via CSS Custom Property.</span></li>
+            <li><span class="sg-rule-index">4</span><span><strong>sg-* nie verwenden.</strong> Diese Klassen gehören nur zur Styleguide-Oberfläche.</span></li>
+          </ol>
+        </div>
+      </section>
+
+      <section class="sg-section" id="tokens">
+        <div class="sg-section-header">
+          <div>
+            <div class="sg-section-kicker">02 Token</div>
+            <h2 class="lum-h2">Farben und Rollen</h2>
+          </div>
+          <span class="lum-badge lum-badge-accent">CSS Custom Properties</span>
+        </div>
+        <div class="sg-section-body">
+          <div class="sg-color-grid">
+            <div class="sg-swatch" style="--swatch:#152c3e"><strong>dark</strong><span>#152c3e</span></div>
+            <div class="sg-swatch" style="--swatch:#366a99"><strong>primary</strong><span>#366a99</span></div>
+            <div class="sg-swatch" style="--swatch:#3b92c7"><strong>accent</strong><span>#3b92c7</span></div>
+            <div class="sg-swatch" style="--swatch:#8b9baa"><strong>mint</strong><span>#8b9baa</span></div>
+            <div class="sg-swatch" style="--swatch:#e4e8ec;--swatch-text:#617184"><strong>light</strong><span>#e4e8ec</span></div>
+            <div class="sg-swatch" style="--swatch:#f2f3f4;--swatch-text:#617184"><strong>cream</strong><span>#f2f3f4</span></div>
+            <div class="sg-swatch" style="--swatch:#ff4d00"><strong>orange</strong><span>#ff4d00</span></div>
+          </div>
+          <table class="sg-token-table">
+            <thead><tr><th>Rolle</th><th>Verwendung</th><th>Token</th></tr></thead>
+            <tbody>
+              <tr><td>Primär</td><td>Navigation, Hauptaktionen, Tabellenheader</td><td><code>--lum-primary</code></td></tr>
+              <tr><td>Akzent</td><td>Fokus, aktive Zustände, Links, Charts</td><td><code>--lum-accent</code></td></tr>
+              <tr><td>Neutral</td><td>Hintergründe, Trennlinien, Karten</td><td><code>--lum-cream</code>, <code>--lum-light</code></td></tr>
+              <tr><td>Status</td><td>Erfolg, Warnung, Fehler</td><td><code>--lum-green</code>, <code>--lum-yellow</code>, <code>--lum-red</code></td></tr>
+            </tbody>
+          </table>
+        </div>
+      </section>
+
+      <section class="sg-section" id="layout">
+        <div class="sg-section-header">
+          <div>
+            <div class="sg-section-kicker">03 Layout</div>
+            <h2 class="lum-h2">Responsive Grundformen</h2>
+          </div>
+          <span class="lum-badge">Breiten ohne Rückfrage</span>
+        </div>
+        <div class="sg-section-body">
+          <article class="sg-component" data-component="layout grid stack cluster responsive">
+            <div class="sg-component-head">
+              <div class="sg-component-title"><h3>Layout-Primitives</h3><p>Spalten, Stapel und flexible Gruppen statt komponentenspezifischer Breiten.</p></div>
+              <div class="sg-component-tags"><span class="lum-badge lum-badge-accent">Required</span><span class="lum-badge">Primitive</span></div>
+            </div>
+            <div class="sg-component-body">
+              <div class="sg-preview"><div class="sg-preview-inner"></div></div>
+              <div class="sg-code-panel">
+                <div class="sg-code-toolbar"><span class="sg-code-label">Canonical HTML</span><button class="sg-copy" type="button" aria-label="Code kopieren"><svg><use href="#i-copy"></use></svg></button></div>
+                <pre><code></code></pre>
+              </div>
+            </div>
+            <template>
+<div class="lum-layout-grid" style="--lum-columns:3">
+  <div class="lum-card">
+    <h3 class="lum-h3">Plan</h3>
+    <p class="lum-body-sm">Auftragsbestand und offene Mengen.</p>
+  </div>
+  <div class="lum-card">
+    <h3 class="lum-h3">Produktion</h3>
+    <p class="lum-body-sm">Linienstatus und Engpässe.</p>
+  </div>
+  <div class="lum-card">
+    <h3 class="lum-h3">Qualität</h3>
+    <p class="lum-body-sm">QA-Rate und Rückmeldungen.</p>
+  </div>
+</div>
+            </template>
+          </article>
+        </div>
+      </section>
+
+      <section class="sg-section" id="actions">
+        <div class="sg-section-header">
+          <div>
+            <div class="sg-section-kicker">04 Aktionen</div>
+            <h2 class="lum-h2">Buttons und Icons</h2>
+          </div>
+          <span class="lum-badge">Interaktion</span>
+        </div>
+        <div class="sg-section-body">
+          <article class="sg-component" data-component="button action primary secondary icon">
+            <div class="sg-component-head">
+              <div class="sg-component-title"><h3>Button-Set</h3><p>Primäraktion, Sekundäraktion, ruhige Ghost-Aktion und Icon-Button.</p></div>
+              <div class="sg-component-tags"><span class="lum-badge lum-badge-accent">Actions</span><span class="lum-badge">Use often</span></div>
+            </div>
+            <div class="sg-component-body">
+              <div class="sg-preview"><div class="sg-preview-inner"></div></div>
+              <div class="sg-code-panel">
+                <div class="sg-code-toolbar"><span class="sg-code-label">Canonical HTML</span><button class="sg-copy" type="button" aria-label="Code kopieren"><svg><use href="#i-copy"></use></svg></button></div>
+                <pre><code></code></pre>
+              </div>
+            </div>
+            <template>
+<div class="lum-cluster">
+  <button class="lum-btn lum-btn-primary" type="button">Speichern</button>
+  <button class="lum-btn lum-btn-outline" type="button">Abbrechen</button>
+  <button class="lum-btn lum-btn-ghost" type="button">Details</button>
+  <button class="lum-icon-btn" type="button" aria-label="Einstellungen">
+    <svg><use href="#i-settings"></use></svg>
+  </button>
+</div>
+            </template>
+          </article>
+
+          <article class="sg-component" data-component="dark button hero action">
+            <div class="sg-component-head">
+              <div class="sg-component-title"><h3>Dunkle Aktionsleiste</h3><p>Buttons auf dunklen Flächen immer mit Dark-Variante einsetzen.</p></div>
+              <div class="sg-component-tags"><span class="lum-badge">Dark</span></div>
+            </div>
+            <div class="sg-component-body">
+              <div class="sg-preview sg-preview-dark"><div class="sg-preview-inner"></div></div>
+              <div class="sg-code-panel">
+                <div class="sg-code-toolbar"><span class="sg-code-label">Canonical HTML</span><button class="sg-copy" type="button" aria-label="Code kopieren"><svg><use href="#i-copy"></use></svg></button></div>
+                <pre><code></code></pre>
+              </div>
+            </div>
+            <template>
+<div class="lum-cluster">
+  <button class="lum-btn lum-btn-accent" type="button">Freigeben</button>
+  <button class="lum-btn lum-btn-dark" type="button">Pruefen</button>
+  <button class="lum-btn lum-btn-dark" type="button">
+    <svg><use href="#i-download"></use></svg>
+    Export
+  </button>
+</div>
+            </template>
+          </article>
+        </div>
+      </section>
+
+      <section class="sg-section" id="forms">
+        <div class="sg-section-header">
+          <div>
+            <div class="sg-section-kicker">05 Formulare</div>
+            <h2 class="lum-h2">Eingabe und Suche</h2>
+          </div>
+          <span class="lum-badge">Operational UI</span>
+        </div>
+        <div class="sg-section-body">
+          <article class="sg-component" data-component="form input select textarea search">
+            <div class="sg-component-head">
+              <div class="sg-component-title"><h3>Formularblock</h3><p>Labels bleiben sichtbar; Felder nutzen die Standardhöhe und kollabieren mobil.</p></div>
+              <div class="sg-component-tags"><span class="lum-badge lum-badge-accent">Forms</span></div>
+            </div>
+            <div class="sg-component-body">
+              <div class="sg-preview"><div class="sg-preview-inner" style="--sg-preview-width:640px"></div></div>
+              <div class="sg-code-panel">
+                <div class="sg-code-toolbar"><span class="sg-code-label">Canonical HTML</span><button class="sg-copy" type="button" aria-label="Code kopieren"><svg><use href="#i-copy"></use></svg></button></div>
+                <pre><code></code></pre>
+              </div>
+            </div>
+            <template>
+<form class="lum-stack" style="--lum-stack-gap:16px">
+  <label class="lum-search">
+    <svg><use href="#i-search"></use></svg>
+    <input class="lum-input" type="search" placeholder="Produkt suchen">
+  </label>
+  <div class="lum-field-row">
+    <label class="lum-field">
+      <span class="lum-label">Serie</span>
+      <input class="lum-input" type="text" value="LumiFlex700 Pro">
+    </label>
+    <label class="lum-field">
+      <span class="lum-label">Status</span>
+      <select class="lum-select">
+        <option>Aktiv</option>
+        <option>Entwurf</option>
+        <option>Archiv</option>
+      </select>
+    </label>
+  </div>
+  <label class="lum-field">
+    <span class="lum-label">Notiz</span>
+    <textarea class="lum-textarea">Bemusterung für Fertigungslinie 2 vorbereiten.</textarea>
+  </label>
+</form>
+            </template>
+          </article>
+        </div>
+      </section>
+
+      <section class="sg-section" id="data">
+        <div class="sg-section-header">
+          <div>
+            <div class="sg-section-kicker">06 Daten</div>
+            <h2 class="lum-h2">Tabellen, Kennzahlen und Charts</h2>
+          </div>
+          <span class="lum-badge">Zahlen sichtbar machen</span>
+        </div>
+        <div class="sg-section-body">
+          <article class="sg-component" data-component="stats kpi cards metric">
+            <div class="sg-component-head">
+              <div class="sg-component-title"><h3>KPI-Gruppe</h3><p>Vier Kennzahlen als Raster; mobil automatisch einspaltig.</p></div>
+              <div class="sg-component-tags"><span class="lum-badge lum-badge-green">KPI</span></div>
+            </div>
+            <div class="sg-component-body">
+              <div class="sg-preview"><div class="sg-preview-inner" style="--sg-preview-width:820px"></div></div>
+              <div class="sg-code-panel">
+                <div class="sg-code-toolbar"><span class="sg-code-label">Canonical HTML</span><button class="sg-copy" type="button" aria-label="Code kopieren"><svg><use href="#i-copy"></use></svg></button></div>
+                <pre><code></code></pre>
+              </div>
+            </div>
+            <template>
+<div class="lum-stat-grid">
+  <div class="lum-stat-card">
+    <div class="lum-stat-label">Umsatz MTD</div>
+    <div class="lum-stat-value">1,24 Mio. €</div>
+    <div class="lum-stat-note"><span class="lum-stat-up">+12,4%</span> zum Vormonat</div>
+  </div>
+  <div class="lum-stat-card">
+    <div class="lum-stat-label">Aufträge</div>
+    <div class="lum-stat-value">156</div>
+    <div class="lum-stat-note"><span class="lum-stat-up">+8%</span> zum Vormonat</div>
+  </div>
+  <div class="lum-stat-card">
+    <div class="lum-stat-label">QA-Rate</div>
+    <div class="lum-stat-value">98,2%</div>
+    <div class="lum-stat-note"><span class="lum-stat-up">+0,4%</span> stabil</div>
+  </div>
+  <div class="lum-stat-card">
+    <div class="lum-stat-label">Rückstand</div>
+    <div class="lum-stat-value">18</div>
+    <div class="lum-stat-note"><span class="lum-stat-down">+3</span> kritisch</div>
+  </div>
+</div>
+            </template>
+          </article>
+
+          <article class="sg-component" data-component="table data list status badge">
+            <div class="sg-component-head">
+              <div class="sg-component-title"><h3>Datentabelle</h3><p>Tabellen nie frei stylen; Status über Badge, Zahlen rechtsbündig bei Bedarf.</p></div>
+              <div class="sg-component-tags"><span class="lum-badge">Table</span></div>
+            </div>
+            <div class="sg-component-body">
+              <div class="sg-preview"><div class="sg-preview-inner" style="--sg-preview-width:820px"></div></div>
+              <div class="sg-code-panel">
+                <div class="sg-code-toolbar"><span class="sg-code-label">Canonical HTML</span><button class="sg-copy" type="button" aria-label="Code kopieren"><svg><use href="#i-copy"></use></svg></button></div>
+                <pre><code></code></pre>
+              </div>
+            </div>
+            <template>
+<div class="lum-table-wrap">
+  <table class="lum-table">
+    <thead>
+      <tr><th>Produkt</th><th>Serie</th><th>Status</th><th>Lager</th></tr>
+    </thead>
+    <tbody>
+      <tr><td>LumiFlex700 Pro</td><td>4000K</td><td><span class="lum-badge lum-badge-green">Aktiv</span></td><td>12.480</td></tr>
+      <tr><td>LinearZ 24V</td><td>2700K</td><td><span class="lum-badge lum-badge-accent">Prüfung</span></td><td>3.210</td></tr>
+      <tr><td>PowerBar V3</td><td>6500K</td><td><span class="lum-badge lum-badge-orange">Engpass</span></td><td>420</td></tr>
+    </tbody>
+  </table>
+</div>
+            </template>
+          </article>
+
+          <article class="sg-component" data-component="chart progress bar values">
+            <div class="sg-component-head">
+              <div class="sg-component-title"><h3>Balken-Chart</h3><p>Werte per Custom Property setzen, nicht über neue Klassen.</p></div>
+              <div class="sg-component-tags"><span class="lum-badge">Chart</span></div>
+            </div>
+            <div class="sg-component-body">
+              <div class="sg-preview"><div class="sg-preview-inner" style="--sg-preview-width:640px"></div></div>
+              <div class="sg-code-panel">
+                <div class="sg-code-toolbar"><span class="sg-code-label">Canonical HTML</span><button class="sg-copy" type="button" aria-label="Code kopieren"><svg><use href="#i-copy"></use></svg></button></div>
+                <pre><code></code></pre>
+              </div>
+            </div>
+            <template>
+<div class="lum-card">
+  <h3 class="lum-h3">Auslastung nach Linie</h3>
+  <div class="lum-chart" style="margin-top:16px">
+    <div class="lum-chart-row">
+      <span class="lum-chart-label">Linie 1</span>
+      <div class="lum-chart-track"><div class="lum-chart-fill" style="--lum-chart-value:78%"></div></div>
+      <span class="lum-chart-value">78%</span>
+    </div>
+    <div class="lum-chart-row">
+      <span class="lum-chart-label">Linie 2</span>
+      <div class="lum-chart-track"><div class="lum-chart-fill" style="--lum-chart-value:92%"></div></div>
+      <span class="lum-chart-value">92%</span>
+    </div>
+    <div class="lum-chart-row">
+      <span class="lum-chart-label">Linie 3</span>
+      <div class="lum-chart-track"><div class="lum-chart-fill" style="--lum-chart-value:61%"></div></div>
+      <span class="lum-chart-value">61%</span>
+    </div>
+  </div>
+</div>
+            </template>
+          </article>
+        </div>
+      </section>
+
+      <section class="sg-section" id="feedback">
+        <div class="sg-section-header">
+          <div>
+            <div class="sg-section-kicker">07 Feedback</div>
+            <h2 class="lum-h2">Status, Tabs, Modal, Skeleton</h2>
+          </div>
+          <span class="lum-badge">UI States</span>
+        </div>
+        <div class="sg-section-body">
+          <article class="sg-component" data-component="alert status feedback badge">
+            <div class="sg-component-head">
+              <div class="sg-component-title"><h3>Alerts</h3><p>Kurz, handlungsnah, mit Icon und Statusfarbe.</p></div>
+              <div class="sg-component-tags"><span class="lum-badge lum-badge-orange">Feedback</span></div>
+            </div>
+            <div class="sg-component-body">
+              <div class="sg-preview"><div class="sg-preview-inner" style="--sg-preview-width:640px"></div></div>
+              <div class="sg-code-panel">
+                <div class="sg-code-toolbar"><span class="sg-code-label">Canonical HTML</span><button class="sg-copy" type="button" aria-label="Code kopieren"><svg><use href="#i-copy"></use></svg></button></div>
+                <pre><code></code></pre>
+              </div>
+            </div>
+            <template>
+<div class="lum-stack" style="--lum-stack-gap:12px">
+  <div class="lum-alert lum-alert-info">
+    <svg><use href="#i-info"></use></svg>
+    <span>Firmware v3.2 ist für die Charge verfügbar.</span>
+  </div>
+  <div class="lum-alert lum-alert-success">
+    <svg><use href="#i-check"></use></svg>
+    <span>Auftrag #LF700-048 wurde angelegt.</span>
+  </div>
+  <div class="lum-alert lum-alert-warning">
+    <svg><use href="#i-warning"></use></svg>
+    <span>Nichia 757G liegt unter Sicherheitsbestand.</span>
+  </div>
+</div>
+            </template>
+          </article>
+
+          <article class="sg-component" data-component="tabs segmented navigation">
+            <div class="sg-component-head">
+              <div class="sg-component-title"><h3>Tabs</h3><p>Segmentierte Tabs für kompakte Wechsel innerhalb einer Ansicht.</p></div>
+              <div class="sg-component-tags"><span class="lum-badge">Navigation</span></div>
+            </div>
+            <div class="sg-component-body">
+              <div class="sg-preview"><div class="sg-preview-inner"></div></div>
+              <div class="sg-code-panel">
+                <div class="sg-code-toolbar"><span class="sg-code-label">Canonical HTML</span><button class="sg-copy" type="button" aria-label="Code kopieren"><svg><use href="#i-copy"></use></svg></button></div>
+                <pre><code></code></pre>
+              </div>
+            </div>
+            <template>
+<div class="lum-tabs" role="tablist" aria-label="Produktdetails">
+  <button class="lum-tab is-active" role="tab" aria-selected="true" type="button">Übersicht</button>
+  <button class="lum-tab" role="tab" aria-selected="false" type="button">Spezifikation</button>
+  <button class="lum-tab" role="tab" aria-selected="false" type="button">Downloads</button>
+</div>
+            </template>
+          </article>
+
+          <article class="sg-component" data-component="modal dialog overlay">
+            <div class="sg-component-head">
+              <div class="sg-component-title"><h3>Modal</h3><p>Dialoge sind fokussierte Entscheidungen, nicht für lange Formulare.</p></div>
+              <div class="sg-component-tags"><span class="lum-badge">Dialog</span></div>
+            </div>
+            <div class="sg-component-body">
+              <div class="sg-preview"><div class="sg-preview-inner"></div></div>
+              <div class="sg-code-panel">
+                <div class="sg-code-toolbar"><span class="sg-code-label">Canonical HTML</span><button class="sg-copy" type="button" aria-label="Code kopieren"><svg><use href="#i-copy"></use></svg></button></div>
+                <pre><code></code></pre>
+              </div>
+            </div>
+            <template>
+<div>
+  <button class="lum-btn lum-btn-accent" type="button" data-open-modal="order-modal">Auftrag bestätigen</button>
+  <div class="lum-modal-backdrop" id="order-modal" role="dialog" aria-modal="true" aria-labelledby="order-modal-title">
+    <div class="lum-modal">
+      <div class="lum-modal-header">
+        <h3 class="lum-h3" id="order-modal-title">Auftrag bestätigen</h3>
+        <button class="lum-icon-btn" type="button" data-close-modal aria-label="Schließen"><svg><use href="#i-close"></use></svg></button>
+      </div>
+      <div class="lum-modal-body">
+        <p class="lum-body">Auftrag #LF700-048 über 2.400 Stück freigeben?</p>
+      </div>
+      <div class="lum-modal-footer">
+        <button class="lum-btn lum-btn-outline" type="button" data-close-modal>Abbrechen</button>
+        <button class="lum-btn lum-btn-accent" type="button" data-close-modal>Freigeben</button>
+      </div>
+    </div>
+  </div>
+</div>
+            </template>
+          </article>
+
+          <article class="sg-component" data-component="loading skeleton placeholder">
+            <div class="sg-component-head">
+              <div class="sg-component-title"><h3>Skeleton</h3><p>Platzhalter für geladene Inhalte, ohne Layoutsprung.</p></div>
+              <div class="sg-component-tags"><span class="lum-badge">Loading</span></div>
+            </div>
+            <div class="sg-component-body">
+              <div class="sg-preview"><div class="sg-preview-inner" style="--sg-preview-width:340px"></div></div>
+              <div class="sg-code-panel">
+                <div class="sg-code-toolbar"><span class="sg-code-label">Canonical HTML</span><button class="sg-copy" type="button" aria-label="Code kopieren"><svg><use href="#i-copy"></use></svg></button></div>
+                <pre><code></code></pre>
+              </div>
+            </div>
+            <template>
+<div class="lum-card">
+  <div class="lum-cluster" style="margin-bottom:16px">
+    <div class="lum-skeleton lum-skeleton-avatar"></div>
+    <div style="flex:1;min-width:120px">
+      <div class="lum-skeleton lum-skeleton-line" style="width:68%"></div>
+      <div class="lum-skeleton lum-skeleton-line" style="width:44%;margin-bottom:0"></div>
+    </div>
+  </div>
+  <div class="lum-skeleton lum-skeleton-heading"></div>
+  <div class="lum-skeleton lum-skeleton-line"></div>
+  <div class="lum-skeleton lum-skeleton-line"></div>
+  <div class="lum-skeleton lum-skeleton-line" style="width:74%;margin-bottom:0"></div>
+</div>
+            </template>
+          </article>
+        </div>
+      </section>
+
+      <div class="sg-empty" id="empty-state">
+        <h2 class="lum-h2">Keine Komponente gefunden</h2>
+        <p class="lum-body-sm">Suche nach Buttons, Tabellen, KPI, Formularen, Alerts oder Layout.</p>
+      </div>
+    </div>
+  </main>
+</div>
+
+<script type="application/json" id="lum-component-manifest">
+{
+  "purpose": "Canonical LUMITRONIX component templates for AI and human review",
+  "copy_rules": [
+    "Copy only markup inside component templates.",
+    "Do not copy sg-* classes; they are documentation chrome.",
+    "Use lum-layout-grid, lum-stack and lum-cluster for layout before inventing widths.",
+    "Inline styles are allowed only for component values expressed as CSS custom properties."
+  ],
+  "files": {
+    "preview": "index4.html",
+    "styles": "global.css"
+  }
+}
+</script>
+
+<script>
+(() => {
+  const normalize = (text) => text.replace(/\n\s+$/g, "").trim();
+
+  document.querySelectorAll(".sg-component").forEach((component) => {
+    const template = component.querySelector("template");
+    const preview = component.querySelector(".sg-preview-inner");
+    const code = component.querySelector("code");
+    const copy = component.querySelector(".sg-copy");
+    if (!template || !preview || !code || !copy) return;
+
+    const html = normalize(template.innerHTML);
+    preview.appendChild(template.content.cloneNode(true));
+    code.textContent = html;
+    copy.addEventListener("click", async () => {
+      try {
+        await navigator.clipboard.writeText(html);
+        copy.setAttribute("aria-label", "Kopiert");
+      } catch {
+        copy.setAttribute("aria-label", "Kopieren fehlgeschlagen");
+      }
+      window.setTimeout(() => copy.setAttribute("aria-label", "Code kopieren"), 1200);
+    });
+  });
+
+  document.addEventListener("click", (event) => {
+    const openButton = event.target.closest("[data-open-modal]");
+    const closeButton = event.target.closest("[data-close-modal]");
+    const backdrop = event.target.classList.contains("lum-modal-backdrop") ? event.target : null;
+
+    if (openButton) {
+      const modal = document.getElementById(openButton.dataset.openModal);
+      modal?.classList.add("is-open");
+    }
+
+    if (closeButton) {
+      closeButton.closest(".lum-modal-backdrop")?.classList.remove("is-open");
+    }
+
+    if (backdrop) {
+      backdrop.classList.remove("is-open");
+    }
+  });
+
+  document.addEventListener("click", (event) => {
+    const tab = event.target.closest(".lum-tab");
+    if (!tab) return;
+    const group = tab.closest(".lum-tabs");
+    group?.querySelectorAll(".lum-tab").forEach((item) => {
+      const active = item === tab;
+      item.classList.toggle("is-active", active);
+      item.setAttribute("aria-selected", active ? "true" : "false");
+    });
+  });
+
+  const search = document.getElementById("component-search");
+  const empty = document.getElementById("empty-state");
+  search?.addEventListener("input", () => {
+    const query = search.value.trim().toLowerCase();
+    let visible = 0;
+    document.querySelectorAll(".sg-component").forEach((component) => {
+      const haystack = [
+        component.dataset.component || "",
+        component.querySelector(".sg-component-title")?.textContent || "",
+        component.querySelector("code")?.textContent || ""
+      ].join(" ").toLowerCase();
+      const match = !query || haystack.includes(query);
+      component.classList.toggle("is-hidden", !match);
+      if (match) visible += 1;
+    });
+    empty?.classList.toggle("is-visible", visible === 0);
+  });
+
+  document.getElementById("mobile-nav")?.addEventListener("change", (event) => {
+    document.querySelector(event.target.value)?.scrollIntoView({ behavior: "smooth" });
+  });
+})();
+</script>
+</body>
+</html>
